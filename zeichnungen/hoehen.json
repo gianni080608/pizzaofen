@@ -1,0 +1,31 @@
+{
+ "kies": [
+  -30,
+  -10
+ ],
+ "fundament": [
+  -10,
+  5
+ ],
+ "sockel": [
+  5,
+  80
+ ],
+ "herdplatte": [
+  80,
+  90
+ ],
+ "daemmung": [
+  90,
+  100
+ ],
+ "boden": [
+  100.5,
+  104.5
+ ],
+ "kuppel_innen_scheitel": 144.5,
+ "kuppel_aussen": 161.9,
+ "tunnel_oben": 131.9,
+ "platte_oben": 135.9,
+ "kamin_oben": 235.9
+}

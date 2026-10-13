@@ -1,0 +1,300 @@
+{
+ "D80": {
+  "D": 80,
+  "h": 36,
+  "cy": 73.4,
+  "kuppel": {
+   "D": 80,
+   "h": 36,
+   "meridian_cm": 64.8,
+   "reihen": [
+    {
+     "reihe": 1,
+     "s_von": 0.0,
+     "z_innen_von": 0.0,
+     "z_innen_bis": 11.2,
+     "r_innen": 39.5,
+     "neigung_grad": 0.0,
+     "halbsteine": 18,
+     "tuerabzug": 3
+    },
+    {
+     "reihe": 2,
+     "s_von": 13.0,
+     "z_innen_von": 11.7,
+     "z_innen_bis": 21.5,
+     "r_innen": 35.4,
+     "neigung_grad": 20.7,
+     "halbsteine": 16,
+     "tuerabzug": 3
+    },
+    {
+     "reihe": 3,
+     "s_von": 26.0,
+     "z_innen_von": 21.9,
+     "z_innen_bis": 29.4,
+     "r_innen": 27.7,
+     "neigung_grad": 40.2,
+     "halbsteine": 15,
+     "tuerabzug": 0
+    },
+    {
+     "reihe": 4,
+     "s_von": 39.0,
+     "z_innen_von": 29.7,
+     "z_innen_bis": 34.3,
+     "r_innen": 17.6,
+     "neigung_grad": 58.0,
+     "halbsteine": 10,
+     "tuerabzug": 0
+    }
+   ],
+   "schluss_halbsteine": 3,
+   "rest_bogen_cm": 12.8,
+   "halbsteine_reihen": 62,
+   "kontrolle_flaeche_m2": 1.101,
+   "halbsteine_flaechenkontrolle": 58.2
+  },
+  "halbsteine_mit_verschnitt": 69,
+  "nf_kuppel": 35,
+  "nf_tunnel": 19,
+  "nf_total": 54,
+  "y_tuer": 108.0,
+  "tunnel_laenge": 42.0,
+  "boden_m2": 0.9,
+  "platten_boden": 11,
+  "platten_total": 13,
+  "moertel_liter": 11.4,
+  "moertel_kg": 23.6,
+  "perlit_mix_m3": {
+   "boden": 0.106,
+   "kuppel": 0.121,
+   "tunnel": 0.022,
+   "total": 0.249
+  },
+  "perlit_l": 273,
+  "zement_perlit_kg": 71.1,
+  "putz_m2": 2.32,
+  "putz_m3": 0.077,
+  "zement_putz_kg": 26.8,
+  "sand_putz_m3": 0.096,
+  "R_aussen": 57.4,
+  "aussendurchmesser": 114.8,
+  "masse_kuppel_kg": 117.2,
+  "masse_boden_kg": 70.8
+ },
+ "D90": {
+  "D": 90,
+  "h": 40,
+  "cy": 68.0,
+  "kuppel": {
+   "D": 90,
+   "h": 40,
+   "meridian_cm": 71.8,
+   "reihen": [
+    {
+     "reihe": 1,
+     "s_von": 0.0,
+     "z_innen_von": 0.0,
+     "z_innen_bis": 11.3,
+     "r_innen": 44.5,
+     "neigung_grad": 0.0,
+     "halbsteine": 20,
+     "tuerabzug": 3
+    },
+    {
+     "reihe": 2,
+     "s_von": 13.0,
+     "z_innen_von": 11.8,
+     "z_innen_bis": 21.9,
+     "r_innen": 40.7,
+     "neigung_grad": 19.0,
+     "halbsteine": 18,
+     "tuerabzug": 3
+    },
+    {
+     "reihe": 3,
+     "s_von": 26.0,
+     "z_innen_von": 22.4,
+     "z_innen_bis": 30.5,
+     "r_innen": 33.5,
+     "neigung_grad": 37.0,
+     "halbsteine": 18,
+     "tuerabzug": 0
+    },
+    {
+     "reihe": 4,
+     "s_von": 39.0,
+     "z_innen_von": 30.8,
+     "z_innen_bis": 36.4,
+     "r_innen": 23.8,
+     "neigung_grad": 53.4,
+     "halbsteine": 13,
+     "tuerabzug": 0
+    },
+    {
+     "reihe": 5,
+     "s_von": 52.0,
+     "z_innen_von": 36.6,
+     "z_innen_bis": 39.5,
+     "r_innen": 12.6,
+     "neigung_grad": 68.5,
+     "halbsteine": 7,
+     "tuerabzug": 0
+    }
+   ],
+   "schluss_halbsteine": 1,
+   "rest_bogen_cm": 6.8,
+   "halbsteine_reihen": 77,
+   "kontrolle_flaeche_m2": 1.36,
+   "halbsteine_flaechenkontrolle": 73.4
+  },
+  "halbsteine_mit_verschnitt": 85,
+  "nf_kuppel": 43,
+  "nf_tunnel": 19,
+  "nf_total": 62,
+  "y_tuer": 108.3,
+  "tunnel_laenge": 41.7,
+  "boden_m2": 1.053,
+  "platten_boden": 13,
+  "platten_total": 15,
+  "moertel_liter": 12.8,
+  "moertel_kg": 26.6,
+  "perlit_mix_m3": {
+   "boden": 0.123,
+   "kuppel": 0.145,
+   "tunnel": 0.022,
+   "total": 0.289
+  },
+  "perlit_l": 318,
+  "zement_perlit_kg": 82.8,
+  "putz_m2": 2.65,
+  "putz_m3": 0.088,
+  "zement_putz_kg": 30.7,
+  "sand_putz_m3": 0.109,
+  "R_aussen": 62.4,
+  "aussendurchmesser": 124.8,
+  "masse_kuppel_kg": 145.5,
+  "masse_boden_kg": 83.7
+ },
+ "D100": {
+  "D": 100,
+  "h": 44,
+  "cy": 73.0,
+  "kuppel": {
+   "D": 100,
+   "h": 44,
+   "meridian_cm": 78.9,
+   "reihen": [
+    {
+     "reihe": 1,
+     "s_von": 0.0,
+     "z_innen_von": 0.0,
+     "z_innen_bis": 11.4,
+     "r_innen": 49.6,
+     "neigung_grad": 0.0,
+     "halbsteine": 23,
+     "tuerabzug": 3
+    },
+    {
+     "reihe": 2,
+     "s_von": 13.0,
+     "z_innen_von": 11.9,
+     "z_innen_bis": 22.3,
+     "r_innen": 46.0,
+     "neigung_grad": 17.6,
+     "halbsteine": 21,
+     "tuerabzug": 3
+    },
+    {
+     "reihe": 3,
+     "s_von": 26.0,
+     "z_innen_von": 22.8,
+     "z_innen_bis": 31.4,
+     "r_innen": 39.2,
+     "neigung_grad": 34.3,
+     "halbsteine": 20,
+     "tuerabzug": 0
+    },
+    {
+     "reihe": 4,
+     "s_von": 39.0,
+     "z_innen_von": 31.7,
+     "z_innen_bis": 38.1,
+     "r_innen": 30.0,
+     "neigung_grad": 49.6,
+     "halbsteine": 16,
+     "tuerabzug": 0
+    },
+    {
+     "reihe": 5,
+     "s_von": 52.0,
+     "z_innen_von": 38.4,
+     "z_innen_bis": 42.4,
+     "r_innen": 19.1,
+     "neigung_grad": 63.6,
+     "halbsteine": 10,
+     "tuerabzug": 0
+    },
+    {
+     "reihe": 6,
+     "s_von": 65.0,
+     "z_innen_von": 42.5,
+     "z_innen_bis": 44.0,
+     "r_innen": 7.2,
+     "neigung_grad": 76.6,
+     "halbsteine": 4,
+     "tuerabzug": 0
+    }
+   ],
+   "schluss_halbsteine": 0,
+   "rest_bogen_cm": 0.9,
+   "halbsteine_reihen": 94,
+   "kontrolle_flaeche_m2": 1.646,
+   "halbsteine_flaechenkontrolle": 90.2
+  },
+  "halbsteine_mit_verschnitt": 104,
+  "nf_kuppel": 52,
+  "nf_tunnel": 14,
+  "nf_total": 66,
+  "y_tuer": 118.8,
+  "tunnel_laenge": 31.2,
+  "boden_m2": 1.155,
+  "platten_boden": 14,
+  "platten_total": 16,
+  "moertel_liter": 13.3,
+  "moertel_kg": 27.6,
+  "perlit_mix_m3": {
+   "boden": 0.133,
+   "kuppel": 0.172,
+   "tunnel": 0.016,
+   "total": 0.321
+  },
+  "perlit_l": 353,
+  "zement_perlit_kg": 91.8,
+  "putz_m2": 3.01,
+  "putz_m3": 0.099,
+  "zement_putz_kg": 34.8,
+  "sand_putz_m3": 0.124,
+  "R_aussen": 67.4,
+  "aussendurchmesser": 134.8,
+  "masse_kuppel_kg": 177.7,
+  "masse_boden_kg": 90.1
+ },
+ "unterbau": {
+  "fundament_m3": 0.3375,
+  "wandlaenge_cm": 402.0,
+  "wandflaeche_m2": 3.015,
+  "fuellbeton_m3": 0.407,
+  "herdplatte_m3": 0.225,
+  "beton_total_m3": 1.018,
+  "zement_beton_kg": 305.4,
+  "betonkies_kg": 1934,
+  "betonkies_m3_lose": 1.075,
+  "steine_pro_lage": 8.04,
+  "steine_3_lagen": 24.1,
+  "kies_verdichtet_m3": 0.578,
+  "kies_lose_m3": 0.722,
+  "kies_kg": 1156
+ }
+}

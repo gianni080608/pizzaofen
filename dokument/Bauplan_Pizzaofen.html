@@ -1,0 +1,1885 @@
+<title>Pizzaofen Würenlos Bauplan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: technisches Dossier – schmale Lesespalte, breite Tabellen scrollen in eigener Box, Zeichnungen auf weissem Planpapier */
+:root{--bg:#f2f3f1;--paper:#ffffff;--ink:#1c2125;--muted:#5b646b;--line:#d6d9d5;--accent:#a9542a;--blue:#1c4f8a;--quote:#eef1f4;
+--fd:"Barlow Semi Condensed","Arial Narrow",Arial,sans-serif;--fb:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--fm:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14181b;--paper:#1c2125;--ink:#e6e8e5;--muted:#9aa3a9;--line:#323a40;--accent:#e08a57;--blue:#86b6ea;--quote:#20282f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14181b;--paper:#1c2125;--ink:#e6e8e5;--muted:#9aa3a9;--line:#323a40;--accent:#e08a57;--blue:#86b6ea;--quote:#20282f;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:15.5px;line-height:1.55}
+.wrap{max-width:980px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+.doc{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding-inline:clamp(16px,4vw,48px);padding-block:clamp(20px,4vw,44px)}
+.doc>*{max-width:72ch}.doc>.tw,.doc>figure,.doc>blockquote{max-width:none}
+.kicker{font-family:var(--fm);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 .4rem}
+.title{font-family:var(--fd);font-weight:700;font-size:clamp(2rem,6vw,3.1rem);line-height:1.02;margin:0 0 .5rem;text-wrap:balance}
+h2,h3{font-family:var(--fd);font-weight:700;text-wrap:balance;line-height:1.15}
+h2{font-size:1.75rem;margin:2.6rem 0 .6rem;padding-top:1rem;border-top:2px solid var(--ink)}
+h3{font-size:1.25rem;margin:1.8rem 0 .4rem;color:var(--ink)}
+a{color:var(--blue);overflow-wrap:anywhere}
+hr{border:0;border-top:1px solid var(--line);margin:2rem 0}
+blockquote{margin:1.2rem 0;padding:.9rem 1.1rem;background:var(--quote);border-left:4px solid var(--accent);border-radius:6px}
+blockquote p{margin:.3rem 0}
+code{font-family:var(--fm);font-size:.88em;background:var(--quote);padding:.05em .3em;border-radius:4px}
+.tw{overflow-x:auto;margin:1rem 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:.86rem;font-variant-numeric:tabular-nums}
+th,td{padding:.5rem .6rem;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th{font-family:var(--fd);font-size:.85rem;letter-spacing:.03em;text-transform:uppercase;background:var(--quote);position:sticky;top:0}
+tr:last-child td{border-bottom:0}
+figure{margin:1.4rem 0;background:#ffffff;border:1px solid var(--line);border-radius:8px;padding:10px;overflow-x:auto}
+figure img{display:block;width:100%;min-width:560px;height:auto}
+figcaption{font-size:.8rem;color:#4b545a;margin-top:6px;font-family:var(--fm)}
+ol,ul{padding-left:1.3rem}li{margin:.2rem 0}
+strong{font-weight:600}
+@media print{body{background:#fff;color:#000;font-size:11.5px}.wrap{max-width:none;padding:0}.doc{border:0;padding:0}.doc>*{max-width:none}
+ h2{break-before:page;border-top:0}h2:first-of-type{break-before:auto}figure{break-inside:avoid}figure img{min-width:0}table{font-size:9px}.tw{overflow:visible;border:0}th{position:static}a{color:#000}}
+</style>
+<main class="wrap"><article class="doc">
+<p class="kicker">Vertiefungsarbeit · Bau- und Beschaffungsplan · Stand 13.10.2026</p>
+<h1 class="title">Pizzaofen Würenlos</h1>
+
+<p><strong>Projekt:</strong> Kuppelofen (neapolitanischer Stil) in der Gartenecke an der Betonmauer, Würenlos AG <strong>Stand:</strong> Dienstag, 13.10.2026 · Preise abgerufen am 13.10.2026 · EUR-Kurs: <strong>1 EUR = 0.9312 CHF</strong> (EZB-Referenzkurs vom 12.10.2026) <strong>Rechengrundlage:</strong> Alle Mengen stammen aus <code>berechnung/berechnung.py</code> und <code>berechnung/stueckliste.py</code>. Die Skripte kann man erneut laufen lassen, um jede Zahl nachzuprüfen.</p>
+<blockquote>
+<p><strong>Kurzfassung</strong></p>
+<ul>
+<li><strong>Empfehlung: Variante B.</strong> Ihr baut aus Einzelteilen mit <strong>90 cm Innendurchmesser</strong> (nicht 100 cm), einer Kuppel aus halbierten Schamott-Normalsteinen (6.4 cm) und kauft alles heute in der Schweiz.</li>
+<li><strong>Kosten: CHF 1'922.65</strong> inkl. Sockel, Fundament und Mietgeräten. Damit bleibt eine <strong>Reserve von CHF 77.35</strong> bis 2000. Mit der Sparliste (Kapitel 10) kommt ihr auf <strong>ca. CHF 1'360</strong>, also unter 1500.</li>
+<li><strong>Fahrten:</strong> Das Material wiegt ca. <strong>5.2 t</strong>. Das schafft der Fiat Talento nicht in einer Fahrt. Ihr braucht <strong>2 Baumarkt-Fahrten</strong> (Hornbach Affoltern a. A., OBI Volketswil) und <strong>4 kurze Kies-Fahrten</strong> zum Kieswerk Tägerhard (2.8 km). Jede Fahrt bleibt bei max. 900 kg Ladung, das Fahrzeug bleibt damit unter 3500 kg. Mit Kat. B dürft ihr legal fahren.</li>
+<li><strong>Bewilligung:</strong> Ein Gartencheminée in der Bauzone braucht im Aargau keine Baubewilligung (BauV § 49 Abs. 2 lit. c), <strong>sofern die Abstände eingehalten sind</strong>. Das sind 2 m Grenzabstand, ausser der Nachbar stimmt schriftlich zu. Kurz bei der Bauverwaltung Würenlos melden (Kontakt in Kapitel 9).</li>
+<li><strong>Wetter:</strong> Beton- und Mörtelarbeiten müssen bis <strong>ca. 31. Oktober</strong> fertig sein. Im November gibt es im Mittel 9 Frosttage (MeteoSchweiz, Station Zürich-Affoltern).</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="inhalt">Inhalt</h2>
+<ol type="1">
+<li>Variantenvergleich und Empfehlung (inkl. Prüfung 100 cm vs. 80–90 cm)</li>
+<li>Exakte Stückliste mit Rechnungen</li>
+<li>Schematik / Bauzeichnungen</li>
+<li>Einkaufsroute für heute (mit Anruftexten)</li>
+<li>Transport und Gewicht (Fiat Talento, Kat. B)</li>
+<li>Einkauf in Deutschland (Zoll, MWST, Ausfuhrschein)</li>
+<li>Bauanleitung mit Zeitplan und Trockenbrennplan</li>
+<li>Werkzeugliste (kaufen/mieten)</li>
+<li>Sicherheit und Recht</li>
+<li>Budgetübersicht, Sparliste und Plan B</li>
+</ol>
+<p>Anhang: Quellenverzeichnis · separate Einkaufsliste zum Abhaken (<code>einkaufsliste.html</code> / <code>.pdf</code>)</p>
+<hr />
+<h2 id="1-variantenvergleich-und-empfehlung">1. Variantenvergleich und Empfehlung</h2>
+<h3 id="11-prüfung-der-masse-100-cm-oder-8090-cm-innendurchmesser">1.1 Prüfung der Masse: 100 cm oder 80–90 cm Innendurchmesser?</h3>
+<p>Berechnet für eine flache, neapolitanische Kuppel (Innenhöhe ≈ 0.89 × Radius), Kuppelstärke 6.4 cm, Dämmung 8 cm, Putz 3 cm, Grundfläche 150 × 150 cm:</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Kriterium</th>
+<th>Ø 80 cm</th>
+<th><strong>Ø 90 cm</strong></th>
+<th>Ø 100 cm (eure Skizze)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Backfläche</td>
+<td>0.5 m²</td>
+<td><strong>0.64 m²</strong></td>
+<td>0.79 m²</td>
+</tr>
+<tr class="even">
+<td>Pizzen Ø 30 cm gleichzeitig (neben dem Feuer)</td>
+<td>2</td>
+<td><strong>2–3</strong></td>
+<td>3–4</td>
+</tr>
+<tr class="odd">
+<td>Kuppel aussen (mit Dämmung + Putz)</td>
+<td>114.8 cm</td>
+<td><strong>124.8 cm</strong></td>
+<td>134.8 cm</td>
+</tr>
+<tr class="even">
+<td>Platz auf 150 × 150 für Eingang/Kamin</td>
+<td>gut</td>
+<td><strong>gut (Tunnel 41.7 cm)</strong></td>
+<td>knapp (Tunnel nur 31.2 cm → Kamin passt nicht sauber, Sockel müsste ~160 × 160 werden)</td>
+</tr>
+<tr class="odd">
+<td>Schamott-NF-Steine (Kuppel + Tunnel)</td>
+<td>54</td>
+<td><strong>62</strong></td>
+<td>66</td>
+</tr>
+<tr class="even">
+<td>Schamottmasse Kuppel + Boden</td>
+<td>188 kg</td>
+<td><strong>229 kg</strong></td>
+<td>268 kg</td>
+</tr>
+<tr class="odd">
+<td>Wärme zum Aufheizen der Masse (auf Ø 350 °C)</td>
+<td>15.51 kWh</td>
+<td><strong>18.91 kWh</strong></td>
+<td>22.09 kWh</td>
+</tr>
+<tr class="even">
+<td>Aufheizzeit bis ~450 °C (Schätzung, 6.4-cm-Kuppel)</td>
+<td>ca. 40–50 min</td>
+<td><strong>ca. 45–60 min</strong></td>
+<td>ca. 60–75 min</td>
+</tr>
+<tr class="odd">
+<td>Holzverbrauch pro Abend (Schätzung)</td>
+<td>geringer</td>
+<td><strong>mittel</strong></td>
+<td>+15–20 % gegenüber 90 cm</td>
+</tr>
+<tr class="even">
+<td>Mehrkosten gegenüber 90 cm</td>
+<td>−CHF 135.85</td>
+<td>–</td>
+<td>ca. +CHF 90–120 (grösserer Sockel, mehr Steine)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Empfehlung: 90 cm Innendurchmesser.</strong> Begründung:</p>
+<ol type="1">
+<li><strong>Passt auf euren Sockel.</strong> Mit 100 cm ist die Kuppel aussen 134.8 cm breit. Auf 150 cm bleiben nur 7.6 cm pro Seite, und vorne fehlt der Platz für Eingang und Rauchabzug. 90 cm lassen ~12 cm Rand und einen 42 cm tiefen Eingang mit Kamin.</li>
+<li><strong>Aufheizen und Holz.</strong> Die Masse ist 15 % kleiner als bei 100 cm. Mit einer dünnen 6.4-cm-Kuppel ist der Ofen in knapp einer Stunde pizzabereit.</li>
+<li><strong>Budget und Gewicht.</strong> Ihr spart Steine, Perlit und Beton und vermeidet einen grösseren Sockel.</li>
+<li><strong>Für eine Familie reicht es.</strong> 2–3 Pizzen gleichzeitig ergeben bei 60–90 s Backzeit gut 40 Pizzen pro Stunde.</li>
+</ol>
+<p><strong>Kuppelstärke 6 cm: ja, mit Einschränkung.</strong> Halbierte NF-Steine flach verlegt ergeben genau 6.4 cm. Das ist günstig, leicht und heizt schnell auf. Ideal für Pizza. Für langes Brotbacken mit Resthitze wären 10–12 cm besser, das kostet aber rund 40 zusätzliche Steine (+CHF 340) und +150 kg. Für euren Zweck (Pizza) bleibt es bei 6.4 cm.</p>
+<p><strong>Weitere begründete Anpassungen an eurer Skizze:</strong></p>
+<ul>
+<li><strong>Gesamthöhe 236 cm</strong> (Kaminrohr 1 m), mit optionalem Regenhut ca. 251 cm. Damit bleibt ihr bei den gewünschten ~245 cm.</li>
+<li><strong>Sockel:</strong> 3 Lagen Schalungssteine (75 cm) + 10 cm Herdplatte ergeben eine Plattenoberkante von 90 cm über Terrain. Die <strong>Arbeitshöhe (Backboden) liegt bei 104.5 cm</strong>, das ist ergonomisch. Mit 4 Lagen läge der Boden auf ~130 cm, das ist zu hoch.</li>
+<li><strong>Backboden aus Schamottplatten 40 × 200 × 500 mm</strong> statt NF-Steinen. Das ergibt weniger Fugen, ist einfacher zu verlegen und <strong>ca. CHF 90 günstiger</strong> (13 Platten à 18.95 statt 40 NF à 8.50).</li>
+</ul>
+<h3 id="12-die-drei-varianten">1.2 Die drei Varianten</h3>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>A) Komplettbausatz</strong></th>
+<th><strong>B) Selbstbau aus Einzelteilen (Empfehlung)</strong></th>
+<th><strong>C) Günstigste realistische Lösung</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Was</td>
+<td>Gegossener Schamott-Bausatz „Les Cheminées FD 100" (Boden, 3–6-teilige Kuppel, Frontbogen, Tür, Rauchrohranschluss) + Sockel aus B</td>
+<td>Ø 90 cm, Kuppel aus halbierten NF-Schamottsteinen, Boden aus Schamottplatten, Perlit-Dämmung, alles heute in CH gekauft</td>
+<td>Wie B, aber Ø 80 cm, NF-Steine online in DE an Lieferadresse, Betonmischer geliehen, Kies von Hand gestampft</td>
+</tr>
+<tr class="even">
+<td><strong>Gesamtpreis</strong></td>
+<td><strong>ca. CHF 2'220.06</strong> (Bausatz €1'149 + Dämmung ~€350 ANNAHME, MWST-Rückerstattung DE / 8.1 % CH)</td>
+<td><strong>CHF 1'922.65</strong></td>
+<td><strong>ca. CHF 1'361.71</strong></td>
+</tr>
+<tr class="odd">
+<td>Verfügbarkeit heute</td>
+<td><strong>Nein.</strong> Lager in Ruderatshofen (Allgäu), ~230 km, Lieferung nur DE/AT</td>
+<td><strong>Ja</strong> (Hornbach, OBI, Kieswerk; vorher anrufen/reservieren)</td>
+<td>Teilweise. Sockel heute; Steine 1–2 Wochen Lieferzeit (Kuppel erst ab Tag ~12 nötig)</td>
+</tr>
+<tr class="even">
+<td>Aufwand</td>
+<td>ca. 60–80 Personenstunden</td>
+<td>ca. 110–130 Personenstunden</td>
+<td>ca. 120–140 Personenstunden</td>
+</tr>
+<tr class="odd">
+<td>Schwierigkeit</td>
+<td>mittel (Teile bis 100 kg, Kran fehlt)</td>
+<td>mittel–hoch (Steine schneiden, Kuppel mauern)</td>
+<td>hoch (wie B + mehr Handarbeit)</td>
+</tr>
+<tr class="even">
+<td>Optik</td>
+<td>sehr gleichmässig, „wie gekauft"</td>
+<td>klassisch, Fugenbild innen sichtbar; aussen verputzter Iglu – sehr schön</td>
+<td>wie B, etwas kleiner</td>
+</tr>
+<tr class="odd">
+<td>Risiken</td>
+<td>Budget überschritten; Abholung ausserhalb 100 km; Bruch beim Transport</td>
+<td>Steinbestand in der Filiale, Wetter (Frost ab Ende Okt.), Schneidstaub</td>
+<td>Lieferzeit/Versandkosten unbestätigt, Wetter, Zollformalitäten</td>
+</tr>
+<tr class="even">
+<td>Bemerkung</td>
+<td>CUPPO 90 (holz-feuer.shop) €2'220 + €150 Spedition = allein ca. CHF 2'030–2'210. Schweizer Bausätze (pizzaofenbau.ch) CHF 3'490–5'490. TheFiredome verkauft 2026 keine Bausätze.</td>
+<td>Beste Kombination aus Preis, Termin und Lerneffekt</td>
+<td>Gut, wenn das Budget kippt</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="empfehlung">Empfehlung</h3>
+<blockquote>
+<p><strong>Nehmt Variante B.</strong> Sie ist die einzige Variante, die <strong>heute abholbar</strong> ist, <strong>unter CHF 2000</strong> bleibt (CHF 1'922.65), <strong>auf euren 150 × 150-Sockel passt</strong> und für eine Vertiefungsarbeit am meisten zeigt: eigene Mengenrechnung, Kuppelgeometrie, Mauerwerk. Wenn das Geld knapp wird, könnt ihr einzelne Sparpunkte aus C übernehmen (Kapitel 10), ohne den Plan zu ändern.</p>
+</blockquote>
+<hr />
+<h2 id="2-exakte-stückliste-variante-b-ø-90-cm">2. Exakte Stückliste (Variante B, Ø 90 cm)</h2>
+<h3 id="21-tabelle">2.1 Tabelle</h3>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Pos.</th>
+<th>Produktbezeichnung</th>
+<th>Spezifikation / Rechnung</th>
+<th>Menge</th>
+<th>Einzelpreis CHF</th>
+<th>Gesamt CHF</th>
+<th>Gewicht</th>
+<th>Händler</th>
+<th>Verfügbarkeit / Preisstatus</th>
+<th>Quelle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Kiesgemisch UG22 0/31.5 (Art. 60201) für Kieskoffer</td>
+<td>ungebundenes Gemisch, RG 1.60 t/m³; 1.70 × 1.70 × 0.20 m verdichtet = 0.578 m³, lose × 1.25</td>
+<td>0.75 m³</td>
+<td>60.00</td>
+<td><strong>45.00</strong></td>
+<td>1600 kg/m³ × 0.75 = 1200 kg</td>
+<td>Tägerhard Kies AG, Wettingen</td>
+<td>Kieswerk, Bar-/Privatverkauf während Öffnungszeiten; Privatpreis inkl. MWST laut Preisliste 2026 (S. 10) – telefonisch bestätigen</td>
+<td><a href="https://taegerhardkies.ch/wp-content/uploads/2025/12/Grundpreisliste-2026.pdf" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Betonkies gewaschen 0-16 (Art. 20001)</td>
+<td>EN 12620, RG 1.80 t/m³; 1.018 m³ Beton × 1900 kg/m³</td>
+<td>1.1 m³</td>
+<td>60.00</td>
+<td><strong>66.00</strong></td>
+<td>1800 kg/m³ × 1.1 = 1980 kg</td>
+<td>Tägerhard Kies AG, Wettingen</td>
+<td>Kieswerk; Privatpreis inkl. MWST laut Preisliste 2026 – telefonisch bestätigen</td>
+<td><a href="https://taegerhardkies.ch/wp-content/uploads/2025/12/Grundpreisliste-2026.pdf" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Sand gewaschen 0-4 (Art. 40001)</td>
+<td>RG 1.50 t/m³; Sandform Kuppel (0.17 m³), danach Putz + Bodenbett</td>
+<td>0.25 m³</td>
+<td>60.00</td>
+<td><strong>15.00</strong></td>
+<td>1500 kg/m³ × 0.25 = 375 kg</td>
+<td>Tägerhard Kies AG, Wettingen</td>
+<td>Kieswerk; Privatpreis inkl. MWST laut Preisliste 2026 – telefonisch bestätigen</td>
+<td><a href="https://taegerhardkies.ch/wp-content/uploads/2025/12/Grundpreisliste-2026.pdf" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Zement CEM II/B-M (V-LL) 42.5 N, 25 kg (Art. 12415537)</td>
+<td>für Fundamentbeton (0.354 m³ × 300 kg = 106 kg)</td>
+<td>5 Sack</td>
+<td>5.15</td>
+<td><strong>25.75</strong></td>
+<td>25 kg/Sack × 5 = 125 kg</td>
+<td>HORNBACH Affoltern a. A.</td>
+<td>Marktsortiment; Preis laut hornbach.ch (Seitenstand Aug. 2026)</td>
+<td><a href="https://www.hornbach.ch/de/p/portlandkompositzement-cem-ii-b-m-v-ll-42-5-n-25-kg/12415537/" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Zement CEM I 42.5 N, 25 kg (OBI Art. 4793972)</td>
+<td>Sockelfüllung + Herdplatte (199 kg), Perlit-Dämmung (83 kg), Putz (31 kg)</td>
+<td>12 Sack</td>
+<td>5.50</td>
+<td><strong>66.00</strong></td>
+<td>25 kg/Sack × 12 = 300 kg</td>
+<td>OBI Volketswil</td>
+<td>online nicht verfügbar → Marktbestand telefonisch prüfen; Online-Preis obi.ch; Ersatz: Hornbach Art. 12415537 (5.15)</td>
+<td><a href="https://www.obi.ch/zemente-kalke/zement-cem-i-42-5-n/p/4793972" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Betonschalungsstein grau 50x24x25 cm, Vollstein (Art. 5242971)</td>
+<td>3 Lagen U-Form, 8.04 Steine/Lage → 18 Voll + 6 End + 2 Reserve</td>
+<td>20 Stk</td>
+<td>4.90</td>
+<td><strong>98.00</strong></td>
+<td>27 kg/Stk × 20 = 540 kg</td>
+<td>HORNBACH Affoltern a. A.</td>
+<td>Marktsortiment; Preis laut hornbach.ch; Gewicht ANNAHME (27 kg wie OBI Kann 24 cm)</td>
+<td><a href="https://www.hornbach.ch/de/p/betonschalungsstein-grau-50-x-24-x-25-cm-palette-45-vollsteine-5-endsteine/5242971/" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Betonschalungsstein Endstein grau 50x24x25 cm (Art. 10080612)</td>
+<td>offene Wandenden vorne, 2 pro Lage</td>
+<td>6 Stk</td>
+<td>5.40</td>
+<td><strong>32.40</strong></td>
+<td>27 kg/Stk × 6 = 162 kg</td>
+<td>HORNBACH Affoltern a. A.</td>
+<td>Marktsortiment; Preis laut hornbach.ch; Gewicht ANNAHME</td>
+<td><a href="https://www.hornbach.ch/de/p/betonschalungsstein-endstein-grau-50-x-24-x-25-cm/10080612/" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>CATNIC Baustahlmatte Q188A 2300 × 1500 × 6 mm (Art. 5498829)</td>
+<td>je 1 Matte Fundament + Herdplatte, zugeschnitten 140 × 140 cm; Reststreifen = Steckeisen</td>
+<td>2 Stk</td>
+<td>32.50</td>
+<td><strong>65.00</strong></td>
+<td>10.4 kg/Stk × 2 = 21 kg</td>
+<td>HORNBACH Affoltern a. A.</td>
+<td>Marktsortiment; Preis laut hornbach.ch; Gewicht berechnet 3.0 kg/m²</td>
+<td><a href="https://www.hornbach.ch/de/p/catnic-baustahlmatte-q188a-2300-x-1500-x-6-mm/5498829/" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>OSB-3 Verlegeplatte N+F 250 × 62.5 cm, 18 mm (OBI Art. 6464333)</td>
+<td>verlorene/abnehmbare Schalung Herdplatte, Feld 102 × 126 cm</td>
+<td>2 Stk</td>
+<td>17.00</td>
+<td><strong>34.00</strong></td>
+<td>16.9 kg/Stk × 2 = 34 kg</td>
+<td>OBI Volketswil</td>
+<td>online verfügbar; Online-Preis obi.ch</td>
+<td><a href="https://www.obi.ch/osb-platten-verlegeplatten/osb-platte-nut-und-feder-hxbxt-1-8-x-62-5-x-250-cm/p/6464333" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Schalbrett sägerau Fichte/Tanne 23 × 150 mm, 3 m (OBI Art. 2473270)</td>
+<td>Fundamentrand (2x155 + 2x150 cm), Herdplattenrand, Stützen; im Markt halbieren lassen</td>
+<td>3 Stk</td>
+<td>11.95</td>
+<td><strong>35.85</strong></td>
+<td>4.7 kg/Stk × 3 = 14 kg</td>
+<td>OBI Volketswil</td>
+<td>online verfügbar; Online-Preis obi.ch</td>
+<td><a href="https://www.obi.ch/saegeraue-ware/schalbrett-saegerau-fichte-tanne-23-x-150-mm-laenge-3-m/p/2473270" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="odd">
+<td>10b</td>
+<td>Brett sägerau Fichte/Tanne 23 × 100 mm, 2 m (OBI Art. 4895694)</td>
+<td>8 Stützen a 75 cm (je 2 Bretter verschraubt) unter der Herdplatten-Schalung</td>
+<td>4 Stk</td>
+<td>4.95</td>
+<td><strong>19.80</strong></td>
+<td>2.1 kg/Stk × 4 = 8 kg</td>
+<td>OBI Volketswil</td>
+<td>Marktsortiment; Online-Preis obi.ch (Suchliste)</td>
+<td><a href="https://www.obi.ch/saegeraue-ware/brett-saegerau-fichte-tanne-23-x-100-mm-laenge-2-m/p/4895694" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>Schamottestein 64 × 124 × 250 mm (NF2) (OBI Art. 5390067)</td>
+<td>Kuppel 43 NF (= 85 Halbsteine inkl. 10 %) + Tunnel 19 NF; Qualität am Etikett prüfen: ≥ 1200 °C, Al2O3 ≥ 30 %</td>
+<td>62 Stk</td>
+<td>8.50</td>
+<td><strong>527.00</strong></td>
+<td>3.78 kg/Stk × 62 = 234 kg</td>
+<td>OBI Volketswil</td>
+<td>online verfügbar; Reservieren &amp; Abholen ca. 4 h; Online-Preis obi.ch (Marktpreis kann abweichen)</td>
+<td><a href="https://www.obi.ch/grillutensilien/schamottestein-hxbxt-64-x-124-x-250-mm/p/5390067" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>Schamottestein 40 × 200 × 500 mm (OBI Art. 5390026)</td>
+<td>Backboden 1.053 m² → 13 Platten (inkl. 15 % Verschnitt) + 2 Tunneldecke/Kaminauflager</td>
+<td>15 Stk</td>
+<td>18.95</td>
+<td><strong>284.25</strong></td>
+<td>7.4 kg/Stk × 15 = 111 kg</td>
+<td>OBI Volketswil</td>
+<td>online verfügbar; Online-Preis obi.ch; Temperaturklasse nicht angegeben → Etikett prüfen</td>
+<td><a href="https://www.obi.ch/grillutensilien/schamottestein-hxbxt-40-x-200-x-500-mm/p/5390026" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>HORNBACH Schamottemörtel 7 kg (Art. 5167054)</td>
+<td>feuerbestaendig bis 1000 °C; Bedarf 26.6 kg (Fugen 6 mm, +30 %)</td>
+<td>4 Eimer</td>
+<td>11.50</td>
+<td><strong>46.00</strong></td>
+<td>7 kg/Eimer × 4 = 28 kg</td>
+<td>HORNBACH Affoltern a. A.</td>
+<td>Marktsortiment; Preis laut hornbach.ch (Seitenstand 02.09.2026)</td>
+<td><a href="https://www.hornbach.ch/de/p/schamottemoertel-7-kg/5167054/" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>Pflanzen-Perlit 100 l, Körnung bis 10 mm (OBI Art. 3798733)</td>
+<td>Perlit-Zement 5:1 – Boden 10 cm, Kuppel 8 cm; Bedarf 318 l</td>
+<td>4 Sack</td>
+<td>29.95</td>
+<td><strong>119.80</strong></td>
+<td>9.4 kg/Sack × 4 = 38 kg</td>
+<td>OBI Volketswil</td>
+<td>online verfügbar; Online-Preis obi.ch</td>
+<td><a href="https://www.obi.ch/perlite-vermiculite/pflanzen-perlit-100-l/p/3798733" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td>Ofenrohr Ø150 mm Edelstahl, einwandig 0.6 mm, 1 m (Art. 5860137)</td>
+<td>Kaminrohr, steckt im Ø15-Loch zwischen den Tunneldeckplatten</td>
+<td>1 Stk</td>
+<td>80.40</td>
+<td><strong>80.40</strong></td>
+<td>2.3 kg/Stk × 1 = 2 kg</td>
+<td>HORNBACH Affoltern a. A.</td>
+<td>Marktsortiment / evtl. Lieferzeit → telefonisch prüfen; Preis laut hornbach.ch (Seitenstand 29.07.2026)</td>
+<td><a href="https://www.hornbach.ch/de/p/ofenrohr-o150-mm-edelstahl-1-m/5860137/" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>Drahtgeflecht Sechseck 25 mm, 100 cm × 10 m, verzinkt silber (Art. 6482865)</td>
+<td>Putzträger für Aussenputz 2.65 m²</td>
+<td>1 Rolle</td>
+<td>29.90</td>
+<td><strong>29.90</strong></td>
+<td>5 kg/Rolle × 1 = 5 kg</td>
+<td>HORNBACH Affoltern a. A.</td>
+<td>Marktsortiment; Preis laut hornbach.ch (Seitenstand 05.08.2026); Gewicht ANNAHME</td>
+<td><a href="https://www.hornbach.ch/de/p/drahtgeflecht-sechseck-25-mm-100-cm-silber-verzinkt/6482865/" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="even">
+<td>17</td>
+<td>Glattblech Stahl 500 × 1000 × 0.75 mm (OBI Art. 4983821)</td>
+<td>Ofentür DIY 46 × 33 cm (Rand 2x abgekantet) + Holzgriff</td>
+<td>1 Stk</td>
+<td>23.50</td>
+<td><strong>23.50</strong></td>
+<td>2.9 kg/Stk × 1 = 3 kg</td>
+<td>OBI Volketswil</td>
+<td>online verfügbar; Online-Preis obi.ch</td>
+<td><a href="https://www.obi.ch/bleche/glattblech-stahl-500-x-1-000-mm-staerke-0-75-mm/p/4983821" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="odd">
+<td>18</td>
+<td>Kleinmaterial: Bindedraht, Schrauben, Holzgriff, Ofenlack, Abstandhalter, Zeitungen</td>
+<td>-</td>
+<td>1 Pausch.</td>
+<td>40.00</td>
+<td><strong>40.00</strong></td>
+<td>8 kg/Pausch. × 1 = 8 kg</td>
+<td>Hornbach/OBI</td>
+<td>Marktsortiment; Preis unbestätigt – ANNAHME</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>19</td>
+<td>Abdeckplane ca. 4 × 5 m (Regen-/Frostschutz)</td>
+<td>-</td>
+<td>1 Stk</td>
+<td>20.00</td>
+<td><strong>20.00</strong></td>
+<td>3 kg/Stk × 1 = 3 kg</td>
+<td>Hornbach/OBI</td>
+<td>Marktsortiment; Preis unbestätigt – ANNAHME</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>Diamanttrennscheibe 125 mm für Stein (eigener Winkelschleifer)</td>
+<td>-</td>
+<td>1 Stk</td>
+<td>25.00</td>
+<td><strong>25.00</strong></td>
+<td>0.2 kg/Stk × 1 = 0 kg</td>
+<td>Hornbach/OBI</td>
+<td>Marktsortiment; Preis unbestätigt – ANNAHME</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>M1</td>
+<td>Betonmischer (OBI Mietgerät 513905)</td>
+<td>Wochentarif, Kaution CHF 200</td>
+<td>1 Woche</td>
+<td>147.00</td>
+<td><strong>147.00</strong></td>
+<td>~65 kg</td>
+<td>OBI Volketswil (oder näher: Hug Baustoffe, Preis telefonisch prüfen)</td>
+<td>Miete, Verfügbarkeit telefonisch prüfen</td>
+<td><a href="https://www.obi.ch/public/specials/baumarkt-services/assets/pdf/preisliste-obi-mietgeraete-ch-de.pdf" target="_blank" rel="noopener">Preisliste</a></td>
+</tr>
+<tr class="odd">
+<td>M2</td>
+<td>Rüttelplatte Benzin 11 kN (OBI Mietgerät 513961)</td>
+<td>Tagestarif, Kaution CHF 250</td>
+<td>1 Tag</td>
+<td>77.00</td>
+<td><strong>77.00</strong></td>
+<td>~75 kg</td>
+<td>OBI Volketswil</td>
+<td>Miete, Verfügbarkeit telefonisch prüfen</td>
+<td><a href="https://www.obi.ch/public/specials/baumarkt-services/assets/pdf/preisliste-obi-mietgeraete-ch-de.pdf" target="_blank" rel="noopener">Preisliste</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Summe Material CHF 1'698.65 + Mieten CHF 224.00 = CHF 1'922.65</strong> · Gewicht Material 5'192 kg (+ Mietgeräte ca. 140 kg)</p>
+<p>Hinweise zu den Preisen:</p>
+<ul>
+<li><strong>OBI:</strong> Online-Preise von obi.ch, direkt abgerufen am 13.10.2026. OBI weist darauf hin, dass der Marktpreis abweichen kann. Mit „Reservieren &amp; Abholen" sind die Artikel nach ca. 4 Stunden abholbereit.</li>
+<li><strong>Hornbach:</strong> Preise laut hornbach.ch-Produktseiten (Seitenstand August–Oktober 2026, Filiale Biel). Ein direkter Abruf war technisch blockiert. Im Markt Affoltern <strong>an der Kasse prüfen</strong>.</li>
+<li><strong>Tägerhard Kies:</strong> Bar-/Privatpreisliste 2026 (inkl. MWST): Kübel 10 l CHF 3.–, Karrette CHF 12.–, <strong>ab 5 Karretten CHF 60.–/m³</strong>. Gilt für Kieskomponenten, <strong>telefonisch bestätigen</strong>.</li>
+<li>Positionen mit <strong>„Preis unbestätigt – ANNAHME"</strong> sind Schätzungen für Kleinmaterial. Bitte telefonisch oder im Markt prüfen.</li>
+</ul>
+<p><strong>Optional / später (nicht in der Summe):</strong></p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Pos.</th>
+<th>Artikel</th>
+<th>Hinweis</th>
+<th>CHF</th>
+<th>Quelle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>O1</td>
+<td>Steintrennmaschine 600 mm (OBI Mietgerät 525983)</td>
+<td>nur falls kein Winkelschleifer: Tagestarif</td>
+<td>120.00</td>
+<td><a href="https://www.obi.ch/public/specials/baumarkt-services/assets/pdf/preisliste-obi-mietgeraete-ch-de.pdf" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="even">
+<td>O2</td>
+<td>Regenhut Ø150 mm Edelstahl (Hornbach Art. 5860174)</td>
+<td>Lieferzeit ca. 8 Arbeitstage → später</td>
+<td>134.40</td>
+<td><a href="https://www.hornbach.ch/de/p/regenhut-o150-mm-edelstahl/5860174/" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="odd">
+<td>O4</td>
+<td>Deponie Aushub sauber (Tägerhard, Privatpreis)</td>
+<td>ca. 1.1 m³ lose; gratis, wenn im Garten verteilt</td>
+<td>22.00</td>
+<td><a href="https://taegerhardkies.ch/wp-content/uploads/2025/12/Grundpreisliste-2026.pdf" target="_blank" rel="noopener">Link</a></td>
+</tr>
+<tr class="even">
+<td>O3</td>
+<td>Keramikfasermatte 1000 × 610 × 25 mm, 1260 °C (schamotte-shop.de)</td>
+<td>erste Dämmlage auf Kuppel statt 2.5 cm Perlit; 7 Stk × 26.49 EUR (Versand)</td>
+<td>172.67</td>
+<td><a href="https://www.schamotte-shop.de/ofenbaumaterial/hochtemperatur-isolierung/keramikfasermatte.html" target="_blank" rel="noopener">Link</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="22-schamottsteine-genaue-sorte-und-stückzahl-der-kuppel">2.2 Schamottsteine: genaue Sorte und Stückzahl der Kuppel</h3>
+<p><strong>Sorte:</strong> Schamotte-Normalstein <strong>NF2, 250 × 124 × 64 mm</strong>, Alumina-Gehalt <strong>Al₂O₃ ≥ 30 %</strong> (Qualität A30/B30, entspricht etwa <strong>SK 30–32</strong>), <strong>Klassifikationstemperatur ≥ 1200 °C</strong>, Rohdichte ~2.0 kg/dm³. Heute verfügbar ist OBI Art. 5390067 (3.78 kg/Stück). OBI nennt keine Temperaturklasse, deshalb <strong>im Markt Etikett/Palettenzettel prüfen</strong>. Vergleich mit voll spezifizierten Steinen: PUR Schamotte NF2 A35t, 1350 °C, 3.9 kg (schamotte-shop.de, €4.29) und Bauhaus NF 1200 °C, 3.7 kg.</p>
+<p><strong>Verlegeart:</strong> Jeder NF-Stein wird <strong>halbiert</strong> (125 × 124 × 64 mm). Die Fläche 125 × 124 mm zeigt nach innen, die Kuppelstärke beträgt damit 6.4 cm. Fuge 6 mm.</p>
+<p><strong>Rechnung (Ø 90 cm innen, Innenhöhe 40 cm, halbe Rotationsellipse):</strong></p>
+<ol type="1">
+<li>Mittelfläche der Kuppelschale: a = 45 + 3.2 = <strong>48.2 cm</strong> (Radius), c = 40 + 3.2 = <strong>43.2 cm</strong> (Höhe).</li>
+<li>Länge des Viertelbogens (Meridian) der Mittelfläche, numerisch integriert: <strong>L = 71.8 cm</strong>.</li>
+<li>Reihenteilung: Steinhöhe 12.4 + Fuge 0.6 = 13.0 cm → 71.8 / 13.0 = <strong>5 volle Reihen</strong> + Rest 6.8 cm → 1 zugeschnittener <strong>Schlussstein</strong>.</li>
+<li>Steine pro Reihe = ⌈ Umfang auf Reihenmitte / (12.5 + 0.6 cm) ⌉, abzüglich Türausschnitt (40 cm breit → 3 Halbsteine in Reihe 1 und 2):</li>
+</ol>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Reihe</th>
+<th>Höhe innen (z)</th>
+<th>Radius innen</th>
+<th>Neigung Lagerfuge</th>
+<th>Halbsteine (nach Türabzug)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>0.0–11.3 cm</td>
+<td>44.5 cm</td>
+<td>0.0°</td>
+<td><strong>20</strong> (−3 Tür)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>11.8–21.9 cm</td>
+<td>40.7 cm</td>
+<td>19.0°</td>
+<td><strong>18</strong> (−3 Tür)</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>22.4–30.5 cm</td>
+<td>33.5 cm</td>
+<td>37.0°</td>
+<td><strong>18</strong></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>30.8–36.4 cm</td>
+<td>23.8 cm</td>
+<td>53.4°</td>
+<td><strong>13</strong></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>36.6–39.5 cm</td>
+<td>12.6 cm</td>
+<td>68.5°</td>
+<td><strong>7</strong></td>
+</tr>
+<tr class="even">
+<td>Schluss</td>
+<td>39.5–40 cm</td>
+<td>–</td>
+<td>–</td>
+<td><strong>1</strong> (zugeschnitten)</td>
+</tr>
+</tbody>
+</table></div>
+<ol start="5" type="1">
+<li><strong>Summe: 77 Halbsteine</strong> (Gegenprobe über die Oberfläche: Halbellipsoid 1.36 m² minus Tür 0.11 m² ergibt 73.4 Halbsteine, das passt).</li>
+<li>+10 % Verschnitt/Bruch → <strong>85 Halbsteine = 43 ganze NF-Steine</strong>.</li>
+<li><strong>Tunnel/Eingang:</strong> 2 Wände × 4 Lagen NF flach (12.4 cm dick, Lagenhöhe 7.0 cm → Öffnungshöhe 27.4 cm), mittlere Wandlänge ~46 cm (inkl. Anschluss an die Kuppelrundung), +25 % Anpassschnitte → <strong>19 NF</strong>.</li>
+<li><strong>Total: 62 Schamott-NF-Steine.</strong></li>
+</ol>
+<h3 id="23-backfläche">2.3 Backfläche</h3>
+<p>Bodenfläche = Kreis Ø 102.8 cm (Kuppel steht auf dem Boden) ∪ Tunnelboden 64.8 cm breit bis Vorderkante = <strong>1.053 m²</strong> (Rasterrechnung). Platte 0.20 × 0.50 m = 0.10 m² → 1.053 / 0.10 × 1.15 Verschnitt = 12.1 → <strong>13 Platten</strong> + 2 Platten Tunneldecke/Kaminauflager = <strong>15 Platten</strong> 40 × 200 × 500 mm (7.4 kg). Die Platten werden <strong>ohne Mörtel</strong>, dicht gestossen, auf 5 mm trockenem Sand verlegt.</p>
+<h3 id="24-schamottmörtel">2.4 Schamottmörtel</h3>
+<p>Fugenvolumen pro Halbstein = (125 × 64 + 124 × 64) mm² × 6 mm = 95.6 cm³; pro Tunnel-NF = (250 × 124 + 124 × 64) mm² × 6 mm = 233.6 cm³. 77 × 95.6 + 19 × 233.6 + Plattenauflager ~1 l = <strong>12.8 l</strong> Frischmörtel × 1.6 kg/l × 1.3 (Verlust/Keilfugen aussen) = <strong>26.6 kg</strong> → <strong>4 Eimer à 7 kg</strong> Hornbach-Schamottemörtel (feuerbeständig bis 1000 °C).</p>
+<h3 id="25-isolation-perlit-zement-5--1">2.5 Isolation (Perlit-Zement 5 : 1)</h3>
+<ul>
+<li><strong>Unter dem Boden, 10 cm:</strong> Fläche 1.17 m² (Boden + 5 cm Rand) × 0.10 = <strong>0.123 m³</strong></li>
+<li><strong>Kuppel, 8 cm:</strong> V = ⅔ π (a₂²c₂ − a₁²c₁) mit a₁ = 51.4, c₁ = 46.4, a₂ = 59.4, c₂ = 54.4 cm = <strong>0.145 m³</strong></li>
+<li><strong>Tunneldecke, 8 cm:</strong> 64.8 × 41.7 × 8 cm = <strong>0.022 m³</strong></li>
+<li>Total <strong>0.289 m³</strong> Mischung × 1.10 (Setzen) = <strong>318 l Perlit → 4 Säcke à 100 l</strong>. Zement = Perlitvolumen / 5 × 1.3 kg/l = <strong>82.8 kg</strong>.</li>
+<li>Upgrade (Plan-B-Liste): erste Lage 25 mm Keramikfasermatte (1260 °C) direkt auf der Kuppel. Die Faser ist trocken und dämmt besser. Sie ist heute aber nicht lokal verfügbar.</li>
+</ul>
+<h3 id="26-unterbau-kies-beton-armierung-sockel">2.6 Unterbau: Kies, Beton, Armierung, Sockel</h3>
+<ul>
+<li><strong>Kieskoffer:</strong> 1.70 × 1.70 × 0.20 m = 0.578 m³ verdichtet × 1.25 (lose) = <strong>0.722 m³ ≈ 1'156 kg</strong></li>
+<li><strong>Beton (C25/30, selbst gemischt):</strong> Fundament 1.5 × 1.5 × 0.15 = 0.338 m³ + Füllung Schalungssteine 4.02 m × 0.75 m × 135 l/m² = 0.407 m³ + Herdplatte 1.5 × 1.5 × 0.10 = 0.225 m³ → × 1.05 = <strong>1.018 m³</strong>
+<ul>
+<li>Rezept pro m³: <strong>300 kg Zement + 1900 kg Betonkies 0/16 + ca. 170 l Wasser</strong>. Für den Mischer (130 l Trommel) pro Mischung: <strong>1 Sack Zement (25 kg) + 9 Kübel à 10 l Betonkies (≈ 158 kg) + ca. 14 l Wasser</strong> → ergibt ca. 83 l Beton.</li>
+<li>Zement 305.4 kg + Betonkies 1'934 kg (= 1.075 m³ lose)</li>
+</ul></li>
+<li><strong>Zement total:</strong> Beton 305.4 + Perlit 82.8 + Aussenputz 30.7 kg = <strong>418.9 kg → 17 Säcke</strong></li>
+<li><strong>Sockel:</strong> U-Form (vorne offen als Holzlager), Wandlänge 150 + 2 × 126 = 402 cm → 8.04 Steine/Lage × 3 Lagen = 24.1 → <strong>20 Vollsteine + 6 Endsteine</strong> (inkl. 2 Reserve)</li>
+<li><strong>Armierung:</strong> 2 Baustahlmatten Q188A (2.30 × 1.50 m), je auf 1.40 × 1.40 m zugeschnitten (5 cm Überdeckung). Aus den Reststreifen (90 × 140 cm) werden die <strong>Steckeisen</strong>: 12 L-Bügel, die das Fundament mit den Schalungssteinen verbinden.</li>
+<li><strong>Aussenputz:</strong> 2.65 m² × 3 cm = 0.088 m³ Zementmörtel 1 : 4 (Zement 30.7 kg, Sand ~0.11 m³)</li>
+</ul>
+<hr />
+<h2 id="3-schematik--bauzeichnungen">3. Schematik / Bauzeichnungen</h2>
+<p>Alle Zeichnungen liegen als SVG (verlustfrei skalierbar, druckbar) und PNG im Ordner <code>zeichnungen/</code>. Sie werden direkt aus den Rechenwerten erzeugt (<code>zeichnungen.py</code>).</p>
+<p><strong>Schichtaufbau (von unten nach oben, Höhen über Terrain ±0):</strong></p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Nr.</th>
+<th>Schicht</th>
+<th>von</th>
+<th>bis</th>
+<th>Dicke</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>①</td>
+<td>Kieskoffer 0/31.5, verdichtet (170 × 170)</td>
+<td>−30</td>
+<td>−10</td>
+<td>20 cm</td>
+</tr>
+<tr class="even">
+<td>②</td>
+<td>Fundamentplatte C25/30, Q188A (150 × 150)</td>
+<td>−10</td>
+<td>+5</td>
+<td>15 cm</td>
+</tr>
+<tr class="odd">
+<td>③</td>
+<td>Sockel Schalungssteine 24 cm, 3 Lagen, gefüllt + Steckeisen</td>
+<td>+5</td>
+<td>+80</td>
+<td>75 cm</td>
+</tr>
+<tr class="even">
+<td>④</td>
+<td>Herdplatte Stahlbeton, Q188A</td>
+<td>+80</td>
+<td>+90</td>
+<td>10 cm</td>
+</tr>
+<tr class="odd">
+<td>⑤</td>
+<td>Bodendämmung Perlit-Zement 5 : 1</td>
+<td>+90</td>
+<td>+100</td>
+<td>10 cm</td>
+</tr>
+<tr class="even">
+<td>⑥</td>
+<td>Sandbett 5 mm + Backboden Schamottplatten 40 mm</td>
+<td>+100</td>
+<td><strong>+104.5</strong></td>
+<td>4.5 cm</td>
+</tr>
+<tr class="odd">
+<td>⑦</td>
+<td>Kuppel: halbe NF-Steine, Innenhöhe 40 cm</td>
+<td>+104.5</td>
+<td>+150.9</td>
+<td>6.4 cm</td>
+</tr>
+<tr class="even">
+<td>⑧</td>
+<td>Kuppeldämmung Perlit-Zement</td>
+<td></td>
+<td>+158.9</td>
+<td>8 cm</td>
+</tr>
+<tr class="odd">
+<td>⑨</td>
+<td>Drahtgeflecht + Aussenputz (Aussenschale)</td>
+<td></td>
+<td><strong>+161.9</strong></td>
+<td>3 cm</td>
+</tr>
+<tr class="even">
+<td>⑩</td>
+<td>Eingang 40 × 27.4 cm, Deckplatten 4 cm (Oberkante +135.9), Kaminrohr Ø 150, 1 m</td>
+<td>+135.9</td>
+<td><strong>+235.9</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="frontansicht">Frontansicht</h3>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iMTIwMCIgdmlld0JveD0iLTQwIC0yNjMuOSAyNDUgMzE3LjkiIGZvbnQtZmFtaWx5PSJEZWphVnUgU2FucywgQXJpYWwsIHNhbnMtc2VyaWYiPjx0aXRsZT5Gcm9udGFuc2ljaHQ8L3RpdGxlPjxkZWZzPgo8cGF0dGVybiBpZD0icEtpZXMiIHdpZHRoPSI0IiBoZWlnaHQ9IjQiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNkOGNmYjgiLz48Y2lyY2xlIGN4PSIxIiBjeT0iMSIgcj0iMC41NSIgZmlsbD0iIzhmODA2MCIvPjxjaXJjbGUgY3g9IjMiIGN5PSIyLjgiIHI9IjAuNyIgZmlsbD0iI2E4OTc3YSIvPjwvcGF0dGVybj4KPHBhdHRlcm4gaWQ9InBCZXRvbiIgd2lkdGg9IjYiIGhlaWdodD0iNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHJlY3Qgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0iI2M5Y2RkMiIvPjxjaXJjbGUgY3g9IjEuNSIgY3k9IjIiIHI9IjAuMzUiIGZpbGw9IiM3ZDgzOGIiLz48Y2lyY2xlIGN4PSI0LjMiIGN5PSI0LjUiIHI9IjAuNSIgZmlsbD0iIzhjOTI5YSIvPjxwYXRoIGQ9Ik0zLjUgMSBsMC43IDAuNiBsLTAuOSAwLjJ6IiBmaWxsPSIjN2Q4MzhiIi8+PC9wYXR0ZXJuPgo8cGF0dGVybiBpZD0icFNjaGFsIiB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjYjliZmM2Ii8+PGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjUiIHN0cm9rZT0iIzZkNzQ3YyIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3BhdHRlcm4+CjxwYXR0ZXJuIGlkPSJwUGVybGl0IiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZjNlN2IzIi8+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjAuNDUiIGZpbGw9IiNmZmZhZjAiIHN0cm9rZT0iI2M4YjQ2YSIgc3Ryb2tlLXdpZHRoPSIwLjE1Ii8+PC9wYXR0ZXJuPgo8cGF0dGVybiBpZD0icElzbyIgd2lkdGg9IjQiIGhlaWdodD0iNCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHJlY3Qgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI2Y2ZWRjOSIvPjxjaXJjbGUgY3g9IjEiIGN5PSIzIiByPSIwLjQiIGZpbGw9IiNmZmZhZjAiIHN0cm9rZT0iI2M4YjQ2YSIgc3Ryb2tlLXdpZHRoPSIwLjEyIi8+PGNpcmNsZSBjeD0iMyIgY3k9IjEiIHI9IjAuNCIgZmlsbD0iI2ZmZmFmMCIgc3Ryb2tlPSIjYzhiNDZhIiBzdHJva2Utd2lkdGg9IjAuMTIiLz48L3BhdHRlcm4+CjxwYXR0ZXJuIGlkPSJwRXJkZSIgd2lkdGg9IjYiIGhlaWdodD0iNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHJlY3Qgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0iI2NkYjQ4ZiIvPjxwYXRoIGQ9Ik0wIDYgTDYgMCIgc3Ryb2tlPSIjYTA4NTVmIiBzdHJva2Utd2lkdGg9IjAuNCIvPjwvcGF0dGVybj4KPG1hcmtlciBpZD0iYXJyIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjEwIiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNSIgbWFya2VySGVpZ2h0PSI1IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAgMCBMMTAgNSBMMCAxMCB6IiBmaWxsPSIjMWM0ZjhhIi8+PC9tYXJrZXI+CjwvZGVmcz48cmVjdCB4PSItNDAiIHk9Ii0yNjMuOSIgd2lkdGg9IjI0NSIgaGVpZ2h0PSIzMTcuOSIgZmlsbD0iI2ZmZmZmZiIvPjxyZWN0IHg9Ii0zNS4wMCIgeT0iMC4wMCIgd2lkdGg9IjIyMC4wMCIgaGVpZ2h0PSIzMy4wMCIgZmlsbD0idXJsKCNwRXJkZSkiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIwIiAvPjxsaW5lIHgxPSItMzUuMDAiIHkxPSIwLjAwIiB4Mj0iMTg1LjAwIiB5Mj0iMC4wMCIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuNSIgLz48cmVjdCB4PSItMTAuMDAiIHk9IjEwLjAwIiB3aWR0aD0iMTcwLjAwIiBoZWlnaHQ9IjIwLjAwIiBmaWxsPSJ1cmwoI3BLaWVzKSIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMyIgc3Ryb2tlLWRhc2hhcnJheT0iMS41IDEiLz48cmVjdCB4PSIwLjAwIiB5PSItNS4wMCIgd2lkdGg9IjE1MC4wMCIgaGVpZ2h0PSIxNS4wMCIgZmlsbD0idXJsKCNwQmV0b24pIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zNSIgLz48cmVjdCB4PSIyNC4wMCIgeT0iLTgwLjAwIiB3aWR0aD0iMTAyLjAwIiBoZWlnaHQ9Ijc1LjAwIiBmaWxsPSIjNWI1MTQ4IiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zIiAvPjxjaXJjbGUgY3g9IjM0LjAiIGN5PSItMTMuMCIgcj0iNi41IiBmaWxsPSIjOGI2YjRhIiBzdHJva2U9IiM0YTNhMmEiIHN0cm9rZS13aWR0aD0iMC4zIi8+PGNpcmNsZSBjeD0iNDIuMCIgY3k9Ii0yNS4wIiByPSI2LjUiIGZpbGw9IiM5YzdhNTUiIHN0cm9rZT0iIzRhM2EyYSIgc3Ryb2tlLXdpZHRoPSIwLjMiLz48Y2lyY2xlIGN4PSI1MC4wIiBjeT0iLTEzLjAiIHI9IjYuNSIgZmlsbD0iIzhiNmI0YSIgc3Ryb2tlPSIjNGEzYTJhIiBzdHJva2Utd2lkdGg9IjAuMyIvPjxjaXJjbGUgY3g9IjU4LjAiIGN5PSItMjUuMCIgcj0iNi41IiBmaWxsPSIjOWM3YTU1IiBzdHJva2U9IiM0YTNhMmEiIHN0cm9rZS13aWR0aD0iMC4zIi8+PGNpcmNsZSBjeD0iNjYuMCIgY3k9Ii0xMy4wIiByPSI2LjUiIGZpbGw9IiM4YjZiNGEiIHN0cm9rZT0iIzRhM2EyYSIgc3Ryb2tlLXdpZHRoPSIwLjMiLz48Y2lyY2xlIGN4PSI3NC4wIiBjeT0iLTI1LjAiIHI9IjYuNSIgZmlsbD0iIzljN2E1NSIgc3Ryb2tlPSIjNGEzYTJhIiBzdHJva2Utd2lkdGg9IjAuMyIvPjxjaXJjbGUgY3g9IjgyLjAiIGN5PSItMTMuMCIgcj0iNi41IiBmaWxsPSIjOGI2YjRhIiBzdHJva2U9IiM0YTNhMmEiIHN0cm9rZS13aWR0aD0iMC4zIi8+PGNpcmNsZSBjeD0iOTAuMCIgY3k9Ii0yNS4wIiByPSI2LjUiIGZpbGw9IiM5YzdhNTUiIHN0cm9rZT0iIzRhM2EyYSIgc3Ryb2tlLXdpZHRoPSIwLjMiLz48Y2lyY2xlIGN4PSI5OC4wIiBjeT0iLTEzLjAiIHI9IjYuNSIgZmlsbD0iIzhiNmI0YSIgc3Ryb2tlPSIjNGEzYTJhIiBzdHJva2Utd2lkdGg9IjAuMyIvPjxjaXJjbGUgY3g9IjEwNi4wIiBjeT0iLTI1LjAiIHI9IjYuNSIgZmlsbD0iIzljN2E1NSIgc3Ryb2tlPSIjNGEzYTJhIiBzdHJva2Utd2lkdGg9IjAuMyIvPjxjaXJjbGUgY3g9IjExNC4wIiBjeT0iLTEzLjAiIHI9IjYuNSIgZmlsbD0iIzhiNmI0YSIgc3Ryb2tlPSIjNGEzYTJhIiBzdHJva2Utd2lkdGg9IjAuMyIvPjxjaXJjbGUgY3g9IjEyMi4wIiBjeT0iLTI1LjAiIHI9IjYuNSIgZmlsbD0iIzljN2E1NSIgc3Ryb2tlPSIjNGEzYTJhIiBzdHJva2Utd2lkdGg9IjAuMyIvPjxyZWN0IHg9IjAuMDAiIHk9Ii04MC4wMCIgd2lkdGg9IjI0LjAwIiBoZWlnaHQ9Ijc1LjAwIiBmaWxsPSJ1cmwoI3BTY2hhbCkiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjM1IiAvPjxsaW5lIHgxPSIwLjAwIiB5MT0iLTMwLjAwIiB4Mj0iMjQuMDAiIHkyPSItMzAuMDAiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjI1IiAvPjxsaW5lIHgxPSIwLjAwIiB5MT0iLTU1LjAwIiB4Mj0iMjQuMDAiIHkyPSItNTUuMDAiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjI1IiAvPjxyZWN0IHg9IjEyNi4wMCIgeT0iLTgwLjAwIiB3aWR0aD0iMjQuMDAiIGhlaWdodD0iNzUuMDAiIGZpbGw9InVybCgjcFNjaGFsKSIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMzUiIC8+PGxpbmUgeDE9IjEyNi4wMCIgeTE9Ii0zMC4wMCIgeDI9IjE1MC4wMCIgeTI9Ii0zMC4wMCIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMjUiIC8+PGxpbmUgeDE9IjEyNi4wMCIgeTE9Ii01NS4wMCIgeDI9IjE1MC4wMCIgeTI9Ii01NS4wMCIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMjUiIC8+PHJlY3QgeD0iMC4wMCIgeT0iLTkwLjAwIiB3aWR0aD0iMTUwLjAwIiBoZWlnaHQ9IjEwLjAwIiBmaWxsPSJ1cmwoI3BCZXRvbikiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjM1IiAvPjxyZWN0IHg9IjM5LjYwIiB5PSItMTQ2LjkwIiB3aWR0aD0iNzAuODAiIGhlaWdodD0iNTYuOTAiIGZpbGw9IiNlN2UzZGMiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjM1IiAvPjxwb2x5Z29uIHBvaW50cz0iMTM3LjQwLC05MC4wMCAxMzcuMzYsLTkyLjUxIDEzNy4yNSwtOTUuMDIgMTM3LjA2LC05Ny41MiAxMzYuNzksLTEwMC4wMSAxMzYuNDUsLTEwMi40OSAxMzYuMDQsLTEwNC45NSAxMzUuNTUsLTEwNy4zOSAxMzQuOTgsLTEwOS44MiAxMzQuMzUsLTExMi4yMiAxMzMuNjQsLTExNC41OSAxMzIuODYsLTExNi45MyAxMzIuMDEsLTExOS4yNCAxMzEuMDgsLTEyMS41MiAxMzAuMTAsLTEyMy43NiAxMjkuMDQsLTEyNS45NSAxMjcuOTIsLTEyOC4xMCAxMjYuNzMsLTEzMC4yMSAxMjUuNDgsLTEzMi4yNiAxMjQuMTcsLTEzNC4yNyAxMjIuODAsLTEzNi4yMiAxMjEuMzcsLTEzOC4xMSAxMTkuODksLTEzOS45NSAxMTguMzUsLTE0MS43MiAxMTYuNzUsLTE0My40MyAxMTUuMTEsLTE0NS4wOCAxMTMuNDIsLTE0Ni42NiAxMTEuNjgsLTE0OC4xNyAxMDkuODksLTE0OS42MSAxMDguMDcsLTE1MC45NyAxMDYuMjAsLTE1Mi4yNyAxMDQuMzAsLTE1My40OCAxMDIuMzUsLTE1NC42MiAxMDAuMzgsLTE1NS42OCA5OC4zOCwtMTU2LjY2IDk2LjM0LC0xNTcuNTYgOTQuMjgsLTE1OC4zOCA5Mi4yMCwtMTU5LjExIDkwLjEwLC0xNTkuNzYgODcuOTcsLTE2MC4zMyA4NS44NCwtMTYwLjgxIDgzLjY4LC0xNjEuMjAgODEuNTIsLTE2MS41MSA3OS4zNSwtMTYxLjcyIDc3LjE4LC0xNjEuODYgNzUuMDAsLTE2MS45MCA3Mi44MiwtMTYxLjg2IDcwLjY1LC0xNjEuNzIgNjguNDgsLTE2MS41MSA2Ni4zMiwtMTYxLjIwIDY0LjE2LC0xNjAuODEgNjIuMDMsLTE2MC4zMyA1OS45MCwtMTU5Ljc2IDU3LjgwLC0xNTkuMTEgNTUuNzIsLTE1OC4zOCA1My42NiwtMTU3LjU2IDUxLjYyLC0xNTYuNjYgNDkuNjIsLTE1NS42OCA0Ny42NSwtMTU0LjYyIDQ1LjcwLC0xNTMuNDggNDMuODAsLTE1Mi4yNyA0MS45MywtMTUwLjk3IDQwLjExLC0xNDkuNjEgMzguMzIsLTE0OC4xNyAzNi41OCwtMTQ2LjY2IDM0Ljg5LC0xNDUuMDggMzMuMjUsLTE0My40MyAzMS42NSwtMTQxLjcyIDMwLjExLC0xMzkuOTUgMjguNjMsLTEzOC4xMSAyNy4yMCwtMTM2LjIyIDI1LjgzLC0xMzQuMjcgMjQuNTIsLTEzMi4yNiAyMy4yNywtMTMwLjIxIDIyLjA4LC0xMjguMTAgMjAuOTYsLTEyNS45NSAxOS45MCwtMTIzLjc2IDE4LjkyLC0xMjEuNTIgMTcuOTksLTExOS4yNCAxNy4xNCwtMTE2LjkzIDE2LjM2LC0xMTQuNTkgMTUuNjUsLTExMi4yMiAxNS4wMiwtMTA5LjgyIDE0LjQ1LC0xMDcuMzkgMTMuOTYsLTEwNC45NSAxMy41NSwtMTAyLjQ5IDEzLjIxLC0xMDAuMDEgMTIuOTQsLTk3LjUyIDEyLjc1LC05NS4wMiAxMi42NCwtOTIuNTEgMTIuNjAsLTkwLjAwIiBmaWxsPSIjZTdlM2RjIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC41IiAvPjxyZWN0IHg9IjM5LjYwIiB5PSItMTQ2LjkwIiB3aWR0aD0iNzAuODAiIGhlaWdodD0iNTYuOTAiIGZpbGw9IiNlN2UzZGMiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjUiIC8+PHJlY3QgeD0iNDguNjAiIHk9Ii0xMzUuOTAiIHdpZHRoPSI1Mi44MCIgaGVpZ2h0PSI0NS45MCIgZmlsbD0iI2Q5ODQ0ZiIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMyIgLz48cmVjdCB4PSI1NS4wMCIgeT0iLTEzMS45MCIgd2lkdGg9IjQwLjAwIiBoZWlnaHQ9IjI3LjQwIiBmaWxsPSIjMmIxZDE0IiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC40IiAvPjxyZWN0IHg9IjU1LjAwIiB5PSItMTM1LjkwIiB3aWR0aD0iNDAuMDAiIGhlaWdodD0iNC4wMCIgZmlsbD0iI2M4NjkzZiIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMyIgLz48cmVjdCB4PSI1NS4wMCIgeT0iLTEwNC41MCIgd2lkdGg9IjQwLjAwIiBoZWlnaHQ9IjQuMDAiIGZpbGw9IiNjODY5M2YiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjMiIC8+PHJlY3QgeD0iNjcuNTAiIHk9Ii0yMzUuOTAiIHdpZHRoPSIxNS4wMCIgaGVpZ2h0PSI4OS4wMCIgZmlsbD0iI2M3Y2NkMSIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuNCIgLz48cG9seWdvbiBwb2ludHM9IjYxLjAwLC0yNDAuOTAgODkuMDAsLTI0MC45MCA3NS4wMCwtMjUwLjkwIiBmaWxsPSIjZTVlOGViIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zIiBzdHJva2UtZGFzaGFycmF5PSIxLjIgMC44Ii8+PHRleHQgeD0iOTEuMDAiIHk9Ii0yNDQuOTAiIGZvbnQtc2l6ZT0iMi42IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiM4YTNiMTIiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPlJlZ2VuaHV0IChvcHRpb25hbCwgY2EuICsxNSk8L3RleHQ+PGxpbmUgeDE9IjAuMDAiIHkxPSIzOC4wMCIgeDI9IjE1MC4wMCIgeTI9IjM4LjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yNSIgbWFya2VyLXN0YXJ0PSJ1cmwoI2FycikiIG1hcmtlci1lbmQ9InVybCgjYXJyKSIvPjxsaW5lIHgxPSIwLjAwIiB5MT0iMzYuMDAiIHgyPSIwLjAwIiB5Mj0iNDAuMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9IjE1MC4wMCIgeTE9IjM2LjAwIiB4Mj0iMTUwLjAwIiB5Mj0iNDAuMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iNzUuMDAiIHk9IjM2LjgwIiBmb250LXNpemU9IjMuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFjNGY4YSIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+RnVuZGFtZW50IDE1MDwvdGV4dD48bGluZSB4MT0iLTEwLjAwIiB5MT0iNDcuMDAiIHgyPSIxNjAuMDAiIHkyPSI0Ny4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMjUiIG1hcmtlci1zdGFydD0idXJsKCNhcnIpIiBtYXJrZXItZW5kPSJ1cmwoI2FycikiLz48bGluZSB4MT0iLTEwLjAwIiB5MT0iNDUuMDAiIHgyPSItMTAuMDAiIHkyPSI0OS4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iMTYwLjAwIiB5MT0iNDUuMDAiIHgyPSIxNjAuMDAiIHkyPSI0OS4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSI3NS4wMCIgeT0iNDUuODAiIGZvbnQtc2l6ZT0iMy4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMWM0ZjhhIiBmb250LXdlaWdodD0ibm9ybWFsIj5LaWVza29mZmVyIDE3MCAoMjAgY20gdmVyZGljaHRldCwgVUsgLTMwKTwvdGV4dD48bGluZSB4MT0iMTIuNjAiIHkxPSItMTY5LjkwIiB4Mj0iMTM3LjQwIiB5Mj0iLTE2OS45MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMjUiIG1hcmtlci1zdGFydD0idXJsKCNhcnIpIiBtYXJrZXItZW5kPSJ1cmwoI2FycikiLz48bGluZSB4MT0iMTIuNjAiIHkxPSItMTcxLjkwIiB4Mj0iMTIuNjAiIHkyPSItMTY3LjkwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSIxMzcuNDAiIHkxPSItMTcxLjkwIiB4Mj0iMTM3LjQwIiB5Mj0iLTE2Ny45MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSI3NS4wMCIgeT0iLTE3MS4xMCIgZm9udC1zaXplPSIzLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPjwvdGV4dD48dGV4dCB4PSIxNC42MCIgeT0iLTE3MS45MCIgZm9udC1zaXplPSIzLjAiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzFjNGY4YSIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+S3VwcGVsIGF1c3NlbiDDmCAxMjQuODwvdGV4dD48bGluZSB4MT0iNTUuMDAiIHkxPSItMTEwLjUwIiB4Mj0iOTUuMDAiIHkyPSItMTEwLjUwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yNSIgbWFya2VyLXN0YXJ0PSJ1cmwoI2FycikiIG1hcmtlci1lbmQ9InVybCgjYXJyKSIvPjxsaW5lIHgxPSI1NS4wMCIgeTE9Ii0xMTIuNTAiIHgyPSI1NS4wMCIgeTI9Ii0xMDguNTAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9Ijk1LjAwIiB5MT0iLTExMi41MCIgeDI9Ijk1LjAwIiB5Mj0iLTEwOC41MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSI3NS4wMCIgeT0iLTExMS43MCIgZm9udC1zaXplPSIzLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPlTDvHIgNDA8L3RleHQ+PGxpbmUgeDE9IjI0LjAwIiB5MT0iLTcxLjAwIiB4Mj0iMTI2LjAwIiB5Mj0iLTcxLjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yNSIgbWFya2VyLXN0YXJ0PSJ1cmwoI2FycikiIG1hcmtlci1lbmQ9InVybCgjYXJyKSIvPjxsaW5lIHgxPSIyNC4wMCIgeTE9Ii03My4wMCIgeDI9IjI0LjAwIiB5Mj0iLTY5LjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSIxMjYuMDAiIHkxPSItNzMuMDAiIHgyPSIxMjYuMDAiIHkyPSItNjkuMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iNzUuMDAiIHk9Ii03Mi4yMCIgZm9udC1zaXplPSIzLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPkhvbHpsYWdlciAxMDIgeCA3NTwvdGV4dD48bGluZSB4MT0iMTcwLjAwIiB5MT0iMC4wMCIgeDI9IjE3MC4wMCIgeTI9Ii01LjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yNSIgbWFya2VyLXN0YXJ0PSJ1cmwoI2FycikiIG1hcmtlci1lbmQ9InVybCgjYXJyKSIvPjxsaW5lIHgxPSIxNjguMDAiIHkxPSIwLjAwIiB4Mj0iMTcyLjAwIiB5Mj0iMC4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iMTY4LjAwIiB5MT0iLTUuMDAiIHgyPSIxNzIuMDAiIHkyPSItNS4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSIxNzEuNjAiIHk9Ii0yLjUwIiBmb250LXNpemU9IjIuNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFjNGY4YSIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDE3MS42MCAtMi41MCkiPjU8L3RleHQ+PGxpbmUgeDE9IjE3MC4wMCIgeTE9Ii01LjAwIiB4Mj0iMTcwLjAwIiB5Mj0iLTgwLjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yNSIgbWFya2VyLXN0YXJ0PSJ1cmwoI2FycikiIG1hcmtlci1lbmQ9InVybCgjYXJyKSIvPjxsaW5lIHgxPSIxNjguMDAiIHkxPSItNS4wMCIgeDI9IjE3Mi4wMCIgeTI9Ii01LjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSIxNjguMDAiIHkxPSItODAuMDAiIHgyPSIxNzIuMDAiIHkyPSItODAuMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iMTcxLjYwIiB5PSItNDIuNTAiIGZvbnQtc2l6ZT0iMi42IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMWM0ZjhhIiBmb250LXdlaWdodD0ibm9ybWFsIiB0cmFuc2Zvcm09InJvdGF0ZSgtOTAgMTcxLjYwIC00Mi41MCkiPjc1PC90ZXh0PjxsaW5lIHgxPSIxNzAuMDAiIHkxPSItODAuMDAiIHgyPSIxNzAuMDAiIHkyPSItOTAuMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjI1IiBtYXJrZXItc3RhcnQ9InVybCgjYXJyKSIgbWFya2VyLWVuZD0idXJsKCNhcnIpIi8+PGxpbmUgeDE9IjE2OC4wMCIgeTE9Ii04MC4wMCIgeDI9IjE3Mi4wMCIgeTI9Ii04MC4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iMTY4LjAwIiB5MT0iLTkwLjAwIiB4Mj0iMTcyLjAwIiB5Mj0iLTkwLjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjx0ZXh0IHg9IjE3MS42MCIgeT0iLTg1LjAwIiBmb250LXNpemU9IjIuNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFjNGY4YSIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDE3MS42MCAtODUuMDApIj4xMDwvdGV4dD48bGluZSB4MT0iMTcwLjAwIiB5MT0iLTkwLjAwIiB4Mj0iMTcwLjAwIiB5Mj0iLTEwNC41MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMjUiIG1hcmtlci1zdGFydD0idXJsKCNhcnIpIiBtYXJrZXItZW5kPSJ1cmwoI2FycikiLz48bGluZSB4MT0iMTY4LjAwIiB5MT0iLTkwLjAwIiB4Mj0iMTcyLjAwIiB5Mj0iLTkwLjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSIxNjguMDAiIHkxPSItMTA0LjUwIiB4Mj0iMTcyLjAwIiB5Mj0iLTEwNC41MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSIxNzEuNjAiIHk9Ii05Ny4yNSIgZm9udC1zaXplPSIyLjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiIHRyYW5zZm9ybT0icm90YXRlKC05MCAxNzEuNjAgLTk3LjI1KSI+MTQuNTwvdGV4dD48bGluZSB4MT0iMTcwLjAwIiB5MT0iLTEwNC41MCIgeDI9IjE3MC4wMCIgeTI9Ii0xNjEuOTAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjI1IiBtYXJrZXItc3RhcnQ9InVybCgjYXJyKSIgbWFya2VyLWVuZD0idXJsKCNhcnIpIi8+PGxpbmUgeDE9IjE2OC4wMCIgeTE9Ii0xMDQuNTAiIHgyPSIxNzIuMDAiIHkyPSItMTA0LjUwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSIxNjguMDAiIHkxPSItMTYxLjkwIiB4Mj0iMTcyLjAwIiB5Mj0iLTE2MS45MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSIxNzEuNjAiIHk9Ii0xMzMuMjAiIGZvbnQtc2l6ZT0iMi42IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMWM0ZjhhIiBmb250LXdlaWdodD0ibm9ybWFsIiB0cmFuc2Zvcm09InJvdGF0ZSgtOTAgMTcxLjYwIC0xMzMuMjApIj41Ny40PC90ZXh0PjxsaW5lIHgxPSIxNzAuMDAiIHkxPSItMTYxLjkwIiB4Mj0iMTcwLjAwIiB5Mj0iLTIzNS45MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMjUiIG1hcmtlci1zdGFydD0idXJsKCNhcnIpIiBtYXJrZXItZW5kPSJ1cmwoI2FycikiLz48bGluZSB4MT0iMTY4LjAwIiB5MT0iLTE2MS45MCIgeDI9IjE3Mi4wMCIgeTI9Ii0xNjEuOTAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9IjE2OC4wMCIgeTE9Ii0yMzUuOTAiIHgyPSIxNzIuMDAiIHkyPSItMjM1LjkwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjx0ZXh0IHg9IjE3MS42MCIgeT0iLTE5OC45MCIgZm9udC1zaXplPSIyLjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiIHRyYW5zZm9ybT0icm90YXRlKC05MCAxNzEuNjAgLTE5OC45MCkiPjc0LjA8L3RleHQ+PGxpbmUgeDE9IjE5MC4wMCIgeTE9IjAuMDAiIHgyPSIxOTAuMDAiIHkyPSItMjM1LjkwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yNSIgbWFya2VyLXN0YXJ0PSJ1cmwoI2FycikiIG1hcmtlci1lbmQ9InVybCgjYXJyKSIvPjxsaW5lIHgxPSIxODguMDAiIHkxPSIwLjAwIiB4Mj0iMTkyLjAwIiB5Mj0iMC4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iMTg4LjAwIiB5MT0iLTIzNS45MCIgeDI9IjE5Mi4wMCIgeTI9Ii0yMzUuOTAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iMTkxLjYwIiB5PSItMTE3Ljk1IiBmb250LXNpemU9IjMuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFjNGY4YSIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDE5MS42MCAtMTE3Ljk1KSI+R2VzYW10aMO2aGUgMjM2IChtaXQgUmVnZW5odXQgY2EuIDI1MSk8L3RleHQ+PGxpbmUgeDE9Ii0yMC4wMCIgeTE9IjAuMDAiIHgyPSItMjAuMDAiIHkyPSItMTA0LjUwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yNSIgbWFya2VyLXN0YXJ0PSJ1cmwoI2FycikiIG1hcmtlci1lbmQ9InVybCgjYXJyKSIvPjxsaW5lIHgxPSItMjIuMDAiIHkxPSIwLjAwIiB4Mj0iLTE4LjAwIiB5Mj0iMC4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iLTIyLjAwIiB5MT0iLTEwNC41MCIgeDI9Ii0xOC4wMCIgeTI9Ii0xMDQuNTAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iLTIxLjYwIiB5PSItNTIuMjUiIGZvbnQtc2l6ZT0iMy4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMWM0ZjhhIiBmb250LXdlaWdodD0ibm9ybWFsIiB0cmFuc2Zvcm09InJvdGF0ZSgtOTAgLTIxLjYwIC01Mi4yNSkiPkFyYmVpdHNow7ZoZSAxMDQuNTwvdGV4dD48bGluZSB4MT0iLTYuMDAiIHkxPSItMTA0LjUwIiB4Mj0iLTYuMDAiIHkyPSItMTMxLjkwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yNSIgbWFya2VyLXN0YXJ0PSJ1cmwoI2FycikiIG1hcmtlci1lbmQ9InVybCgjYXJyKSIvPjxsaW5lIHgxPSItOC4wMCIgeTE9Ii0xMDQuNTAiIHgyPSItNC4wMCIgeTI9Ii0xMDQuNTAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9Ii04LjAwIiB5MT0iLTEzMS45MCIgeDI9Ii00LjAwIiB5Mj0iLTEzMS45MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSItNy42MCIgeT0iLTExOC4yMCIgZm9udC1zaXplPSIyLjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiIHRyYW5zZm9ybT0icm90YXRlKC05MCAtNy42MCAtMTE4LjIwKSI+MjcuNDwvdGV4dD48dGV4dCB4PSItMzUuMDAiIHk9Ii0yNTcuOTAiIGZvbnQtc2l6ZT0iNC41IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJib2xkIj5GUk9OVEFOU0lDSFQgIDE6MjAgKE1hc3NlIGluIGNtKTwvdGV4dD48dGV4dCB4PSItMzUuMDAiIHk9Ii0yNTEuOTAiIGZvbnQtc2l6ZT0iMyIgdGV4dC1hbmNob3I9InN0YXJ0IiBmaWxsPSIjNTU1IiBmb250LXdlaWdodD0ibm9ybWFsIj5LdXBwZWxvZmVuIMOYIDkwIGlubmVuIOKAkyBXw7xyZW5sb3Mg4oCTIFZhcmlhbnRlIEI8L3RleHQ+PHRleHQgeD0iLTMzLjAwIiB5PSItMi4wMCIgZm9udC1zaXplPSIyLjYiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzhhM2IxMiIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+wrEwID0gVGVycmFpbiAvIFBsYXR0ZW5iZWxhZzwvdGV4dD48L3N2Zz4=" alt="Frontansicht" loading="lazy"><figcaption>Frontansicht</figcaption></figure>
+<h3 id="schnitt-aa-längsschnitt-mit-schichtaufbau">Schnitt A–A (Längsschnitt mit Schichtaufbau)</h3>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjExMDAiIHZpZXdCb3g9Ii00MCAtMjU1LjkgMzMwIDMwMC45IiBmb250LWZhbWlseT0iRGVqYVZ1IFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIj48dGl0bGU+U2Nobml0dCBBLUE8L3RpdGxlPjxkZWZzPgo8cGF0dGVybiBpZD0icEtpZXMiIHdpZHRoPSI0IiBoZWlnaHQ9IjQiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNkOGNmYjgiLz48Y2lyY2xlIGN4PSIxIiBjeT0iMSIgcj0iMC41NSIgZmlsbD0iIzhmODA2MCIvPjxjaXJjbGUgY3g9IjMiIGN5PSIyLjgiIHI9IjAuNyIgZmlsbD0iI2E4OTc3YSIvPjwvcGF0dGVybj4KPHBhdHRlcm4gaWQ9InBCZXRvbiIgd2lkdGg9IjYiIGhlaWdodD0iNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHJlY3Qgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0iI2M5Y2RkMiIvPjxjaXJjbGUgY3g9IjEuNSIgY3k9IjIiIHI9IjAuMzUiIGZpbGw9IiM3ZDgzOGIiLz48Y2lyY2xlIGN4PSI0LjMiIGN5PSI0LjUiIHI9IjAuNSIgZmlsbD0iIzhjOTI5YSIvPjxwYXRoIGQ9Ik0zLjUgMSBsMC43IDAuNiBsLTAuOSAwLjJ6IiBmaWxsPSIjN2Q4MzhiIi8+PC9wYXR0ZXJuPgo8cGF0dGVybiBpZD0icFNjaGFsIiB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjYjliZmM2Ii8+PGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjUiIHN0cm9rZT0iIzZkNzQ3YyIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3BhdHRlcm4+CjxwYXR0ZXJuIGlkPSJwUGVybGl0IiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZjNlN2IzIi8+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjAuNDUiIGZpbGw9IiNmZmZhZjAiIHN0cm9rZT0iI2M4YjQ2YSIgc3Ryb2tlLXdpZHRoPSIwLjE1Ii8+PC9wYXR0ZXJuPgo8cGF0dGVybiBpZD0icElzbyIgd2lkdGg9IjQiIGhlaWdodD0iNCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHJlY3Qgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI2Y2ZWRjOSIvPjxjaXJjbGUgY3g9IjEiIGN5PSIzIiByPSIwLjQiIGZpbGw9IiNmZmZhZjAiIHN0cm9rZT0iI2M4YjQ2YSIgc3Ryb2tlLXdpZHRoPSIwLjEyIi8+PGNpcmNsZSBjeD0iMyIgY3k9IjEiIHI9IjAuNCIgZmlsbD0iI2ZmZmFmMCIgc3Ryb2tlPSIjYzhiNDZhIiBzdHJva2Utd2lkdGg9IjAuMTIiLz48L3BhdHRlcm4+CjxwYXR0ZXJuIGlkPSJwRXJkZSIgd2lkdGg9IjYiIGhlaWdodD0iNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHJlY3Qgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0iI2NkYjQ4ZiIvPjxwYXRoIGQ9Ik0wIDYgTDYgMCIgc3Ryb2tlPSIjYTA4NTVmIiBzdHJva2Utd2lkdGg9IjAuNCIvPjwvcGF0dGVybj4KPG1hcmtlciBpZD0iYXJyIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjEwIiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNSIgbWFya2VySGVpZ2h0PSI1IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAgMCBMMTAgNSBMMCAxMCB6IiBmaWxsPSIjMWM0ZjhhIi8+PC9tYXJrZXI+CjwvZGVmcz48cmVjdCB4PSItNDAiIHk9Ii0yNTUuOSIgd2lkdGg9IjMzMCIgaGVpZ2h0PSIzMDAuOSIgZmlsbD0iI2ZmZmZmZiIvPjxyZWN0IHg9Ii0zNS4wMCIgeT0iLTIwMC4wMCIgd2lkdGg9IjIwLjAwIiBoZWlnaHQ9IjI0MC4wMCIgZmlsbD0iIzlhYTFhOCIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuNCIgLz48dGV4dCB4PSItMjQuMDAiIHk9Ii0xMjAuMDAiIGZvbnQtc2l6ZT0iMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZiIgZm9udC13ZWlnaHQ9ImJvbGQiIHRyYW5zZm9ybT0icm90YXRlKC05MCAtMjQuMDAgLTEyMC4wMCkiPkJldG9ubWF1ZXI8L3RleHQ+PHJlY3QgeD0iLTE1LjAwIiB5PSIwLjAwIiB3aWR0aD0iMTc1LjAwIiBoZWlnaHQ9IjQwLjAwIiBmaWxsPSJ1cmwoI3BFcmRlKSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjAiIC8+PGxpbmUgeDE9Ii0xNS4wMCIgeTE9IjAuMDAiIHgyPSIxNjAuMDAiIHkyPSIwLjAwIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC41IiAvPjxyZWN0IHg9Ii0xMC4wMCIgeT0iMTAuMDAiIHdpZHRoPSIxNzAuMDAiIGhlaWdodD0iMjAuMDAiIGZpbGw9InVybCgjcEtpZXMpIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zNSIgLz48cmVjdCB4PSIwLjAwIiB5PSItNS4wMCIgd2lkdGg9IjE1MC4wMCIgaGVpZ2h0PSIxNS4wMCIgZmlsbD0idXJsKCNwQmV0b24pIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zNSIgLz48bGluZSB4MT0iNS4wMCIgeTE9IjUuMDAiIHgyPSIxNDUuMDAiIHkyPSI1LjAwIiBzdHJva2U9IiM1YjdmYTYiIHN0cm9rZS13aWR0aD0iMC43IiAvPjxyZWN0IHg9IjI0LjAwIiB5PSItODAuMDAiIHdpZHRoPSIxMjYuMDAiIGhlaWdodD0iNzUuMDAiIGZpbGw9IiNlOWVjZWYiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjI1IiAvPjxsaW5lIHgxPSIyNC4wMCIgeTE9Ii0zMC4wMCIgeDI9IjE1MC4wMCIgeTI9Ii0zMC4wMCIgc3Ryb2tlPSIjOTk5IiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iMjQuMDAiIHkxPSItNTUuMDAiIHgyPSIxNTAuMDAiIHkyPSItNTUuMDAiIHN0cm9rZT0iIzk5OSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9IjYyLjAwIiB5MT0iLTUuMDAiIHgyPSI2Mi4wMCIgeTI9Ii0zMC4wMCIgc3Ryb2tlPSIjOTk5IiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iMTEyLjAwIiB5MT0iLTUuMDAiIHgyPSIxMTIuMDAiIHkyPSItMzAuMDAiIHN0cm9rZT0iIzk5OSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHJlY3QgeD0iMC4wMCIgeT0iLTgwLjAwIiB3aWR0aD0iMjQuMDAiIGhlaWdodD0iNzUuMDAiIGZpbGw9InVybCgjcFNjaGFsKSIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMzUiIC8+PHJlY3QgeD0iNS4wMCIgeT0iLTgwLjAwIiB3aWR0aD0iMTQuMDAiIGhlaWdodD0iNzUuMDAiIGZpbGw9InVybCgjcEJldG9uKSIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iMTIuMDAiIHkxPSIzLjAwIiB4Mj0iMTIuMDAiIHkyPSItODcuMDAiIHN0cm9rZT0iIzViN2ZhNiIgc3Ryb2tlLXdpZHRoPSIwLjYiIC8+PHRleHQgeD0iODcuMDAiIHk9Ii00NS4wMCIgZm9udC1zaXplPSIzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNjY2IiBmb250LXdlaWdodD0ibm9ybWFsIj5Ib2x6bGFnZXIgKFNlaXRlbndhbmQgaW4gQW5zaWNodCk8L3RleHQ+PHJlY3QgeD0iMC4wMCIgeT0iLTkwLjAwIiB3aWR0aD0iMTUwLjAwIiBoZWlnaHQ9IjEwLjAwIiBmaWxsPSJ1cmwoI3BCZXRvbikiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjM1IiAvPjxsaW5lIHgxPSI0LjAwIiB5MT0iLTgzLjAwIiB4Mj0iMTQ2LjAwIiB5Mj0iLTgzLjAwIiBzdHJva2U9IiM1YjdmYTYiIHN0cm9rZS13aWR0aD0iMC43IiAvPjxyZWN0IHg9IjguNjAiIHk9Ii0xMDAuMDAiIHdpZHRoPSIxNDEuNDAiIGhlaWdodD0iMTAuMDAiIGZpbGw9InVybCgjcFBlcmxpdCkiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjM1IiAvPjxyZWN0IHg9IjguNjAiIHk9Ii0xMDQuNTAiIHdpZHRoPSI4LjAwIiBoZWlnaHQ9IjQuNTAiIGZpbGw9InVybCgjcElzbykiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjM1IiAvPjxyZWN0IHg9IjUuNjAiIHk9Ii0xMDQuNTAiIHdpZHRoPSIzLjAwIiBoZWlnaHQ9IjE0LjUwIiBmaWxsPSIjZTdlM2RjIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zNSIgLz48cmVjdCB4PSIxNi42MCIgeT0iLTEwNC41MCIgd2lkdGg9IjEzMy40MCIgaGVpZ2h0PSI0LjAwIiBmaWxsPSIjYzg2OTNmIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zNSIgLz48bGluZSB4MT0iMzYuMDAiIHkxPSItMTA0LjUwIiB4Mj0iMzYuMDAiIHkyPSItMTAwLjUwIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSI1Ni4wMCIgeTE9Ii0xMDQuNTAiIHgyPSI1Ni4wMCIgeTI9Ii0xMDAuNTAiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9Ijc2LjAwIiB5MT0iLTEwNC41MCIgeDI9Ijc2LjAwIiB5Mj0iLTEwMC41MCIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iOTYuMDAiIHkxPSItMTA0LjUwIiB4Mj0iOTYuMDAiIHkyPSItMTAwLjUwIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSIxMTYuMDAiIHkxPSItMTA0LjUwIiB4Mj0iMTE2LjAwIiB5Mj0iLTEwMC41MCIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iMTM2LjAwIiB5MT0iLTEwNC41MCIgeDI9IjEzNi4wMCIgeTI9Ii0xMDAuNTAiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHBvbHlnb24gcG9pbnRzPSIxMDUuODQsLTEzNS45MCAxMDUuMTQsLTEzNi41OCAxMDQuNDIsLTEzNy4yNCAxMDMuNjksLTEzNy44OSAxMDIuOTQsLTEzOC41MyAxMDIuMTgsLTEzOS4xNSAxMDEuNDEsLTEzOS43NiAxMDAuNjIsLTE0MC4zNiA5OS44MiwtMTQwLjk0IDk5LjAxLC0xNDEuNTAgOTguMTgsLTE0Mi4wNiA5Ny4zNSwtMTQyLjU5IDk2LjUwLC0xNDMuMTIgOTUuNjQsLTE0My42MiA5NC43NiwtMTQ0LjExIDkzLjg4LC0xNDQuNTkgOTIuOTksLTE0NS4wNSA5Mi4wOSwtMTQ1LjQ5IDkxLjE4LC0xNDUuOTIgOTAuMjUsLTE0Ni4zMyA4OS4zMiwtMTQ2LjcyIDg4LjM4LC0xNDcuMTAgODcuNDQsLTE0Ny40NSA4Ni40OCwtMTQ3LjgwIDg1LjUyLC0xNDguMTIgODQuNTUsLTE0OC40MyA4My41OCwtMTQ4LjcyIDgyLjU5LC0xNDguOTkgODEuNjEsLTE0OS4yNCA4MC42MSwtMTQ5LjQ4IDc5LjYxLC0xNDkuNzAgNzguNjEsLTE0OS45MCA3Ny42MCwtMTUwLjA4IDc2LjU5LC0xNTAuMjUgNzUuNTgsLTE1MC4zOSA3NC41NiwtMTUwLjUyIDczLjU0LC0xNTAuNjMgNzIuNTIsLTE1MC43MiA3MS40OSwtMTUwLjc5IDcwLjQ3LC0xNTAuODUgNjkuNDQsLTE1MC44OCA2OC40MiwtMTUwLjkwIDY3LjM5LC0xNTAuOTAgNjYuMzYsLTE1MC44OCA2NS4zMywtMTUwLjg0IDY0LjMxLC0xNTAuNzggNjMuMjksLTE1MC43MCA2Mi4yNiwtMTUwLjYxIDYxLjI0LC0xNTAuNTAgNjAuMjMsLTE1MC4zNyA1OS4yMSwtMTUwLjIyIDU4LjIwLC0xNTAuMDUgNTcuMjAsLTE0OS44NiA1Ni4xOSwtMTQ5LjY2IDU1LjIwLC0xNDkuNDQgNTQuMjAsLTE0OS4yMCA1My4yMiwtMTQ4Ljk0IDUyLjI0LC0xNDguNjYgNTEuMjYsLTE0OC4zNyA1MC4yOSwtMTQ4LjA2IDQ5LjMzLC0xNDcuNzMgNDguMzgsLTE0Ny4zOSA0Ny40MywtMTQ3LjAyIDQ2LjUwLC0xNDYuNjQgNDUuNTcsLTE0Ni4yNSA0NC42NSwtMTQ1Ljg0IDQzLjc0LC0xNDUuNDEgNDIuODQsLTE0NC45NiA0MS45NSwtMTQ0LjUwIDQxLjA3LC0xNDQuMDIgNDAuMjAsLTE0My41MyAzOS4zNCwtMTQzLjAyIDM4LjQ5LC0xNDIuNDkgMzcuNjYsLTE0MS45NSAzNi44MywtMTQxLjQwIDM2LjAyLC0xNDAuODMgMzUuMjMsLTE0MC4yNCAzNC40NCwtMTM5LjY1IDMzLjY3LC0xMzkuMDMgMzIuOTEsLTEzOC40MSAzMi4xNywtMTM3Ljc3IDMxLjQ0LC0xMzcuMTEgMzAuNzIsLTEzNi40NSAzMC4wMiwtMTM1Ljc3IDI5LjM0LC0xMzUuMDggMjguNjcsLTEzNC4zNyAyOC4wMiwtMTMzLjY2IDI3LjM4LC0xMzIuOTMgMjYuNzYsLTEzMi4xOSAyNi4xNSwtMTMxLjQ0IDI1LjU3LC0xMzAuNjggMjQuOTksLTEyOS45MSAyNC40NCwtMTI5LjEzIDIzLjkwLC0xMjguMzQgMjMuMzgsLTEyNy41NCAyMi44OCwtMTI2LjczIDIyLjQwLC0xMjUuOTEgMjEuOTQsLTEyNS4wOSAyMS40OSwtMTI0LjI1IDIxLjA2LC0xMjMuNDEgMjAuNjUsLTEyMi41NiAyMC4yNiwtMTIxLjcwIDE5Ljg5LC0xMjAuODMgMTkuNTQsLTExOS45NiAxOS4yMSwtMTE5LjA5IDE4Ljg5LC0xMTguMjAgMTguNjAsLTExNy4zMSAxOC4zMywtMTE2LjQyIDE4LjA3LC0xMTUuNTIgMTcuODQsLTExNC42MiAxNy42MiwtMTEzLjcxIDE3LjQzLC0xMTIuODAgMTcuMjYsLTExMS44OSAxNy4xMCwtMTEwLjk3IDE2Ljk3LC0xMTAuMDUgMTYuODYsLTEwOS4xMyAxNi43NiwtMTA4LjIxIDE2LjY5LC0xMDcuMjggMTYuNjQsLTEwNi4zNSAxNi42MSwtMTA1LjQzIDE2LjYwLC0xMDQuNTAgMjMuMDAsLTEwNC41MCAyMy4wMSwtMTA1LjI1IDIzLjAzLC0xMDUuOTkgMjMuMDcsLTEwNi43NCAyMy4xMywtMTA3LjQ4IDIzLjIwLC0xMDguMjMgMjMuMjgsLTEwOC45NyAyMy4zOCwtMTA5LjcxIDIzLjUwLC0xMTAuNDUgMjMuNjMsLTExMS4xOSAyMy43OCwtMTExLjkyIDIzLjk0LC0xMTIuNjUgMjQuMTIsLTExMy4zOCAyNC4zMiwtMTE0LjExIDI0LjUzLC0xMTQuODMgMjQuNzUsLTExNS41NSAyNC45OSwtMTE2LjI2IDI1LjI0LC0xMTYuOTggMjUuNTEsLTExNy42OCAyNS44MCwtMTE4LjM4IDI2LjEwLC0xMTkuMDggMjYuNDEsLTExOS43NyAyNi43NCwtMTIwLjQ2IDI3LjA4LC0xMjEuMTQgMjcuNDQsLTEyMS44MiAyNy44MSwtMTIyLjQ5IDI4LjE5LC0xMjMuMTUgMjguNTksLTEyMy44MSAyOS4wMCwtMTI0LjQ2IDI5LjQzLC0xMjUuMTAgMjkuODcsLTEyNS43NCAzMC4zMiwtMTI2LjM3IDMwLjc4LC0xMjYuOTkgMzEuMjYsLTEyNy42MCAzMS43NSwtMTI4LjIxIDMyLjI2LC0xMjguODAgMzIuNzcsLTEyOS4zOSAzMy4zMCwtMTI5Ljk3IDMzLjg0LC0xMzAuNTQgMzQuNDAsLTEzMS4xMCAzNC45NiwtMTMxLjY2IDM1LjU0LC0xMzIuMjAgMzYuMTIsLTEzMi43MyAzNi43MiwtMTMzLjI2IDM3LjMzLC0xMzMuNzcgMzcuOTUsLTEzNC4yNyAzOC41OCwtMTM0Ljc3IDM5LjIyLC0xMzUuMjUgMzkuODcsLTEzNS43MiA0MC41MywtMTM2LjE4IDQxLjIwLC0xMzYuNjMgNDEuODgsLTEzNy4wNyA0Mi41NywtMTM3LjUwIDQzLjI3LC0xMzcuOTIgNDMuOTcsLTEzOC4zMiA0NC42OSwtMTM4LjcxIDQ1LjQxLC0xMzkuMDkgNDYuMTQsLTEzOS40NiA0Ni44NywtMTM5LjgyIDQ3LjYyLC0xNDAuMTYgNDguMzcsLTE0MC40OSA0OS4xMywtMTQwLjgxIDQ5LjkwLC0xNDEuMTIgNTAuNjcsLTE0MS40MSA1MS40NSwtMTQxLjcwIDUyLjIzLC0xNDEuOTYgNTMuMDIsLTE0Mi4yMiA1My44MSwtMTQyLjQ2IDU0LjYxLC0xNDIuNjkgNTUuNDIsLTE0Mi45MCA1Ni4yMiwtMTQzLjExIDU3LjA0LC0xNDMuMjkgNTcuODUsLTE0My40NyA1OC42NywtMTQzLjYzIDU5LjUwLC0xNDMuNzggNjAuMzIsLTE0My45MSA2MS4xNSwtMTQ0LjAzIDYxLjk4LC0xNDQuMTQgNjIuODEsLTE0NC4yMyA2My42NSwtMTQ0LjMxIDY0LjQ4LC0xNDQuMzggNjUuMzIsLTE0NC40MyA2Ni4xNiwtMTQ0LjQ3IDY3LjAwLC0xNDQuNDkgNjcuODQsLTE0NC41MCA2OC42OCwtMTQ0LjUwIDY5LjUyLC0xNDQuNDggNzAuMzYsLTE0NC40NSA3MS4yMCwtMTQ0LjQwIDcyLjAzLC0xNDQuMzQgNzIuODcsLTE0NC4yNyA3My43MCwtMTQ0LjE4IDc0LjUzLC0xNDQuMDggNzUuMzYsLTE0My45NiA3Ni4xOSwtMTQzLjgzIDc3LjAxLC0xNDMuNjkgNzcuODMsLTE0My41MyA3OC42NSwtMTQzLjM2IDc5LjQ3LC0xNDMuMTggODAuMjgsLTE0Mi45OCA4MS4wOCwtMTQyLjc3IDgxLjg4LC0xNDIuNTUgODIuNjgsLTE0Mi4zMSA4My40NywtMTQyLjA2IDg0LjI2LC0xNDEuODAgODUuMDQsLTE0MS41MiA4NS44MSwtMTQxLjIzIDg2LjU4LC0xNDAuOTMgODcuMzQsLTE0MC42MiA4OC4wOSwtMTQwLjI5IDg4Ljg0LC0xMzkuOTUgODkuNTgsLTEzOS42MCA5MC4zMSwtMTM5LjI0IDkxLjA0LC0xMzguODYgOTEuNzYsLTEzOC40NyA5Mi40NywtMTM4LjA3IDkzLjE3LC0xMzcuNjYgOTMuODYsLTEzNy4yNCA5NC41NCwtMTM2LjgwIDk1LjIxLC0xMzYuMzYgOTUuODgsLTEzNS45MCIgZmlsbD0iI2Q5ODQ0ZiIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMyIgLz48cG9seWdvbiBwb2ludHM9IjExNi41MSwtMTM1LjkwIDExNS43NywtMTM2LjgzIDExNS4wMiwtMTM3Ljc0IDExNC4yNSwtMTM4LjY0IDExMy40NSwtMTM5LjUzIDExMi42NCwtMTQwLjM5IDExMS44MCwtMTQxLjI1IDExMC45NSwtMTQyLjA4IDExMC4wNywtMTQyLjkwIDEwOS4xOCwtMTQzLjcwIDEwOC4yNywtMTQ0LjQ5IDEwNy4zNCwtMTQ1LjI2IDEwNi40MCwtMTQ2LjAxIDEwNS40MywtMTQ2Ljc0IDEwNC40NSwtMTQ3LjQ1IDEwMy40NiwtMTQ4LjE0IDEwMi40NSwtMTQ4LjgyIDEwMS40MiwtMTQ5LjQ3IDEwMC4zOCwtMTUwLjExIDk5LjMzLC0xNTAuNzIgOTguMjYsLTE1MS4zMSA5Ny4xNywtMTUxLjg5IDk2LjA4LC0xNTIuNDQgOTQuOTcsLTE1Mi45NyA5My44NSwtMTUzLjQ4IDkyLjcyLC0xNTMuOTcgOTEuNTgsLTE1NC40MyA5MC40MiwtMTU0Ljg4IDg5LjI2LC0xNTUuMzAgODguMDksLTE1NS42OSA4Ni45MSwtMTU2LjA3IDg1LjcyLC0xNTYuNDIgODQuNTIsLTE1Ni43NSA4My4zMSwtMTU3LjA2IDgyLjEwLC0xNTcuMzQgODAuODksLTE1Ny42MCA3OS42NiwtMTU3Ljg0IDc4LjQzLC0xNTguMDUgNzcuMjAsLTE1OC4yNCA3NS45NiwtMTU4LjQxIDc0LjcyLC0xNTguNTUgNzMuNDgsLTE1OC42NyA3Mi4yMywtMTU4Ljc2IDcwLjk4LC0xNTguODMgNjkuNzMsLTE1OC44OCA2OC40OCwtMTU4LjkwIDY3LjIzLC0xNTguOTAgNjUuOTgsLTE1OC44NyA2NC43MywtMTU4LjgyIDYzLjQ5LC0xNTguNzQgNjIuMjQsLTE1OC42NCA2MS4wMCwtMTU4LjUyIDU5Ljc2LC0xNTguMzcgNTguNTIsLTE1OC4yMCA1Ny4yOSwtMTU4LjAxIDU2LjA2LC0xNTcuNzkgNTQuODQsLTE1Ny41NSA1My42MiwtMTU3LjI4IDUyLjQxLC0xNTYuOTkgNTEuMjEsLTE1Ni42OCA1MC4wMSwtMTU2LjM1IDQ4LjgyLC0xNTUuOTkgNDcuNjUsLTE1NS42MSA0Ni40OCwtMTU1LjIwIDQ1LjMxLC0xNTQuNzggNDQuMTYsLTE1NC4zMyA0My4wMiwtMTUzLjg2IDQxLjg5LC0xNTMuMzYgNDAuNzgsLTE1Mi44NSAzOS42NywtMTUyLjMyIDM4LjU4LC0xNTEuNzYgMzcuNTAsLTE1MS4xOCAzNi40MywtMTUwLjU4IDM1LjM4LC0xNDkuOTYgMzQuMzQsLTE0OS4zMiAzMy4zMiwtMTQ4LjY3IDMyLjMxLC0xNDcuOTkgMzEuMzIsLTE0Ny4yOSAzMC4zNSwtMTQ2LjU3IDI5LjM5LC0xNDUuODQgMjguNDUsLTE0NS4wOCAyNy41MiwtMTQ0LjMxIDI2LjYyLC0xNDMuNTIgMjUuNzMsLTE0Mi43MiAyNC44NiwtMTQxLjg5IDI0LjAxLC0xNDEuMDUgMjMuMTgsLTE0MC4yMCAyMi4zNywtMTM5LjMzIDIxLjU4LC0xMzguNDQgMjAuODEsLTEzNy41NCAyMC4wNiwtMTM2LjYyIDE5LjMzLC0xMzUuNjkgMTguNjIsLTEzNC43NCAxNy45NCwtMTMzLjc4IDE3LjI4LC0xMzIuODEgMTYuNjQsLTEzMS44MyAxNi4wMiwtMTMwLjgzIDE1LjQzLC0xMjkuODIgMTQuODYsLTEyOC44MCAxNC4zMSwtMTI3Ljc3IDEzLjc5LC0xMjYuNzMgMTMuMjksLTEyNS42OCAxMi44MSwtMTI0LjYyIDEyLjM2LC0xMjMuNTYgMTEuOTQsLTEyMi40OCAxMS41NCwtMTIxLjM5IDExLjE2LC0xMjAuMzAgMTAuODEsLTExOS4yMCAxMC40OSwtMTE4LjEwIDEwLjE5LC0xMTYuOTkgOS45MSwtMTE1Ljg3IDkuNjYsLTExNC43NSA5LjQ0LC0xMTMuNjIgOS4yNCwtMTEyLjQ5IDkuMDcsLTExMS4zNSA4LjkzLC0xMTAuMjIgOC44MSwtMTA5LjA4IDguNzIsLTEwNy45MyA4LjY1LC0xMDYuNzkgOC42MSwtMTA1LjY1IDguNjAsLTEwNC41MCAxNi42MCwtMTA0LjUwIDE2LjYxLC0xMDUuNDggMTYuNjUsLTEwNi40NSAxNi43MCwtMTA3LjQzIDE2Ljc4LC0xMDguNDAgMTYuODgsLTEwOS4zOCAxNy4wMSwtMTEwLjM1IDE3LjE2LC0xMTEuMzEgMTcuMzMsLTExMi4yOCAxNy41MiwtMTEzLjI0IDE3LjczLC0xMTQuMjAgMTcuOTcsLTExNS4xNSAxOC4yMywtMTE2LjEwIDE4LjUxLC0xMTcuMDQgMTguODIsLTExNy45OCAxOS4xNCwtMTE4LjkxIDE5LjQ5LC0xMTkuODQgMTkuODYsLTEyMC43NSAyMC4yNSwtMTIxLjY3IDIwLjY2LC0xMjIuNTcgMjEuMDksLTEyMy40NiAyMS41NCwtMTI0LjM1IDIyLjAyLC0xMjUuMjMgMjIuNTEsLTEyNi4xMCAyMy4wMiwtMTI2Ljk2IDIzLjU2LC0xMjcuODEgMjQuMTEsLTEyOC42NSAyNC42OCwtMTI5LjQ4IDI1LjI3LC0xMzAuMjkgMjUuODksLTEzMS4xMCAyNi41MiwtMTMxLjkwIDI3LjE2LC0xMzIuNjggMjcuODMsLTEzMy40NSAyOC41MSwtMTM0LjIwIDI5LjIxLC0xMzQuOTUgMjkuOTMsLTEzNS42OCAzMC42NywtMTM2LjM5IDMxLjQyLC0xMzcuMTAgMzIuMTksLTEzNy43OSAzMi45NywtMTM4LjQ2IDMzLjc3LC0xMzkuMTIgMzQuNTksLTEzOS43NiAzNS40MiwtMTQwLjM5IDM2LjI2LC0xNDEuMDAgMzcuMTIsLTE0MS41OSAzNy45OSwtMTQyLjE3IDM4Ljg4LC0xNDIuNzMgMzkuNzcsLTE0My4yOCA0MC42OCwtMTQzLjgxIDQxLjYxLC0xNDQuMzIgNDIuNTQsLTE0NC44MSA0My40OSwtMTQ1LjI4IDQ0LjQ0LC0xNDUuNzQgNDUuNDEsLTE0Ni4xOCA0Ni4zOSwtMTQ2LjYwIDQ3LjM3LC0xNDcuMDAgNDguMzcsLTE0Ny4zOCA0OS4zNywtMTQ3Ljc1IDUwLjM5LC0xNDguMDkgNTEuNDEsLTE0OC40MiA1Mi40MywtMTQ4LjcyIDUzLjQ3LC0xNDkuMDEgNTQuNTEsLTE0OS4yNyA1NS41NiwtMTQ5LjUyIDU2LjYxLC0xNDkuNzUgNTcuNjcsLTE0OS45NSA1OC43MywtMTUwLjE0IDU5LjgwLC0xNTAuMzEgNjAuODcsLTE1MC40NSA2MS45NCwtMTUwLjU4IDYzLjAyLC0xNTAuNjggNjQuMDksLTE1MC43NyA2NS4xNywtMTUwLjgzIDY2LjI1LC0xNTAuODcgNjcuMzQsLTE1MC45MCA2OC40MiwtMTUwLjkwIDY5LjUwLC0xNTAuODggNzAuNTgsLTE1MC44NCA3MS42NiwtMTUwLjc4IDcyLjc0LC0xNTAuNzAgNzMuODIsLTE1MC42MCA3NC44OSwtMTUwLjQ4IDc1Ljk2LC0xNTAuMzQgNzcuMDMsLTE1MC4xOCA3OC4wOSwtMTUwLjAwIDc5LjE1LC0xNDkuODAgODAuMjAsLTE0OS41NyA4MS4yNSwtMTQ5LjMzIDgyLjI5LC0xNDkuMDcgODMuMzMsLTE0OC43OSA4NC4zNiwtMTQ4LjQ5IDg1LjM4LC0xNDguMTcgODYuNDAsLTE0Ny44MyA4Ny40MCwtMTQ3LjQ3IDg4LjQwLC0xNDcuMDkgODkuMzksLTE0Ni42OSA5MC4zNywtMTQ2LjI4IDkxLjM0LC0xNDUuODQgOTIuMzAsLTE0NS4zOSA5My4yNCwtMTQ0LjkyIDk0LjE4LC0xNDQuNDMgOTUuMTEsLTE0My45MiA5Ni4wMiwtMTQzLjQwIDk2LjkyLC0xNDIuODYgOTcuODEsLTE0Mi4zMCA5OC42OCwtMTQxLjczIDk5LjU1LC0xNDEuMTMgMTAwLjM5LC0xNDAuNTMgMTAxLjIzLC0xMzkuOTAgMTAyLjA0LC0xMzkuMjYgMTAyLjg1LC0xMzguNjEgMTAzLjYzLC0xMzcuOTQgMTA0LjQxLC0xMzcuMjUgMTA1LjE2LC0xMzYuNTYgMTA1LjkwLC0xMzUuODQgMTA2LjYyLC0xMzUuMTIgMTA3LjMzLC0xMzQuMzcgMTA4LjAyLC0xMzMuNjIgMTA4LjY5LC0xMzIuODUgMTA5LjM0LC0xMzIuMDcgMTA5Ljk3LC0xMzEuMjgiIGZpbGw9InVybCgjcElzbykiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjMiIC8+PHBvbHlnb24gcG9pbnRzPSIxMTMuMzgsLTE0My45MCAxMTIuNTIsLTE0NC43MiAxMTEuNjQsLTE0NS41MyAxMTAuNzUsLTE0Ni4zMiAxMDkuODMsLTE0Ny4wOSAxMDguOTAsLTE0Ny44NSAxMDcuOTYsLTE0OC41OSAxMDcuMDAsLTE0OS4zMSAxMDYuMDIsLTE1MC4wMSAxMDUuMDMsLTE1MC43MCAxMDQuMDMsLTE1MS4zNyAxMDMuMDEsLTE1Mi4wMiAxMDEuOTcsLTE1Mi42NSAxMDAuOTMsLTE1My4yNiA5OS44NywtMTUzLjg1IDk4LjgwLC0xNTQuNDIgOTcuNzEsLTE1NC45OCA5Ni42MSwtMTU1LjUxIDk1LjUxLC0xNTYuMDIgOTQuMzksLTE1Ni41MiA5My4yNiwtMTU2Ljk5IDkyLjEyLC0xNTcuNDQgOTAuOTcsLTE1Ny44NyA4OS44MSwtMTU4LjI4IDg4LjY1LC0xNTguNjcgODcuNDcsLTE1OS4wMyA4Ni4yOSwtMTU5LjM4IDg1LjEwLC0xNTkuNzAgODMuOTEsLTE2MC4wMCA4Mi43MCwtMTYwLjI4IDgxLjUwLC0xNjAuNTQgODAuMjgsLTE2MC43OCA3OS4wNiwtMTYwLjk5IDc3Ljg0LC0xNjEuMTggNzYuNjEsLTE2MS4zNSA3NS4zOCwtMTYxLjUwIDc0LjE1LC0xNjEuNjIgNzIuOTIsLTE2MS43MiA3MS42OCwtMTYxLjgwIDcwLjQ0LC0xNjEuODYgNjkuMjAsLTE2MS44OSA2Ny45NiwtMTYxLjkwIDY2LjcyLC0xNjEuODkgNjUuNDgsLTE2MS44NSA2NC4yNCwtMTYxLjgwIDYzLjAwLC0xNjEuNzIgNjEuNzcsLTE2MS42MSA2MC41NCwtMTYxLjQ5IDU5LjMxLC0xNjEuMzQgNTguMDgsLTE2MS4xNyA1Ni44NiwtMTYwLjk4IDU1LjY0LC0xNjAuNzYgNTQuNDMsLTE2MC41MyA1My4yMiwtMTYwLjI3IDUyLjAyLC0xNTkuOTkgNTAuODIsLTE1OS42OCA0OS42MywtMTU5LjM2IDQ4LjQ1LC0xNTkuMDEgNDcuMjgsLTE1OC42NCA0Ni4xMSwtMTU4LjI1IDQ0Ljk1LC0xNTcuODQgNDMuODEsLTE1Ny40MSA0Mi42NywtMTU2Ljk2IDQxLjU0LC0xNTYuNDggNDAuNDIsLTE1NS45OSAzOS4zMiwtMTU1LjQ4IDM4LjIyLC0xNTQuOTQgMzcuMTQsLTE1NC4zOSAzNi4wNiwtMTUzLjgxIDM1LjAwLC0xNTMuMjIgMzMuOTYsLTE1Mi42MSAzMi45MywtMTUxLjk3IDMxLjkxLC0xNTEuMzIgMzAuOTAsLTE1MC42NSAyOS45MSwtMTQ5Ljk3IDI4Ljk0LC0xNDkuMjYgMjcuOTgsLTE0OC41NCAyNy4wNCwtMTQ3LjgwIDI2LjExLC0xNDcuMDQgMjUuMjAsLTE0Ni4yNyAyNC4zMCwtMTQ1LjQ4IDIzLjQzLC0xNDQuNjcgMjIuNTcsLTE0My44NSAyMS43MywtMTQzLjAxIDIwLjkwLC0xNDIuMTUgMjAuMTAsLTE0MS4yOSAxOS4zMSwtMTQwLjQwIDE4LjU1LC0xMzkuNTEgMTcuODAsLTEzOC42MCAxNy4wNywtMTM3LjY3IDE2LjM3LC0xMzYuNzMgMTUuNjgsLTEzNS43OCAxNS4wMiwtMTM0LjgyIDE0LjM3LC0xMzMuODUgMTMuNzUsLTEzMi44NiAxMy4xNSwtMTMxLjg2IDEyLjU3LC0xMzAuODUgMTIuMDEsLTEyOS44NCAxMS40NywtMTI4LjgxIDEwLjk2LC0xMjcuNzcgMTAuNDcsLTEyNi43MiAxMC4wMCwtMTI1LjY2IDkuNTUsLTEyNC42MCA5LjEzLC0xMjMuNTMgOC43MywtMTIyLjQ1IDguMzUsLTEyMS4zNiA4LjAwLC0xMjAuMjcgNy42NywtMTE5LjE3IDcuMzcsLTExOC4wNiA3LjA5LC0xMTYuOTUgNi44MywtMTE1LjgzIDYuNjAsLTExNC43MSA2LjM5LC0xMTMuNTkgNi4yMCwtMTEyLjQ2IDYuMDQsLTExMS4zMyA1LjkxLC0xMTAuMTkgNS44MCwtMTA5LjA2IDUuNzEsLTEwNy45MiA1LjY1LC0xMDYuNzggNS42MSwtMTA1LjY0IDUuNjAsLTEwNC41MCA4LjYwLC0xMDQuNTAgOC42MSwtMTA1LjU4IDguNjUsLTEwNi42NiA4LjcxLC0xMDcuNzQgOC43OSwtMTA4LjgyIDguODksLTEwOS45MCA5LjAyLC0xMTAuOTcgOS4xNywtMTEyLjA0IDkuMzUsLTExMy4xMSA5LjU1LC0xMTQuMTggOS43NywtMTE1LjI0IDEwLjAxLC0xMTYuMzAgMTAuMjgsLTExNy4zNSAxMC41NywtMTE4LjQwIDEwLjg4LC0xMTkuNDQgMTEuMjIsLTEyMC40OCAxMS41OCwtMTIxLjUxIDExLjk2LC0xMjIuNTMgMTIuMzYsLTEyMy41NSAxMi43OSwtMTI0LjU2IDEzLjIzLC0xMjUuNTYgMTMuNzAsLTEyNi41NSAxNC4xOSwtMTI3LjU0IDE0LjcwLC0xMjguNTEgMTUuMjMsLTEyOS40OCAxNS43OCwtMTMwLjQzIDE2LjM2LC0xMzEuMzggMTYuOTUsLTEzMi4zMSAxNy41NiwtMTMzLjI0IDE4LjIwLC0xMzQuMTUgMTguODUsLTEzNS4wNSAxOS41MiwtMTM1Ljk0IDIwLjIxLC0xMzYuODEgMjAuOTMsLTEzNy42OCAyMS42NSwtMTM4LjUzIDIyLjQwLC0xMzkuMzYgMjMuMTcsLTE0MC4xOSAyMy45NSwtMTQxLjAwIDI0Ljc1LC0xNDEuNzkgMjUuNTcsLTE0Mi41NyAyNi40MCwtMTQzLjMzIDI3LjI1LC0xNDQuMDggMjguMTIsLTE0NC44MiAyOS4wMCwtMTQ1LjU0IDI5LjkwLC0xNDYuMjQgMzAuODIsLTE0Ni45MiAzMS43NCwtMTQ3LjU5IDMyLjY5LC0xNDguMjQgMzMuNjQsLTE0OC44OCAzNC42MSwtMTQ5LjQ5IDM1LjYwLC0xNTAuMDkgMzYuNTksLTE1MC42NyAzNy42MCwtMTUxLjI0IDM4LjYyLC0xNTEuNzggMzkuNjUsLTE1Mi4zMCA0MC42OSwtMTUyLjgxIDQxLjc1LC0xNTMuMzAgNDIuODEsLTE1My43NyA0My44OSwtMTU0LjIyIDQ0Ljk3LC0xNTQuNjQgNDYuMDYsLTE1NS4wNSA0Ny4xNiwtMTU1LjQ0IDQ4LjI3LC0xNTUuODEgNDkuMzksLTE1Ni4xNiA1MC41MiwtMTU2LjQ5IDUxLjY1LC0xNTYuODAgNTIuNzksLTE1Ny4wOSA1My45MywtMTU3LjM1IDU1LjA4LC0xNTcuNjAgNTYuMjMsLTE1Ny44MiA1Ny4zOSwtMTU4LjAzIDU4LjU2LC0xNTguMjEgNTkuNzIsLTE1OC4zNyA2MC45MCwtMTU4LjUxIDYyLjA3LC0xNTguNjMgNjMuMjQsLTE1OC43MyA2NC40MiwtMTU4LjgwIDY1LjYwLC0xNTguODYgNjYuNzgsLTE1OC44OSA2Ny45NiwtMTU4LjkwIDY5LjE0LC0xNTguODkgNzAuMzIsLTE1OC44NiA3MS41MCwtMTU4LjgxIDcyLjY4LC0xNTguNzMgNzMuODYsLTE1OC42NCA3NS4wMywtMTU4LjUyIDc2LjIwLC0xNTguMzggNzcuMzcsLTE1OC4yMiA3OC41MywtMTU4LjA0IDc5LjY5LC0xNTcuODQgODAuODUsLTE1Ny42MSA4Mi4wMCwtMTU3LjM3IDgzLjE0LC0xNTcuMTAgODQuMjgsLTE1Ni44MiA4NS40MSwtMTU2LjUxIDg2LjU0LC0xNTYuMTggODcuNjUsLTE1NS44NCA4OC43NiwtMTU1LjQ3IDg5Ljg3LC0xNTUuMDggOTAuOTYsLTE1NC42NyA5Mi4wNCwtMTU0LjI0IDkzLjEyLC0xNTMuODAgOTQuMTgsLTE1My4zMyA5NS4yNCwtMTUyLjg0IDk2LjI4LC0xNTIuMzQgOTcuMzEsLTE1MS44MSA5OC4zNCwtMTUxLjI3IDk5LjM0LC0xNTAuNzEgMTAwLjM0LC0xNTAuMTMgMTAxLjMyLC0xNDkuNTMgMTAyLjMwLC0xNDguOTIgMTAzLjI1LC0xNDguMjggMTA0LjIwLC0xNDcuNjMgMTA1LjEyLC0xNDYuOTcgMTA2LjA0LC0xNDYuMjggMTA2Ljk0LC0xNDUuNTggMTA3LjgyLC0xNDQuODYgMTA4LjY5LC0xNDQuMTMgMTA5LjU0LC0xNDMuMzggMTEwLjM4LC0xNDIuNjIgMTExLjIwLC0xNDEuODQiIGZpbGw9IiNlN2UzZGMiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjMiIC8+PGxpbmUgeDE9IjIzLjAwIiB5MT0iLTEwNC41MCIgeDI9IjE2LjYwIiB5Mj0iLTEwNC41MCIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMyIgLz48bGluZSB4MT0iMjUuMDAiIHkxPSItMTE2LjMwIiB4Mj0iMTguOTYiIHkyPSItMTE4LjQwIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zIiAvPjxsaW5lIHgxPSIzMC43MiIgeTE9Ii0xMjYuOTAiIHgyPSIyNS42MiIgeTI9Ii0xMzAuNzciIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjMiIC8+PGxpbmUgeDE9IjM5LjI5IiB5MT0iLTEzNS4zMCIgeDI9IjM1LjQ5IiB5Mj0iLTE0MC40NSIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMyIgLz48bGluZSB4MT0iNDkuODQiIHkxPSItMTQxLjEwIiB4Mj0iNDcuNTEiIHkyPSItMTQ3LjA2IiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zIiAvPjxyZWN0IHg9IjEwOC4zMCIgeT0iLTEzMS45MCIgd2lkdGg9IjQxLjcwIiBoZWlnaHQ9IjI3LjQwIiBmaWxsPSIjZjFkN2M0IiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4yNSIgLz48bGluZSB4MT0iMTA4LjMwIiB5MT0iLTExMS41MCIgeDI9IjE1MC4wMCIgeTI9Ii0xMTEuNTAiIHN0cm9rZT0iI2IwNmE0MCIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9IjEwOC4zMCIgeTE9Ii0xMTguNTAiIHgyPSIxNTAuMDAiIHkyPSItMTE4LjUwIiBzdHJva2U9IiNiMDZhNDAiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSIxMDguMzAiIHkxPSItMTI1LjUwIiB4Mj0iMTUwLjAwIiB5Mj0iLTEyNS41MCIgc3Ryb2tlPSIjYjA2YTQwIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSIxMjkuMTUiIHk9Ii0xMTYuNTAiIGZvbnQtc2l6ZT0iMi40IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjN2EzZDFjIiBmb250LXdlaWdodD0ibm9ybWFsIj5UdW5uZWx3YW5kPC90ZXh0Pjx0ZXh0IHg9IjEyOS4xNSIgeT0iLTExMy41MCIgZm9udC1zaXplPSIyLjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM3YTNkMWMiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPihBbnNpY2h0KTwvdGV4dD48cmVjdCB4PSIxMDkuMDAiIHk9Ii0xMzUuOTAiIHdpZHRoPSIyMC4wMCIgaGVpZ2h0PSI0LjAwIiBmaWxsPSIjYzg2OTNmIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zNSIgLz48cmVjdCB4PSIxMzAuMDAiIHk9Ii0xMzUuOTAiIHdpZHRoPSIyMC4wMCIgaGVpZ2h0PSI0LjAwIiBmaWxsPSIjYzg2OTNmIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zNSIgLz48cmVjdCB4PSIxMDkuMDAiIHk9Ii0xNDMuOTAiIHdpZHRoPSI0MS4wMCIgaGVpZ2h0PSI4LjAwIiBmaWxsPSJ1cmwoI3BJc28pIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zNSIgLz48cmVjdCB4PSIxMDkuMDAiIHk9Ii0xNDYuOTAiIHdpZHRoPSI0MS4wMCIgaGVpZ2h0PSIzLjAwIiBmaWxsPSIjZTdlM2RjIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zNSIgLz48cmVjdCB4PSIxNTAuMDAiIHk9Ii0xNDYuOTAiIHdpZHRoPSIzLjAwIiBoZWlnaHQ9IjU2LjkwIiBmaWxsPSIjZTdlM2RjIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC4zNSIgLz48cmVjdCB4PSIxMjIuMDAiIHk9Ii0yMzUuOTAiIHdpZHRoPSIxNS4wMCIgaGVpZ2h0PSIxMDAuMDAiIGZpbGw9IiNjN2NjZDEiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjQiIC8+PHJlY3QgeD0iMTIyLjAwIiB5PSItMTM1LjkwIiB3aWR0aD0iMTUuMDAiIGhlaWdodD0iNC4wMCIgZmlsbD0iIzJiMWQxNCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjAiIC8+PHBhdGggZD0iTSA3OC4wIC0xMzQuNSBRIDEyNC41IC0xMjkuOSAxMjkuNSAtMTU1LjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIwLjgiIHN0cm9rZS1kYXNoYXJyYXk9IjIgMS41IiBtYXJrZXItZW5kPSJ1cmwoI2FycikiLz48dGV4dCB4PSIxMzguNTAiIHk9Ii0xNjUuOTAiIGZvbnQtc2l6ZT0iMi42IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiM2NjYiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPlJhdWNoPC90ZXh0PjxyZWN0IHg9IjE1MC41MCIgeT0iLTEzMy45MCIgd2lkdGg9IjEuMjAiIGhlaWdodD0iMzEuNDAiIGZpbGw9IiMzMzMiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9IjE2MC4wMCIgeTE9IjIwLjAwIiB4Mj0iMTcyLjAwIiB5Mj0iMjAuMDAiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iMTczLjAwIiB5PSIyMS4wMCIgZm9udC1zaXplPSIyLjgiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzIyMiIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+4pGgIEtpZXNrb2ZmZXIgMC8zMS41LCAyMCBjbSB2ZXJkaWNodGV0ICgxNzAgeCAxNzApPC90ZXh0PjxsaW5lIHgxPSIxNjAuMDAiIHkxPSIzLjAwIiB4Mj0iMTcyLjAwIiB5Mj0iMy4wMCIgc3Ryb2tlPSIjODg4IiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSIxNzMuMDAiIHk9IjQuMDAiIGZvbnQtc2l6ZT0iMi44IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPuKRoSBGdW5kYW1lbnRwbGF0dGUgQzI1LzMwLCAxNSBjbSwgUTE4OEE8L3RleHQ+PGxpbmUgeDE9IjE2MC4wMCIgeTE9Ii00Mi4wMCIgeDI9IjE3Mi4wMCIgeTI9Ii00Mi4wMCIgc3Ryb2tlPSIjODg4IiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSIxNzMuMDAiIHk9Ii00MS4wMCIgZm9udC1zaXplPSIyLjgiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzIyMiIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+4pGiIFNvY2tlbCBTY2hhbHVuZ3NzdGVpbmUgMjQgY20sIDMgTGFnZW4sIGdlZsO8bGx0PC90ZXh0PjxsaW5lIHgxPSIxNjAuMDAiIHkxPSItODUuMDAiIHgyPSIxNzIuMDAiIHkyPSItODUuMDAiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iMTczLjAwIiB5PSItODQuMDAiIGZvbnQtc2l6ZT0iMi44IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPuKRoyBIZXJkcGxhdHRlIFN0YWhsYmV0b24gMTAgY20sIFExODhBPC90ZXh0PjxsaW5lIHgxPSIxNjAuMDAiIHkxPSItOTUuMDAiIHgyPSIxNzIuMDAiIHkyPSItOTUuMDAiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iMTczLjAwIiB5PSItOTQuMDAiIGZvbnQtc2l6ZT0iMi44IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPuKRpCBQZXJsaXQtWmVtZW50IDU6MSwgMTAgY20gKEJvZGVuZMOkbW11bmcpPC90ZXh0PjxsaW5lIHgxPSIxNjAuMDAiIHkxPSItMTAyLjUwIiB4Mj0iMTcyLjAwIiB5Mj0iLTEwMi41MCIgc3Ryb2tlPSIjODg4IiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSIxNzMuMDAiIHk9Ii0xMDEuNTAiIGZvbnQtc2l6ZT0iMi44IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPuKRpSBCYWNrYm9kZW4gU2NoYW1vdHRwbGF0dGVuIDQwIG1tIGF1ZiA1IG1tIFNhbmRiZXR0PC90ZXh0PjxsaW5lIHgxPSIxNjAuMDAiIHkxPSItMTI2LjUwIiB4Mj0iMTcyLjAwIiB5Mj0iLTEyNi41MCIgc3Ryb2tlPSIjODg4IiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSIxNzMuMDAiIHk9Ii0xMjUuNTAiIGZvbnQtc2l6ZT0iMi44IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPuKRpiBLdXBwZWwgU2NoYW1vdHQtSGFsYnN0ZWluZSA2LjQgY20sIDUgUmVpaGVuICsgU2NobHVzczwvdGV4dD48bGluZSB4MT0iMTYwLjAwIiB5MT0iLTE1NC45MCIgeDI9IjE3Mi4wMCIgeTI9Ii0xNTQuOTAiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iMTczLjAwIiB5PSItMTUzLjkwIiBmb250LXNpemU9IjIuOCIgdGV4dC1hbmNob3I9InN0YXJ0IiBmaWxsPSIjMjIyIiBmb250LXdlaWdodD0ibm9ybWFsIj7ikacgUGVybGl0LVplbWVudCA4IGNtIChLdXBwZWxkw6RtbXVuZyk8L3RleHQ+PGxpbmUgeDE9IjE2MC4wMCIgeTE9Ii0xNjAuOTAiIHgyPSIxNzIuMDAiIHkyPSItMTYwLjkwIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjx0ZXh0IHg9IjE3My4wMCIgeT0iLTE1OS45MCIgZm9udC1zaXplPSIyLjgiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzIyMiIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+4pGoIERyYWh0Z2VmbGVjaHQgKyBBdXNzZW5wdXR6IDMgY208L3RleHQ+PGxpbmUgeDE9IjE2MC4wMCIgeTE9Ii0xODUuOTAiIHgyPSIxNzIuMDAiIHkyPSItMTg1LjkwIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjx0ZXh0IHg9IjE3My4wMCIgeT0iLTE4NC45MCIgZm9udC1zaXplPSIyLjgiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzIyMiIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+4pGpIEthbWlucm9ociBFZGVsc3RhaGwgw5gxNTAsIDEuMCBtPC90ZXh0PjxsaW5lIHgxPSIwLjAwIiB5MT0iMzYuMDAiIHgyPSIxNTAuMDAiIHkyPSIzNi4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMjUiIG1hcmtlci1zdGFydD0idXJsKCNhcnIpIiBtYXJrZXItZW5kPSJ1cmwoI2FycikiLz48bGluZSB4MT0iMC4wMCIgeTE9IjM0LjAwIiB4Mj0iMC4wMCIgeTI9IjM4LjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSIxNTAuMDAiIHkxPSIzNC4wMCIgeDI9IjE1MC4wMCIgeTI9IjM4LjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjx0ZXh0IHg9Ijc1LjAwIiB5PSIzNC44MCIgZm9udC1zaXplPSIzLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPkZ1bmRhbWVudCAxNTA8L3RleHQ+PGxpbmUgeDE9IjIzLjAwIiB5MT0iLTExMi41MCIgeDI9IjExMy4wMCIgeTI9Ii0xMTIuNTAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjI1IiBtYXJrZXItc3RhcnQ9InVybCgjYXJyKSIgbWFya2VyLWVuZD0idXJsKCNhcnIpIi8+PGxpbmUgeDE9IjIzLjAwIiB5MT0iLTExNC41MCIgeDI9IjIzLjAwIiB5Mj0iLTExMC41MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iMTEzLjAwIiB5MT0iLTExNC41MCIgeDI9IjExMy4wMCIgeTI9Ii0xMTAuNTAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iNjguMDAiIHk9Ii0xMTMuNzAiIGZvbnQtc2l6ZT0iMy4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMWM0ZjhhIiBmb250LXdlaWdodD0ibm9ybWFsIj7DmCBpbm5lbiA5MDwvdGV4dD48bGluZSB4MT0iMC4wMCIgeTE9Ii0yMTUuOTAiIHgyPSI2OC4wMCIgeTI9Ii0yMTUuOTAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjI1IiBtYXJrZXItc3RhcnQ9InVybCgjYXJyKSIgbWFya2VyLWVuZD0idXJsKCNhcnIpIi8+PGxpbmUgeDE9IjAuMDAiIHkxPSItMjE3LjkwIiB4Mj0iMC4wMCIgeTI9Ii0yMTMuOTAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9IjY4LjAwIiB5MT0iLTIxNy45MCIgeDI9IjY4LjAwIiB5Mj0iLTIxMy45MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSIzNC4wMCIgeT0iLTIxNy4xMCIgZm9udC1zaXplPSIzLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPkFjaHNlIEt1cHBlbCA2ODwvdGV4dD48bGluZSB4MT0iMTA4LjMwIiB5MT0iLTIxNS45MCIgeDI9IjE1MC4wMCIgeTI9Ii0yMTUuOTAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjI1IiBtYXJrZXItc3RhcnQ9InVybCgjYXJyKSIgbWFya2VyLWVuZD0idXJsKCNhcnIpIi8+PGxpbmUgeDE9IjEwOC4zMCIgeTE9Ii0yMTcuOTAiIHgyPSIxMDguMzAiIHkyPSItMjEzLjkwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSIxNTAuMDAiIHkxPSItMjE3LjkwIiB4Mj0iMTUwLjAwIiB5Mj0iLTIxMy45MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSIxMjkuMTUiIHk9Ii0yMTcuMTAiIGZvbnQtc2l6ZT0iMy4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMWM0ZjhhIiBmb250LXdlaWdodD0ibm9ybWFsIj5UdW5uZWwgNDEuNzwvdGV4dD48bGluZSB4MT0iLTguMDAiIHkxPSItMTA0LjUwIiB4Mj0iLTguMDAiIHkyPSItMTQ0LjUwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yNSIgbWFya2VyLXN0YXJ0PSJ1cmwoI2FycikiIG1hcmtlci1lbmQ9InVybCgjYXJyKSIvPjxsaW5lIHgxPSItMTAuMDAiIHkxPSItMTA0LjUwIiB4Mj0iLTYuMDAiIHkyPSItMTA0LjUwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSItMTAuMDAiIHkxPSItMTQ0LjUwIiB4Mj0iLTYuMDAiIHkyPSItMTQ0LjUwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjx0ZXh0IHg9Ii02LjQwIiB5PSItMTI0LjUwIiBmb250LXNpemU9IjIuNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFjNGY4YSIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIC02LjQwIC0xMjQuNTApIj5oIGlubmVuIDQwPC90ZXh0PjxsaW5lIHgxPSIxNTUuMDAiIHkxPSItMTA0LjUwIiB4Mj0iMTU1LjAwIiB5Mj0iLTEzMS45MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMjUiIG1hcmtlci1zdGFydD0idXJsKCNhcnIpIiBtYXJrZXItZW5kPSJ1cmwoI2FycikiLz48bGluZSB4MT0iMTUzLjAwIiB5MT0iLTEwNC41MCIgeDI9IjE1Ny4wMCIgeTI9Ii0xMDQuNTAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9IjE1My4wMCIgeTE9Ii0xMzEuOTAiIHgyPSIxNTcuMDAiIHkyPSItMTMxLjkwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjx0ZXh0IHg9IjE1Ni42MCIgeT0iLTExOC4yMCIgZm9udC1zaXplPSIyLjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiIHRyYW5zZm9ybT0icm90YXRlKC05MCAxNTYuNjAgLTExOC4yMCkiPlTDvHIgMjcuNDwvdGV4dD48dGV4dCB4PSItMzUuMDAiIHk9Ii0yNDkuOTAiIGZvbnQtc2l6ZT0iNC41IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJib2xkIj5TQ0hOSVRUIEHigJNBIChMw6RuZ3NzY2huaXR0IE1pdHRlKSAgMToyMDwvdGV4dD48dGV4dCB4PSItMzUuMDAiIHk9Ii0yNDMuOTAiIGZvbnQtc2l6ZT0iMyIgdGV4dC1hbmNob3I9InN0YXJ0IiBmaWxsPSIjNTU1IiBmb250LXdlaWdodD0ibm9ybWFsIj5TY2hpY2h0YXVmYmF1IHZvbiB1bnRlbiBuYWNoIG9iZW4g4pGgIOKAkyDikaksIE1hc3NlIGluIGNtLCDCsTAgPSBUZXJyYWluPC90ZXh0Pjx0ZXh0IHg9Ii0xMy4wMCIgeT0iMjYuMDAiIGZvbnQtc2l6ZT0iMi4yIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiM4YTNiMTIiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPkFic3RhbmQgTWF1ZXIg4omlIDEwIGNtIChBTk5BSE1FKTwvdGV4dD48L3N2Zz4=" alt="Schnitt A-A" loading="lazy"><figcaption>Schnitt A-A</figcaption></figure>
+<h3 id="draufsicht">Draufsicht</h3>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMzAwIiBoZWlnaHQ9IjEwMDAiIHZpZXdCb3g9Ii00NSAtNjIgMzMwIDI2MiIgZm9udC1mYW1pbHk9IkRlamFWdSBTYW5zLCBBcmlhbCwgc2Fucy1zZXJpZiI+PHRpdGxlPkRyYXVmc2ljaHQ8L3RpdGxlPjxkZWZzPgo8cGF0dGVybiBpZD0icEtpZXMiIHdpZHRoPSI0IiBoZWlnaHQ9IjQiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNkOGNmYjgiLz48Y2lyY2xlIGN4PSIxIiBjeT0iMSIgcj0iMC41NSIgZmlsbD0iIzhmODA2MCIvPjxjaXJjbGUgY3g9IjMiIGN5PSIyLjgiIHI9IjAuNyIgZmlsbD0iI2E4OTc3YSIvPjwvcGF0dGVybj4KPHBhdHRlcm4gaWQ9InBCZXRvbiIgd2lkdGg9IjYiIGhlaWdodD0iNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHJlY3Qgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0iI2M5Y2RkMiIvPjxjaXJjbGUgY3g9IjEuNSIgY3k9IjIiIHI9IjAuMzUiIGZpbGw9IiM3ZDgzOGIiLz48Y2lyY2xlIGN4PSI0LjMiIGN5PSI0LjUiIHI9IjAuNSIgZmlsbD0iIzhjOTI5YSIvPjxwYXRoIGQ9Ik0zLjUgMSBsMC43IDAuNiBsLTAuOSAwLjJ6IiBmaWxsPSIjN2Q4MzhiIi8+PC9wYXR0ZXJuPgo8cGF0dGVybiBpZD0icFNjaGFsIiB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjYjliZmM2Ii8+PGxpbmUgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjUiIHN0cm9rZT0iIzZkNzQ3YyIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3BhdHRlcm4+CjxwYXR0ZXJuIGlkPSJwUGVybGl0IiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZjNlN2IzIi8+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjAuNDUiIGZpbGw9IiNmZmZhZjAiIHN0cm9rZT0iI2M4YjQ2YSIgc3Ryb2tlLXdpZHRoPSIwLjE1Ii8+PC9wYXR0ZXJuPgo8cGF0dGVybiBpZD0icElzbyIgd2lkdGg9IjQiIGhlaWdodD0iNCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHJlY3Qgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI2Y2ZWRjOSIvPjxjaXJjbGUgY3g9IjEiIGN5PSIzIiByPSIwLjQiIGZpbGw9IiNmZmZhZjAiIHN0cm9rZT0iI2M4YjQ2YSIgc3Ryb2tlLXdpZHRoPSIwLjEyIi8+PGNpcmNsZSBjeD0iMyIgY3k9IjEiIHI9IjAuNCIgZmlsbD0iI2ZmZmFmMCIgc3Ryb2tlPSIjYzhiNDZhIiBzdHJva2Utd2lkdGg9IjAuMTIiLz48L3BhdHRlcm4+CjxwYXR0ZXJuIGlkPSJwRXJkZSIgd2lkdGg9IjYiIGhlaWdodD0iNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHJlY3Qgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0iI2NkYjQ4ZiIvPjxwYXRoIGQ9Ik0wIDYgTDYgMCIgc3Ryb2tlPSIjYTA4NTVmIiBzdHJva2Utd2lkdGg9IjAuNCIvPjwvcGF0dGVybj4KPG1hcmtlciBpZD0iYXJyIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjEwIiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNSIgbWFya2VySGVpZ2h0PSI1IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAgMCBMMTAgNSBMMCAxMCB6IiBmaWxsPSIjMWM0ZjhhIi8+PC9tYXJrZXI+CjwvZGVmcz48cmVjdCB4PSItNDUiIHk9Ii02MiIgd2lkdGg9IjMzMCIgaGVpZ2h0PSIyNjIiIGZpbGw9IiNmZmZmZmYiLz48cmVjdCB4PSItMzAuMDAiIHk9Ii0zOC4wMCIgd2lkdGg9IjIxMC4wMCIgaGVpZ2h0PSIyMi4wMCIgZmlsbD0iIzlhYTFhOCIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuNCIgLz48dGV4dCB4PSI3NS4wMCIgeT0iLTI1LjAwIiBmb250LXNpemU9IjMuMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZiIgZm9udC13ZWlnaHQ9ImJvbGQiPkJldG9ubWF1ZXIgKEFic3RhbmQgRnVuZGFtZW50IOKJpSAxMCBjbSk8L3RleHQ+PHJlY3QgeD0iLTEwLjAwIiB5PSItMTAuMDAiIHdpZHRoPSIxNzAuMDAiIGhlaWdodD0iMTcwLjAwIiBmaWxsPSJ1cmwoI3BLaWVzKSIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMyIgc3Ryb2tlLWRhc2hhcnJheT0iMS41IDEiIG9wYWNpdHk9IjAuNyIvPjxyZWN0IHg9IjAuMDAiIHk9IjAuMDAiIHdpZHRoPSIxNTAuMDAiIGhlaWdodD0iMTUwLjAwIiBmaWxsPSJ1cmwoI3BCZXRvbikiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjM1IiAvPjxyZWN0IHg9IjAuMDAiIHk9IjAuMDAiIHdpZHRoPSIxNTAuMDAiIGhlaWdodD0iMjQuMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzU1NSIgc3Ryb2tlLXdpZHRoPSIwLjM1IiBzdHJva2UtZGFzaGFycmF5PSIyIDEiLz48cmVjdCB4PSIwLjAwIiB5PSIyNC4wMCIgd2lkdGg9IjI0LjAwIiBoZWlnaHQ9IjEyNi4wMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNTU1IiBzdHJva2Utd2lkdGg9IjAuMzUiIHN0cm9rZS1kYXNoYXJyYXk9IjIgMSIvPjxyZWN0IHg9IjEyNi4wMCIgeT0iMjQuMDAiIHdpZHRoPSIyNC4wMCIgaGVpZ2h0PSIxMjYuMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzU1NSIgc3Ryb2tlLXdpZHRoPSIwLjM1IiBzdHJva2UtZGFzaGFycmF5PSIyIDEiLz48cmVjdCB4PSIzOS42MCIgeT0iODguMDAiIHdpZHRoPSI3MC44MCIgaGVpZ2h0PSI2NS4wMCIgZmlsbD0iI2U3ZTNkYyIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuNSIgLz48Y2lyY2xlIGN4PSI3NS4wIiBjeT0iNjguMCIgcj0iNjIuNCIgZmlsbD0iI2U3ZTNkYyIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuNSIvPjxyZWN0IHg9IjM5Ljg1IiB5PSIxMTkuMzkiIHdpZHRoPSI3MC4zMCIgaGVpZ2h0PSIzMy42MSIgZmlsbD0iI2U3ZTNkYyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjAiIC8+PGxpbmUgeDE9IjM5LjYwIiB5MT0iMTE5LjM5IiB4Mj0iMzkuNjAiIHkyPSIxNTMuMDAiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjUiIC8+PGxpbmUgeDE9IjExMC40MCIgeTE9IjExOS4zOSIgeDI9IjExMC40MCIgeTI9IjE1My4wMCIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuNSIgLz48bGluZSB4MT0iMzkuNjAiIHkxPSIxNTMuMDAiIHgyPSIxMTAuNDAiIHkyPSIxNTMuMDAiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjUiIC8+PGNpcmNsZSBjeD0iNzUuMCIgY3k9IjY4LjAiIHI9IjU5LjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzdhM2QxYyIgc3Ryb2tlLXdpZHRoPSIwLjI1IiBzdHJva2UtZGFzaGFycmF5PSIyIDEiLz48Y2lyY2xlIGN4PSI3NS4wIiBjeT0iNjguMCIgcj0iNTEuNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN2EzZDFjIiBzdHJva2Utd2lkdGg9IjAuMjUiIHN0cm9rZS1kYXNoYXJyYXk9IjIgMSIvPjxjaXJjbGUgY3g9Ijc1LjAiIGN5PSI2OC4wIiByPSI0NS4wIiBmaWxsPSJub25lIiBzdHJva2U9IiM3YTNkMWMiIHN0cm9rZS13aWR0aD0iMC40NSIgc3Ryb2tlLWRhc2hhcnJheT0iMCIvPjxyZWN0IHg9IjU1LjAwIiB5PSIxMDguMzAiIHdpZHRoPSI0MC4wMCIgaGVpZ2h0PSI0MS43MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN2EzZDFjIiBzdHJva2Utd2lkdGg9IjAuNDUiIHN0cm9rZS1kYXNoYXJyYXk9IjIgMSIvPjxjaXJjbGUgY3g9Ijc1LjAiIGN5PSIxMjkuNSIgcj0iNy41IiBmaWxsPSIjYzdjY2QxIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC41Ii8+PHRleHQgeD0iNzUuMDAiIHk9IjEzMC41MCIgZm9udC1zaXplPSIyLjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPsOYMTU8L3RleHQ+PHRleHQgeD0iNzUuMDAiIHk9IjY4LjAwIiBmb250LXNpemU9IjMuNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzdhM2QxYyIgZm9udC13ZWlnaHQ9ImJvbGQiPkJhY2tyYXVtIMOYIDkwPC90ZXh0Pjx0ZXh0IHg9Ijc1LjAwIiB5PSI3My4wMCIgZm9udC1zaXplPSIyLjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM3YTNkMWMiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPkt1cHBlbCBhdXNzZW4gw5ggMTI0Ljg8L3RleHQ+PGxpbmUgeDE9IjAuMDAiIHkxPSIxNjguMDAiIHgyPSIxNTAuMDAiIHkyPSIxNjguMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjI1IiBtYXJrZXItc3RhcnQ9InVybCgjYXJyKSIgbWFya2VyLWVuZD0idXJsKCNhcnIpIi8+PGxpbmUgeDE9IjAuMDAiIHkxPSIxNjYuMDAiIHgyPSIwLjAwIiB5Mj0iMTcwLjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSIxNTAuMDAiIHkxPSIxNjYuMDAiIHgyPSIxNTAuMDAiIHkyPSIxNzAuMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iNzUuMDAiIHk9IjE2Ni44MCIgZm9udC1zaXplPSIzLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPkZ1bmRhbWVudCAxNTA8L3RleHQ+PGxpbmUgeDE9Ii0xMC4wMCIgeTE9IjE3OC4wMCIgeDI9IjE2MC4wMCIgeTI9IjE3OC4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMjUiIG1hcmtlci1zdGFydD0idXJsKCNhcnIpIiBtYXJrZXItZW5kPSJ1cmwoI2FycikiLz48bGluZSB4MT0iLTEwLjAwIiB5MT0iMTc2LjAwIiB4Mj0iLTEwLjAwIiB5Mj0iMTgwLjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSIxNjAuMDAiIHkxPSIxNzYuMDAiIHgyPSIxNjAuMDAiIHkyPSIxODAuMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iNzUuMDAiIHk9IjE3Ni44MCIgZm9udC1zaXplPSIzLjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPktpZXNrb2ZmZXIgMTcwPC90ZXh0PjxsaW5lIHgxPSIxNjIuMDAiIHkxPSIwLjAwIiB4Mj0iMTYyLjAwIiB5Mj0iMTUwLjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yNSIgbWFya2VyLXN0YXJ0PSJ1cmwoI2FycikiIG1hcmtlci1lbmQ9InVybCgjYXJyKSIvPjxsaW5lIHgxPSIxNjAuMDAiIHkxPSIwLjAwIiB4Mj0iMTY0LjAwIiB5Mj0iMC4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iMTYwLjAwIiB5MT0iMTUwLjAwIiB4Mj0iMTY0LjAwIiB5Mj0iMTUwLjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjx0ZXh0IHg9IjE2My42MCIgeT0iNzUuMDAiIGZvbnQtc2l6ZT0iMy4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMWM0ZjhhIiBmb250LXdlaWdodD0ibm9ybWFsIiB0cmFuc2Zvcm09InJvdGF0ZSgtOTAgMTYzLjYwIDc1LjAwKSI+MTUwPC90ZXh0PjxsaW5lIHgxPSItNS4wMCIgeTE9IjAuMDAiIHgyPSItNS4wMCIgeTI9IjY4LjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yNSIgbWFya2VyLXN0YXJ0PSJ1cmwoI2FycikiIG1hcmtlci1lbmQ9InVybCgjYXJyKSIvPjxsaW5lIHgxPSItNy4wMCIgeTE9IjAuMDAiIHgyPSItMy4wMCIgeTI9IjAuMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9Ii03LjAwIiB5MT0iNjguMDAiIHgyPSItMy4wMCIgeTI9IjY4LjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjx0ZXh0IHg9Ii02LjYwIiB5PSIzNC4wMCIgZm9udC1zaXplPSIyLjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiIHRyYW5zZm9ybT0icm90YXRlKC05MCAtNi42MCAzNC4wMCkiPjY4PC90ZXh0Pjx0ZXh0IHg9IjE1MC4wMCIgeT0iLTMuMDAiIGZvbnQtc2l6ZT0iMi42IiB0ZXh0LWFuY2hvcj0iZW5kIiBmaWxsPSIjOGEzYjEyIiBmb250LXdlaWdodD0ibm9ybWFsIj5LdXBwZWwgYmlzIEhpbnRlcmthbnRlOiA1LjYgY208L3RleHQ+PGxpbmUgeDE9IjU1LjAwIiB5MT0iMTQ1LjAwIiB4Mj0iOTUuMDAiIHkyPSIxNDUuMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjI1IiBtYXJrZXItc3RhcnQ9InVybCgjYXJyKSIgbWFya2VyLWVuZD0idXJsKCNhcnIpIi8+PGxpbmUgeDE9IjU1LjAwIiB5MT0iMTQzLjAwIiB4Mj0iNTUuMDAiIHkyPSIxNDcuMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9Ijk1LjAwIiB5MT0iMTQzLjAwIiB4Mj0iOTUuMDAiIHkyPSIxNDcuMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iNzUuMDAiIHk9IjE0My44MCIgZm9udC1zaXplPSIyLjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPlTDvHIgNDA8L3RleHQ+PGxpbmUgeDE9IjM5LjYwIiB5MT0iMTU5LjAwIiB4Mj0iMTEwLjQwIiB5Mj0iMTU5LjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yNSIgbWFya2VyLXN0YXJ0PSJ1cmwoI2FycikiIG1hcmtlci1lbmQ9InVybCgjYXJyKSIvPjxsaW5lIHgxPSIzOS42MCIgeTE9IjE1Ny4wMCIgeDI9IjM5LjYwIiB5Mj0iMTYxLjAwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjxsaW5lIHgxPSIxMTAuNDAiIHkxPSIxNTcuMDAiIHgyPSIxMTAuNDAiIHkyPSIxNjEuMDAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iNzUuMDAiIHk9IjE1Ny44MCIgZm9udC1zaXplPSIyLjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPlZvcmJhdSA3MC44PC90ZXh0Pjx0ZXh0IHg9Ijc1LjAwIiB5PSIxOTAuMDAiIGZvbnQtc2l6ZT0iMy4yIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOGEzYjEyIiBmb250LXdlaWdodD0iYm9sZCI+4pa8IEFyYmVpdHNzZWl0ZSAvIFJhc2VuPC90ZXh0Pjx0ZXh0IHg9Ii00MC4wMCIgeT0iLTUzLjAwIiBmb250LXNpemU9IjQuNSIgdGV4dC1hbmNob3I9InN0YXJ0IiBmaWxsPSIjMjIyIiBmb250LXdlaWdodD0iYm9sZCI+RFJBVUZTSUNIVCAgMToyMDwvdGV4dD48dGV4dCB4PSItNDAuMDAiIHk9Ii00Ny4wMCIgZm9udC1zaXplPSIzIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiM1NTUiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPmdlc3RyaWNoZWx0ID0gdmVyZGVja3RlIEthbnRlbiAoU29ja2VsLCBTdGVpbmxhZ2UsIETDpG1tdW5nKTwvdGV4dD48dGV4dCB4PSIxOTAuMDAiIHk9IjEwLjAwIiBmb250LXNpemU9IjMiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzIyMiIgZm9udC13ZWlnaHQ9ImJvbGQiPkFic3TDpG5kZSAoRW1wZmVobHVuZyk6PC90ZXh0Pjx0ZXh0IHg9IjE5MC4wMCIgeT0iMTcuMDAiIGZvbnQtc2l6ZT0iMi44IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPuKAoiBNYXVlciAobmljaHQgYnJlbm5iYXIpOiDiiaUgMTAgY208L3RleHQ+PHRleHQgeD0iMTkwLjAwIiB5PSIyMy4wMCIgZm9udC1zaXplPSIyLjgiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzIyMiIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+4oCiIFJhc2VuOiA1MCBjbSBLaWVzLS9QbGF0dGVuc3RyZWlmZW48L3RleHQ+PHRleHQgeD0iMTkwLjAwIiB5PSIyOS4wMCIgZm9udC1zaXplPSIyLjgiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzIyMiIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+4oCiIEZlaWdlbmJhdW06IEtyb25lIOKJpSAzIG0gdm9tIEthbWluPC90ZXh0Pjx0ZXh0IHg9IjE5MC4wMCIgeT0iMzUuMDAiIGZvbnQtc2l6ZT0iMi44IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPuKAoiBOYWNoYmFyZ3JlbnplOiDiiaUgMiBtIChCYXVWIEFHIMKnIDE5KTwvdGV4dD48dGV4dCB4PSIxOTAuMDAiIHk9IjQxLjAwIiBmb250LXNpemU9IjIuOCIgdGV4dC1hbmNob3I9InN0YXJ0IiBmaWxsPSIjMjIyIiBmb250LXdlaWdodD0ibm9ybWFsIj7igKIgQnJlbm5iYXJlcyAoSG9seiwgTcO2YmVsKTog4omlIDEuNSBtIHZvciBUw7xyPC90ZXh0Pjwvc3ZnPg==" alt="Draufsicht" loading="lazy"><figcaption>Draufsicht</figcaption></figure>
+<h3 id="kuppelschnitt-mit-steinreihen-und-neigungen">Kuppelschnitt mit Steinreihen und Neigungen</h3>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMzAwIiBoZWlnaHQ9Ijg2MCIgdmlld0JveD0iMTUgLTIyNS42MDAwMDAwMDAwMDAwMiAyNjAgMjY1LjIwMDAwMDAwMDAwMDA1IiBmb250LWZhbWlseT0iRGVqYVZ1IFNhbnMsIEFyaWFsLCBzYW5zLXNlcmlmIj48dGl0bGU+S3VwcGVsc2Nobml0dCBTdGVpbnJlaWhlbjwvdGl0bGU+PGRlZnM+CjxwYXR0ZXJuIGlkPSJwS2llcyIgd2lkdGg9IjQiIGhlaWdodD0iNCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHJlY3Qgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI2Q4Y2ZiOCIvPjxjaXJjbGUgY3g9IjEiIGN5PSIxIiByPSIwLjU1IiBmaWxsPSIjOGY4MDYwIi8+PGNpcmNsZSBjeD0iMyIgY3k9IjIuOCIgcj0iMC43IiBmaWxsPSIjYTg5NzdhIi8+PC9wYXR0ZXJuPgo8cGF0dGVybiBpZD0icEJldG9uIiB3aWR0aD0iNiIgaGVpZ2h0PSI2IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cmVjdCB3aWR0aD0iNiIgaGVpZ2h0PSI2IiBmaWxsPSIjYzljZGQyIi8+PGNpcmNsZSBjeD0iMS41IiBjeT0iMiIgcj0iMC4zNSIgZmlsbD0iIzdkODM4YiIvPjxjaXJjbGUgY3g9IjQuMyIgY3k9IjQuNSIgcj0iMC41IiBmaWxsPSIjOGM5MjlhIi8+PHBhdGggZD0iTTMuNSAxIGwwLjcgMC42IGwtMC45IDAuMnoiIGZpbGw9IiM3ZDgzOGIiLz48L3BhdHRlcm4+CjxwYXR0ZXJuIGlkPSJwU2NoYWwiIHdpZHRoPSI1IiBoZWlnaHQ9IjUiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSI1IiBoZWlnaHQ9IjUiIGZpbGw9IiNiOWJmYzYiLz48bGluZSB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iNSIgc3Ryb2tlPSIjNmQ3NDdjIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvcGF0dGVybj4KPHBhdHRlcm4gaWQ9InBQZXJsaXQiIHdpZHRoPSI0IiBoZWlnaHQ9IjQiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmM2U3YjMiLz48Y2lyY2xlIGN4PSIyIiBjeT0iMiIgcj0iMC40NSIgZmlsbD0iI2ZmZmFmMCIgc3Ryb2tlPSIjYzhiNDZhIiBzdHJva2Utd2lkdGg9IjAuMTUiLz48L3BhdHRlcm4+CjxwYXR0ZXJuIGlkPSJwSXNvIiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZjZlZGM5Ii8+PGNpcmNsZSBjeD0iMSIgY3k9IjMiIHI9IjAuNCIgZmlsbD0iI2ZmZmFmMCIgc3Ryb2tlPSIjYzhiNDZhIiBzdHJva2Utd2lkdGg9IjAuMTIiLz48Y2lyY2xlIGN4PSIzIiBjeT0iMSIgcj0iMC40IiBmaWxsPSIjZmZmYWYwIiBzdHJva2U9IiNjOGI0NmEiIHN0cm9rZS13aWR0aD0iMC4xMiIvPjwvcGF0dGVybj4KPHBhdHRlcm4gaWQ9InBFcmRlIiB3aWR0aD0iNiIgaGVpZ2h0PSI2IiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cmVjdCB3aWR0aD0iNiIgaGVpZ2h0PSI2IiBmaWxsPSIjY2RiNDhmIi8+PHBhdGggZD0iTTAgNiBMNiAwIiBzdHJva2U9IiNhMDg1NWYiIHN0cm9rZS13aWR0aD0iMC40Ii8+PC9wYXR0ZXJuPgo8bWFya2VyIGlkPSJhcnIiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iMTAiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI1IiBtYXJrZXJIZWlnaHQ9IjUiIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCAwIEwxMCA1IEwwIDEwIHoiIGZpbGw9IiMxYzRmOGEiLz48L21hcmtlcj4KPC9kZWZzPjxyZWN0IHg9IjE1IiB5PSItMjI1LjYwMDAwMDAwMDAwMDAyIiB3aWR0aD0iMjYwIiBoZWlnaHQ9IjI2NS4yMDAwMDAwMDAwMDAwNSIgZmlsbD0iI2ZmZmZmZiIvPjxyZWN0IHg9IjE5LjAwIiB5PSItMTAuMDAiIHdpZHRoPSIxNDEuNjgiIGhlaWdodD0iOC44MCIgZmlsbD0iI2M4NjkzZiIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuMzUiIC8+PHRleHQgeD0iNTIuMDAiIHk9Ii00LjYwIiBmb250LXNpemU9IjIuOCIgdGV4dC1hbmNob3I9InN0YXJ0IiBmaWxsPSIjZmZmIiBmb250LXdlaWdodD0ibm9ybWFsIj5CYWNrYm9kZW4gKFNjaGFtb3R0cGxhdHRlIDQwIG1tKTwvdGV4dD48bGluZSB4MT0iMzAuMDAiIHkxPSItMS4yMCIgeDI9IjMwLjAwIiB5Mj0iLTEyNC40MCIgc3Ryb2tlPSIjOTk5IiBzdHJva2Utd2lkdGg9IjAuMyIgc3Ryb2tlLWRhc2hhcnJheT0iMiAxLjUiLz48dGV4dCB4PSIzMi4yMCIgeT0iLTEyMC4wMCIgZm9udC1zaXplPSIyLjYiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzc3NyIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+S3VwcGVsYWNoc2U8L3RleHQ+PHBvbHlnb24gcG9pbnRzPSIxMjkuMDAsLTEwLjAwIDE0My4wOCwtMTAuMDAgMTM4LjQxLC0zOS4wMyAxMjUuMDQsLTM0LjY0IiBmaWxsPSIjZDk4NDRmIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC40IiAvPjx0ZXh0IHg9IjEzMy44OCIgeT0iLTIyLjQyIiBmb250LXNpemU9IjIuOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZiIgZm9udC13ZWlnaHQ9ImJvbGQiPlIxPC90ZXh0PjxsaW5lIHgxPSIxNDEuOTIiIHkxPSItMjQuNTYiIHgyPSIxODIuODYiIHkyPSItMzAuNDYiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIwLjI1IiAvPjx0ZXh0IHg9IjE4My44NiIgeT0iLTMxLjk2IiBmb250LXNpemU9IjIuOSIgdGV4dC1hbmNob3I9InN0YXJ0IiBmaWxsPSIjMjIyIiBmb250LXdlaWdodD0iYm9sZCI+UmVpaGUgMTogMjAgSGFsYnN0ZWluZSAo4oiSMyBUw7xyKTwvdGV4dD48dGV4dCB4PSIxODMuODYiIHk9Ii0yOC4yNiIgZm9udC1zaXplPSIyLjUiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzQ0NCIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+TGFnZXJmdWdlIDDCsCBnZW5laWd0IMK3IHogPSAwLjDigJMxMS4zIGNtIMK3IHIgPSA0NC41PC90ZXh0Pjxwb2x5Z29uIHBvaW50cz0iMTI0LjY1LC0zNS43OSAxMzcuOTYsLTQwLjM5IDEyNC4zMywtNjYuMzEgMTEyLjk3LC01Ny45OSIgZmlsbD0iI2Q5ODQ0ZiIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuNCIgLz48dGV4dCB4PSIxMjQuOTgiIHk9Ii00OS4xMiIgZm9udC1zaXplPSIyLjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmYiIGZvbnQtd2VpZ2h0PSJib2xkIj5SMjwvdGV4dD48bGluZSB4MT0iMTMyLjI5IiB5MT0iLTUzLjUyIiB4Mj0iMTY5LjcwIiB5Mj0iLTcxLjE1IiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMC4yNSIgLz48dGV4dCB4PSIxNzAuNzAiIHk9Ii03Mi42NSIgZm9udC1zaXplPSIyLjkiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzIyMiIgZm9udC13ZWlnaHQ9ImJvbGQiPlJlaWhlIDI6IDE4IEhhbGJzdGVpbmUgKOKIkjMgVMO8cik8L3RleHQ+PHRleHQgeD0iMTcwLjcwIiB5PSItNjguOTUiIGZvbnQtc2l6ZT0iMi41IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiM0NDQiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPkxhZ2VyZnVnZSAxOcKwIGdlbmVpZ3QgwrcgeiA9IDExLjjigJMyMS45IGNtIMK3IHIgPSA0MC43PC90ZXh0Pjxwb2x5Z29uIHBvaW50cz0iMTEyLjI1LC01OC45NyAxMjMuNDksLTY3LjQ0IDEwMi45MSwtODguMDQgOTQuMzgsLTc2Ljg0IiBmaWxsPSIjZDk4NDRmIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC40IiAvPjx0ZXh0IHg9IjEwOC4yNiIgeT0iLTcxLjgyIiBmb250LXNpemU9IjIuOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZiIgZm9udC13ZWlnaHQ9ImJvbGQiPlIzPC90ZXh0PjxsaW5lIHgxPSIxMTQuMjMiIHkxPSItNzguMTEiIHgyPSIxNDUuMDQiIHkyPSItMTA1LjcwIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMC4yNSIgLz48dGV4dCB4PSIxNDYuMDQiIHk9Ii0xMDcuMjAiIGZvbnQtc2l6ZT0iMi45IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJib2xkIj5SZWloZSAzOiAxOCBIYWxic3RlaW5lPC90ZXh0Pjx0ZXh0IHg9IjE0Ni4wNCIgeT0iLTEwMy41MCIgZm9udC1zaXplPSIyLjUiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzQ0NCIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+TGFnZXJmdWdlIDM3wrAgZ2VuZWlndCDCtyB6ID0gMjIuNOKAkzMwLjUgY20gwrcgciA9IDMzLjU8L3RleHQ+PHBvbHlnb24gcG9pbnRzPSI5My40MCwtNzcuNTcgMTAxLjc5LC04OC44OCA3Ni41MiwtMTAzLjA1IDcxLjIxLC05MC4wMSIgZmlsbD0iI2Q5ODQ0ZiIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuNCIgLz48dGV4dCB4PSI4NS43MyIgeT0iLTg4Ljg4IiBmb250LXNpemU9IjIuOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZiIgZm9udC13ZWlnaHQ9ImJvbGQiPlI0PC90ZXh0PjxsaW5lIHgxPSI4OS45NSIgeTE9Ii05Ni41NSIgeDI9IjExMS44OCIgeTI9Ii0xMzEuNjIiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIwLjI1IiAvPjx0ZXh0IHg9IjExMi44OCIgeT0iLTEzMy4xMiIgZm9udC1zaXplPSIyLjkiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzIyMiIgZm9udC13ZWlnaHQ9ImJvbGQiPlJlaWhlIDQ6IDEzIEhhbGJzdGVpbmU8L3RleHQ+PHRleHQgeD0iMTEyLjg4IiB5PSItMTI5LjQyIiBmb250LXNpemU9IjIuNSIgdGV4dC1hbmNob3I9InN0YXJ0IiBmaWxsPSIjNDQ0IiBmb250LXdlaWdodD0ibm9ybWFsIj5MYWdlcmZ1Z2UgNTPCsCBnZW5laWd0IMK3IHogPSAzMC444oCTMzYuNCBjbSDCtyByID0gMjMuODwvdGV4dD48cG9seWdvbiBwb2ludHM9IjcwLjAzLC05MC40OCA3NS4xOSwtMTAzLjU4IDQ3LjI3LC0xMTAuODggNDUuMzMsLTk2Ljk0IiBmaWxsPSIjZDk4NDRmIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMC40IiAvPjx0ZXh0IHg9IjU5LjQ2IiB5PSItOTkuNDciIGZvbnQtc2l6ZT0iMi44IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmIiBmb250LXdlaWdodD0iYm9sZCI+UjU8L3RleHQ+PGxpbmUgeDE9IjYxLjY4IiB5MT0iLTEwNy45OSIgeDI9IjczLjI2IiB5Mj0iLTE0Ny43MCIgc3Ryb2tlPSIjODg4IiBzdHJva2Utd2lkdGg9IjAuMjUiIC8+PHRleHQgeD0iNzQuMjYiIHk9Ii0xNDkuMjAiIGZvbnQtc2l6ZT0iMi45IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJib2xkIj5SZWloZSA1OiA3IEhhbGJzdGVpbmU8L3RleHQ+PHRleHQgeD0iNzQuMjYiIHk9Ii0xNDUuNTAiIGZvbnQtc2l6ZT0iMi41IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiM0NDQiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPkxhZ2VyZnVnZSA2OMKwIGdlbmVpZ3QgwrcgeiA9IDM2LjbigJMzOS41IGNtIMK3IHIgPSAxMi42PC90ZXh0Pjxwb2x5Z29uIHBvaW50cz0iMzAuMDAsLTk4LjAwIDMwLjAwLC0xMTIuMDggNDcuMDksLTExMS4xMyA0Mi44NywtOTcuMDUiIGZpbGw9IiNiNTY1M2EiIHN0cm9rZT0iIzIyMiIgc3Ryb2tlLXdpZHRoPSIwLjQiIC8+PGxpbmUgeDE9IjM4LjgwIiB5MT0iLTExMi4wOCIgeDI9IjYzLjAwIiB5Mj0iLTE2NC4wMCIgc3Ryb2tlPSIjODg4IiBzdHJva2Utd2lkdGg9IjAuMjUiIC8+PHRleHQgeD0iNjQuMDAiIHk9Ii0xNjUuNTAiIGZvbnQtc2l6ZT0iMi45IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJib2xkIj5TY2hsdXNzOiAxIHp1Z2VzY2huaXR0ZW5lciBTY2hsdXNzc3RlaW4gKMOYIGNhLiAxNCBjbSk8L3RleHQ+PHBvbHlsaW5lIHBvaW50cz0iMTI5LjAwLC0xMC4wMCAxMjguOTcsLTEyLjMwIDEyOC44NiwtMTQuNjEgMTI4LjY5LC0xNi45MCAxMjguNDYsLTE5LjIwIDEyOC4xNSwtMjEuNDkgMTI3Ljc4LC0yMy43NyAxMjcuMzQsLTI2LjA0IDEyNi44NCwtMjguMzAgMTI2LjI2LC0zMC41NCAxMjUuNjMsLTMyLjc4IDEyNC45MiwtMzQuOTkgMTI0LjE1LC0zNy4xOSAxMjMuMzIsLTM5LjM4IDEyMi40MiwtNDEuNTQgMTIxLjQ2LC00My42OCAxMjAuNDQsLTQ1Ljc5IDExOS4zNiwtNDcuODggMTE4LjIxLC00OS45NSAxMTcuMDAsLTUxLjk5IDExNS43NCwtNTQuMDAgMTE0LjQxLC01NS45OCAxMTMuMDMsLTU3LjkzIDExMS41OSwtNTkuODQgMTEwLjA5LC02MS43MyAxMDguNTQsLTYzLjU3IDEwNi45NCwtNjUuMzggMTA1LjI4LC02Ny4xNSAxMDMuNTcsLTY4Ljg4IDEwMS44MSwtNzAuNTggMTAwLjAwLC03Mi4yMyA5OC4xNSwtNzMuODMgOTYuMjQsLTc1LjQwIDk0LjMwLC03Ni45MiA5Mi4zMCwtNzguMzkgOTAuMjcsLTc5LjgyIDg4LjE5LC04MS4xOSA4Ni4wNywtODIuNTIgODMuOTIsLTgzLjgwIDgxLjczLC04NS4wMyA3OS41MCwtODYuMjEgNzcuMjQsLTg3LjM0IDc0Ljk1LC04OC40MSA3Mi42MiwtODkuNDMgNzAuMjcsLTkwLjM5IDY3Ljg5LC05MS4zMCA2NS40OCwtOTIuMTYgNjMuMDUsLTkyLjk1IDYwLjU5LC05My42OSA1OC4xMiwtOTQuMzggNTUuNjIsLTk1LjAwIDUzLjExLC05NS41NyA1MC41OCwtOTYuMDggNDguMDQsLTk2LjUzIDQ1LjQ5LC05Ni45MiA0Mi45MiwtOTcuMjUgNDAuMzUsLTk3LjUyIDM3Ljc3LC05Ny43MyAzNS4xOCwtOTcuODggMzIuNTksLTk3Ljk3IDMwLjAwLC05OC4wMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN2EzZDFjIiBzdHJva2Utd2lkdGg9IjAuNCIgc3Ryb2tlLWRhc2hhcnJheT0iMS41IDEiLz48cG9seWxpbmUgcG9pbnRzPSIxNjAuNjgsLTEwLjAwIDE2MC42NCwtMTMuMTMgMTYwLjUwLC0xNi4yNiAxNjAuMjgsLTE5LjM5IDE1OS45NiwtMjIuNTEgMTU5LjU2LC0yNS42MiAxNTkuMDcsLTI4LjcyIDE1OC40OSwtMzEuODEgMTU3LjgyLC0zNC44OCAxNTcuMDcsLTM3Ljk0IDE1Ni4yMywtNDAuOTggMTU1LjMwLC00My45OSAxNTQuMjgsLTQ2Ljk4IDE1My4xOCwtNDkuOTUgMTUyLjAwLC01Mi44OSAxNTAuNzMsLTU1LjgwIDE0OS4zOCwtNTguNjggMTQ3Ljk1LC02MS41MiAxNDYuNDQsLTY0LjMzIDE0NC44NCwtNjcuMTEgMTQzLjE3LC02OS44NCAxNDEuNDIsLTcyLjUzIDEzOS42MCwtNzUuMTggMTM3LjcwLC03Ny43OSAxMzUuNzIsLTgwLjM1IDEzMy42OCwtODIuODYgMTMxLjU2LC04NS4zMiAxMjkuMzcsLTg3LjczIDEyNy4xMSwtOTAuMDggMTI0Ljc5LC05Mi4zOCAxMjIuNDAsLTk0LjYzIDExOS45NSwtOTYuODEgMTE3LjQ0LC05OC45NCAxMTQuODcsLTEwMS4wMSAxMTIuMjQsLTEwMy4wMSAxMDkuNTUsLTEwNC45NSAxMDYuODEsLTEwNi44MiAxMDQuMDIsLTEwOC42MyAxMDEuMTcsLTExMC4zNyA5OC4yOCwtMTEyLjA0IDk1LjM0LC0xMTMuNjUgOTIuMzYsLTExNS4xOCA4OS4zMywtMTE2LjY0IDg2LjI2LC0xMTguMDIgODMuMTUsLTExOS4zMyA4MC4wMSwtMTIwLjU3IDc2LjgzLC0xMjEuNzMgNzMuNjIsLTEyMi44MiA3MC4zOCwtMTIzLjgyIDY3LjEyLC0xMjQuNzUgNjMuODIsLTEyNS42MCA2MC41MSwtMTI2LjM3IDU3LjE3LC0xMjcuMDYgNTMuODEsLTEyNy42OCA1MC40NCwtMTI4LjIxIDQ3LjA2LC0xMjguNjYgNDMuNjYsLTEyOS4wMiA0MC4yNSwtMTI5LjMxIDM2Ljg0LC0xMjkuNTIgMzMuNDIsLTEyOS42NCAzMC4wMCwtMTI5LjY4IiBmaWxsPSJub25lIiBzdHJva2U9IiNjOGI0NmEiIHN0cm9rZS13aWR0aD0iMC42IiBzdHJva2UtZGFzaGFycmF5PSIzIDEuNSIvPjx0ZXh0IHg9IjE2Mi44OCIgeT0iLTE2LjYwIiBmb250LXNpemU9IjIuNSIgdGV4dC1hbmNob3I9InN0YXJ0IiBmaWxsPSIjOWM4YTNmIiBmb250LXdlaWdodD0ibm9ybWFsIj5BdXNzZW5rYW50ZSBEw6RtbXVuZzwvdGV4dD48bGluZSB4MT0iMzAuMDAiIHkxPSI5LjgwIiB4Mj0iMTI5LjAwIiB5Mj0iOS44MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMjUiIG1hcmtlci1zdGFydD0idXJsKCNhcnIpIiBtYXJrZXItZW5kPSJ1cmwoI2FycikiLz48bGluZSB4MT0iMzAuMDAiIHkxPSI3LjgwIiB4Mj0iMzAuMDAiIHkyPSIxMS44MCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iMTI5LjAwIiB5MT0iNy44MCIgeDI9IjEyOS4wMCIgeTI9IjExLjgwIiBzdHJva2U9IiMxYzRmOGEiIHN0cm9rZS13aWR0aD0iMC4yIiAvPjx0ZXh0IHg9Ijc5LjUwIiB5PSI4LjYwIiBmb250LXNpemU9IjMuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFjNGY4YSIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+ciBpbm5lbiA0NTwvdGV4dD48bGluZSB4MT0iMTYuODAiIHkxPSItMTAuMDAiIHgyPSIxNi44MCIgeTI9Ii05OC4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMjUiIG1hcmtlci1zdGFydD0idXJsKCNhcnIpIiBtYXJrZXItZW5kPSJ1cmwoI2FycikiLz48bGluZSB4MT0iMTQuODAiIHkxPSItMTAuMDAiIHgyPSIxOC44MCIgeTI9Ii0xMC4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48bGluZSB4MT0iMTQuODAiIHkxPSItOTguMDAiIHgyPSIxOC44MCIgeTI9Ii05OC4wMCIgc3Ryb2tlPSIjMWM0ZjhhIiBzdHJva2Utd2lkdGg9IjAuMiIgLz48dGV4dCB4PSIxNS4yMCIgeT0iLTU0LjAwIiBmb250LXNpemU9IjMuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFjNGY4YSIgZm9udC13ZWlnaHQ9Im5vcm1hbCIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDE1LjIwIC01NC4wMCkiPmggaW5uZW4gNDA8L3RleHQ+PGxpbmUgeDE9IjEyOS4wMCIgeTE9IjIwLjgwIiB4Mj0iMTQzLjA4IiB5Mj0iMjAuODAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjI1IiBtYXJrZXItc3RhcnQ9InVybCgjYXJyKSIgbWFya2VyLWVuZD0idXJsKCNhcnIpIi8+PGxpbmUgeDE9IjEyOS4wMCIgeTE9IjE4LjgwIiB4Mj0iMTI5LjAwIiB5Mj0iMjIuODAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PGxpbmUgeDE9IjE0My4wOCIgeTE9IjE4LjgwIiB4Mj0iMTQzLjA4IiB5Mj0iMjIuODAiIHN0cm9rZT0iIzFjNGY4YSIgc3Ryb2tlLXdpZHRoPSIwLjIiIC8+PHRleHQgeD0iMTM2LjA0IiB5PSIxOS42MCIgZm9udC1zaXplPSIyLjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYzRmOGEiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPjYuNDwvdGV4dD48dGV4dCB4PSIyMC4wMCIgeT0iLTIxMi40MCIgZm9udC1zaXplPSI0IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiMyMjIiIGZvbnQtd2VpZ2h0PSJib2xkIj5LVVBQRUxTQ0hOSVRUIE1JVCBTVEVJTlJFSUhFTiAgKGhhbGJlciBTY2huaXR0LCBNYXNzc3RhYiBjYS4gMToxMCk8L3RleHQ+PHRleHQgeD0iMjAuMDAiIHk9Ii0yMDcuNDAiIGZvbnQtc2l6ZT0iMi44IiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZpbGw9IiM1NTUiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPkhhbGJlciBORi1TdGVpbiAxMjUgeCAxMjQgeCA2NCBtbSwgZmxhY2ggdmVybGVndDogRmzDpGNoZSAxMjUgeCAxMjQgemVpZ3QgbmFjaCBpbm5lbiwgNi40IGNtID0gS3VwcGVsc3TDpHJrZS4gRnVnZSA2IG1tLjwvdGV4dD48dGV4dCB4PSIyMC4wMCIgeT0iLTIwMy40MCIgZm9udC1zaXplPSIyLjgiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzU1NSIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+VG90YWw6IDc3IEhhbGJzdGVpbmUgKyAxMCAlIFZlcnNjaG5pdHQgPSA4NSA9IDQzIGdhbnplIE5GLVN0ZWluZS4gVHVubmVsIHp1c8OkdHpsaWNoIDE5IE5GLjwvdGV4dD48dGV4dCB4PSIyMC4wMCIgeT0iLTE5OS40MCIgZm9udC1zaXplPSIyLjgiIHRleHQtYW5jaG9yPSJzdGFydCIgZmlsbD0iIzU1NSIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+TmVpZ3VuZyA9IFdpbmtlbCBkZXIgTGFnZXJmdWdlIGdlZ2VuIGRpZSBXYWFncmVjaHRlOyBqZWRlIFJlaWhlIGF1ZiBTYW5kZm9ybS9MZWhyZSBzZXR6ZW4sIEZ1Z2VuIGlubmVuIGVuZywgYXVzc2VuIGtlaWxmw7ZybWlnLjwvdGV4dD48L3N2Zz4=" alt="Kuppelschnitt" loading="lazy"><figcaption>Kuppelschnitt</figcaption></figure>
+<p><strong>So setzt ihr die Reihen:</strong> Die „Neigung" ist der Winkel der Lagerfuge (der Fläche, auf der der Stein liegt) gegen die Waagrechte. Reihe 1 steht senkrecht auf dem Boden (0°), Reihe 5 ist schon um 68° nach innen gekippt. Ohne Unterstützung würde sie herunterrutschen. Deshalb wird die ganze Kuppel über eine <strong>Sandform</strong> gemauert: ein feuchter Sandhaufen in exakt der Innenform, abgezogen mit einer Sperrholz-Schablone (Halbellipse 90 × 40 cm), mit nassem Zeitungspapier abgedeckt.</p>
+<hr />
+<h2 id="4-einkaufsroute-für-heute-dienstag-13102026">4. Einkaufsroute für heute (Dienstag, 13.10.2026)</h2>
+<h3 id="41-händler">4.1 Händler</h3>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Händler</th>
+<th>Adresse</th>
+<th>Distanz / Fahrzeit ab Würenlos*</th>
+<th>Heute geöffnet</th>
+<th>Telefon</th>
+<th>Vorher anrufen?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>HORNBACH Affoltern am Albis</strong></td>
+<td>Obfelderstrasse 37, 8910 Affoltern a. A.</td>
+<td>26.6 km / ca. 25–30 min</td>
+<td><strong>07:00–19:00</strong> (laut Verzeichnissen; teils 20:00 angegeben → prüfen)</td>
+<td><strong>044 204 40 00</strong></td>
+<td><strong>JA</strong>: Schalungssteine einzeln? Edelstahlrohr Ø150 an Lager?</td>
+</tr>
+<tr class="even">
+<td><strong>OBI Volketswil</strong></td>
+<td>Industriestrasse 20, 8604 Volketswil</td>
+<td>31.8 km / ca. 30–35 min</td>
+<td><strong>08:00–20:00</strong> (obi.ch)</td>
+<td><strong>058 329 12 00</strong></td>
+<td><strong>JA</strong>: 62 Schamottsteine + 15 Platten reservieren (online „Reservieren &amp; Abholen", ca. 4 h), Mietgeräte</td>
+</tr>
+<tr class="odd">
+<td><strong>Tägerhard Kies AG (Kieswerk)</strong></td>
+<td>Tägerhardstrasse 151, 5430 Wettingen</td>
+<td>2.8 km / ca. 5 min</td>
+<td><strong>07:00–12:00, 13:00–16:45</strong></td>
+<td>Verkauf <strong>056 426 70 45</strong> (Disposition 056 426 37 10)</td>
+<td><strong>JA</strong>: Selbstverlad in Säcke/Kübel erlaubt? Privatpreis 60.–/m³ bestätigen</td>
+</tr>
+<tr class="even">
+<td>Bauverwaltung Würenlos (kein Einkauf)</td>
+<td>Schulstrasse 26, 5436 Würenlos</td>
+<td>–</td>
+<td>Di 08:00–11:30, 14:00–16:00</td>
+<td><strong>056 436 87 50</strong></td>
+<td>Gartenofen melden (Kapitel 9)</td>
+</tr>
+</tbody>
+</table></div>
+<p>*Distanzen über OpenStreetMap/OSRM berechnet (Freifluss). Mit Kastenwagen und Verkehr ca. +20–30 % Zeit einplanen.</p>
+<p><strong>Plan-B-Filialen:</strong> OBI Winterthur, Industriestrasse 44 (41.4 km / ca. 40 min), OBI Oftringen, Ackerweg 2 (42.3 km / ca. 35 min), OBI Waldshut-Tiengen (DE), Lise-Meitner-Ring 8 (30 km / ca. 40 min, Tel. +49 7751 89610, Di 08:00–20:00).</p>
+<h3 id="42-optimierte-route-gewicht-erzwingt-zwischenstopps-zu-hause">4.2 Optimierte Route (Gewicht erzwingt Zwischenstopps zu Hause)</h3>
+<p>Eine einzige Schleife Würenlos → Hornbach → OBI → Würenlos (95 km) ginge nur mit <strong>1'777 kg</strong> Ladung. Das ist <strong>fast das Doppelte der Nutzlast</strong>. Deshalb fahrt ihr in <strong>Sternfahrten</strong>:</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Zeit (Vorschlag)</th>
+<th>Fahrt</th>
+<th>Stopp</th>
+<th>Ladung</th>
+<th>km</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>11:45–12:15</strong></td>
+<td>–</td>
+<td><strong>Anrufen</strong> (Texte unten) + bei OBI online reservieren (Abholung ab ca. 16:00)</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>12:30–14:45</td>
+<td><strong>F1</strong></td>
+<td>Würenlos → <strong>Hornbach Affoltern</strong> → Würenlos, abladen</td>
+<td>883 kg</td>
+<td>53</td>
+</tr>
+<tr class="odd">
+<td>14:00–16:00</td>
+<td>(Anruf)</td>
+<td>Bauverwaltung Würenlos 056 436 87 50</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>15:00–16:30</td>
+<td><strong>K1</strong></td>
+<td>Würenlos → <strong>Kieswerk Tägerhard</strong> → Würenlos (Kieskoffer, ~0.56 m³)</td>
+<td>896 kg</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>17:00–19:15</td>
+<td><strong>F2</strong></td>
+<td>Würenlos → <strong>OBI Volketswil</strong> (Reservierung + Mietgeräte) → Würenlos</td>
+<td>893 kg</td>
+<td>64</td>
+</tr>
+<tr class="even">
+<td>Mi 07:00</td>
+<td><strong>K2</strong></td>
+<td>Kieswerk: Rest Kiesgemisch + 0.33 m³ Betonkies (optional Aushub mitnehmen)</td>
+<td>898 kg</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>Mi/Do</td>
+<td><strong>K3, K4</strong></td>
+<td>Kieswerk: Betonkies, Sand</td>
+<td>900 / 861 kg</td>
+<td>12</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Heute total ca. 123 km</strong> (F1 + K1 + F2). Alles, was ihr für Fundament <strong>und</strong> Sockel braucht, ist nach F1 + K1 + F2 zu Hause. Fehlt nur noch Betonkies, und den holt ihr morgen um 07:00.</p>
+<h3 id="43-anruftexte">4.3 Anruftexte</h3>
+<p><strong>OBI Volketswil (058 329 12 00):</strong></p>
+<blockquote>
+<p>„Guten Tag, ich baue einen Pizzaofen und möchte heute Abend abholen. Haben Sie folgende Artikel im Markt Volketswil an Lager: <strong>62 Stück Schamottestein 64 × 124 × 250 mm, Artikel 5390067</strong>; <strong>15 Stück Schamottestein 40 × 200 × 500 mm, Artikel 5390026</strong>; <strong>4 Säcke Pflanzen-Perlit 100 Liter, Artikel 3798733</strong>; <strong>12 Säcke Zement 25 kg</strong> (CEM I oder CEM II)? Können Sie mir die reservieren, auf den Namen …? Und noch etwas: Vermieten Sie in Volketswil einen <strong>Betonmischer</strong> (Wochentarif) und eine <strong>Rüttelplatte</strong> ab heute Abend? Bis wann ist die Mietgeräte-Ausgabe offen? Vielen Dank."</p>
+</blockquote>
+<p><strong>HORNBACH Affoltern a. A. (044 204 40 00):</strong></p>
+<blockquote>
+<p>„Guten Tag, ich komme heute um ca. 13 Uhr vorbei. Verkaufen Sie den <strong>Betonschalungsstein grau 50 × 24 × 25 cm</strong> (Artikel 5242971) auch <strong>einzeln</strong>? Ich brauche 20 Vollsteine und 6 Endsteine (Artikel 10080612). Haben Sie das <strong>Ofenrohr Ø 150 mm Edelstahl 1 m</strong> (Artikel 5860137) an Lager, und 4 Eimer <strong>Schamottemörtel 7 kg</strong> (Artikel 5167054)? Und 2 <strong>Baustahlmatten Q188A 2300 × 1500</strong> (Artikel 5498829)? Danke!"</p>
+</blockquote>
+<p><strong>Tägerhard Kies AG (056 426 70 45):</strong></p>
+<blockquote>
+<p>„Guten Tag, ich bin Privatkunde aus Würenlos und baue einen Gartenofen. Ich möchte heute Nachmittag und morgen früh mit einem Lieferwagen (Kastenwagen, keine Kippbrücke) abholen: insgesamt ca. <strong>0.75 m³ Kiesgemisch 0/31.5</strong> für einen Kieskoffer, <strong>1.1 m³ Betonkies 0/16</strong> und <strong>0.25 m³ gewaschenen Sand 0/4</strong>, verteilt auf 4 Fahrten. Darf ich das <strong>selber in Säcke oder Kübel schaufeln</strong>, und gilt der Privatpreis von 60 Franken pro Kubikmeter? Kann ich ca. 1 m³ sauberen Aushub bei Ihnen abgeben? Vielen Dank."</p>
+</blockquote>
+<p><strong>Bauverwaltung Würenlos (056 436 87 50, <a href="mailto:bauverwaltung@wuerenlos.ch">bauverwaltung@wuerenlos.ch</a>):</strong></p>
+<blockquote>
+<p>„Guten Tag, ich möchte einen gemauerten Pizzaofen (Gartencheminée) mit 1.5 × 1.5 m Grundfläche und ca. 2.40 m Höhe inkl. Kaminrohr in unserem Garten an der Adresse … bauen. Nach § 49 Abs. 2 lit. c BauV ist das in der Bauzone bewilligungsfrei, wenn die Abstände eingehalten sind. Der Ofen steht ca. … m von der Grenze entfernt. Gibt es in Würenlos zusätzliche Vorschriften in der Bau- und Nutzungsordnung, oder muss ich etwas melden? Darf ich Ihnen eine Skizze mailen?"</p>
+</blockquote>
+<hr />
+<h2 id="5-transport-und-gewicht-fiat-talento-kat-b">5. Transport und Gewicht (Fiat Talento, Kat. B)</h2>
+<h3 id="51-gesamtgewicht-stückgewicht--menge">5.1 Gesamtgewicht (Stückgewicht × Menge)</h3>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Position</th>
+<th>Stückgewicht</th>
+<th>Menge</th>
+<th>Gewicht</th>
+<th>Fahrt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Betonkies gewaschen 0-16 (Art. 20001)</td>
+<td>1800 kg/m³</td>
+<td>1.1 m³</td>
+<td><strong>1980 kg</strong></td>
+<td>K2-K4</td>
+</tr>
+<tr class="even">
+<td>Kiesgemisch UG22 0/31.5 (Art. 60201) für Kieskoffer</td>
+<td>1600 kg/m³</td>
+<td>0.75 m³</td>
+<td><strong>1200 kg</strong></td>
+<td>K1+K2</td>
+</tr>
+<tr class="odd">
+<td>Betonschalungsstein grau 50x24x25 cm, Vollstein (Art. 5242971)</td>
+<td>27 kg/Stk</td>
+<td>20 Stk</td>
+<td><strong>540 kg</strong></td>
+<td>H</td>
+</tr>
+<tr class="even">
+<td>Sand gewaschen 0-4 (Art. 40001)</td>
+<td>1500 kg/m³</td>
+<td>0.25 m³</td>
+<td><strong>375 kg</strong></td>
+<td>K4</td>
+</tr>
+<tr class="odd">
+<td>Zement CEM I 42.5 N, 25 kg (OBI Art. 4793972)</td>
+<td>25 kg/Sack</td>
+<td>12 Sack</td>
+<td><strong>300 kg</strong></td>
+<td>O</td>
+</tr>
+<tr class="even">
+<td>Schamottestein 64 × 124 × 250 mm (NF2) (OBI Art. 5390067)</td>
+<td>3.78 kg/Stk</td>
+<td>62 Stk</td>
+<td><strong>234 kg</strong></td>
+<td>O</td>
+</tr>
+<tr class="odd">
+<td>Betonschalungsstein Endstein grau 50x24x25 cm (Art. 10080612)</td>
+<td>27 kg/Stk</td>
+<td>6 Stk</td>
+<td><strong>162 kg</strong></td>
+<td>H</td>
+</tr>
+<tr class="even">
+<td>Zement CEM II/B-M (V-LL) 42.5 N, 25 kg (Art. 12415537)</td>
+<td>25 kg/Sack</td>
+<td>5 Sack</td>
+<td><strong>125 kg</strong></td>
+<td>H</td>
+</tr>
+<tr class="odd">
+<td>Schamottestein 40 × 200 × 500 mm (OBI Art. 5390026)</td>
+<td>7.4 kg/Stk</td>
+<td>15 Stk</td>
+<td><strong>111 kg</strong></td>
+<td>O</td>
+</tr>
+<tr class="even">
+<td>Pflanzen-Perlit 100 l, Körnung bis 10 mm (OBI Art. 3798733)</td>
+<td>9.4 kg/Sack</td>
+<td>4 Sack</td>
+<td><strong>38 kg</strong></td>
+<td>O</td>
+</tr>
+<tr class="odd">
+<td>OSB-3 Verlegeplatte N+F 250 × 62.5 cm, 18 mm (OBI Art. 6464333)</td>
+<td>16.9 kg/Stk</td>
+<td>2 Stk</td>
+<td><strong>34 kg</strong></td>
+<td>O</td>
+</tr>
+<tr class="even">
+<td>HORNBACH Schamottemörtel 7 kg (Art. 5167054)</td>
+<td>7 kg/Eimer</td>
+<td>4 Eimer</td>
+<td><strong>28 kg</strong></td>
+<td>H</td>
+</tr>
+<tr class="odd">
+<td>CATNIC Baustahlmatte Q188A 2300 × 1500 × 6 mm (Art. 5498829)</td>
+<td>10.4 kg/Stk</td>
+<td>2 Stk</td>
+<td><strong>21 kg</strong></td>
+<td>H</td>
+</tr>
+<tr class="even">
+<td>Schalbrett sägerau Fichte/Tanne 23 × 150 mm, 3 m (OBI Art. 2473270)</td>
+<td>4.7 kg/Stk</td>
+<td>3 Stk</td>
+<td><strong>14 kg</strong></td>
+<td>O</td>
+</tr>
+<tr class="odd">
+<td>Brett sägerau Fichte/Tanne 23 × 100 mm, 2 m (OBI Art. 4895694)</td>
+<td>2.1 kg/Stk</td>
+<td>4 Stk</td>
+<td><strong>8 kg</strong></td>
+<td>O</td>
+</tr>
+<tr class="even">
+<td>Kleinmaterial: Bindedraht, Schrauben, Holzgriff, Ofenlack, Abstandhalter, Zeitungen</td>
+<td>8 kg/Pausch.</td>
+<td>1 Pausch.</td>
+<td><strong>8 kg</strong></td>
+<td>H/O</td>
+</tr>
+<tr class="odd">
+<td>Drahtgeflecht Sechseck 25 mm, 100 cm × 10 m, verzinkt silber (Art. 6482865)</td>
+<td>5 kg/Rolle</td>
+<td>1 Rolle</td>
+<td><strong>5 kg</strong></td>
+<td>H</td>
+</tr>
+<tr class="even">
+<td>Abdeckplane ca. 4 × 5 m (Regen-/Frostschutz)</td>
+<td>3 kg/Stk</td>
+<td>1 Stk</td>
+<td><strong>3 kg</strong></td>
+<td>H/O</td>
+</tr>
+<tr class="odd">
+<td>Glattblech Stahl 500 × 1000 × 0.75 mm (OBI Art. 4983821)</td>
+<td>2.9 kg/Stk</td>
+<td>1 Stk</td>
+<td><strong>3 kg</strong></td>
+<td>O</td>
+</tr>
+<tr class="even">
+<td>Ofenrohr Ø150 mm Edelstahl, einwandig 0.6 mm, 1 m (Art. 5860137)</td>
+<td>2.3 kg/Stk</td>
+<td>1 Stk</td>
+<td><strong>2 kg</strong></td>
+<td>H</td>
+</tr>
+<tr class="odd">
+<td>Diamanttrennscheibe 125 mm für Stein (eigener Winkelschleifer)</td>
+<td>0.2 kg/Stk</td>
+<td>1 Stk</td>
+<td><strong>0 kg</strong></td>
+<td>H/O</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Total Material: 5'192 kg</strong> (+ Mietgeräte Betonmischer ~65 kg, Rüttelplatte ~75 kg). Davon sind <strong>3'555 kg Kies/Sand</strong> (69 %), dazu kommen 702 kg Schalungssteine und 425 kg Zement.</p>
+<h3 id="52-nutzlast-so-rechnet-ihr-sie-aus-dem-fahrzeugausweis">5.2 Nutzlast: so rechnet ihr sie aus dem Fahrzeugausweis</h3>
+<p>Im Fahrzeugausweis stehen <strong>„Gesamtgewicht"</strong> (höchstes zulässiges Betriebsgewicht) und <strong>„Leergewicht"</strong>. In der Schweiz ist das Leergewicht das fahrbereite Fahrzeug <strong>inkl. Fahrer mit 75 kg</strong> (VTS Art. 7).</p>
+<p><strong>Rechenbeispiel</strong> (Fiat Talento Kastenwagen L2H2 1.2 t, Katalogwerte ADAC; <strong>eure Werte im Ausweis können abweichen!</strong>):</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th></th>
+<th>kg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gesamtgewicht (Fahrzeugausweis)</td>
+<td>3'060</td>
+</tr>
+<tr class="even">
+<td>− Leergewicht inkl. Fahrer 75 kg</td>
+<td>− 1'965</td>
+</tr>
+<tr class="odd">
+<td><strong>= Nutzlast</strong></td>
+<td><strong>1'095</strong></td>
+</tr>
+<tr class="even">
+<td>− Beifahrer (Kollege)</td>
+<td>− 75</td>
+</tr>
+<tr class="odd">
+<td>− Spanngurte, Antirutschmatte, Schaufeln, Kübel</td>
+<td>− 20</td>
+</tr>
+<tr class="even">
+<td><strong>= verfügbar für Material</strong></td>
+<td><strong>1'000</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Planungsgrenze pro Fahrt (10 % Reserve, z. B. nasser Kies ist schwerer)</strong></td>
+<td><strong>900</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Gesamtgewicht beladen (schwerste Fahrt):</strong> 1'965 + 75 + 20 + 900 = <strong>2'960 kg</strong>. Das liegt <strong>unter 3'060 kg</strong> (zulässig für dieses Fahrzeug) und <strong>deutlich unter 3'500 kg</strong>.</p>
+<h3 id="53-darf-ich-das-mit-kat-b-fahren">5.3 Darf ich das mit Kat. B fahren?</h3>
+<p><strong>Ja.</strong> Kategorie B erlaubt Motorwagen bis <strong>3'500 kg Gesamtgewicht</strong> (laut Fahrzeugausweis) und Anhänger bis 750 kg. Der Talento hat je nach Version ~2'900–3'100 kg Gesamtgewicht und liegt damit in Kat. B. Seit September 2026 habt ihr den <strong>Führerausweis auf Probe</strong> (3 Jahre). Für das Gewicht gibt es dabei keine Zusatzeinschränkung. Es gilt aber <strong>Alkohollimite 0.1 ‰</strong>. Ausserdem führt jeder Ausweisentzug in der Probezeit zur Verlängerung der Probezeit, und ein zweiter Entzug zur Annullierung.</p>
+<blockquote>
+<p>⚠️ <strong>Überladungs-Warnung:</strong> Schamotte, Beton und Kies sind extrem schwer im Verhältnis zum Volumen. <strong>0.5 m³ Kies (~900 kg) bedecken nur den Boden des Laderaums knapp knöcheltief.</strong> Der Laderaum (ca. 8.6 m³ beim L2H2) sieht dann noch fast leer aus, ist aber <strong>bereits voll beladen</strong>. 26 Schalungssteine sind 0.8 m³ und wiegen 702 kg, 17 Säcke Zement sind eine kleine Palette und wiegen 425 kg. <strong>Ladet nie nach Gefühl, immer nach Liste!</strong> Überladung verlängert den Bremsweg, überlastet Reifen und Hinterachse, kostet eine Busse und bei einem Unfall Regress der Versicherung. In der Probezeit kann das richtig teuer werden. Prüft auch die <strong>zulässige Hinterachslast</strong> im Ausweis und erhöht den <strong>Reifendruck</strong> gemäss Tankdeckel/Handbuch für volle Beladung.</p>
+</blockquote>
+<h3 id="54-wie-viele-fahrten-und-was-muss-in-fahrt-1">5.4 Wie viele Fahrten, und was muss in Fahrt 1?</h3>
+<p><strong>Nicht in einer Fahrt.</strong> 5.19 t / 0.9 t = mindestens 6 Fahrten. Aufteilung:</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Fahrt</th>
+<th>Händler</th>
+<th>Ladung</th>
+<th>Gewicht</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>F1 (heute, zwingend zuerst)</strong></td>
+<td>Hornbach</td>
+<td>20 Voll- + 6 Endschalungssteine, <strong>5 Zement</strong> (Fundament), <strong>2 Baustahlmatten</strong>, 4 Schamottmörtel, Kaminrohr, Drahtgeflecht</td>
+<td><strong>883 kg</strong></td>
+</tr>
+<tr class="even">
+<td><strong>K1 (heute)</strong></td>
+<td>Kieswerk</td>
+<td>0.56 m³ Kiesgemisch 0/31.5 (Kieskoffer)</td>
+<td><strong>896 kg</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>F2 (heute Abend)</strong></td>
+<td>OBI</td>
+<td>62 NF, 15 Platten, 4 Perlit, 12 Zement, OSB, Bretter, Blech + Mischer + Rüttelplatte</td>
+<td><strong>893 kg</strong></td>
+</tr>
+<tr class="even">
+<td>K2 (Mi früh)</td>
+<td>Kieswerk</td>
+<td>0.19 m³ Kiesgemisch + 0.33 m³ Betonkies</td>
+<td><strong>898 kg</strong></td>
+</tr>
+<tr class="odd">
+<td>K3 (Mi/Do)</td>
+<td>Kieswerk</td>
+<td>0.50 m³ Betonkies</td>
+<td><strong>900 kg</strong></td>
+</tr>
+<tr class="even">
+<td>K4 (Do)</td>
+<td>Kieswerk</td>
+<td>0.27 m³ Betonkies + 0.25 m³ Sand</td>
+<td><strong>861 kg</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Zwingend für den Start (Fundament + Sockel):</strong> Matten, Zement (5 aus F1 + 12 aus F2), Kies (K1 + K2), Betonkies (K2–K4), Schalbretter, Mischer und Rüttelplatte (F2). Die Schamottsteine (F2) braucht ihr erst ab Tag ~10. Wenn F2 heute nicht klappt, könnt ihr sie auch später holen. <strong>Die Mietgeräte müssen aber vor Mittwochmorgen da sein.</strong></p>
+<h3 id="55-ladungssicherung-und-gewichtsverteilung">5.5 Ladungssicherung und Gewichtsverteilung</h3>
+<ul>
+<li><strong>Schwere Lasten nach vorne an die Trennwand und über bzw. knapp vor die Hinterachse</strong>, nie ganz hinten an die Hecktüren. Ganz hinten entlastet die Last die Vorderachse (Lenkung, Bremse).</li>
+<li><strong>Flach und tief laden:</strong> Schalungssteine in max. 2 Lagen, Zementsäcke flach, NF-Steine dicht in Reihen an die Trennwand. Keine Hohlräume, sonst rutscht die Ladung beim Bremsen.</li>
+<li><strong>Antirutschmatte</strong> unter die Ladung, darüber <strong>mind. 4 Spanngurte (≥ 500 daN)</strong> an die Zurrösen im Boden („Niederzurren"). Platten und OSB hochkant an die Seitenwand gurten.</li>
+<li><strong>Kies nie lose:</strong> in Säcke oder Kübel (max. ~30 kg pro Gebinde, sonst ist er nicht tragbar), dicht stellen, gurten. Tipp: Malervlies + Plane auslegen.</li>
+<li><strong>Fahrweise:</strong> doppelter Abstand, früh bremsen, Kurven langsam. 3 m-Bretter im Markt halbieren lassen (Ladelänge L2 ca. 2.9 m).</li>
+</ul>
+<hr />
+<h2 id="6-einkauf-in-deutschland--lohnt-es-sich">6. Einkauf in Deutschland – lohnt es sich?</h2>
+<h3 id="61-regeln-stand-13102026">6.1 Regeln (Stand 13.10.2026)</h3>
+<ul>
+<li><strong>Wertfreigrenze Schweiz:</strong> Waren für den privaten Gebrauch bis <strong>CHF 150 pro Person und Tag</strong> sind MWST-frei (seit 1.1.2025, vorher 300). Massgebend ist der <strong>Wert nach Abzug der ausländischen MWST</strong>, wenn sie auf der Quittung ausgewiesen ist. <strong>Übersteigt der Gesamtwert 150 Franken, wird die MWST auf den ganzen Wert fällig, nicht nur auf den Teil über 150.</strong> Einzelne Gegenstände über CHF 150 sind immer steuerpflichtig.</li>
+<li><strong>Schweizer Einfuhrsteuer:</strong> 8.1 % MWST (Normalsatz). <strong>Zölle auf Industriegüter (z. B. Schamottsteine) gibt es seit 1.1.2024 nicht mehr</strong>, es fällt also nur MWST an.</li>
+<li><strong>Deutsche MWST zurück (19 %):</strong> Im Laden <strong>Ausfuhr- und Abnehmerbescheinigung („Ausfuhrschein")</strong> verlangen (Pass/ID zeigen). Bei der Ausreise am <strong>deutschen Zoll abstempeln lassen</strong>, Ware vorzeigen. Den gestempelten Schein später im Laden abgeben, dann gibt es die MWST zurück (oft abzüglich Gebühr). <strong>Bagatellgrenze: Rechnungsbetrag mind. €50.01</strong> pro Beleg (Stand 2025; sie soll mit dem digitalen Verfahren wegfallen). Der <strong>digitale Ausfuhrschein</strong> läuft seit Juni 2026 nur als Pilot bei wenigen Händlern (z. B. Lidl). Bei Baumärkten gilt weiterhin Papier.</li>
+<li><strong>Anmeldung Schweiz:</strong> Am besten vorab mit der App <strong>QuickZoll</strong> (BAZG) anmelden und die MWST bezahlen, dann über die grüne Spur fahren. Alternativ am Schalter der Zollstelle.</li>
+<li><strong>Grenzübergang:</strong> Für Waldshut-Tiengen ist <strong>Koblenz AG – Waldshut (Rheinbrücke)</strong> der passende Übergang, mit deutscher und Schweizer Zollstelle direkt an der Brücke.</li>
+<li><strong>Papiere:</strong> ID/Pass, Kassenbelege mit ausgewiesener MWST, Ausfuhrschein(e), Fahrzeugausweis, QuickZoll-Quittung.</li>
+</ul>
+<h3 id="62-ehrliche-vergleichsrechnung">6.2 Ehrliche Vergleichsrechnung</h3>
+<p><strong>a) Schamottsteine heute bei OBI Waldshut (Firefix NF 250 × 124 × 64, €9.49):</strong></p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th></th>
+<th>mit MWST-Rückerstattung</th>
+<th>ohne Rückerstattung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>62 × €9.49 brutto</td>
+<td>€588.38</td>
+<td>€588.38</td>
+</tr>
+<tr class="even">
+<td>− 19 % deutsche MWST</td>
+<td>→ €494.44 netto</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>in CHF (× 0.9312)</td>
+<td>460.42</td>
+<td>547.90</td>
+</tr>
+<tr class="even">
+<td>+ 8.1 % Schweizer MWST (Wert &gt; 150)</td>
+<td>+ 37.29</td>
+<td>+ 44.38</td>
+</tr>
+<tr class="odd">
+<td><strong>Endpreis</strong></td>
+<td><strong>CHF 497.71</strong></td>
+<td><strong>CHF 592.28</strong></td>
+</tr>
+<tr class="even">
+<td>Vergleich OBI Volketswil (62 × 8.50)</td>
+<td><strong>CHF 527.00</strong></td>
+<td>CHF 527.00</td>
+</tr>
+</tbody>
+</table></div>
+<p>→ Ersparnis nur <strong>CHF 29</strong>. Dafür kommen 60 km Umweg, der Zollstopp in beide Richtungen und das Risiko dazu, dass die Filiale keine 62 Stück hat. <strong>Ohne Ausfuhrschein ist Deutschland sogar CHF 65 teurer.</strong> <strong>Nicht empfohlen.</strong></p>
+<p><strong>b) Schamottsteine online bei schamotte-shop.de an eine deutsche Lieferadresse (z. B. Paketannahme in Waldshut/Konstanz):</strong> 62 × €4.12 (Staffelpreis ab 50 Stk) = €255.44 → netto €214.66 = CHF 199.89 + Versand (Spedition, <strong>ANNAHME €60, unbestätigt</strong>) + Lieferadresse (<strong>ANNAHME €10</strong>) + 8.1 % MWST ≈ <strong>CHF 285.79</strong> statt CHF 527 → <strong>Ersparnis ca. CHF 240</strong>, aber <strong>1–2 Wochen Lieferzeit</strong>. Das ist machbar, weil ihr die Kuppel frühestens ab Tag ~12 mauert. Das ist der grösste Sparhebel (Variante C).</p>
+<p><strong>Fazit:</strong> Heute alles in der Schweiz kaufen. Deutschland lohnt sich nur bei den Schamottsteinen als <strong>Online-Bestellung</strong> (Plan B / Sparvariante).</p>
+<hr />
+<h2 id="7-bauanleitung">7. Bauanleitung</h2>
+<p><strong>Vorbereitung (heute):</strong> Bauverwaltung kontaktieren, Standort abstecken (Schnurgerüst 1.70 × 1.70 m, Abstand Mauer ≥ 10 cm, Front zum Rasen), Wetterbericht für 10 Tage prüfen (MeteoSchweiz-App).</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Schritt</th>
+<th>Arbeit</th>
+<th>Personen</th>
+<th>Zeit</th>
+<th>Warten / Aushärten</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Betonplatten im Bereich 1.9 × 1.9 m abheben (stapeln für später). <strong>Aushub auf −30 cm</strong> (0.87 m³ fest ≈ 1.1 m³ lose), Sohle eben, Wurzeln entfernen. <strong>Tipp:</strong> Liegt unter den Platten schon ein Kieskoffer, diesen Kies wiederverwenden.</td>
+<td>2</td>
+<td>4–5 h</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><strong>Kieskoffer</strong> in 2 Lagen à 10 cm einbringen, leicht nässen, jede Lage 3–4 × <strong>rütteln</strong>. Oberkante −10 cm, eben (Richtlatte).</td>
+<td>2</td>
+<td>2–3 h</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><strong>Fundamentschalung:</strong> 4 Schalbretter (2 × 155, 2 × 150 cm) auf Höhe +5 cm, mit Pflöcken und Wasserwaage ausrichten, Diagonalen gleich lang (212.1 cm). Matte 140 × 140 auf <strong>Abstandhalter 3–4 cm</strong> legen.</td>
+<td>2</td>
+<td>2 h</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><strong>Fundament betonieren</strong> (0.354 m³ ≈ 5 Mischungen à 1 Sack Zement). Verdichten (stochern, an Schalung klopfen), abziehen. <strong>12 L-Steckeisen</strong> aus Mattenresten in die Achsen der späteren Schalungssteine stecken.</td>
+<td>3</td>
+<td>3 h</td>
+<td><strong>feucht halten + Folie 3 Tage</strong>, Schalung nach 2 Tagen weg, Schalungssteine ab Tag 4</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><strong>Sockel:</strong> 1. Lage Schalungssteine im Mörtelbett (Zement : Sand 1 : 4) exakt waagrecht und rechtwinklig setzen, Lagen 2 und 3 trocken im Verband (Stossfugen versetzt), Endsteine vorne. Steckeisen stehen in den Kammern.</td>
+<td>2</td>
+<td>4 h</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><strong>Herdplatten-Schalung:</strong> OSB-Platten (102 × 126 cm Feld) auf 2 hochkant gestellte Schalbretter, abgestützt mit 8 Doppelbrett-Stützen à 75 cm auf dem Fundament. Randschalung vorne 10 cm hoch. Matte 140 × 140 auf Abstandhalter 3 cm.</td>
+<td>2</td>
+<td>3 h</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><strong>In einem Guss</strong> die Schalungssteine verfüllen (lagenweise, stochern) und die Herdplatte betonieren (0.664 m³ ≈ 8 Mischungen à 1 Sack Zement). Oberfläche abziehen und glätten.</td>
+<td>3</td>
+<td>5–6 h</td>
+<td><strong>feucht + Folie 5 Tage</strong>. Stützen frühestens nach <strong>10 Tagen</strong> entfernen (bei ~10 °C). Leichte Last (Dämmung) ab Tag 3, Kuppel ab Tag ≥ 7</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td><strong>Bodendämmung:</strong> Kreis Ø 113 + Tunnelfläche mit Brettstreifen einfassen. Perlit : Zement = 5 : 1 (Volumen) mit wenig Wasser („erdfeucht", krümelig) mischen, 10 cm einbringen, leicht andrücken, nicht stampfen.</td>
+<td>2</td>
+<td>3 h</td>
+<td><strong>3–5 Tage</strong> abgedeckt, belüftet trocknen</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><strong>Backboden:</strong> 5 mm trockener Sand, mit Brett und Wasserwaage abziehen. Schamottplatten dicht gestossen verlegen (Fugen <strong>versetzt zur Schieberichtung</strong> des Pizzaschiebers), mit Gummihammer bündig klopfen. Kreis Ø 102.8 anzeichnen und Plattenränder ausserhalb wegschneiden.</td>
+<td>2</td>
+<td>3 h</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><strong>Steine schneiden:</strong> 43 NF halbieren (86 Halbsteine) + Tunnel-Anpassschnitte. Mit Winkelschleifer und Diamantscheibe, <strong>nass</strong>, im Freien, <strong>FFP3-Maske, Schutzbrille, Gehörschutz</strong> (Quarzstaub!). Steine vor dem Vermauern 10 min wässern.</td>
+<td>2</td>
+<td>3–4 h</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><strong>Tunnelwände:</strong> 4 Lagen NF flach, Innenabstand 40 cm, mit Schamottmörtel, vorne bündig mit Plattenkante.</td>
+<td>2</td>
+<td>2 h</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td><strong>Sandform:</strong> feuchter Sand (0.17 m³) auf dem Boden zur Halbellipse Ø 90 × 40 cm aufhäufen, mit Sperrholz-Schablone abziehen, mit nassem Zeitungspapier bedecken. Türbereich mit Brettern/Karton ausbilden.</td>
+<td>2</td>
+<td>2–3 h</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td><strong>Kuppel mauern:</strong> Reihen 1–5 nach Tabelle (2.2), Fugen 6 mm, innen eng/aussen keilförmig, Stossfugen versetzt. Über der Tür die erste <strong>Schamottplatte als Sturz</strong>, zweite Platte vorne, <strong>Loch Ø 15.5 cm</strong> halb/halb ausschneiden. Schlussstein zuschneiden und einmörteln.</td>
+<td>2</td>
+<td><strong>1.5–2 Tage</strong></td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>Aushärten, dann <strong>Sand vorsichtig durch die Tür auskratzen</strong>, innen nachverfugen.</td>
+<td>2</td>
+<td>2 h</td>
+<td><strong>3 Tage</strong> abgedeckt, frostfrei</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><strong>Kaminrohr</strong> senkrecht in das Loch setzen, mit Schamottmörtel einbetten, provisorisch mit Draht abspannen.</td>
+<td>1</td>
+<td>1 h</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td><strong>Kuppeldämmung:</strong> Perlit-Zement 8 cm in 3 Lagen von unten nach oben, Tunneldecke mit.</td>
+<td>2</td>
+<td>4 h</td>
+<td><strong>≥ 7 Tage</strong> unter Plane (Luftspalt!) trocknen</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td><strong>Aussenschale:</strong> Drahtgeflecht überziehen, mit Bindedraht verankern. Zementputz 1 : 4 in 2 Lagen à 1.5 cm.</td>
+<td>2</td>
+<td>4 h</td>
+<td><strong>≥ 5 °C</strong> während 3 Tagen, abdecken. Farbe später (Frühling)</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td><strong>Tür:</strong> Blech 46 × 33 cm zuschneiden, Rand 1.5 cm abkanten (Schraubstock), Holzgriff mit 3 cm Distanzhülsen anschrauben, Ofenlack.</td>
+<td>1</td>
+<td>2 h</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td><strong>Trockenbrennen</strong> (siehe unten)</td>
+<td>1–2</td>
+<td>7 Abende à 2–4 h</td>
+<td>–</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Gesamt:</strong> ca. 110–130 Personenstunden, verteilt über ~4 Wochen (viel davon ist Wartezeit).</p>
+<h3 id="71-zeitplan-oktobernovember-2026-vorschlag">7.1 Zeitplan Oktober/November 2026 (Vorschlag)</h3>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Datum</th>
+<th>Arbeit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Di 13.10.</td>
+<td>Einkauf F1, K1, F2 · Anrufe · Abstecken</td>
+</tr>
+<tr class="even">
+<td>Mi 14.10.</td>
+<td>K2 · Schritte 1–2 (Aushub, Kieskoffer)</td>
+</tr>
+<tr class="odd">
+<td>Do 15.10.</td>
+<td>K3/K4 · Schritte 3–4 (Fundament)</td>
+</tr>
+<tr class="even">
+<td>Fr–So 16.–18.10.</td>
+<td>Fundament härtet aus (feucht halten); Steine schneiden kann man schon jetzt (Schritt 10)</td>
+</tr>
+<tr class="odd">
+<td>Mo 19.10.</td>
+<td>Schritt 5 (Sockel)</td>
+</tr>
+<tr class="even">
+<td>Di 20.10.</td>
+<td>Schritte 6–7 (Schalung, Herdplatte)</td>
+</tr>
+<tr class="odd">
+<td>Fr 23.10.</td>
+<td>Schritt 8 (Bodendämmung)</td>
+</tr>
+<tr class="even">
+<td>Mi 28.10.</td>
+<td>Schritte 9, 11 (Boden, Tunnel)</td>
+</tr>
+<tr class="odd">
+<td><strong>Sa/So 31.10./1.11.</strong></td>
+<td><strong>Schritte 12–13 (Kuppel), nur bei Prognose ≥ 5 °C für 3 Nächte</strong></td>
+</tr>
+<tr class="even">
+<td>ab 4.11.</td>
+<td>Schritte 14–16, Mörtel geschützt halten</td>
+</tr>
+<tr class="odd">
+<td>ab ~11.11.</td>
+<td>Schritte 17–18, danach Trockenbrennen</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="72-beton-und-mörtel-im-oktober-bis-wann-ist-es-sicher">7.2 Beton und Mörtel im Oktober: bis wann ist es sicher?</h3>
+<p>Klimanormwerte 1991–2020, MeteoSchweiz, <strong>Station Zürich-Affoltern</strong> (ca. 10 km von Würenlos):</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Mittel</th>
+<th>Ø Tagesminimum</th>
+<th>Ø Tagesmaximum</th>
+<th>Frosttage</th>
+<th>Niederschlag</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Oktober</td>
+<td>9.9 °C</td>
+<td>6.1 °C</td>
+<td>14.3 °C</td>
+<td>1.6</td>
+<td>80 mm</td>
+</tr>
+<tr class="even">
+<td>November</td>
+<td>4.8 °C</td>
+<td>1.8 °C</td>
+<td>8.0 °C</td>
+<td>9.0</td>
+<td>74 mm</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Zement-Beton und -Mörtel</strong> brauchen beim Einbau und in den ersten <strong>3 Tagen ≥ 5 °C</strong>. Die Datenblätter der Schamott-/Ofenmörtel nennen 5–30 °C als Verarbeitungstemperatur. Bei 5–10 °C erreicht Beton nach ~7 Tagen erst ~50 % der Festigkeit, deshalb Stützen länger stehen lassen.</li>
+<li><strong>Frischer Beton/Mörtel darf in den ersten 48–72 h nicht gefrieren</strong>, sonst sprengt das Wasser das Gefüge.</li>
+<li><strong>Sicheres Fenster:</strong> <strong>Fundament und Sockel bis ~25. Oktober</strong> (sehr sicher), <strong>Kuppel bis ~31. Oktober/ Anfang November</strong> (nur bei passender Prognose). Danach steigt das Risiko klar.</li>
+<li><strong>Vorkehrungen:</strong> Morgens nicht vor 9 Uhr betonieren, nachmittags fertig. Abends <strong>Plane + alte Decken/Styropor</strong> über das Bauteil, Plane nicht direkt auf frischen Beton (Holzlatten dazwischen). <strong>Keine Frostschutzmittel</strong> in Schamottmörtel. Bei Regen: Plane als Zelt (Luft muss zirkulieren). Pro Bauphase <strong>2–3 Tage Zeitpuffer</strong>. Kleine Wärmefeuer im Ofen ab Tag 3 nach dem Mauern halten die Kuppel frostfrei.</li>
+<li><strong>Wenn es Ende Oktober kalt wird:</strong> Fundament, Sockel und Herdplatte fertigstellen, die Herdplatte abdecken, Steine trocken lagern und <strong>die Kuppel im März/April bauen</strong>. Der Sockel nimmt keinen Schaden.</li>
+</ul>
+<h3 id="73-trockenbrennplan-nach--7-tagen-trocknung-von-dämmungputz">7.3 Trockenbrennplan (nach ≥ 7 Tagen Trocknung von Dämmung/Putz)</h3>
+<p>Ziel: Das Wasser aus Mörtel, Perlit-Zement und Putz langsam austreiben, damit keine Risse durch Dampfdruck entstehen.</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Tag</th>
+<th>Feuer</th>
+<th>Ofeninnen ca.</th>
+<th>Dauer</th>
+<th>Hinweis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Zeitungspapier + 1–2 kg Kleinholz</td>
+<td>~100 °C</td>
+<td>2 h</td>
+<td>Tür offen, Dampf ist normal</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>2–3 kg</td>
+<td>~150 °C</td>
+<td>3 h</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>3–4 kg</td>
+<td>~200 °C</td>
+<td>3 h</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>4–5 kg</td>
+<td>~250 °C</td>
+<td>3–4 h</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>5–6 kg</td>
+<td>~300 °C</td>
+<td>3–4 h</td>
+<td>Haarrisse im Putz sind normal</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>6–8 kg</td>
+<td>~350–400 °C</td>
+<td>4 h</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>volles Feuer</td>
+<td>450–500 °C</td>
+<td>bis Kuppel innen weiss ist (Russ abgebrannt)</td>
+<td>erste Pizza!</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nur trockenes, unbehandeltes Hartholz (Buche, Esche). <strong>Bei Regen den Plan unterbrechen</strong> und den Ofen abdecken. Optional ein Infrarot-Thermometer (bis 500 °C) zur Kontrolle.</p>
+<hr />
+<h2 id="8-werkzeugliste">8. Werkzeugliste</h2>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Werkzeug</th>
+<th>Kaufen / Mieten / Ausleihen</th>
+<th>Preis / Anbieter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Betonmischer</strong> (130 l)</td>
+<td><strong>Mieten</strong></td>
+<td>OBI Mietgeräte: CHF 42.–/Tag, <strong>147.–/Woche</strong>, Kaution 200 (Kaufpreis Atika 130 l: CHF 325.–)</td>
+</tr>
+<tr class="even">
+<td><strong>Rüttelplatte</strong> (11 kN)</td>
+<td><strong>Mieten</strong>, 1 Tag</td>
+<td>OBI: <strong>CHF 77.–/Tag</strong>, Kaution 250</td>
+</tr>
+<tr class="odd">
+<td><strong>Steintrennmaschine/Nassfräse</strong></td>
+<td>Mieten <strong>nur</strong> wenn kein Winkelschleifer</td>
+<td>OBI: CHF 120.–/Tag; Hug Baustoffe: Nassfräse S-75 K CHF 100.–/Tag exkl. MWST</td>
+</tr>
+<tr class="even">
+<td>Winkelschleifer 125 mm + <strong>Diamanttrennscheibe Stein</strong></td>
+<td>ausleihen + Scheibe kaufen</td>
+<td>Scheibe ~CHF 25 (unbestätigt)</td>
+</tr>
+<tr class="odd">
+<td>Schaufeln (2), Spaten, Pickel, Rechen, Schubkarre</td>
+<td>ausleihen/vorhanden</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>Maurerkelle, Fugenkelle, Glättekelle, Reibbrett</td>
+<td>kaufen, falls nicht vorhanden</td>
+<td>~CHF 30–40 (unbestätigt)</td>
+</tr>
+<tr class="odd">
+<td>Wasserwaage 1 m + Richtlatte 2 m (gerades Brett)</td>
+<td>vorhanden/ausleihen</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>Doppelmeter, Schnur, Pflöcke, Winkel, Bleistift</td>
+<td>vorhanden</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>Gummihammer, Hammer, Akkuschrauber + Holzschrauben</td>
+<td>vorhanden</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>Handsäge/Stichsäge (OSB, Schablone)</td>
+<td>vorhanden</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td>Bolzenschneider (Matten) oder Winkelschleifer</td>
+<td>ausleihen</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td>Mörtelwanne 90 l, 4 Maurerkübel, Rührquirl + Bohrmaschine</td>
+<td>kaufen/vorhanden</td>
+<td>~CHF 40 (unbestätigt)</td>
+</tr>
+<tr class="odd">
+<td>Blechschere, Schraubstock (Tür)</td>
+<td>ausleihen</td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td><strong>PSA:</strong> Handschuhe, Schutzbrille, <strong>FFP3-Masken</strong>, Gehörschutz, Sicherheitsschuhe</td>
+<td>kaufen</td>
+<td>~CHF 30 (unbestätigt)</td>
+</tr>
+<tr class="odd">
+<td><strong>Ladung:</strong> 4 Spanngurte ≥ 500 daN, Antirutschmatte, 40 PP-Säcke oder Kübel</td>
+<td>kaufen/ausleihen</td>
+<td>~CHF 30 (unbestätigt)</td>
+</tr>
+<tr class="even">
+<td>Feuerlöscher 6 kg / Löschdecke, Metalleimer mit Deckel für Asche</td>
+<td>kaufen</td>
+<td>Pflicht für den Betrieb</td>
+</tr>
+</tbody>
+</table></div>
+<p>Näher als OBI vermietet auch <strong>Hug Baustoffe</strong> (Standorte u. a. Wettingen und Dietikon, Mietmaschinen). Preise dort telefonisch prüfen.</p>
+<hr />
+<h2 id="9-sicherheit-und-recht">9. Sicherheit und Recht</h2>
+<h3 id="91-abstände-empfehlung-annahmen-wo-vermerkt">9.1 Abstände (Empfehlung, ANNAHMEN wo vermerkt)</h3>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Zu</th>
+<th>Abstand</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Betonmauer</strong> (nicht brennbar)</td>
+<td><strong>≥ 10 cm</strong> Luftspalt</td>
+<td>Mauer wird nicht heiss (8 cm Dämmung), Spalt für Unterhalt/Feuchte. <strong>Wenn die Mauer auf der Grenze steht oder dem Nachbarn gehört: 2 m Grenzabstand beachten oder schriftliche Zustimmung!</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Rasen</strong></td>
+<td>Rasenkante ≥ 50 cm vom Sockel, davor <strong>1.5 m nicht brennbare Fläche</strong> (eure Betonplatten) vor der Tür</td>
+<td>Funkenflug und Glut beim Ausräumen</td>
+</tr>
+<tr class="odd">
+<td><strong>Feigenbaum</strong></td>
+<td><strong>Kaminmündung ≥ 3 m</strong> von Ästen/Blättern, Fundament ≥ 1.5–2 m vom Stamm (ANNAHME)</td>
+<td>Heisse Rauchgase (200–400 °C) versengen Laub. Feigenwurzeln heben Platten</td>
+</tr>
+<tr class="even">
+<td><strong>Nachbargrundstück</strong></td>
+<td><strong>≥ 2 m</strong> (BauV AG § 19 Abs. 2, Klein- und Anbauten). Mit schriftlicher Zustimmung der Nachbarn weniger</td>
+<td>Sonst wird der Ofen bewilligungspflichtig (§ 49 Abs. 4)</td>
+</tr>
+<tr class="odd">
+<td><strong>Brennbares</strong> (Holzlager, Möbel, Sonnenschirm)</td>
+<td>≥ 1.5 m vor der Tür, ≥ 1 m vom Kaminrohr</td>
+<td>Strahlungswärme, Funken</td>
+</tr>
+<tr class="even">
+<td><strong>Fenster/Lüftungen (eigene und Nachbarn)</strong></td>
+<td>Rauch nicht direkt dorthin</td>
+<td>Hauptwindrichtung im Mittelland ist West/Südwest. Rauch zieht meist Richtung Ost/Nordost</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="92-brandschutz-kaminhöhe-rauchführung">9.2 Brandschutz, Kaminhöhe, Rauchführung</h3>
+<ul>
+<li><strong>Kaminmündung ≥ 50 cm über dem höchsten Punkt der Kuppel:</strong> 235.9 − 161.9 = <strong>74 cm</strong> ✔.</li>
+<li><strong>Rauchführung:</strong> Der Rauch verlässt die Kuppel oben an der Türöffnung und steigt im Tunnel <strong>vor</strong> der Kuppel in den Kamin (neapolitanisches Prinzip, siehe Schnitt A–A). Die Tür nur bei erloschenem Feuer schliessen (Resthitze).</li>
+<li><strong>Nur trockenes, unbehandeltes Holz</strong> (Restfeuchte &lt; 20 %). Das Verbrennen von Abfällen, behandeltem Holz oder Karton im Freien ist nach Luftreinhalte-Verordnung (LRV) und kantonalem Recht verboten. Rauch, der Nachbarn übermässig stört, verstösst gegen ZGB Art. 684.</li>
+<li><strong>Asche</strong> 24 h in einem <strong>Metalleimer mit Deckel</strong> auskühlen lassen. <strong>Feuerlöscher/Löschdecke</strong> griffbereit. Feuer nie unbeaufsichtigt lassen. Kinder fernhalten (Kuppel aussen bis ~60 °C, Tür/Rohr &gt; 200 °C).</li>
+<li>Bei Waldbrandgefahr bzw. Feuerverbot (Kanton Aargau) nicht feuern.</li>
+</ul>
+<h3 id="93-bewilligung-im-kanton-aargau--würenlos">9.3 Bewilligung im Kanton Aargau / Würenlos</h3>
+<ul>
+<li><strong>Bauverordnung Aargau (BauV, SAR 713.121) § 49 Abs. 2 lit. c:</strong> In den Bauzonen brauchen <em>„Anlagen der Garten- und Aussenraumgestaltung wie … Feuerstellen und Gartencheminées"</em> <strong>keine Baubewilligung</strong>.</li>
+<li><strong>§ 49 Abs. 4:</strong> Sie werden aber <strong>bewilligungspflichtig</strong>, wenn Nutzungsvorschriften für Schutzzonen dies bestimmen oder <strong>Abstandsvorschriften nicht eingehalten</strong> werden.</li>
+<li><strong>§ 19 Abs. 2:</strong> Für Klein- und Anbauten gilt ein <strong>Grenzabstand von 2 m</strong>, der mit <strong>schriftlicher Zustimmung</strong> der betroffenen Nachbarschaft reduziert oder aufgehoben werden kann.</li>
+<li>Zur Sicherheit erfüllt ihr auch die Grenzen für „Kleinstbauten" (§ 49 Abs. 2 lit. d: ≤ 5 m², ≤ 2.50 m). Der Ofen hat 2.25 m² und <strong>2.36 m</strong> Höhe (mit Regenhut ~2.51 m → Regenhut eher flach wählen oder weglassen).</li>
+<li><strong>Zuständige Stelle:</strong> <strong>Bauverwaltung Würenlos</strong>, Gemeindehaus, Schulstrasse 26, 5436 Würenlos, Tel. <strong>056 436 87 50</strong>, <strong><a href="mailto:bauverwaltung@wuerenlos.ch">bauverwaltung@wuerenlos.ch</a></strong>. Schalter: Mo 08:00–11:30 / 14:00–18:30, Di–Fr 08:00–11:30 / 14:00–16:00. Fragen: Gibt es in der kommunalen Bau- und Nutzungsordnung (BNO) zusätzliche Regeln? Liegt das Grundstück in einer Schutzzone? <strong>Empfehlung:</strong> kurze E-Mail mit Skizze und Abständen schicken und die Antwort aufbewahren (auch gut für die Vertiefungsarbeit).</li>
+<li><strong>Feuerungskontrolle/Kaminfeger:</strong> Ein freistehender Gartenofen ohne Gebäudeanschluss ist keine Heizungsanlage. Eine Feuerungskontrolle ist nach unserem Kenntnisstand nicht vorgesehen (<strong>ANNAHME</strong>, bei der Bauverwaltung mitfragen).</li>
+<li><strong>Mietwohnung/Stockwerkeigentum?</strong> Dann braucht ihr zusätzlich die Zustimmung des Eigentümers bzw. der Gemeinschaft (ANNAHME: Einfamilienhaus der Familie).</li>
+</ul>
+<hr />
+<h2 id="10-budgetübersicht-sparliste-und-plan-b">10. Budgetübersicht, Sparliste und Plan B</h2>
+<h3 id="101-budget-variante-b">10.1 Budget (Variante B)</h3>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Bereich</th>
+<th>CHF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Kieswerk Tägerhard (Kies, Betonkies, Sand)</td>
+<td>126.00</td>
+</tr>
+<tr class="even">
+<td>HORNBACH Affoltern (Schalungssteine, Zement, Matten, Mörtel, Kaminrohr, Drahtgeflecht)</td>
+<td>377.45</td>
+</tr>
+<tr class="odd">
+<td>OBI Volketswil (Schamott, Platten, Perlit, Zement, Schalung, Blech)</td>
+<td>1'110.20</td>
+</tr>
+<tr class="even">
+<td>Kleinmaterial, Plane, Diamantscheibe (ANNAHME)</td>
+<td>85.00</td>
+</tr>
+<tr class="odd">
+<td>Mieten (Mischer 1 Woche, Rüttelplatte 1 Tag)</td>
+<td>224.00</td>
+</tr>
+<tr class="even">
+<td><strong>Total Variante B</strong></td>
+<td><strong>1'922.65</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Reserve bis CHF 2000</strong></td>
+<td><strong>77.35</strong></td>
+</tr>
+<tr class="even">
+<td>Variante C (mit Sparliste)</td>
+<td>ca. 1'361.71</td>
+</tr>
+</tbody>
+</table></div>
+<p>Kautionen (werden zurückbezahlt): Mischer CHF 200, Rüttelplatte CHF 250. Nicht im Budget: Werkzeug, das ihr ausleiht, Benzin (~120 km heute, ca. CHF 25–30), Brennholz.</p>
+<h3 id="102-sparliste--wenn-es-billiger-sein-muss">10.2 Sparliste – wenn es billiger sein muss</h3>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Massnahme</th>
+<th>Ersparnis</th>
+<th>Nachteil</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Schamott-NF online</strong> (schamotte-shop.de, an deutsche Lieferadresse, Ausfuhrschein)</td>
+<td><strong>ca. CHF 240</strong></td>
+<td>1–2 Wochen Lieferzeit, Versand unbestätigt</td>
+</tr>
+<tr class="even">
+<td><strong>Betonmischer bei Bekannten ausleihen</strong></td>
+<td>CHF 147</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td><strong>Kies von Hand stampfen</strong> statt Rüttelplatte (Lagen à 5 cm, nass, Handstampfer ausleihen/aus Kantholz bauen)</td>
+<td>CHF 77</td>
+<td>mehr Arbeit, etwas weniger dicht</td>
+</tr>
+<tr class="even">
+<td><strong>Kuppel 80 statt 90 cm</strong></td>
+<td>CHF 136</td>
+<td>kleinere Backfläche (2 Pizzen)</td>
+</tr>
+<tr class="odd">
+<td><strong>Kieskoffer unter den bestehenden Platten wiederverwenden</strong> (falls vorhanden)</td>
+<td>bis CHF 45 und ~1.2 t weniger Transport</td>
+<td>vorher Probeloch graben</td>
+</tr>
+<tr class="even">
+<td>Tür später kaufen/bauen</td>
+<td>CHF 23.50</td>
+<td>–</td>
+</tr>
+<tr class="odd">
+<td><strong>Alle Punkte = Variante C</strong></td>
+<td><strong>→ ca. CHF 1'361.71 (unter 1500 ✔)</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Nicht sparen bei:</strong> Fundament und Armierung, Dämmung (ohne Dämmung wird der Ofen nie richtig heiss), Schamott-Qualität und Schutzausrüstung.</p>
+<h3 id="103-plan-b--falls-heute-etwas-nicht-verfügbar-ist">10.3 Plan B – falls heute etwas nicht verfügbar ist</h3>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Problem</th>
+<th>Plan B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OBI Volketswil hat keine 62 NF / 15 Platten</td>
+<td><strong>OBI Winterthur</strong> (Industriestr. 44) oder <strong>OBI Oftringen</strong> (Ackerweg 2) per „Reservieren &amp; Abholen". Bauhaus Schlieren (NF 25 × 12.4 × 6.4 laut bauhaus.ch CHF 7.95, <strong>Preis/Bestand unbestätigt</strong>). Oder online schamotte-shop.de (NF2 1350 °C, €4.29). Die Steine braucht ihr erst ab Tag ~10</td>
+</tr>
+<tr class="even">
+<td>Hornbach verkauft Schalungssteine nur palettenweise (Artikel ist als Palette 45 + 5 Endsteine gelistet)</td>
+<td>Ganze Palette (50 Stk à 4.40 = CHF 220, +CHF 90; Reststeine als Gartenmäuerchen) <strong>oder</strong> OBI „Kann Schalungsstein 24 cm" CHF 5.95/Stk</td>
+</tr>
+<tr class="odd">
+<td>Edelstahl-Kaminrohr nicht an Lager</td>
+<td>Online bei Hornbach bestellen. Ihr braucht es erst ab Tag ~18</td>
+</tr>
+<tr class="even">
+<td>Schamottmörtel fehlt</td>
+<td>OBI Sakret Schamottemörtel 5 kg (CHF 17.95, 6 Stk) oder schamotte-shop.de 25 kg (€38.89, Lieferzeit)</td>
+</tr>
+<tr class="odd">
+<td>Kieswerk erlaubt keinen Selbstverlad / zu</td>
+<td><strong>Hornbach Big Bags</strong> (z. B. Rundkies 4–8, 725 kg, CHF 155) für den Koffer. Statt Betonkies: <strong>Baumit Trockenbeton C25/30, 25 kg, CHF 7.90</strong> (ab 42 Sack 7.15). Das kostet für 1.02 m³ (~85 Sack) ca. <strong>CHF 610</strong> statt ~CHF 140 und <strong>sprengt das Budget</strong>, deshalb nur im Notfall</td>
+</tr>
+<tr class="even">
+<td>Keine Mietgeräte verfügbar</td>
+<td>Hug Baustoffe (Mietmaschinen) anrufen. Mischer im Notfall von Hand in der Mörtelwanne</td>
+</tr>
+<tr class="odd">
+<td>Frost/Regen Ende Oktober</td>
+<td>Sockel fertig, Kuppel im Frühling (Kapitel 7.2)</td>
+</tr>
+<tr class="even">
+<td>Budget überschritten</td>
+<td>Sparliste 10.2</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="anhang-a--quellenverzeichnis-alle-abgerufen-am-13102026">Anhang A – Quellenverzeichnis (alle abgerufen am 13.10.2026)</h2>
+<ol type="1">
+<li>OBI Schweiz – Schamottestein 64 × 124 × 250 mm (Art. 5390067), CHF 8.50, 3.78 kg – <a href="https://www.obi.ch/grillutensilien/schamottestein-hxbxt-64-x-124-x-250-mm/p/5390067" target="_blank" rel="noopener">https://www.obi.ch/grillutensilien/schamottestein-hxbxt-64-x-124-x-250-mm/p/5390067</a></li>
+<li>OBI Schweiz – Schamottestein 40 × 200 × 500 mm (Art. 5390026), CHF 18.95, 7.4 kg – <a href="https://www.obi.ch/grillutensilien/schamottestein-hxbxt-40-x-200-x-500-mm/p/5390026" target="_blank" rel="noopener">https://www.obi.ch/grillutensilien/schamottestein-hxbxt-40-x-200-x-500-mm/p/5390026</a></li>
+<li>OBI Schweiz – Pflanzen-Perlit 100 l (Art. 3798733), CHF 29.95 – <a href="https://www.obi.ch/perlite-vermiculite/pflanzen-perlit-100-l/p/3798733" target="_blank" rel="noopener">https://www.obi.ch/perlite-vermiculite/pflanzen-perlit-100-l/p/3798733</a></li>
+<li>OBI Schweiz – Zement CEM I 42.5 N (Art. 4793972), CHF 5.50 – <a href="https://www.obi.ch/zemente-kalke/zement-cem-i-42-5-n/p/4793972" target="_blank" rel="noopener">https://www.obi.ch/zemente-kalke/zement-cem-i-42-5-n/p/4793972</a></li>
+<li>OBI Schweiz – OSB-Platte N+F 1.8 × 62.5 × 250 cm (Art. 6464333), CHF 17.00 – <a href="https://www.obi.ch/osb-platten-verlegeplatten/osb-platte-nut-und-feder-hxbxt-1-8-x-62-5-x-250-cm/p/6464333" target="_blank" rel="noopener">https://www.obi.ch/osb-platten-verlegeplatten/osb-platte-nut-und-feder-hxbxt-1-8-x-62-5-x-250-cm/p/6464333</a></li>
+<li>OBI Schweiz – Schalbrett 23 × 150 mm 3 m (Art. 2473270), CHF 11.95; Brett 23 × 100 mm 2 m (Art. 4895694), CHF 4.95 – <a href="https://www.obi.ch/search/schaltafel/" target="_blank" rel="noopener">https://www.obi.ch/search/schaltafel/</a></li>
+<li>OBI Schweiz – Glattblech Stahl 500 × 1000 × 0.75 mm (Art. 4983821), CHF 23.50 – <a href="https://www.obi.ch/bleche/glattblech-stahl-500-x-1-000-mm-staerke-0-75-mm/p/4983821" target="_blank" rel="noopener">https://www.obi.ch/bleche/glattblech-stahl-500-x-1-000-mm-staerke-0-75-mm/p/4983821</a></li>
+<li>OBI Schweiz – Kann Schalungsstein 24 cm, CHF 5.95, 27 kg (Plan B / Gewichtsannahme) – <a href="https://www.obi.ch/einfassungen-stufen-mauersysteme/kann-schalungsstein-grau-24-cm/p/5047857" target="_blank" rel="noopener">https://www.obi.ch/einfassungen-stufen-mauersysteme/kann-schalungsstein-grau-24-cm/p/5047857</a></li>
+<li>OBI Schweiz – Sakret Schamottemörtel 5 kg, CHF 17.95 (Plan B) – <a href="https://www.obi.ch/trockenmoertel/sakret-schamottemoertel-grau-5-kg/p/2925493" target="_blank" rel="noopener">https://www.obi.ch/trockenmoertel/sakret-schamottemoertel-grau-5-kg/p/2925493</a></li>
+<li>OBI Schweiz – Preisliste Mietgeräte (Betonmischer, Rüttelplatte, Steintrennmaschine) – <a href="https://www.obi.ch/public/specials/baumarkt-services/assets/pdf/preisliste-obi-mietgeraete-ch-de.pdf" target="_blank" rel="noopener">https://www.obi.ch/public/specials/baumarkt-services/assets/pdf/preisliste-obi-mietgeraete-ch-de.pdf</a></li>
+<li>OBI Schweiz – Marktliste (Adressen) und Markt Volketswil (Öffnungszeiten, Tel.) – <a href="https://www.obi.ch/markt/volketswil" target="_blank" rel="noopener">https://www.obi.ch/markt/volketswil</a></li>
+<li>HORNBACH Schweiz – Betonschalungsstein 50 × 24 × 25 cm, CHF 4.90 (ab 50: 4.40) – <a href="https://www.hornbach.ch/de/p/betonschalungsstein-grau-50-x-24-x-25-cm-palette-45-vollsteine-5-endsteine/5242971/" target="_blank" rel="noopener">https://www.hornbach.ch/de/p/betonschalungsstein-grau-50-x-24-x-25-cm-palette-45-vollsteine-5-endsteine/5242971/</a></li>
+<li>HORNBACH Schweiz – Endstein 50 × 24 × 25 cm, CHF 5.40 – <a href="https://www.hornbach.ch/de/p/betonschalungsstein-endstein-grau-50-x-24-x-25-cm/10080612/" target="_blank" rel="noopener">https://www.hornbach.ch/de/p/betonschalungsstein-endstein-grau-50-x-24-x-25-cm/10080612/</a></li>
+<li>HORNBACH Schweiz – Portlandkompositzement CEM II/B-M 42.5 N 25 kg, CHF 5.15 – <a href="https://www.hornbach.ch/de/p/portlandkompositzement-cem-ii-b-m-v-ll-42-5-n-25-kg/12415537/" target="_blank" rel="noopener">https://www.hornbach.ch/de/p/portlandkompositzement-cem-ii-b-m-v-ll-42-5-n-25-kg/12415537/</a></li>
+<li>HORNBACH Schweiz – CATNIC Baustahlmatte Q188A 2300 × 1500 × 6 mm, CHF 32.50 – <a href="https://www.hornbach.ch/de/p/catnic-baustahlmatte-q188a-2300-x-1500-x-6-mm/5498829/" target="_blank" rel="noopener">https://www.hornbach.ch/de/p/catnic-baustahlmatte-q188a-2300-x-1500-x-6-mm/5498829/</a></li>
+<li>HORNBACH Schweiz – Schamottemörtel 7 kg, CHF 11.50, bis 1000 °C – <a href="https://www.hornbach.ch/de/p/schamottemoertel-7-kg/5167054/" target="_blank" rel="noopener">https://www.hornbach.ch/de/p/schamottemoertel-7-kg/5167054/</a></li>
+<li>HORNBACH Schweiz – Ofenrohr Ø150 Edelstahl 1 m, CHF 80.40 – <a href="https://www.hornbach.ch/de/p/ofenrohr-o150-mm-edelstahl-1-m/5860137/" target="_blank" rel="noopener">https://www.hornbach.ch/de/p/ofenrohr-o150-mm-edelstahl-1-m/5860137/</a></li>
+<li>HORNBACH Schweiz – Regenhut Ø150 Edelstahl, CHF 134.40 (optional) – <a href="https://www.hornbach.ch/de/p/regenhut-o150-mm-edelstahl/5860174/" target="_blank" rel="noopener">https://www.hornbach.ch/de/p/regenhut-o150-mm-edelstahl/5860174/</a></li>
+<li>HORNBACH Schweiz – Drahtgeflecht Sechseck 25 mm 100 cm × 10 m, CHF 29.90 – <a href="https://www.hornbach.ch/de/p/drahtgeflecht-sechseck-25-mm-100-cm-silber-verzinkt/6482865/" target="_blank" rel="noopener">https://www.hornbach.ch/de/p/drahtgeflecht-sechseck-25-mm-100-cm-silber-verzinkt/6482865/</a></li>
+<li>HORNBACH Schweiz – Baumit Trockenbeton C25/30 25 kg, CHF 7.90 (Plan B) – <a href="https://www.hornbach.ch/de/p/baumit-trockenbeton-c25-30-25-kg/7798656/" target="_blank" rel="noopener">https://www.hornbach.ch/de/p/baumit-trockenbeton-c25-30-25-kg/7798656/</a></li>
+<li>HORNBACH Affoltern a. A. – Marktseite (Adresse); Öffnungszeiten/Telefon aus Verzeichnissen – <a href="https://www.hornbach.ch/mein-markt/baumarkt-hornbach-affoltern-am-albis/" target="_blank" rel="noopener">https://www.hornbach.ch/mein-markt/baumarkt-hornbach-affoltern-am-albis/</a></li>
+<li>Verzeichnis Hornbach Affoltern (Öffnungszeiten Di 07–19 Uhr, Tel. 044 204 40 00) – <a href="https://www.oeffnungszeitenbuch.de/filiale/Affoltern%2520a.%2520Albis-Hornbach%2520Baumarkt-4387710S.html" target="_blank" rel="noopener">https://www.oeffnungszeitenbuch.de/filiale/Affoltern%2520a.%2520Albis-Hornbach%2520Baumarkt-4387710S.html</a></li>
+<li>Bauhaus Schweiz – Schamottsteinplatte 25 × 12.4 × 6.4 cm, CHF 7.95 (nur Suchindex, unbestätigt) – <a href="https://www.bauhaus.ch/de/bims-schamott/schamottsteinplatte/p/13876956" target="_blank" rel="noopener">https://www.bauhaus.ch/de/bims-schamott/schamottsteinplatte/p/13876956</a></li>
+<li>Tägerhard Kies AG – Preisliste 2026 inkl. Bar-/Privatpreise, Öffnungszeiten, Telefon – <a href="https://taegerhardkies.ch/wp-content/uploads/2025/12/Grundpreisliste-2026.pdf" target="_blank" rel="noopener">https://taegerhardkies.ch/wp-content/uploads/2025/12/Grundpreisliste-2026.pdf</a></li>
+<li>Hug Baustoffe AG – Standorte/Mietmaschinen; Nassfräse S-75 K CHF 100/Tag exkl. MWST – <a href="https://www.hug-baustoffe.ch/standorte" target="_blank" rel="noopener">https://www.hug-baustoffe.ch/standorte</a></li>
+<li>OBI Deutschland – Markt Waldshut-Tiengen (Adresse, Öffnungszeiten, Tel.) – <a href="https://www.obi.de/markt/waldshut-tiengen" target="_blank" rel="noopener">https://www.obi.de/markt/waldshut-tiengen</a></li>
+<li>OBI Deutschland – Firefix Schamottstein 250 × 124 × 64 mm, €9.49 – <a href="https://www.obi.de/p/2269678/firefix-schamottstein-250-mm-x-124-mm-x-64-mm" target="_blank" rel="noopener">https://www.obi.de/p/2269678/firefix-schamottstein-250-mm-x-124-mm-x-64-mm</a></li>
+<li>schamotte-shop.de – Schamottstein NF2 250 × 124 × 64, 1350 °C, 3.9 kg, €4.29 (ab 50 Stk €4.12) – <a href="https://www.schamotte-shop.de/schamottstein-nf2-250x124x64mm.html" target="_blank" rel="noopener">https://www.schamotte-shop.de/schamottstein-nf2-250x124x64mm.html</a></li>
+<li>schamotte-shop.de – Keramikfasermatte (u. a. 1000 × 610 × 25 mm, 1260 °C, €26.49) – <a href="https://www.schamotte-shop.de/ofenbaumaterial/hochtemperatur-isolierung/keramikfasermatte.html" target="_blank" rel="noopener">https://www.schamotte-shop.de/ofenbaumaterial/hochtemperatur-isolierung/keramikfasermatte.html</a></li>
+<li>holz-feuer.shop – CUPPO Pizzaofen-Bausatz 90 cm, €2’220 + €150 Spedition, 375 kg; Abholung Berching (DE) – <a href="https://holz-feuer.shop/products/cuppo-pizzaofen-bausatz" target="_blank" rel="noopener">https://holz-feuer.shop/products/cuppo-pizzaofen-bausatz</a></li>
+<li>kuppelofen.de – Les Cheminées FD-Serie (FD 100–120), €1’149–1’399, Abholung Ruderatshofen – <a href="https://www.kuppelofen.de/les-cheminees-fd-serie/" target="_blank" rel="noopener">https://www.kuppelofen.de/les-cheminees-fd-serie/</a></li>
+<li>pizzaofenbau.ch – Bausätze CHF 3’490–5’490 (Suchindex) – <a href="https://www.pizzaofenbau.ch/bausatz/" target="_blank" rel="noopener">https://www.pizzaofenbau.ch/bausatz/</a></li>
+<li>TheFiredome (Kiesen BE) – 2026 keine neuen Bausätze – <a href="https://www.thefiredome.ch/" target="_blank" rel="noopener">https://www.thefiredome.ch/</a></li>
+<li>ofenseite.ch – Schamott-Normalstein 250 × 125 × 64, €15.90 (Vergleich) – <a href="https://www.ofenseite.ch/1151488-schamotte-normalstein-250x125x64mm" target="_blank" rel="noopener">https://www.ofenseite.ch/1151488-schamotte-normalstein-250x125x64mm</a></li>
+<li>Bauhaus DE – Schamottstein 250 × 124 × 64, 1200 °C, 3.7 kg, €7.95 (Vergleich) – <a href="https://www.bauhaus.info/ofenzubehoer/schamottstein/p/33066655" target="_blank" rel="noopener">https://www.bauhaus.info/ofenzubehoer/schamottstein/p/33066655</a></li>
+<li>BAZG – Wertfreigrenze 150 Franken, MWST 8.1 %, Rückerstattung ausländische MWST – <a href="https://www.bazg.admin.ch/de/wertfreigrenze-mehrwertsteuer-einreise-150-franken" target="_blank" rel="noopener">https://www.bazg.admin.ch/de/wertfreigrenze-mehrwertsteuer-einreise-150-franken</a></li>
+<li>BAZG – App QuickZoll – <a href="https://www.bazg.admin.ch/de/quickzoll-app-waren-anmelden-private" target="_blank" rel="noopener">https://www.bazg.admin.ch/de/quickzoll-app-waren-anmelden-private</a></li>
+<li>Ratgeber Ausfuhrschein (Bagatellgrenze €50.01, Stand 2025) – <a href="https://lieferadresse-konstanz.ch/mehrwertsteuer-zurueckholen-so-klappts-fuer-schweizer/" target="_blank" rel="noopener">https://lieferadresse-konstanz.ch/mehrwertsteuer-zurueckholen-so-klappts-fuer-schweizer/</a></li>
+<li>Blick – Digitaler Ausfuhrschein Pilot seit 16.6.2026 – <a href="https://www.blick.ch/politik/leichteres-leben-fuer-einkaufstouristen-jetzt-wird-der-ausfuhrschein-digital-id22038001.html" target="_blank" rel="noopener">https://www.blick.ch/politik/leichteres-leben-fuer-einkaufstouristen-jetzt-wird-der-ausfuhrschein-digital-id22038001.html</a></li>
+<li>EZB – Euro-Referenzkurse (CHF 0.9312 am 12.10.2026) – <a href="https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml" target="_blank" rel="noopener">https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml</a></li>
+<li>Kanton Aargau – Bauverordnung BauV (SAR 713.121), §§ 19, 49 – <a href="https://gesetzessammlungen.ag.ch/app/de/texts_of_law/713.121" target="_blank" rel="noopener">https://gesetzessammlungen.ag.ch/app/de/texts_of_law/713.121</a></li>
+<li>Gemeinde Würenlos – Bauverwaltung (Kontakt, Öffnungszeiten) – <a href="https://www.wuerenlos.ch/verwaltung/bauverwaltung/bauverwaltung/" target="_blank" rel="noopener">https://www.wuerenlos.ch/verwaltung/bauverwaltung/bauverwaltung/</a></li>
+<li>MeteoSchweiz – Klimanormwerte 1991–2020 (Zürich-Affoltern) – <a href="https://data.geo.admin.ch/ch.meteoschweiz.klima/normwerte/normwerte.zip" target="_blank" rel="noopener">https://data.geo.admin.ch/ch.meteoschweiz.klima/normwerte/normwerte.zip</a></li>
+<li>ADAC Autokatalog – Fiat Talento Kastenwagen L2H2 1.2t (Leergewicht 1965 kg, zGG 3060 kg, Zuladung 1095 kg) – <a href="https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/fiat/talento/296/308458" target="_blank" rel="noopener">https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/fiat/talento/296/308458</a></li>
+<li>VTS Art. 7 – Leergewicht inkl. Führer 75 kg (via admin.ch) – <a href="https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de" target="_blank" rel="noopener">https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de</a></li>
+<li>Kanton Aargau – Merkblatt Führerausweis Kategorie B – <a href="https://ag.ch/media/kanton-aargau/dvi/dokumente/stva/fuehrerausweise/ausweiskategorien/kategorie-b-03072024.pdf" target="_blank" rel="noopener">https://ag.ch/media/kanton-aargau/dvi/dokumente/stva/fuehrerausweise/ausweiskategorien/kategorie-b-03072024.pdf</a></li>
+<li>OpenStreetMap Nominatim / OSRM – Distanzen und Fahrzeiten – <a href="https://router.project-osrm.org/" target="_blank" rel="noopener">https://router.project-osrm.org/</a></li>
+</ol>
+<p><strong>Nicht verifizierbar (deshalb als „Preis unbestätigt" bzw. ANNAHME markiert):</strong> Kleinmaterial, Plane, Diamantscheibe, Werkzeug, Versandkosten schamotte-shop.de, Lieferadresse-Gebühr, Dämmpaket zum Bausatz Les Cheminées, Gewicht Schalungsstein Hornbach (27 kg wie OBI Kann 24 cm), Gewicht Drahtgeflecht, Mietgerätegewichte, Öffnungszeiten Hornbach (aus Verzeichnissen, nicht von hornbach.ch).</p>
+<h2 id="anhang-b--dateien-in-diesem-projekt">Anhang B – Dateien in diesem Projekt</h2>
+<ul>
+<li><code>dokument/Bauplan_Pizzaofen.md</code> / <code>.html</code> / <code>.pdf</code>: dieses Dokument</li>
+<li><code>einkaufsliste.html</code> / <code>einkaufsliste.pdf</code>: Einkaufsliste zum Abhaken (Handy)</li>
+<li><code>zeichnungen/*.svg</code> / <code>*.png</code>: Frontansicht, Schnitt A–A, Draufsicht, Kuppelschnitt</li>
+<li><code>berechnung/berechnung.py</code>: Kuppelgeometrie, Steine, Mörtel, Dämmung, Beton, Kies</li>
+<li><code>berechnung/stueckliste.py</code>: Preise, Gewichte, Fahrtenplan</li>
+<li><code>berechnung/varianten_und_zoll.py</code>: Variante A/C, Deutschland-Rechnung, Wärmebedarf</li>
+</ul>
+
+</article></main>
