@@ -1,13 +1,20 @@
 ---
 title: "Pizzaofen Würenlos – Bau- und Beschaffungsplan"
-subtitle: "Kuppelofen (neapolitanischer Stil) · Fassung 2, vollständig geprüft · Dienstag, 13. Oktober 2026"
+subtitle: "Kuppelofen (neapolitanischer Stil) · Fassung 3: Einkauf in zwei Phasen · Dienstag, 13. Oktober 2026"
 ---
 
-# Pizzaofen Würenlos – Bau- und Beschaffungsplan (Fassung 2)
+# Pizzaofen Würenlos – Bau- und Beschaffungsplan (Fassung 3)
 
-**Stand:** Dienstag, 13.10.2026, ca. 12:15 Uhr · Preise und **Lagerbestände live abgefragt** am 13.10.2026 · EUR-Kurs **1 EUR = 0.9312 CHF** (EZB, 12.10.2026)
+**Stand:** Dienstag, 13.10.2026, 15:25 Uhr · Preise und **Lagerbestände live abgefragt** am 13.10.2026 (zuletzt 15:23 Uhr, alles verfügbar) · EUR-Kurs **1 EUR = 0.9312 CHF** (EZB, 12.10.2026)
 
-> **Was gegenüber Fassung 1 geändert hat (und warum)**
+> **Fassung 3 (15:25 Uhr): Einkauf in zwei Phasen, Abholkarte**
+> - **Phase 1 · Sockel** (Fundament, Sockel, Herdplatte): Fahrt **A** heute OBI Oftringen, Fahrt **B** Mi OBI Volketswil, **K1–K4** Kieswerk. CHF {{P1}}.
+> - **Phase 2 · Ofen:** **eine Fahrt C am Mo 19.10.** nach OBI Volketswil, CHF {{P2}}.
+> - Knappe Ofen-Teile fahren in Phase 1 mit (alle 39 Schamottsteine, 1 Platte, Türblech, Sand: CHF {{VOR}}), weil es sie sonst nirgends in genügender Zahl gibt.
+> - **2 Tonnen pro Fahrt sind mit Kat. B nicht erlaubt** (Kapitel 5.4). Es bleibt bei max. 900 kg pro Fahrt.
+> - Neu: **`karte.html`**, eine Abholkarte mit allen Stopps, Ladelisten, Navigation (Google Maps) und Nutzlast-Rechner.
+
+> **Was Fassung 2 gegenüber Fassung 1 geändert hat (und warum)**
 > 1. **Lagerbestand geprüft statt angenommen.** Ich habe die öffentliche Bestandsschnittstelle von obi.ch abgefragt, dieselbe Funktion wie „Verfügbarkeit im Markt prüfen". **Keine Filiale im Umkreis hat 62 Schamott-Normalsteine:** Volketswil 24, Oftringen 25, Basel 21, Schaffhausen 9, Winterthur 3. **Zement ist in Volketswil ausverkauft.** Mit Fassung 1 wärt ihr an der Kasse gescheitert.
 > 2. **Nur noch Händler mit bestätigtem Bestand:** OBI Oftringen, OBI Volketswil, Kieswerk Tägerhard. Hornbach und Bauhaus fallen weg, weil ihre Bestände online nicht prüfbar sind.
 > 3. **Kuppel Ø 80 cm statt 90 cm.** Mit allen echten Preisen und dem Werkzeug, das ihr kaufen müsst, kostet Ø 90 cm **CHF {{D90_TOTAL}}**, also **über 2000**. Ø 80 cm kostet **CHF {{GESAMT}}**. Ø 100 cm ist heute nicht baubar: 56 Steine nötig, 49 im Umkreis.
@@ -18,8 +25,9 @@ subtitle: "Kuppelofen (neapolitanischer Stil) · Fassung 2, vollständig geprüf
 > **Kurzfassung**
 > - **Bau:** Kuppelofen **Ø 80 cm innen**. Die Kuppel besteht aus 62 halbierten Schamott-Normalsteinen (6.4 cm), darauf 8 cm Perlit-Dämmung. Der Backboden besteht aus Schamottplatten 40 mm. **Arbeitshöhe 104.5 cm, Gesamthöhe 231 cm.**
 > - **Kosten:** **CHF {{GESAMT}} alles inklusive** (Material, Kleinmaterial, Schutz und das Werkzeug, das ihr kaufen müsst). **Reserve CHF {{RESERVE}}.** Allein die Positionen eurer Budgetliste (Material + Kleinmaterial) kosten CHF {{BUDGET_MAT}}.
-> - **Heute:** Bei OBI Oftringen und OBI Volketswil online reservieren, danach **eine Fahrt** über beide Märkte (147 km, {{F1}} kg).
-> - **Mittwoch und Donnerstag:** Eine Fahrt nach Volketswil ({{F2}} kg) und 4 kurze Fahrten zum Kieswerk, je höchstens 900 kg. Das Fahrzeug bleibt jederzeit unter 3'060 kg und ist mit Kat. B legal.
+> - **Heute (Phase 1):** Fahrt **A** nach OBI Oftringen ({{TA}} kg), Abfahrt spätestens 17:30.
+> - **Mittwoch und Donnerstag (Phase 1):** Fahrt **B** nach Volketswil ({{TB}} kg) und 4 kurze Fahrten zum Kieswerk, je höchstens 900 kg. Das Fahrzeug bleibt jederzeit unter 3'060 kg und ist mit Kat. B legal.
+> - **Mo 19.10. (Phase 2):** Fahrt **C** nach Volketswil ({{TC}} kg): Platten, Mörtel, Perlit, Kaminrohr, Tür, Brandschutz.
 > - **Bewilligung:** Laut BauV AG § 49 bewilligungsfrei, **wenn 2 m Abstand zur Grenze** eingehalten sind oder der Nachbar schriftlich zustimmt (Formular in Kapitel 9).
 > - **Wetter:** Bis 22.10. trocken, nachts über 6 °C. Fundament am **Do 15.10.**, Herdplatte am **So 18.10.**, Kuppel am **So 25.10.**
 
@@ -45,12 +53,12 @@ Jeder offene Punkt aus Fassung 1 ist jetzt geklärt oder hat eine feste Entschei
 | Füllbeton Schalungsstein | laut KANN-Datenblatt 121 l/m² |
 | Versand/Lieferadresse Deutschland | schamotte-shop.de: Paket 0–150 kg €7.90–79.90; Lieferadresse Konstanz €3–15/Paket. Durchgerechnet: lohnt nicht |
 | Preis Dämmpaket Bausatz | kuppelofen.de: CS-Platte €60, Keramikfaser €80, Mörtel €45 |
-| Reservierung kommt nicht rechtzeitig | Feste Regel in 4.3 |
-| Werkzeug vorhanden? | 10 Haushaltswerkzeuge mit Preis und Bestand. Was fehlt, kommt auf die Reservierung Volketswil (Kapitel 8) |
+| Fahrt A heute nicht mehr möglich | Feste Regel in 4.3 |
+| Werkzeug vorhanden? | 10 Haushaltswerkzeuge mit Preis und Bestand. Was fehlt, kauft ihr bei Fahrt B in Volketswil (Kapitel 8) |
 | Nutzlast eures Talento | Formular und Regel in 5.2, gelten für jeden Wert im Fahrzeugausweis |
 | Grenzabstand/Nachbar | Messregel und Zustimmungsformular in Kapitel 9 |
 
-Ein Rest-Risiko bleibt: Jemand kauft zwischen meiner Abfrage und eurer Abholung. Die Online-Reservierung schliesst das praktisch aus. Für den Notfall gilt **Plan B in 10.3**.
+Ein Rest-Risiko bleibt: Jemand kauft zwischen meiner Abfrage und eurer Abholung. Deshalb ruft ihr vor Fahrt A an und lasst die Steine bereitlegen (Text in 4.5), und alle 39 Schamottsteine kauft ihr schon in Phase 1. Für den Notfall gilt **Plan B in 10.3**.
 
 ---
 
@@ -94,7 +102,7 @@ Grundlagen der Rechnung: flache, neapolitanische Kuppel (Höhe ≈ 0.9 × Radius
 | Aufwand | 60–80 Personenstunden | 110–130 Personenstunden | wie B + Ausleihen |
 | Schwierigkeit | mittel (Teile bis 100 kg, kein Kran) | mittel–hoch (Steine schneiden, Kuppel mauern) | wie B |
 | Optik | gleichmässig, „wie gekauft" | klassischer verputzter Iglu | wie B |
-| Risiken | Budget weit überschritten; Abholung ausserhalb 100 km; Sockel für 100-cm-Kuppel zu klein | Bestand (durch Reservierung abgesichert), Wetter (Termine nach Prognose) | nur sinnvoll, wenn das Ausleihen sicher klappt |
+| Risiken | Budget weit überschritten; Abholung ausserhalb 100 km; Sockel für 100-cm-Kuppel zu klein | Bestand (knappe Steine schon in Phase 1 gekauft), Wetter (Termine nach Prognose) | nur sinnvoll, wenn das Ausleihen sicher klappt |
 
 Zum Vergleich: Ein CUPPO-90-Bausatz kostet €2'370 mit Spedition (ca. CHF {{CUPPO}}), ohne Dämmung und Sockel. Schweizer Bausätze (pizzaofenbau.ch) kosten CHF 3'490–5'490. TheFiredome verkauft 2026 keine Bausätze.
 
@@ -191,32 +199,40 @@ Die Zeichnungen werden direkt aus den Rechenwerten erzeugt (`zeichnungen/zeichnu
 
 ### 4.1 Händler (alle Angaben geprüft)
 
-| Händler | Adresse | Distanz / Fahrzeit* | Öffnungszeiten Dienstag | Telefon |
+| Händler | Adresse | Distanz / Fahrzeit* | Öffnungszeiten (obi.ch, 13.10.) | Telefon |
 |---|---|---|---|---|
-| **OBI Oftringen** | Ackerweg 2, 4665 Oftringen | 42.3 km / 31–40 min | **08:00–19:00** | 058 329 15 00 |
-| **OBI Volketswil** | Industriestrasse 20, 8604 Volketswil | 31.8 km / 27–35 min | **08:00–20:00** | 058 329 12 00 |
-| **Tägerhard Kies AG** | Tägerhardstrasse 151, 5430 Wettingen | 2.8 km / 5 min | **07:00–12:00, 13:00–16:45** | 056 426 70 45 |
+| **OBI Oftringen** | Ackerweg 2, 4665 Oftringen | 42.3 km / 31–39 min | **Mo–Do 08–19, Fr 08–20, Sa 08–18** | 058 329 15 00 |
+| **OBI Volketswil** | Industriestrasse 20, 8604 Volketswil | 31.8 km / 27–34 min | **Mo–Fr 08–20, Sa 08–18** | 058 329 12 00 |
+| **Tägerhard Kies AG** | Tägerhardstrasse 151, 5430 Wettingen | 3.3 km / 6–8 min | **Mo–Fr 07:00–12:00, 13:00–16:45** | 056 426 70 45 |
+| OBI Winterthur (nur Plan B) | Industriestrasse 44, 8404 Winterthur | 41 km / 37–46 min | Mo–Fr 08–20, Sa 08–18 | 058 329 19 00 |
 | Bauverwaltung Würenlos | Schulstrasse 26, 5436 Würenlos | – | 08:00–11:30, 14:00–16:00 | 056 436 87 50 |
 
-\*OSRM-Routing (freie Strasse), dazu +25 % für Kastenwagen und Verkehr. Oftringen → Volketswil: 73 km / 53–65 min.
+\*OSRM-Routing (freie Strasse), dazu +25 % für Kastenwagen und Verkehr. **Alle Stopps mit Ladeliste und Navigationsknopf: `karte.html`.**
 
-### 4.2 Ablauf heute, Dienstag 13.10.
+### 4.2 Zwei Phasen
+
+Zuerst kauft ihr alles für den **Unterbau** (Fundament, Sockel aus Schalungssteinen, Herdplatte) und baut ihn bis So 18.10. Den **Ofen** kauft ihr am Mo 19.10. Ausnahme: Was knapp ist, nehmt ihr schon in Phase 1 mit. Schamottsteine gibt es nur in Oftringen (25) und Volketswil (24). Fehlen sie später, steht der Bau.
+
+| Fahrt | Wann | Wohin | Phase | Ladung | CHF |
+|---|---|---|---|---|---|
+<!--TOUREN-->
+
+**Phase 1 · Sockel: CHF {{P1}}**, davon Ofen-Material vorgezogen CHF {{VOR}}. **Phase 2 · Ofen: CHF {{P2}}.** Total CHF {{GESAMT}}.
+
+### 4.3 Heute, Dienstag 13.10., und Regeln
 
 | Zeit | Was |
 |---|---|
-| **12:15–12:45** | **Auf obi.ch reservieren** („Reservieren & Abholen"): **Reservierung 1 im Markt Oftringen**, **Reservierung 2 im Markt Volketswil**, Artikel laut Einkaufsliste. OBI meldet per E-Mail oder SMS, wenn die Ware bereit ist („bestenfalls nach ca. 4 Stunden"). |
-| 12:45–15:30 | Zuhause: Schnurgerüst 1.70 × 1.70 m abstecken (10 cm Abstand zur Mauer), Gartenplatten auf 1.9 × 1.9 m abheben und stapeln, Aushub beginnen. **Werkzeug-Check** nach Kapitel 8: Was fehlt, auf Reservierung 2 nachbuchen. Abstand zur Grenze messen (Kapitel 9). |
-| 14:00–16:00 | Bauverwaltung anrufen oder E-Mail aus Kapitel 9 schicken |
-| **ab Bestätigung (ca. 16:30)** | **Fahrt F1:** Würenlos → **OBI Oftringen** → **OBI Volketswil** → Würenlos (147 km), Ladung {{F1}} kg |
-| ca. 19:30 | Abladen. Zement auf Bretter legen, unter die Plane |
-
-### 4.3 Entscheidungsregeln für heute
+| **sofort** | OBI Oftringen anrufen (Text 4.5): 25 Schamottsteine und 16 Sack Zement bereitlegen lassen |
+| bis 17:30 | **Fahrt A** losfahren: Würenlos → OBI Oftringen → Würenlos (85 km), Ladung {{TA}} kg |
+| ca. 19:30 | Abladen. Zement auf Bretter, unter die Plane. Steine trocken lagern |
+| abends | Schnurgerüst 1.70 × 1.70 m (10 cm zur Mauer), Gartenplatten auf 1.9 × 1.9 m abheben. **Werkzeug-Check** (Kapitel 8). Abstand zur Grenze messen (Kapitel 9) |
 
 | Situation | Dann |
 |---|---|
-| Bestätigung Oftringen bis **17:45** | F1 wie geplant (Oftringen schliesst um 19:00) |
-| Bestätigung Oftringen **nach 17:45** oder gar nicht | Heute nur Volketswil (64 km). Oftringen kommt am **Mittwoch um 08:00** dran (eigene Fahrt, 519 kg, 85 km). F2 Volketswil verschiebt sich auf Mittwoch 11:00. K2 fällt auf Do 09:00, das Fundament bleibt am Donnerstag. |
-| Bei Abholung **fehlen Schamottsteine** | Nötig sind 35 NF. Ergeben Oftringen + Volketswil zusammen ≥ 35, ist alles gut. Sonst den Rest am Mittwoch in **OBI Schaffhausen** holen (9 Stück, 058 329 22 00), vorher online reservieren. |
+| Fahrt A **heute nicht bis 17:30** möglich | Mittwoch: 08:00 **A**, 10:15 **K1**, 11:00 **B**, 14:00 **K2**. Donnerstag bleibt, das Fundament auch. |
+| Oftringen hat **weniger als 25 Schamottsteine** | Nehmt, was da ist. Den Rest bei Fahrt B zusätzlich in Volketswil (24 am Lager), sonst OBI Basel (21). |
+| Bei Fahrt C fehlen **Platten** in Volketswil | Rest in **OBI Winterthur** (13 Stück am 13.10.), 25 km weiter, auf der Karte gestrichelt |
 | Der Markt verlangt einen anderen Preis | Es gilt der Marktpreis (OBI weist darauf hin). Dafür ist die Reserve von CHF {{RESERVE}} da. |
 
 ### 4.4 Mittwoch und Donnerstag
@@ -224,10 +240,11 @@ Die Zeichnungen werden direkt aus den Rechenwerten erzeugt (`zeichnungen/zeichnu
 | Zeit | Fahrt | Ziel | Ladung |
 |---|---|---|---|
 | Mi 07:00 | **K1** | Kieswerk: 0.56 m³ Kiesgemisch 0/31.5 | {{K1}} kg |
-| Mi 08:15 | **F2** | OBI Volketswil: 26 Schalungssteine, 2 OSB, 3 Schalbretter, 4 Bretter, 3 Perlit | {{F2}} kg |
+| Mi 08:15 | **B** | OBI Volketswil: 26 Schalungssteine, 2 Baustahlmatten, 2 Estrichgitter, 2 OSB, 3 Schalbretter, 4 Bretter, Rührwerk, Kellen, Schutz, 14 Schamottsteine | {{TB}} kg |
 | Mi 13:00 | **K2** | Kieswerk: 0.19 m³ Kiesgemisch + 0.33 m³ Betonkies | {{K2}} kg |
 | Do 07:00 | **K3** | Kieswerk: 0.50 m³ Betonkies | {{K3}} kg |
 | Do 08:00 | **K4** | Kieswerk: 0.27 m³ Betonkies + 0.25 m³ Sand | {{K4}} kg |
+| **Mo 19.10. 08:00** | **C** | OBI Volketswil (Phase 2): 17 Platten, 5 Mörtel, 3 Perlit, Kaminrohr, Geflecht, Tür, Brandschutz. **Am Vorabend Bestand prüfen** | {{TC}} kg |
 
 **Kies holen, so geht's:**
 1. Die 4 Mörtelkästen (90 l) auf den Antirutschmatten direkt an die Trennwand stellen. Füllen bis 5 cm unter den Rand, das sind ~80 l pro Kasten.
@@ -235,10 +252,10 @@ Die Zeichnungen werden direkt aus den Rechenwerten erzeugt (`zeichnungen/zeichnu
 3. Vorher an der Waage oder Kasse melden: „Privat, Kiesgemisch 0/31.5, ich schaufle selbst."
 4. Zuhause mit der Schubkarre ausschaufeln.
 
-### 4.5 Anruftexte (nur falls online etwas nicht klappt)
+### 4.5 Anruftexte
 
-**OBI (Oftringen 058 329 15 00 / Volketswil 058 329 12 00):**
-> „Guten Tag, ich habe heute online reserviert, auf den Namen … Ich möchte heute um ca. … Uhr abholen. Können Sie mir bestätigen, dass die 25 (bzw. 14) Schamottesteine 64 × 124 × 250, Artikel 5390067, bereitliegen? Danke."
+**OBI Oftringen (058 329 15 00), vor Fahrt A:**
+> „Guten Tag, ich komme in ca. einer Stunde mit einem Lieferwagen. Können Sie mir bitte 25 Schamottesteine 64 × 124 × 250, Artikel 5390067, und 16 Sack Zement CEM I, Artikel 4793972, an der Abholung bereitlegen? Ich zahle vor Ort. Danke."
 
 **Tägerhard Kies (056 426 70 45):**
 > „Guten Tag, ich bin Privatkunde aus Würenlos. Ich komme morgen um 7 Uhr mit einem Lieferwagen und eigenen Mörtelkästen. Ich schaufle selbst ca. 0.56 m³ Kiesgemisch 0/31.5, später noch Betonkies 0/16 und Sand 0/4, zum Privatpreis von 60 Franken pro m³ laut Preisliste. Wo melde ich mich an?"
@@ -269,14 +286,15 @@ In der Schweiz ist das **Leergewicht inklusive Fahrer (75 kg)** angegeben (VTS A
 
 **Regel für euren Wert P:**
 - **P ≥ 900 kg:** Alles läuft wie geplant.
-- **P zwischen 790 und 900 kg:** F1 ({{F1}} kg) und F2 ({{F2}} kg) passen. Bei den Kiesfahrten füllt ihr pro 130 kg unter 900 einen Mörtelkasten weniger und holt den Rest mit einer zusätzlichen Kiesfahrt am Freitag.
-- **P unter 790 kg:** In F2 nur 20 Schalungssteine laden. Die restlichen 6 holt ihr am Freitag in Volketswil, gebraucht werden sie erst am Samstag.
+- **P zwischen 840 und 900 kg:** A ({{TA}} kg), B ({{TB}} kg) und C ({{TC}} kg) passen. Bei den Kiesfahrten füllt ihr pro 130 kg unter 900 einen Mörtelkasten weniger und holt den Rest mit einer zusätzlichen Kiesfahrt am Freitag.
+- **P unter 840 kg:** Bei B die 14 Schamottsteine erst mit Fahrt C holen. **P unter 790 kg:** Zusätzlich bei B nur 20 Schalungssteine laden. Die restlichen 6 holt ihr am Freitag in Volketswil, gebraucht werden sie erst am Samstag.
+- Die Karte (`karte.html`) rechnet das für eure Werte aus dem Ausweis aus.
 
 **Schwerste Fahrt (K3), beladen:** 1'965 + 75 + 20 + 900 = **2'960 kg**. Das liegt unter dem zulässigen Gesamtgewicht von 3'060 kg und **unter 3'500 kg**.
 
 ### 5.3 Kat. B: dürft ihr das fahren?
 
-**Ja.** Kat. B erlaubt Motorwagen bis **3'500 kg Gesamtgewicht** (laut Ausweis) und Anhänger bis 750 kg. Der Talento liegt mit 2'900–3'100 kg in Kat. B. Für den **Führerausweis auf Probe** (seit September 2026) gibt es keine Gewichtseinschränkung. Es gilt aber **0.1 ‰ Alkohol**, und jeder Entzug verlängert die Probezeit.
+**Ja, aber nur mit der Ladung aus diesem Plan.** Kat. B erlaubt Motorwagen bis **3'500 kg Gesamtgewicht** (laut Ausweis) und Anhänger bis 750 kg. Der Talento liegt mit 2'900–3'100 kg in Kat. B. Für den **Führerausweis auf Probe** (seit September 2026) gibt es keine Gewichtseinschränkung. Es gilt aber **0.1 ‰ Alkohol**, und jeder Entzug verlängert die Probezeit.
 
 > ⚠️ **Überladung:** Schamotte, Beton und Kies sind im Verhältnis zum Volumen extrem schwer. 0.5 m³ Kies (~900 kg) bedecken den Laderaumboden nur etwa 10 cm hoch. **Der Wagen sieht dann leer aus, ist aber voll.** 26 Schalungssteine (0.78 m³) wiegen 702 kg, 16 Sack Zement 400 kg. **Ladet nach Liste, nie nach Gefühl.** Prüft die zulässige Hinterachslast im Ausweis und pumpt die Reifen auf den Druck für volle Beladung (Angabe im Tankdeckel).
 
@@ -287,6 +305,15 @@ In der Schweiz ist das **Leergewicht inklusive Fahrer (75 kg)** angegeben (VTS A
 - **3 Antirutschunterlagen** unter die Last, **4 Spanngurte** an die Bodenösen.
 - **Mörtelkästen mit Kies** dicht an die Trennwand und nebeneinander stellen, die Eimer dahinter, einen Gurt quer darüber.
 - **Fahren:** doppelter Abstand, früh bremsen. Die 3-m-Bretter im Markt halbieren lassen.
+
+
+### 5.4 Warum keine 2 Tonnen pro Fahrt
+
+Der beladene Bus darf nie mehr wiegen als das **Gesamtgewicht im Fahrzeugausweis**. Beim Talento sind das 2'900–3'100 kg, leer wiegt er ca. 1'965 kg inklusive Fahrer. **Mit 2'000 kg Ladung wären es ca. 3'965 kg.** Das ist rund 30 % über dem erlaubten Gewicht und auch über der Kat.-B-Grenze von 3'500 kg.
+
+- **Folgen:** Eine so grosse Überladung gibt eine Anzeige statt einer Ordnungsbusse. In der Probezeit kann das den Ausweis kosten. Bei einem Unfall nimmt die Versicherung Regress. Bremsweg, Reifen und Achsen sind für dieses Gewicht nicht ausgelegt.
+- **Woher die 2'000 kg wohl kommen:** Beim Talento steht im Ausweis eine **Anhängelast von 2'000 kg (gebremst)**. Sie gilt nur für einen Anhänger und ist keine Zuladung. Mit Kat. B dürft ihr hinter diesem Bus nur einen Anhänger **bis 750 kg** ziehen, denn ein schwererer Anhänger ist nur erlaubt, wenn Bus und Anhänger zusammen höchstens 3'500 kg Gesamtgewicht haben.
+- **Was es kostet, bei 900 kg zu bleiben:** fast nichts. Das Kieswerk ist 3.3 km entfernt, eine Fahrt dauert 6–8 min pro Weg. Die schwerste OBI-Fahrt (B, {{TB}} kg) passt ohnehin.
 
 ---
 
@@ -316,13 +343,13 @@ In der Schweiz ist das **Leergewicht inklusive Fahrer (75 kg)** angegeben (VTS A
 
 | Datum | Schritt | Pers. | Zeit | Wetter |
 |---|---|---|---|---|
-| **Di 13.10.** | Reservieren, abstecken, Platten heben, Aushub beginnen, **F1** | 2 | 7 h | – |
-| **Mi 14.10.** | K1, F2, K2 · Aushub fertig auf −30 cm (0.87 m³) · **Kieskoffer** in 4 Lagen à 5 cm, jede nässen und 3 × stampfen · Fundamentschalung (2 × 155 + 2 × 150 cm, Diagonale 212.1 cm) | 2 | 10 h | trocken ✔ |
+| **Di 13.10.** | **Fahrt A** (Oftringen), abstecken, Platten heben, Aushub beginnen | 2 | 5 h | – |
+| **Mi 14.10.** | K1, **B**, K2 · Aushub fertig auf −30 cm (0.87 m³) · **Kieskoffer** in 4 Lagen à 5 cm, jede nässen und 3 × stampfen · Fundamentschalung (2 × 155 + 2 × 150 cm, Diagonale 212.1 cm) | 2 | 10 h | trocken ✔ |
 | **Do 15.10.** | K3, K4 · **Fundament betonieren:** Estrichgitter auf 4-cm-Abstandhalter, 0.354 m³ in 9 halben Mischungen, abziehen, **12 L-Steckeisen** setzen | 2–3 | 6 h | min 10 °C ✔ |
 | Fr 16.10. | Fundament feucht halten, Folie drauf · **Steine schneiden:** 35 NF halbieren, 5 Platten längs halbieren. Nass schneiden, FFP3, Brille, Gehörschutz | 2 | 4 h | – |
 | **Sa 17.10.** | Fundamentschalung weg · **Sockel:** 1. Lage im Mörtelbett (Zement : Sand 1 : 4), 2. und 3. Lage trocken im Verband · **Herdplattenschalung:** OSB auf 8 Doppelbrett-Stützen à 75 cm | 2 | 7 h | min 9.5 °C ✔ |
 | **So 18.10.** | **Sockel füllen und Herdplatte in einem Guss** (0.62 m³ = 15 halbe Mischungen), R188A auf 3-cm-Abstandhaltern | 3 | 7 h | min 8.8 °C, 0 mm ✔ |
-| Mo–Di 19.–20.10. | Herdplatte nass halten, Folie | 1 | 15 min/Tag | – |
+| Mo–Di 19.–20.10. | Herdplatte nass halten, Folie · **Mo 08:00 Fahrt C** (Phase 2, Ofen-Material) | 1–2 | 2.5 h | – |
 | **Mi 21.10.** | **Bodendämmung** Perlit-Zement 10 cm (Kreis Ø 103 + Eingang, Rand aus OSB-Streifen) | 2 | 3 h | min 7.3 °C ✔ |
 | **Sa 24.10.** | **Backboden** auf 5 mm Sand (ohne Mörtel), Kreis Ø 92.8 anzeichnen, Ränder schneiden · **Sandform** aufbauen · **kein Mörtel** (Nacht 3.2 °C) | 2 | 6 h | – |
 | **So 25.10.** | **Eingangswände** (5 Lagen) + **Kuppel Reihen 1–4 + Schluss**, Sturzplatte, 2. Deckplatte mit Kaminloch | 2 | 9–10 h | folgende Nächte 7.1 / 6.4 / 7.0 °C ✔ |
@@ -394,7 +421,7 @@ Die Temperatur steuert ihr über die Holzmenge. Bei Regen pausieren.
 
 **Mieten statt kaufen: nichts.** Kaufen ist billiger als Miete plus Rückgabefahrt. Zum Vergleich die OBI-Mietpreise: Mischer CHF 147/Woche, Rüttelplatte CHF 77/Tag, Steintrennmaschine CHF 120/Tag.
 
-**Haushaltswerkzeug, heute bis 15:30 zuhause prüfen.** Was fehlt, auf die Reservierung Volketswil setzen:
+**Haushaltswerkzeug heute zuhause prüfen.** Für den Aushub am Mi braucht ihr Schaufel, Spaten, Kreuzhacke und Schubkarre: Fehlendes heute ausleihen. Den Rest kauft ihr bei Fahrt B in Volketswil:
 
 <!--HAUS-->
 
@@ -458,7 +485,7 @@ Die Temperatur steuert ihr über die Holzmenge. Bei Regen pausieren.
 
 | Problem | Ersatz (Bestand 13.10.) |
 |---|---|
-| Nach Oftringen und Volketswil weniger als 35 Schamottsteine | OBI Schaffhausen 9 Stück (058 329 22 00), OBI Basel 21 Stück (058 329 11 00), vorher online reservieren |
+| Nach Oftringen und Volketswil weniger als 35 Schamottsteine | OBI Schaffhausen 9 Stück (058 329 22 00), OBI Basel 21 Stück (058 329 11 00), vorher anrufen |
 | Weniger als 18 Schamottplatten 40 × 200 × 500 | OBI Winterthur 13, Oftringen weitere 11 |
 | Weniger als 26 Kann-Schalungssteine in Volketswil | OBI Winterthur 72 (Industriestrasse 44, 058 329 19 00) |
 | Zement in Oftringen ausverkauft | OBI Winterthur, CEM I 131 Sack |
@@ -479,10 +506,11 @@ Das Skript `berechnung/obi_bestand.py` fragt alle 39 OBI-Positionen live ab und 
 ## Anhang B: Dateien
 
 - `dokument/Bauplan_Pizzaofen.md`, `.html`, `.pdf`: dieses Dokument
+- `karte.html`: Abholkarte mit Route, Stopps, Ladelisten, Navigation und Nutzlast-Rechner (Erzeugung: `karte/basemap.py`, `karte/gen_karte.py`)
 - `einkaufsliste.html`, `einkaufsliste.pdf`: Einkaufsliste zum Abhaken
 - `zeichnungen/`: Frontansicht, Schnitt, Draufsicht, Kuppelschnitt (SVG/PNG)
 - `berechnung/berechnung.py`: Geometrie und Mengen
-- `berechnung/stueckliste.py`: Preise, Gewichte, Fahrten
+- `berechnung/stueckliste.py`: Preise, Gewichte, Phasen und Fahrten
 - `berechnung/varianten_und_zoll.py`: Varianten und Deutschland-Rechnung
 - `berechnung/obi_bestand.py`: Live-Bestandsprüfung
 - `berechnung/wetter_2026-10-13.json`: Prognose-Rohdaten

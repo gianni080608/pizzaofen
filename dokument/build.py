@@ -7,11 +7,13 @@ E, S, VA, BE, WX = L('ergebnis.json'), L('stueckliste.json'), L('varianten.json'
 V, U, K = E[S['d']], E['unterbau'], E[S['d']]['kuppel']
 SU = S['summen']
 def chf(x): return f"{x:,.2f}".replace(',', "'")
-fp = S['fahrten']; fk = list(fp.values())
+fp = S['fahrten']; TO = {t['key']: t for t in S['touren']}; PH = S['phasen']
 ph = dict(GESAMT=chf(SU['gesamt_mit_werkzeug']), RESERVE=chf(2000 - SU['gesamt_mit_werkzeug']), BUDGET_MAT=chf(SU['material'] + SU['klein']),
           S_M=chf(SU['material']), S_K=chf(SU['klein']), S_G=chf(SU['gebinde']), S_S=chf(SU['schutz']), S_W=chf(SU['werkzeug']), S_B=chf(SU['betrieb']),
           GEWICHT_KG=f"{S['gewicht']:,.0f}".replace(',', "'"),
-          F1=f"{fk[0]:.0f}", F2=f"{fk[1]:.0f}", K1=fk[2], K2=fk[3], K3=fk[4], K4=fk[5],
+          TA=TO['A']['kg'], TB=TO['B']['kg'], TC=TO['C']['kg'], K1=TO['K1']['kg'], K2=TO['K2']['kg'], K3=TO['K3']['kg'], K4=TO['K4']['kg'],
+          P1=chf(sum(t['chf'] for t in S['touren'] if t['phase'] == 1)), P2=chf(sum(t['chf'] for t in S['touren'] if t['phase'] == 2)),
+          VOR=chf(sum(t['vorgezogen_chf'] for t in S['touren'])),
           MERIDIAN=K['meridian_cm'], RESTBOGEN=K['rest_bogen_cm'], SCHLUSS=K['schluss_halbsteine'], HALBE=K['halbsteine_reihen'], FLAECHE=K['kontrolle_flaeche_m2'],
           HALBE_KONTROLLE=K['halbsteine_flaechenkontrolle'], HALBE_V=V['halbsteine_mit_verschnitt'], NF_KUPPEL=V['nf_kuppel'], BODEN_M2=V['boden_m2'],
           MOERTEL_L=V['moertel_liter'], MOERTEL_KG=V['moertel_kg'], P_BODEN=V['perlit_mix_m3']['boden'], P_KUPPEL=V['perlit_mix_m3']['kuppel'],
@@ -49,9 +51,13 @@ for r in K['reihen']:
     rr.append(f"| {r['reihe']} | {r['z_innen_von']}–{r['z_innen_bis']} cm | {r['r_innen']} cm | {r['neigung_grad']}° | **{r['halbsteine']}**" + (f" (−{r['tuerabzug']} Tür)" if r['tuerabzug'] else '') + ' |')
 rr.append(f"| Schluss | {K['reihen'][-1]['z_innen_bis']}–{V['h']} cm | – | – | **{K['schluss_halbsteine']}** (zugeschnitten) |")
 s = s.replace('<!--REIHEN-->', '\n'.join(rr))
-fahrt_von = lambda r: ', '.join(sorted(set(f"{'F1' if mk == 'Oftringen' or r['id'] not in ('O02','O04','O05','O06','O10') else 'F2'}" if mk != 'Tägerhard' else 'K1–K4' for mk in r['bezug'])))
+fahrt_von = lambda r: ', '.join(t['key'] for t in S['touren'] if any(p['id'] == r['id'] for p in t['pos']))
+kgf = lambda x: f'{x:,}'.replace(',', "'")
+ORTN = {'oftringen': 'OBI Oftringen', 'volketswil': 'OBI Volketswil', 'kies': 'Kieswerk Tägerhard'}
+tt = [f"| **{t['key']}** | {t['tag']} {t['zeit']} | {ORTN[t['ort']]} | {t['phase']} · {'Sockel' if t['phase'] == 1 else 'Ofen'} | {kgf(t['kg'])} kg | {chf(t['chf'])}" + (f" (davon Ofen vorgezogen {chf(t['vorgezogen_chf'])})" if t['vorgezogen_chf'] else '') + ' |' for t in S['touren']]
+s = s.replace('<!--TOUREN-->', '\n'.join(tt))
 g = ['| Position | Stückgewicht | Menge | Gewicht | Fahrt |', '|---|---|---|---|---|'] + [f"| {r['name']} | {r['kg_einheit']} kg/{r['eh']} | {r['menge']} {r['eh']} | **{r['kg']:.0f} kg** | {fahrt_von(r)} |" for r in sorted(S['rows'], key=lambda r: -r['kg']) if r['kg'] >= 1]
-g.append(f"| übrige Kleinteile (< 1 kg je Position) | – | – | {sum(r['kg'] for r in S['rows'] if r['kg'] < 1):.1f} kg | F1 |")
+g.append(f"| übrige Kleinteile (< 1 kg je Position) | – | – | {sum(r['kg'] for r in S['rows'] if r['kg'] < 1):.1f} kg | A, B, C |")
 g.append('')
 g.append('| Fahrt | Gewicht | Planungsgrenze 900 kg |'); g.append('|---|---|---|')
 for k2, v2 in fp.items(): g.append(f"| {k2} | **{v2:.0f} kg** | {'✔' if v2 <= 900 else '✘'} |")

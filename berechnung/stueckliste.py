@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Stueckliste v2 (13.10.2026): nur Haendler mit online bestaetigtem Lagerbestand (OBI-Schnittstelle) + Kieswerk Taegerhard.
+"""Stueckliste v3 (13.10.2026, Phasen Sockel/Ofen): nur Haendler mit online bestaetigtem Lagerbestand (OBI-Schnittstelle) + Kieswerk Taegerhard.
 Mengen aus ergebnis.json. Preise: OBI-Produktseiten/Suchliste, Taegerhard Preisliste 2026. Abruf 13.10.2026."""
 import json, math
 E = json.load(open('ergebnis.json'))
@@ -37,15 +37,15 @@ R = [
  ('O15','K','Albrecht Thermolack schwarz matt 125 ml','Tür + Kaminrohr-Ausbesserung',1,'Stk',12.50,0.2,'OBI','https://www.obi.ch/metallschutzlacke/albrecht-thermolack-schwarz-matt-125-ml/p/5756416','5756416',{'Volketswil':1},'Volketswil 9'),
  ('O16','K','LUX Universalschraube Senkkopf 4 x 40 mm, 200 Stk','Schalung, Stützen, Griff',1,'Pack',9.95,0.6,'OBI','https://www.obi.ch/spanplattenschrauben-universalschrauben/lux-universalschraube-senkkopf-4-x-40-mm-tx-antrieb-200-stk-/p/4048450','4048450',{'Volketswil':1},'Volketswil 2'),
  ('O17','K','OBI Bindedraht verzinkt 1.4 mm x 20 m','Matten, Geflecht verankern',1,'Rolle',5.95,0.3,'OBI','https://www.obi.ch/weitere-gartenhelfer/obi-bindedraht-verzinkt-1-4-mm-x-20-m/p/4582912','4582912',{'Volketswil':1},'Volketswil 7'),
- ('O18','K','LUX Gewebeplane grün 4 x 5 m','1 x Ofen (Regen/Frost), 1 x Zement/Material',2,'Stk',12.95,1.5,'OBI','https://www.obi.ch/baufolien-planen/lux-gewebeplane-gruen-4-x-5-m/p/2435469','2435469',{'Volketswil':2},'Volketswil 54'),
+ ('O18','K','LUX Gewebeplane grün 4 x 5 m','1 x Ofen (Regen/Frost), 1 x Zement/Material',2,'Stk',12.95,1.5,'OBI','https://www.obi.ch/baufolien-planen/lux-gewebeplane-gruen-4-x-5-m/p/2435469','2435469',{'Oftringen':2},'Oftringen 9'),
  ('O19','K','LUX Diamant-Trennscheibe Universal 125 mm','Schamott schneiden (54 Schnitte)',1,'Stk',21.50,0.2,'OBI','https://www.obi.ch/zubehoer-fuer-winkelschleifer/lux-diamant-trennscheibe-universal-125-mm/p/1755560','1755560',{'Volketswil':1},'Volketswil 2'),
  ('O20','K','LUX Trennscheiben-Sparpack Metall 125 mm','Matten + Türblech schneiden',1,'Pack',8.35,0.4,'OBI','https://www.obi.ch/zubehoer-fuer-winkelschleifer/lux-trennscheiben-sparpack-metall-125-mm/p/1206051','1206051',{'Volketswil':1},'Volketswil 9'),
  ('O21','K','LUX Maurerschnur rot 20 m','Abstecken, Fluchten',1,'Stk',3.65,0.1,'OBI','https://www.obi.ch/pruefwerkzeuge-messwerkzeuge/lux-maurerschnur-classic-rot-20-m/p/1240837','1240837',{'Volketswil':1},'Volketswil 5'),
  ('O22','K','LUX Zimmermannsbleistift 24 cm','Anzeichnen',2,'Stk',2.25,0.02,'OBI','https://www.obi.ch/pruefwerkzeuge-messwerkzeuge/lux-zimmermannsbleistift-classic-24-cm/p/1237163','1237163',{'Volketswil':2},'Volketswil 63'),
- ('O23','G','Jopa Mörtelkasten schwarz 90 l','Mischen + Kiestransport (im Wagen befüllen)',4,'Stk',7.95,2.0,'OBI','https://www.obi.ch/baueimer-moertelkuebel/jopa-moertelkasten-schwarz-fassungsvermoegen-90-l/p/5799150','5799150',{'Volketswil':4},'Volketswil 54'),
+ ('O23','G','Jopa Mörtelkasten schwarz 90 l','Mischen + Kiestransport (im Wagen befüllen)',4,'Stk',7.95,2.0,'OBI','https://www.obi.ch/baueimer-moertelkuebel/jopa-moertelkasten-schwarz-fassungsvermoegen-90-l/p/5799150','5799150',{'Oftringen':4},'Oftringen 25'),
  ('O24','G','Jopa Mörteleimer mit Bügel 20 l','Kiestransport (max. 15 l füllen = 25 kg), Wasser',10,'Stk',3.50,0.68,'OBI','https://www.obi.ch/baueimer-moertelkuebel/jopa-moerteleimer-mit-buegel-fassungsvermoegen-20-l/p/5799200','5799200',{'Oftringen':10},'Oftringen 31'),
- ('O25','G','Spanngurt Unitec mit Klemmverschluss 3 m, 400 kg','Ladungssicherung, 4 Stück',4,'Stk',8.95,0.3,'OBI','https://www.obi.ch/spanngurte-zurrgurte/spanngurt-unitec-mit-klemmverschluss-3-m-400-kg/p/4904546','4904546',{'Volketswil':4},'Volketswil 7'),
- ('O26','G','Antirutschunterlage schwarz 30 x 150 cm','unter die Ladung',3,'Stk',5.50,0.4,'OBI','https://www.obi.ch/teppichgleitschutz/antirutschunterlage-schwarz-30-x-150-cm/p/5102272','5102272',{'Volketswil':3},'Volketswil 23'),
+ ('O25','G','Spanngurt Unitec mit Klemmverschluss 3 m, 400 kg','Ladungssicherung, 4 Stück',4,'Stk',8.95,0.3,'OBI','https://www.obi.ch/spanngurte-zurrgurte/spanngurt-unitec-mit-klemmverschluss-3-m-400-kg/p/4904546','4904546',{'Oftringen':4},'Oftringen 5'),
+ ('O26','G','Antirutschunterlage schwarz 30 x 150 cm','unter die Ladung',3,'Stk',5.50,0.4,'OBI','https://www.obi.ch/teppichgleitschutz/antirutschunterlage-schwarz-30-x-150-cm/p/5102272','5102272',{'Oftringen':3},'Oftringen 18'),
  ('O27','S','LUX Feinstaubmaske FFP3 mit Ventil, 2 Stk','Steine schneiden (Quarzstaub), Perlit, Zement',1,'Pack',19.50,0.1,'OBI','https://www.obi.ch/atemschutz-zubehoer/lux-feinstaubmaske-ffp3-2-stueck/p/3084563','3084563',{'Volketswil':1},'Volketswil 12'),
  ('O28','S','Schutzbrille mit Bügeln','2 Personen',2,'Stk',6.50,0.05,'OBI','https://www.obi.ch/augenschutz/schutzbrille-mit-buegeln/p/3084571','3084571',{'Volketswil':2},'Volketswil 11'),
  ('O29','S','3M Gehörschutzstöpsel mit Kordel 1271','Winkelschleifer',1,'Pack',8.95,0.05,'OBI','https://www.obi.ch/gehoerschutz/3m-gehoerschutzstoepsel-mit-kordel-1271/p/5087713','5087713',{'Volketswil':1},'Volketswil 4'),
@@ -82,23 +82,51 @@ S['gesamt_mit_werkzeug'] = round(S['budget_2000']+S['werkzeug']+S['betrieb'],2)
 S['haus_falls_fehlend'] = round(sum(h['gp'] for h in haus),2)
 S['worst_case'] = round(S['gesamt_mit_werkzeug']+S['haus_falls_fehlend'],2)
 gewicht = round(sum(r['kg'] for r in rows),1)
-# ------------------------------------------------ Fahrten (Gewicht je Haendler-Bezug)
-def kg_bei(markt): return round(sum(r['kg_einheit']*r['bezug'].get(markt,0) for r in rows if markt in r['bezug']),1)
-F2_IDS = {'O02','O04','O05','O06','O10'}     # Mittwoch Volketswil: Sockelsteine + Schalung + Perlit
-def kg_ids(ids, markt): return round(sum(r['kg_einheit']*r['bezug'].get(markt,0) for r in rows if r['id'] in ids),1)
-vol_all = kg_bei('Volketswil'); vol_f2 = kg_ids(F2_IDS,'Volketswil'); vol_f1 = round(vol_all-vol_f2,1)
-oft = kg_bei('Oftringen')
-fahrten = {
- 'F1 OBI Oftringen + OBI Volketswil (heute)': round(oft+vol_f1,1),
- 'F2 OBI Volketswil (Mi)': vol_f2,
- 'K1 Tägerhard (Mi)': round(0.30*1600+0.10*1800+0.0,0) if False else round(0.56*1600),
- 'K2 Tägerhard (Mi)': round(0.19*1600+0.33*1800),
- 'K3 Tägerhard (Do)': round(0.50*1800),
- 'K4 Tägerhard (Do)': round(0.27*1800+0.25*1500),
-}
+# ------------------------------------------------ Phasen und Fahrten (Fassung 3, 13.10.2026 15:15)
+# Phase 1 = Sockel/Unterbau (Fundament, Sockel, Herdplatte), Phase 2 = Ofen (Kuppel, Dämmung, Kamin, Tür, Betrieb).
+PHASE2 = {'K3','O07','O08','O09','O10','O11','O12','O13','O14','O15','O19','O34','O35','O36'}
+for r in rows: r['phase'] = 2 if r['id'] in PHASE2 else 1
+RID = {r['id']: r for r in rows}
+OFT_ADR = 'OBI Oftringen, Ackerweg 2, 4665 Oftringen'; VOL_ADR = 'OBI Volketswil, Industriestrasse 20, 8604 Volketswil'
+KIES_ADR = 'Tägerhard Kies AG, Tägerhardstrasse 151, 5430 Wettingen'
+# Oeffnungszeiten: obi.ch/markt/<ort> (schema.org openingHours, abgerufen 13.10.2026), Taegerhard: Preisliste 2026
+OFT_H = 'Mo–Do 08–19, Fr 08–20, Sa 08–18'; VOL_H = 'Mo–Fr 08–20, Sa 08–18'; KIES_H = 'Mo–Fr 07:00–12:00, 13:00–16:45'
+def obi(markt, ids): return {i: RID[i]['bezug'][markt] for i in ids}
+P1_VOL = [r['id'] for r in rows if r['phase']==1 and 'Volketswil' in r['bezug']]
+P2_VOL = [r['id'] for r in rows if r['phase']==2 and 'Volketswil' in r['bezug'] and r['id'] != 'O07']   # O07: die 14 Steine faehrt B schon am Mi mit
+TOUREN = [
+ dict(key='A', phase=1, ort='oftringen', tag='Di 13.10.', zeit='heute, Abfahrt spätestens 17:30 (Markt offen bis 19:00)', adr=OFT_ADR, oeffnung=OFT_H, tel='058 329 15 00',
+      items={i: RID[i]['bezug']['Oftringen'] for i in RID if 'Oftringen' in RID[i]['bezug']},
+      warum='Zement gibt es nur hier (Volketswil 0). Gurte, Matten und Mörtelkästen braucht ihr schon für diese Fahrt und für K1 morgen um 07:00. Die 25 Schamottsteine, 1 Platte und das Türblech sind Ofen-Material, das ihr jetzt mitnehmt: Oftringen hat nur 25 Steine, nirgends sonst gibt es genug.'),
+ dict(key='K1', phase=1, ort='kies', tag='Mi 14.10.', zeit='07:00', adr=KIES_ADR, oeffnung=KIES_H, tel='056 426 70 45', kies=[('K1',0.56)], warum='Kieskoffer, Lagen 1–3'),
+ dict(key='B', phase=1, ort='volketswil', tag='Mi 14.10.', zeit='08:15', adr=VOL_ADR, oeffnung=VOL_H, tel='058 329 12 00', items=obi('Volketswil', P1_VOL + ['O07']),
+      warum='Alles für Fundament, Sockel und Herdplatte: Schalungssteine, Bewehrung, Schalung, Rührwerk, Kellen, Schutz. Dazu die restlichen 14 Schamottsteine (Ofen-Material): Damit habt ihr alle 39 Steine sicher, bevor sie jemand anderes kauft.'),
+ dict(key='K2', phase=1, ort='kies', tag='Mi 14.10.', zeit='13:00', adr=KIES_ADR, oeffnung=KIES_H, tel='056 426 70 45', kies=[('K1',0.19),('K2',0.33)], warum='Rest Kieskoffer + erster Betonkies'),
+ dict(key='K3', phase=1, ort='kies', tag='Do 15.10.', zeit='07:00', adr=KIES_ADR, oeffnung=KIES_H, tel='056 426 70 45', kies=[('K2',0.50)], warum='Betonkies Fundament'),
+ dict(key='K4', phase=1, ort='kies', tag='Do 15.10.', zeit='08:00', adr=KIES_ADR, oeffnung=KIES_H, tel='056 426 70 45', kies=[('K2',0.27),('K3',0.25)],
+      warum='Rest Betonkies (Sockelfüllung + Herdplatte am So). Der Sand ist Ofen-Material und fährt mit, weil die Fahrt ohnehin stattfindet.'),
+ dict(key='C', phase=2, ort='volketswil', tag='Mo 19.10.', zeit='08:00 (spätestens Di 20.10. – Perlit wird am Mi 21.10. gebraucht)', adr=VOL_ADR, oeffnung=VOL_H, tel='058 329 12 00',
+      items=obi('Volketswil', P2_VOL), warum='Der Ofen: 17 Schamottplatten, Mörtel, Perlit, Kaminrohr, Putzträger, Tür, Brandschutz. Am Vorabend den Bestand prüfen (Regel unten).'),
+]
+for t in TOUREN:
+    pos = []
+    for i, m in t.get('items', {}).items():
+        r = RID[i]; pos.append(dict(id=i, name=r['name'], art=r['art'], menge=m, eh=r['eh'], kg=round(m*r['kg_einheit'],1), chf=round(m*r['ep'],2), phase=r['phase'], url=r['url']))
+    for i, m3 in t.get('kies', []):
+        r = RID[i]; pos.append(dict(id=i, name=r['name'], art=r['art'], menge=m3, eh='m³', kg=round(m3*r['kg_einheit']), chf=round(m3*r['ep'],2), phase=r['phase'], url=r['url']))
+    t['pos'] = pos; t['kg'] = round(sum(p['kg'] for p in pos)); t['chf'] = round(sum(p['chf'] for p in pos), 2)
+    t['vorgezogen_chf'] = round(sum(p['chf'] for p in pos if p['phase'] > t['phase']), 2)
+    t.pop('items', None); t.pop('kies', None)
+# Kontrolle: jede Position genau einmal vollstaendig verteilt
+for r in rows:
+    tot = sum(p['menge'] for t in TOUREN for p in t['pos'] if p['id'] == r['id'])
+    assert abs(tot - r['menge']) < 1e-9, (r['id'], tot, r['menge'])
+assert abs(sum(t['chf'] for t in TOUREN) - sum(r['gp'] for r in rows)) < 0.05
+PHASEN = {p: dict(chf=round(sum(r['gp'] for r in rows if r['phase']==p),2), kg=round(sum(r['kg'] for r in rows if r['phase']==p))) for p in (1,2)}
+fahrten = {f"{t['key']} {t['tag']}": t['kg'] for t in TOUREN}
 NUTZ = dict(gesamtgewicht=3060, leergewicht=1965, beifahrer=75, ausruestung=20)
 out = dict(abruf='13.10.2026', kurs=EUR_CHF, d=D, nf_kauf=NF_KAUF, zement_total_kg=round(zement_total,1), zement_sack=zement_sack,
-           rows=rows, haus=haus, summen=S, gewicht=gewicht, oft_kg=oft, vol_f1_kg=vol_f1, vol_f2_kg=vol_f2, fahrten=fahrten,
+           rows=rows, haus=haus, summen=S, gewicht=gewicht, fahrten=fahrten, touren=TOUREN, phasen=PHASEN,
            nutzlast=dict(**NUTZ, nutzlast=NUTZ['gesamtgewicht']-NUTZ['leergewicht'], verfuegbar=NUTZ['gesamtgewicht']-NUTZ['leergewicht']-95, planungsgrenze=900))
 json.dump(out, open('stueckliste.json','w'), indent=1, ensure_ascii=False)
 art = {r['art']: dict(name=r['name'], menge=m, markt=mk) for r in rows if r['quelle']=='OBI' for mk,m in r['bezug'].items()}
@@ -110,4 +138,5 @@ for r in rows:
 json.dump({k.split('@')[0] if '@' not in k else k: v for k,v in art.items()}, open('obi_artikel.json','w'), indent=1, ensure_ascii=False)
 if __name__=='__main__':
     for r in rows: print(f"{r['id']:4} {r['kat']} {r['name'][:55]:55} {r['menge']:>5} {r['eh']:5} {r['ep']:7.2f} {r['gp']:8.2f} {r['kg']:7.1f} {r['bezug']}")
-    print(S); print('Gewicht', gewicht, 'Oftringen', oft, 'Volketswil F1', vol_f1, 'F2', vol_f2); print(fahrten)
+    print(S); print('Gewicht', gewicht, PHASEN)
+    for t in TOUREN: print(t['key'], t['tag'], t['kg'], 'kg', t['chf'], 'CHF', 'davon vorgezogen', t['vorgezogen_chf'])

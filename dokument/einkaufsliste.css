@@ -19,6 +19,7 @@ h2{font-size:1.25rem;line-height:1.15}
 .when{margin:.15rem 0 0;color:var(--accent);font-weight:600;font-size:.9rem}
 .sum{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.sum b{display:block;font-family:var(--fd);font-size:1.15rem}.sum span{color:var(--muted);font-size:.85rem}
 .info{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.85rem;color:var(--muted)}
+.nav{color:var(--blue);font-weight:600}
 .sel{user-select:all;color:var(--ink);font-family:var(--fm)}
 .copy{font:inherit;font-size:.75rem;border:1px solid var(--line);background:transparent;color:var(--blue);border-radius:6px;padding:1px 7px;cursor:pointer}
 .copy:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}

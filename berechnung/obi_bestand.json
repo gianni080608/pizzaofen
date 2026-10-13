@@ -1,15 +1,15 @@
 {
- "zeit": "2026-10-13T10:19+00:00",
+ "zeit": "2026-10-13T13:23+00:00",
  "artikel": {
   "4793972": {
    "name": "Zement CEM I 42.5 N, 25 kg",
-   "menge": 17,
+   "menge": 16,
    "markt": "Oftringen",
    "bestand": {
     "Basel": 324,
     "Oftringen": 191,
     "Winterthur": 131,
-    "Schaffhausen": 234
+    "Schaffhausen": 231
    }
   },
   "5047857": {
@@ -52,7 +52,7 @@
    "bestand": {
     "Basel": 45,
     "Volketswil": 107,
-    "Oftringen": 69
+    "Oftringen": 53
    }
   },
   "2473270": {
@@ -134,7 +134,7 @@
     "Basel": 18,
     "Volketswil": 15,
     "Oftringen": 12,
-    "Winterthur": 12,
+    "Winterthur": 11,
     "Schaffhausen": 6
    }
   },
@@ -234,7 +234,7 @@
   "2435469": {
    "name": "LUX Gewebeplane grün 4 x 5 m",
    "menge": 2,
-   "markt": "Volketswil",
+   "markt": "Oftringen",
    "bestand": {
     "Basel": 19,
     "Volketswil": 54,
@@ -293,12 +293,12 @@
   "5799150": {
    "name": "Jopa Mörtelkasten schwarz 90 l",
    "menge": 4,
-   "markt": "Volketswil",
+   "markt": "Oftringen",
    "bestand": {
     "Basel": 64,
     "Volketswil": 54,
     "Oftringen": 25,
-    "Winterthur": 26,
+    "Winterthur": 25,
     "Schaffhausen": 9
    }
   },
@@ -307,8 +307,8 @@
    "menge": 10,
    "markt": "Oftringen",
    "bestand": {
-    "Basel": 80,
-    "Volketswil": 26,
+    "Basel": 79,
+    "Volketswil": 25,
     "Oftringen": 31,
     "Winterthur": 36,
     "Schaffhausen": 57
@@ -317,7 +317,7 @@
   "4904546": {
    "name": "Spanngurt Unitec mit Klemmverschluss 3 m, 400 kg",
    "menge": 4,
-   "markt": "Volketswil",
+   "markt": "Oftringen",
    "bestand": {
     "Basel": 16,
     "Volketswil": 7,
@@ -329,7 +329,7 @@
   "5102272": {
    "name": "Antirutschunterlage schwarz 30 x 150 cm",
    "menge": 3,
-   "markt": "Volketswil",
+   "markt": "Oftringen",
    "bestand": {
     "Basel": 46,
     "Volketswil": 23,

@@ -23,7 +23,8 @@
    "bezug": {
     "Tägerhard": 0.75
    },
-   "bestand": "Kieswerk, Bezug immer möglich"
+   "bestand": "Kieswerk, Bezug immer möglich",
+   "phase": 1
   },
   {
    "id": "K2",
@@ -42,7 +43,8 @@
    "bezug": {
     "Tägerhard": 1.1
    },
-   "bestand": "Kieswerk"
+   "bestand": "Kieswerk",
+   "phase": 1
   },
   {
    "id": "K3",
@@ -61,7 +63,8 @@
    "bezug": {
     "Tägerhard": 0.25
    },
-   "bestand": "Kieswerk"
+   "bestand": "Kieswerk",
+   "phase": 2
   },
   {
    "id": "O01",
@@ -80,7 +83,8 @@
    "bezug": {
     "Oftringen": 16
    },
-   "bestand": "Oftringen 191"
+   "bestand": "Oftringen 191",
+   "phase": 1
   },
   {
    "id": "O02",
@@ -99,7 +103,8 @@
    "bezug": {
     "Volketswil": 26
    },
-   "bestand": "Volketswil 36"
+   "bestand": "Volketswil 36",
+   "phase": 1
   },
   {
    "id": "O03",
@@ -118,7 +123,8 @@
    "bezug": {
     "Volketswil": 2
    },
-   "bestand": "Volketswil 26"
+   "bestand": "Volketswil 26",
+   "phase": 1
   },
   {
    "id": "O03b",
@@ -137,7 +143,8 @@
    "bezug": {
     "Volketswil": 2
    },
-   "bestand": "Volketswil 85"
+   "bestand": "Volketswil 85",
+   "phase": 1
   },
   {
    "id": "O04",
@@ -156,7 +163,8 @@
    "bezug": {
     "Volketswil": 2
    },
-   "bestand": "Volketswil 107"
+   "bestand": "Volketswil 107",
+   "phase": 1
   },
   {
    "id": "O05",
@@ -175,7 +183,8 @@
    "bezug": {
     "Volketswil": 3
    },
-   "bestand": "Volketswil 63"
+   "bestand": "Volketswil 63",
+   "phase": 1
   },
   {
    "id": "O06",
@@ -194,7 +203,8 @@
    "bezug": {
     "Volketswil": 4
    },
-   "bestand": "Volketswil 23"
+   "bestand": "Volketswil 23",
+   "phase": 1
   },
   {
    "id": "O07",
@@ -214,7 +224,8 @@
     "Oftringen": 25,
     "Volketswil": 14
    },
-   "bestand": "Oftringen 25, Volketswil 24"
+   "bestand": "Oftringen 25, Volketswil 24",
+   "phase": 2
   },
   {
    "id": "O08",
@@ -234,7 +245,8 @@
     "Oftringen": 1,
     "Volketswil": 17
    },
-   "bestand": "Volketswil 17, Oftringen 12"
+   "bestand": "Volketswil 17, Oftringen 12",
+   "phase": 2
   },
   {
    "id": "O09",
@@ -253,7 +265,8 @@
    "bezug": {
     "Volketswil": 5
    },
-   "bestand": "Volketswil 15"
+   "bestand": "Volketswil 15",
+   "phase": 2
   },
   {
    "id": "O10",
@@ -272,7 +285,8 @@
    "bezug": {
     "Volketswil": 3
    },
-   "bestand": "Volketswil 8"
+   "bestand": "Volketswil 8",
+   "phase": 2
   },
   {
    "id": "O11",
@@ -291,7 +305,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 2"
+   "bestand": "Volketswil 2",
+   "phase": 2
   },
   {
    "id": "O12",
@@ -310,7 +325,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 4"
+   "bestand": "Volketswil 4",
+   "phase": 2
   },
   {
    "id": "O13",
@@ -329,7 +345,8 @@
    "bezug": {
     "Oftringen": 1
    },
-   "bestand": "Oftringen 3"
+   "bestand": "Oftringen 3",
+   "phase": 2
   },
   {
    "id": "O14",
@@ -348,7 +365,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 6"
+   "bestand": "Volketswil 6",
+   "phase": 2
   },
   {
    "id": "O15",
@@ -367,7 +385,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 9"
+   "bestand": "Volketswil 9",
+   "phase": 2
   },
   {
    "id": "O16",
@@ -386,7 +405,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 2"
+   "bestand": "Volketswil 2",
+   "phase": 1
   },
   {
    "id": "O17",
@@ -405,7 +425,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 7"
+   "bestand": "Volketswil 7",
+   "phase": 1
   },
   {
    "id": "O18",
@@ -422,9 +443,10 @@
    "url": "https://www.obi.ch/baufolien-planen/lux-gewebeplane-gruen-4-x-5-m/p/2435469",
    "art": "2435469",
    "bezug": {
-    "Volketswil": 2
+    "Oftringen": 2
    },
-   "bestand": "Volketswil 54"
+   "bestand": "Oftringen 9",
+   "phase": 1
   },
   {
    "id": "O19",
@@ -443,7 +465,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 2"
+   "bestand": "Volketswil 2",
+   "phase": 2
   },
   {
    "id": "O20",
@@ -462,7 +485,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 9"
+   "bestand": "Volketswil 9",
+   "phase": 1
   },
   {
    "id": "O21",
@@ -481,7 +505,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 5"
+   "bestand": "Volketswil 5",
+   "phase": 1
   },
   {
    "id": "O22",
@@ -500,7 +525,8 @@
    "bezug": {
     "Volketswil": 2
    },
-   "bestand": "Volketswil 63"
+   "bestand": "Volketswil 63",
+   "phase": 1
   },
   {
    "id": "O23",
@@ -517,9 +543,10 @@
    "url": "https://www.obi.ch/baueimer-moertelkuebel/jopa-moertelkasten-schwarz-fassungsvermoegen-90-l/p/5799150",
    "art": "5799150",
    "bezug": {
-    "Volketswil": 4
+    "Oftringen": 4
    },
-   "bestand": "Volketswil 54"
+   "bestand": "Oftringen 25",
+   "phase": 1
   },
   {
    "id": "O24",
@@ -538,7 +565,8 @@
    "bezug": {
     "Oftringen": 10
    },
-   "bestand": "Oftringen 31"
+   "bestand": "Oftringen 31",
+   "phase": 1
   },
   {
    "id": "O25",
@@ -555,9 +583,10 @@
    "url": "https://www.obi.ch/spanngurte-zurrgurte/spanngurt-unitec-mit-klemmverschluss-3-m-400-kg/p/4904546",
    "art": "4904546",
    "bezug": {
-    "Volketswil": 4
+    "Oftringen": 4
    },
-   "bestand": "Volketswil 7"
+   "bestand": "Oftringen 5",
+   "phase": 1
   },
   {
    "id": "O26",
@@ -574,9 +603,10 @@
    "url": "https://www.obi.ch/teppichgleitschutz/antirutschunterlage-schwarz-30-x-150-cm/p/5102272",
    "art": "5102272",
    "bezug": {
-    "Volketswil": 3
+    "Oftringen": 3
    },
-   "bestand": "Volketswil 23"
+   "bestand": "Oftringen 18",
+   "phase": 1
   },
   {
    "id": "O27",
@@ -595,7 +625,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 12"
+   "bestand": "Volketswil 12",
+   "phase": 1
   },
   {
    "id": "O28",
@@ -614,7 +645,8 @@
    "bezug": {
     "Volketswil": 2
    },
-   "bestand": "Volketswil 11"
+   "bestand": "Volketswil 11",
+   "phase": 1
   },
   {
    "id": "O29",
@@ -633,7 +665,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 4"
+   "bestand": "Volketswil 4",
+   "phase": 1
   },
   {
    "id": "O30",
@@ -652,7 +685,8 @@
    "bezug": {
     "Oftringen": 4
    },
-   "bestand": "Oftringen 107"
+   "bestand": "Oftringen 107",
+   "phase": 1
   },
   {
    "id": "O31",
@@ -671,7 +705,8 @@
    "bezug": {
     "Oftringen": 1
    },
-   "bestand": "Oftringen 1 (Volketswil 1)"
+   "bestand": "Oftringen 1 (Volketswil 1)",
+   "phase": 1
   },
   {
    "id": "O32",
@@ -690,7 +725,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 4"
+   "bestand": "Volketswil 4",
+   "phase": 1
   },
   {
    "id": "O33",
@@ -709,7 +745,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 5"
+   "bestand": "Volketswil 5",
+   "phase": 1
   },
   {
    "id": "O34",
@@ -728,7 +765,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 6"
+   "bestand": "Volketswil 6",
+   "phase": 2
   },
   {
    "id": "O35",
@@ -747,7 +785,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 18"
+   "bestand": "Volketswil 18",
+   "phase": 2
   },
   {
    "id": "O36",
@@ -766,7 +805,8 @@
    "bezug": {
     "Volketswil": 1
    },
-   "bestand": "Volketswil 20"
+   "bestand": "Volketswil 20",
+   "phase": 2
   }
  ],
  "haus": [
@@ -884,16 +924,633 @@
   "worst_case": 2241.8
  },
  "gewicht": 5117.0,
- "oft_kg": 519.3,
- "vol_f1_kg": 256.3,
- "vol_f2_kg": 786.5,
  "fahrten": {
-  "F1 OBI Oftringen + OBI Volketswil (heute)": 775.6,
-  "F2 OBI Volketswil (Mi)": 786.5,
-  "K1 Tägerhard (Mi)": 896,
-  "K2 Tägerhard (Mi)": 898,
-  "K3 Tägerhard (Do)": 900,
-  "K4 Tägerhard (Do)": 861
+  "A Di 13.10.": 533,
+  "K1 Mi 14.10.": 896,
+  "B Mi 14.10.": 836,
+  "K2 Mi 14.10.": 898,
+  "K3 Do 15.10.": 900,
+  "K4 Do 15.10.": 861,
+  "C Mo 19.10.": 193
+ },
+ "touren": [
+  {
+   "key": "A",
+   "phase": 1,
+   "ort": "oftringen",
+   "tag": "Di 13.10.",
+   "zeit": "heute, Abfahrt spätestens 17:30 (Markt offen bis 19:00)",
+   "adr": "OBI Oftringen, Ackerweg 2, 4665 Oftringen",
+   "oeffnung": "Mo–Do 08–19, Fr 08–20, Sa 08–18",
+   "tel": "058 329 15 00",
+   "warum": "Zement gibt es nur hier (Volketswil 0). Gurte, Matten und Mörtelkästen braucht ihr schon für diese Fahrt und für K1 morgen um 07:00. Die 25 Schamottsteine, 1 Platte und das Türblech sind Ofen-Material, das ihr jetzt mitnehmt: Oftringen hat nur 25 Steine, nirgends sonst gibt es genug.",
+   "pos": [
+    {
+     "id": "O01",
+     "name": "Zement CEM I 42.5 N, 25 kg",
+     "art": "4793972",
+     "menge": 16,
+     "eh": "Sack",
+     "kg": 400,
+     "chf": 88.0,
+     "phase": 1,
+     "url": "https://www.obi.ch/zemente-kalke/zement-cem-i-42-5-n/p/4793972"
+    },
+    {
+     "id": "O07",
+     "name": "Schamottestein 64 x 124 x 250 mm (NF)",
+     "art": "5390067",
+     "menge": 25,
+     "eh": "Stk",
+     "kg": 94.5,
+     "chf": 212.5,
+     "phase": 2,
+     "url": "https://www.obi.ch/grillutensilien/schamottestein-hxbxt-64-x-124-x-250-mm/p/5390067"
+    },
+    {
+     "id": "O08",
+     "name": "Schamottestein 40 x 200 x 500 mm",
+     "art": "5390026",
+     "menge": 1,
+     "eh": "Stk",
+     "kg": 7.4,
+     "chf": 18.95,
+     "phase": 2,
+     "url": "https://www.obi.ch/grillutensilien/schamottestein-hxbxt-40-x-200-x-500-mm/p/5390026"
+    },
+    {
+     "id": "O13",
+     "name": "Glattblech Stahl 500 x 1000 x 0.75 mm",
+     "art": "4983821",
+     "menge": 1,
+     "eh": "Stk",
+     "kg": 2.9,
+     "chf": 23.5,
+     "phase": 2,
+     "url": "https://www.obi.ch/bleche/glattblech-stahl-500-x-1-000-mm-staerke-0-75-mm/p/4983821"
+    },
+    {
+     "id": "O18",
+     "name": "LUX Gewebeplane grün 4 x 5 m",
+     "art": "2435469",
+     "menge": 2,
+     "eh": "Stk",
+     "kg": 3.0,
+     "chf": 25.9,
+     "phase": 1,
+     "url": "https://www.obi.ch/baufolien-planen/lux-gewebeplane-gruen-4-x-5-m/p/2435469"
+    },
+    {
+     "id": "O23",
+     "name": "Jopa Mörtelkasten schwarz 90 l",
+     "art": "5799150",
+     "menge": 4,
+     "eh": "Stk",
+     "kg": 8.0,
+     "chf": 31.8,
+     "phase": 1,
+     "url": "https://www.obi.ch/baueimer-moertelkuebel/jopa-moertelkasten-schwarz-fassungsvermoegen-90-l/p/5799150"
+    },
+    {
+     "id": "O24",
+     "name": "Jopa Mörteleimer mit Bügel 20 l",
+     "art": "5799200",
+     "menge": 10,
+     "eh": "Stk",
+     "kg": 6.8,
+     "chf": 35.0,
+     "phase": 1,
+     "url": "https://www.obi.ch/baueimer-moertelkuebel/jopa-moerteleimer-mit-buegel-fassungsvermoegen-20-l/p/5799200"
+    },
+    {
+     "id": "O25",
+     "name": "Spanngurt Unitec mit Klemmverschluss 3 m, 400 kg",
+     "art": "4904546",
+     "menge": 4,
+     "eh": "Stk",
+     "kg": 1.2,
+     "chf": 35.8,
+     "phase": 1,
+     "url": "https://www.obi.ch/spanngurte-zurrgurte/spanngurt-unitec-mit-klemmverschluss-3-m-400-kg/p/4904546"
+    },
+    {
+     "id": "O26",
+     "name": "Antirutschunterlage schwarz 30 x 150 cm",
+     "art": "5102272",
+     "menge": 3,
+     "eh": "Stk",
+     "kg": 1.2,
+     "chf": 16.5,
+     "phase": 1,
+     "url": "https://www.obi.ch/teppichgleitschutz/antirutschunterlage-schwarz-30-x-150-cm/p/5102272"
+    },
+    {
+     "id": "O30",
+     "name": "PU-Handschuh Gr. 8",
+     "art": "6608442",
+     "menge": 4,
+     "eh": "Paar",
+     "kg": 0.2,
+     "chf": 3.8,
+     "phase": 1,
+     "url": "https://www.obi.ch/arbeitshandschuhe/pu-handschuh-gr-8/p/6608442"
+    },
+    {
+     "id": "O31",
+     "name": "Betonstampfer 13 x 20 cm, Stiel 105 cm (7.5 kg)",
+     "art": "5474523",
+     "menge": 1,
+     "eh": "Stk",
+     "kg": 7.5,
+     "chf": 43.95,
+     "phase": 1,
+     "url": "https://www.obi.ch/baugeraete/betonstampfer-13-x-20-cm-stiellaenge-105-cm/p/5474523"
+    }
+   ],
+   "kg": 533,
+   "chf": 535.7,
+   "vorgezogen_chf": 254.95
+  },
+  {
+   "key": "K1",
+   "phase": 1,
+   "ort": "kies",
+   "tag": "Mi 14.10.",
+   "zeit": "07:00",
+   "adr": "Tägerhard Kies AG, Tägerhardstrasse 151, 5430 Wettingen",
+   "oeffnung": "Mo–Fr 07:00–12:00, 13:00–16:45",
+   "tel": "056 426 70 45",
+   "warum": "Kieskoffer, Lagen 1–3",
+   "pos": [
+    {
+     "id": "K1",
+     "name": "Kiesgemisch UG22 0/31.5 (Art. 60201)",
+     "art": "60201",
+     "menge": 0.56,
+     "eh": "m³",
+     "kg": 896,
+     "chf": 33.6,
+     "phase": 1,
+     "url": "https://taegerhardkies.ch/wp-content/uploads/2025/12/Grundpreisliste-2026.pdf"
+    }
+   ],
+   "kg": 896,
+   "chf": 33.6,
+   "vorgezogen_chf": 0
+  },
+  {
+   "key": "B",
+   "phase": 1,
+   "ort": "volketswil",
+   "tag": "Mi 14.10.",
+   "zeit": "08:15",
+   "adr": "OBI Volketswil, Industriestrasse 20, 8604 Volketswil",
+   "oeffnung": "Mo–Fr 08–20, Sa 08–18",
+   "tel": "058 329 12 00",
+   "warum": "Alles für Fundament, Sockel und Herdplatte: Schalungssteine, Bewehrung, Schalung, Rührwerk, Kellen, Schutz. Dazu die restlichen 14 Schamottsteine (Ofen-Material): Damit habt ihr alle 39 Steine sicher, bevor sie jemand anderes kauft.",
+   "pos": [
+    {
+     "id": "O02",
+     "name": "Kann Schalungsstein grau 24 cm (50 x 25 x 24)",
+     "art": "5047857",
+     "menge": 26,
+     "eh": "Stk",
+     "kg": 702.0,
+     "chf": 154.7,
+     "phase": 1,
+     "url": "https://www.obi.ch/einfassungen-stufen-mauersysteme/kann-schalungsstein-grau-24-cm/p/5047857"
+    },
+    {
+     "id": "O03",
+     "name": "Catnic Baustahlmatte R188A 230 x 100 cm (Stäbe 6 mm)",
+     "art": "5031802",
+     "menge": 2,
+     "eh": "Stk",
+     "kg": 11.2,
+     "chf": 45.9,
+     "phase": 1,
+     "url": "https://www.obi.ch/baustahl-baugitter/baustahlmatte-r188a-230-x-100-cm/p/5031802"
+    },
+    {
+     "id": "O03b",
+     "name": "Catnic Estrichgitter verzinkt 200 x 100 cm",
+     "art": "5031687",
+     "menge": 2,
+     "eh": "Stk",
+     "kg": 6.0,
+     "chf": 13.0,
+     "phase": 1,
+     "url": "https://www.obi.ch/baustahl-baugitter/estrichgitter-verzinkt-200-x-100-cm/p/5031687"
+    },
+    {
+     "id": "O04",
+     "name": "OSB-Platte N+F 1.8 x 62.5 x 250 cm",
+     "art": "6464333",
+     "menge": 2,
+     "eh": "Stk",
+     "kg": 33.8,
+     "chf": 34.0,
+     "phase": 1,
+     "url": "https://www.obi.ch/osb-platten-verlegeplatten/osb-platte-nut-und-feder-hxbxt-1-8-x-62-5-x-250-cm/p/6464333"
+    },
+    {
+     "id": "O05",
+     "name": "Schalbrett sägerau 23 x 150 mm, 3 m",
+     "art": "2473270",
+     "menge": 3,
+     "eh": "Stk",
+     "kg": 14.1,
+     "chf": 35.85,
+     "phase": 1,
+     "url": "https://www.obi.ch/saegeraue-ware/schalbrett-saegerau-fichte-tanne-23-x-150-mm-laenge-3-m/p/2473270"
+    },
+    {
+     "id": "O06",
+     "name": "Brett sägerau 23 x 100 mm, 2 m",
+     "art": "4895694",
+     "menge": 4,
+     "eh": "Stk",
+     "kg": 8.4,
+     "chf": 19.8,
+     "phase": 1,
+     "url": "https://www.obi.ch/saegeraue-ware/brett-saegerau-fichte-tanne-23-x-100-mm-laenge-2-m/p/4895694"
+    },
+    {
+     "id": "O16",
+     "name": "LUX Universalschraube Senkkopf 4 x 40 mm, 200 Stk",
+     "art": "4048450",
+     "menge": 1,
+     "eh": "Pack",
+     "kg": 0.6,
+     "chf": 9.95,
+     "phase": 1,
+     "url": "https://www.obi.ch/spanplattenschrauben-universalschrauben/lux-universalschraube-senkkopf-4-x-40-mm-tx-antrieb-200-stk-/p/4048450"
+    },
+    {
+     "id": "O17",
+     "name": "OBI Bindedraht verzinkt 1.4 mm x 20 m",
+     "art": "4582912",
+     "menge": 1,
+     "eh": "Rolle",
+     "kg": 0.3,
+     "chf": 5.95,
+     "phase": 1,
+     "url": "https://www.obi.ch/weitere-gartenhelfer/obi-bindedraht-verzinkt-1-4-mm-x-20-m/p/4582912"
+    },
+    {
+     "id": "O20",
+     "name": "LUX Trennscheiben-Sparpack Metall 125 mm",
+     "art": "1206051",
+     "menge": 1,
+     "eh": "Pack",
+     "kg": 0.4,
+     "chf": 8.35,
+     "phase": 1,
+     "url": "https://www.obi.ch/zubehoer-fuer-winkelschleifer/lux-trennscheiben-sparpack-metall-125-mm/p/1206051"
+    },
+    {
+     "id": "O21",
+     "name": "LUX Maurerschnur rot 20 m",
+     "art": "1240837",
+     "menge": 1,
+     "eh": "Stk",
+     "kg": 0.1,
+     "chf": 3.65,
+     "phase": 1,
+     "url": "https://www.obi.ch/pruefwerkzeuge-messwerkzeuge/lux-maurerschnur-classic-rot-20-m/p/1240837"
+    },
+    {
+     "id": "O22",
+     "name": "LUX Zimmermannsbleistift 24 cm",
+     "art": "1237163",
+     "menge": 2,
+     "eh": "Stk",
+     "kg": 0.0,
+     "chf": 4.5,
+     "phase": 1,
+     "url": "https://www.obi.ch/pruefwerkzeuge-messwerkzeuge/lux-zimmermannsbleistift-classic-24-cm/p/1237163"
+    },
+    {
+     "id": "O27",
+     "name": "LUX Feinstaubmaske FFP3 mit Ventil, 2 Stk",
+     "art": "3084563",
+     "menge": 1,
+     "eh": "Pack",
+     "kg": 0.1,
+     "chf": 19.5,
+     "phase": 1,
+     "url": "https://www.obi.ch/atemschutz-zubehoer/lux-feinstaubmaske-ffp3-2-stueck/p/3084563"
+    },
+    {
+     "id": "O28",
+     "name": "Schutzbrille mit Bügeln",
+     "art": "3084571",
+     "menge": 2,
+     "eh": "Stk",
+     "kg": 0.1,
+     "chf": 13.0,
+     "phase": 1,
+     "url": "https://www.obi.ch/augenschutz/schutzbrille-mit-buegeln/p/3084571"
+    },
+    {
+     "id": "O29",
+     "name": "3M Gehörschutzstöpsel mit Kordel 1271",
+     "art": "5087713",
+     "menge": 1,
+     "eh": "Pack",
+     "kg": 0.1,
+     "chf": 8.95,
+     "phase": 1,
+     "url": "https://www.obi.ch/gehoerschutz/3m-gehoerschutzstoepsel-mit-kordel-1271/p/5087713"
+    },
+    {
+     "id": "O32",
+     "name": "Einhell Farb-Mörtelrührer TE-MX 1600-2 CE (1600 W)",
+     "art": "5047022",
+     "menge": 1,
+     "eh": "Stk",
+     "kg": 5.2,
+     "chf": 106.95,
+     "phase": 1,
+     "url": "https://www.obi.ch/multitools-spezialwerkzeuge/einhell-farb-moertelruehrer-te-mx-1600-2-ce/p/5047022"
+    },
+    {
+     "id": "O33",
+     "name": "LUX Kellenset 3-tlg.",
+     "art": "5907696",
+     "menge": 1,
+     "eh": "Set",
+     "kg": 1.0,
+     "chf": 17.5,
+     "phase": 1,
+     "url": "https://www.obi.ch/maurer-fliesenleger-verlegewerkzeuge/lux-kellenset-3-tlg-/p/5907696"
+    },
+    {
+     "id": "O07",
+     "name": "Schamottestein 64 x 124 x 250 mm (NF)",
+     "art": "5390067",
+     "menge": 14,
+     "eh": "Stk",
+     "kg": 52.9,
+     "chf": 119.0,
+     "phase": 2,
+     "url": "https://www.obi.ch/grillutensilien/schamottestein-hxbxt-64-x-124-x-250-mm/p/5390067"
+    }
+   ],
+   "kg": 836,
+   "chf": 620.55,
+   "vorgezogen_chf": 119.0
+  },
+  {
+   "key": "K2",
+   "phase": 1,
+   "ort": "kies",
+   "tag": "Mi 14.10.",
+   "zeit": "13:00",
+   "adr": "Tägerhard Kies AG, Tägerhardstrasse 151, 5430 Wettingen",
+   "oeffnung": "Mo–Fr 07:00–12:00, 13:00–16:45",
+   "tel": "056 426 70 45",
+   "warum": "Rest Kieskoffer + erster Betonkies",
+   "pos": [
+    {
+     "id": "K1",
+     "name": "Kiesgemisch UG22 0/31.5 (Art. 60201)",
+     "art": "60201",
+     "menge": 0.19,
+     "eh": "m³",
+     "kg": 304,
+     "chf": 11.4,
+     "phase": 1,
+     "url": "https://taegerhardkies.ch/wp-content/uploads/2025/12/Grundpreisliste-2026.pdf"
+    },
+    {
+     "id": "K2",
+     "name": "Betonkies gewaschen 0/16 (Art. 20001)",
+     "art": "20001",
+     "menge": 0.33,
+     "eh": "m³",
+     "kg": 594,
+     "chf": 19.8,
+     "phase": 1,
+     "url": "https://taegerhardkies.ch/wp-content/uploads/2025/12/Grundpreisliste-2026.pdf"
+    }
+   ],
+   "kg": 898,
+   "chf": 31.2,
+   "vorgezogen_chf": 0
+  },
+  {
+   "key": "K3",
+   "phase": 1,
+   "ort": "kies",
+   "tag": "Do 15.10.",
+   "zeit": "07:00",
+   "adr": "Tägerhard Kies AG, Tägerhardstrasse 151, 5430 Wettingen",
+   "oeffnung": "Mo–Fr 07:00–12:00, 13:00–16:45",
+   "tel": "056 426 70 45",
+   "warum": "Betonkies Fundament",
+   "pos": [
+    {
+     "id": "K2",
+     "name": "Betonkies gewaschen 0/16 (Art. 20001)",
+     "art": "20001",
+     "menge": 0.5,
+     "eh": "m³",
+     "kg": 900,
+     "chf": 30.0,
+     "phase": 1,
+     "url": "https://taegerhardkies.ch/wp-content/uploads/2025/12/Grundpreisliste-2026.pdf"
+    }
+   ],
+   "kg": 900,
+   "chf": 30.0,
+   "vorgezogen_chf": 0
+  },
+  {
+   "key": "K4",
+   "phase": 1,
+   "ort": "kies",
+   "tag": "Do 15.10.",
+   "zeit": "08:00",
+   "adr": "Tägerhard Kies AG, Tägerhardstrasse 151, 5430 Wettingen",
+   "oeffnung": "Mo–Fr 07:00–12:00, 13:00–16:45",
+   "tel": "056 426 70 45",
+   "warum": "Rest Betonkies (Sockelfüllung + Herdplatte am So). Der Sand ist Ofen-Material und fährt mit, weil die Fahrt ohnehin stattfindet.",
+   "pos": [
+    {
+     "id": "K2",
+     "name": "Betonkies gewaschen 0/16 (Art. 20001)",
+     "art": "20001",
+     "menge": 0.27,
+     "eh": "m³",
+     "kg": 486,
+     "chf": 16.2,
+     "phase": 1,
+     "url": "https://taegerhardkies.ch/wp-content/uploads/2025/12/Grundpreisliste-2026.pdf"
+    },
+    {
+     "id": "K3",
+     "name": "Sand gewaschen 0/4 (Art. 40001)",
+     "art": "40001",
+     "menge": 0.25,
+     "eh": "m³",
+     "kg": 375,
+     "chf": 15.0,
+     "phase": 2,
+     "url": "https://taegerhardkies.ch/wp-content/uploads/2025/12/Grundpreisliste-2026.pdf"
+    }
+   ],
+   "kg": 861,
+   "chf": 31.2,
+   "vorgezogen_chf": 15.0
+  },
+  {
+   "key": "C",
+   "phase": 2,
+   "ort": "volketswil",
+   "tag": "Mo 19.10.",
+   "zeit": "08:00 (spätestens Di 20.10. – Perlit wird am Mi 21.10. gebraucht)",
+   "adr": "OBI Volketswil, Industriestrasse 20, 8604 Volketswil",
+   "oeffnung": "Mo–Fr 08–20, Sa 08–18",
+   "tel": "058 329 12 00",
+   "warum": "Der Ofen: 17 Schamottplatten, Mörtel, Perlit, Kaminrohr, Putzträger, Tür, Brandschutz. Am Vorabend den Bestand prüfen (Regel unten).",
+   "pos": [
+    {
+     "id": "O08",
+     "name": "Schamottestein 40 x 200 x 500 mm",
+     "art": "5390026",
+     "menge": 17,
+     "eh": "Stk",
+     "kg": 125.8,
+     "chf": 322.15,
+     "phase": 2,
+     "url": "https://www.obi.ch/grillutensilien/schamottestein-hxbxt-40-x-200-x-500-mm/p/5390026"
+    },
+    {
+     "id": "O09",
+     "name": "Sakret Schamottemörtel 5 kg (feuerbeständig bis 1100 °C)",
+     "art": "2925493",
+     "menge": 5,
+     "eh": "Sack",
+     "kg": 25.0,
+     "chf": 89.75,
+     "phase": 2,
+     "url": "https://www.obi.ch/trockenmoertel/sakret-schamottemoertel-grau-5-kg/p/2925493"
+    },
+    {
+     "id": "O10",
+     "name": "Pflanzen-Perlit 100 l",
+     "art": "3798733",
+     "menge": 3,
+     "eh": "Sack",
+     "kg": 28.2,
+     "chf": 89.85,
+     "phase": 2,
+     "url": "https://www.obi.ch/perlite-vermiculite/pflanzen-perlit-100-l/p/3798733"
+    },
+    {
+     "id": "O11",
+     "name": "Firefix Rauchrohr schwarz Ø 150 mm, 1 m (Stahl, Senotherm-Lack)",
+     "art": "2480333",
+     "menge": 1,
+     "eh": "Stk",
+     "kg": 7.8,
+     "chf": 59.95,
+     "phase": 2,
+     "url": "https://www.obi.ch/zubehoer-fuer-cheminees-und-schwedenoefen/firefix-rauchrohr-schwarz-15-cm/p/2480333"
+    },
+    {
+     "id": "O12",
+     "name": "Gah Alberts Sechseck-Geflecht verzinkt 25 mm, 1 m x 10 m",
+     "art": "4915658",
+     "menge": 1,
+     "eh": "Rolle",
+     "kg": 3.5,
+     "chf": 27.95,
+     "phase": 2,
+     "url": "https://www.obi.ch/draht-zaungeflecht/gah-alberts-sechseck-geflecht-verzinkt-hoehe-1-m-laenge-10-m/p/4915658"
+    },
+    {
+     "id": "O14",
+     "name": "Siro Möbelgriff S113 Kiefer roh, Lochabstand 96 mm",
+     "art": "5786116",
+     "menge": 1,
+     "eh": "Stk",
+     "kg": 0.1,
+     "chf": 6.95,
+     "phase": 2,
+     "url": "https://www.obi.ch/moebelgriffe-moebelknoepfe/siro-moebelgriff-s113-kiefer-roh-lochabstand-96-mm/p/5786116"
+    },
+    {
+     "id": "O15",
+     "name": "Albrecht Thermolack schwarz matt 125 ml",
+     "art": "5756416",
+     "menge": 1,
+     "eh": "Stk",
+     "kg": 0.2,
+     "chf": 12.5,
+     "phase": 2,
+     "url": "https://www.obi.ch/metallschutzlacke/albrecht-thermolack-schwarz-matt-125-ml/p/5756416"
+    },
+    {
+     "id": "O19",
+     "name": "LUX Diamant-Trennscheibe Universal 125 mm",
+     "art": "1755560",
+     "menge": 1,
+     "eh": "Stk",
+     "kg": 0.2,
+     "chf": 21.5,
+     "phase": 2,
+     "url": "https://www.obi.ch/zubehoer-fuer-winkelschleifer/lux-diamant-trennscheibe-universal-125-mm/p/1755560"
+    },
+    {
+     "id": "O34",
+     "name": "LUX Fugenkelle Classic 10 mm",
+     "art": "1240233",
+     "menge": 1,
+     "eh": "Stk",
+     "kg": 0.1,
+     "chf": 7.5,
+     "phase": 2,
+     "url": "https://www.obi.ch/maurer-fliesenleger-verlegewerkzeuge/lux-fugenkelle-classic-10-mm/p/1240233"
+    },
+    {
+     "id": "O35",
+     "name": "Abus Löschdecke LD1118",
+     "art": "5295126",
+     "menge": 1,
+     "eh": "Stk",
+     "kg": 0.5,
+     "chf": 16.5,
+     "phase": 2,
+     "url": "https://www.obi.ch/brandschutz/abus-loeschdecke-ld1118/p/5295126"
+    },
+    {
+     "id": "O36",
+     "name": "Valo Ascheeimer oval mit Deckel schwarz 24 l",
+     "art": "6003131",
+     "menge": 1,
+     "eh": "Stk",
+     "kg": 1.6,
+     "chf": 24.95,
+     "phase": 2,
+     "url": "https://www.obi.ch/zubehoer-fuer-cheminees-und-schwedenoefen/valo-ascheeimer-oval-mit-deckel-schwarz-hxbxt-42-x-31-x-61-cm-24-l/p/6003131"
+    }
+   ],
+   "kg": 193,
+   "chf": 679.55,
+   "vorgezogen_chf": 0
+  }
+ ],
+ "phasen": {
+  "1": {
+   "chf": 893.3,
+   "kg": 4391
+  },
+  "2": {
+   "chf": 1068.5,
+   "kg": 726
+  }
  },
  "nutzlast": {
   "gesamtgewicht": 3060,
