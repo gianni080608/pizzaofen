@@ -13,7 +13,10 @@ PLATTE = dict(l=50.0, b=20.0, d=4.0, kg=7.4)        # OBI Art. 5390026
 SOCKEL_B = SOCKEL_T = 150.0                         # Grundflaeche Sockel
 WAND = 24.0                                          # Schalungsstein 50x24x25
 TUNNEL_INNEN_B = 40.0
-TUNNEL_H = 4 * NF['h'] + 3 * FUGE                   # 4 Lagen NF flach = 27.4 cm
+STREIFEN = dict(l=50.0, b=10.0, d=4.0)               # Plattenstreifen 500 x 100 x 40 (Platte laengs halbiert)
+TUNNEL_W = STREIFEN['b']                            # Tunnelwand 10 cm
+TUNNEL_LAGEN = 6
+TUNNEL_H = TUNNEL_LAGEN * STREIFEN['d'] + (TUNNEL_LAGEN - 1) * FUGE   # 6 Lagen = 27.0 cm
 DAEMM_KUPPEL = 8.0                                   # Perlit-Zement auf Kuppel
 PUTZ = 3.0
 DAEMM_BODEN = 10.0                                   # Perlit-Zement unter Boden
@@ -91,7 +94,9 @@ def flaeche_union(cx, cy, R, xl, xr, y0, y1, step=0.5):
 
 def variante(D, h, cy=None):
     a = D / 2
-    k = kuppel(D, h)
+    lagen = max(4, round((0.63 * h + FUGE) / (STREIFEN['d'] + FUGE)))   # Tuerhoehe ~63 % der Kuppelhoehe (neapolitanisch)
+    tuer_h = lagen * STREIFEN['d'] + (lagen - 1) * FUGE
+    k = kuppel(D, h, tuer_h=tuer_h)
     halbe = k['halbsteine_reihen']
     halbe_mit_verschnitt = math.ceil(halbe * 1.10)
     nf_kuppel = math.ceil(halbe_mit_verschnitt / 2)
@@ -101,22 +106,25 @@ def variante(D, h, cy=None):
         cy = R_aussen + 5.6
     cx = SOCKEL_B / 2
     R_boden = a + HALB['t']
-    halb_tunnel = TUNNEL_INNEN_B / 2 + NF['b']       # Tunnelwand 12.4 dick
+    halb_tunnel = TUNNEL_INNEN_B / 2 + TUNNEL_W      # Tunnelwand 10 cm (Plattenstreifen)
     y_tuer = cy + math.sqrt(a ** 2 - (TUNNEL_INNEN_B / 2) ** 2)
     tunnel_laenge = SOCKEL_T - y_tuer                # an der Tuerkante gemessen
-    # Tunnelwaende: NF flach (Laeufer), 4 Lagen, mittlere Laenge inkl. Anschluss an Kuppelrundung
+    # Tunnelwaende: je 6 Lagen Plattenstreifen 500 x 100 x 40 (1 Streifen pro Lage, an Kuppelrundung angepasst)
     y_wand_aussen = cy + math.sqrt(max(a ** 2 - halb_tunnel ** 2, 0))
     wandlaenge_mittel = SOCKEL_T - (y_tuer + y_wand_aussen) / 2
-    nf_tunnel = math.ceil(2 * 4 * wandlaenge_mittel / (NF['l'] + FUGE) * 1.25)  # +25% Verschnitt (Anpassschnitte)
+    streifen = 2 * lagen
+    platten_tunnelwand = math.ceil(streifen / 2)        # 2 Streifen pro Platte
+    nf_tunnel = 0
     # Boden
     A_boden = flaeche_union(cx, cy, R_boden, cx - halb_tunnel, cx + halb_tunnel, cy, SOCKEL_T)
     platten_boden = math.ceil(A_boden / (PLATTE['l'] * PLATTE['b'] / 1e4) * 1.15)
     platten_tunneldecke = 2
+    platten_tunnel = platten_tunneldecke + platten_tunnelwand
     # Moertel (Schamott): Fugenvolumen
     v_halb = (HALB['w'] * HALB['t'] + HALB['h'] * HALB['t']) * FUGE          # cm3 pro Halbstein
-    v_nf = (NF['l'] * NF['b'] + NF['b'] * NF['h']) * FUGE                       # cm3 pro NF im Tunnel
+    v_streifen = (STREIFEN['l'] * STREIFEN['b'] + STREIFEN['b'] * STREIFEN['d']) * FUGE   # cm3 pro Streifen
     v_platten = platten_tunneldecke * 2 * (PLATTE['b'] * NF['b']) * 1.0      # Auflager 1 cm
-    v_moertel_l = (halbe * v_halb + nf_tunnel * v_nf + v_platten) / 1000
+    v_moertel_l = (halbe * v_halb + streifen * v_streifen + v_platten) / 1000
     kg_moertel = v_moertel_l * 1.6 * 1.30                                       # 1.6 kg Trockenmoertel/l, +30 % Verlust
     # Perlit-Zement
     A_daemm_boden = flaeche_union(cx, cy, R_boden + 5, cx - halb_tunnel - 5, cx + halb_tunnel + 5, cy, SOCKEL_T)
@@ -136,10 +144,10 @@ def variante(D, h, cy=None):
     V_putz = A_putz * PUTZ / 100 * 1.1
     zement_putz = V_putz * 350
     sand_putz_m3 = V_putz * 1.25
-    return dict(D=D, h=h, cy=round(cy, 1), kuppel=k, halbsteine_mit_verschnitt=halbe_mit_verschnitt,
+    return dict(D=D, h=h, cy=round(cy, 1), kuppel=k, tunnel_lagen=lagen, tuer_h=round(tuer_h, 1), tuer_anteil=round(tuer_h / h, 2), halbsteine_mit_verschnitt=halbe_mit_verschnitt,
                 nf_kuppel=nf_kuppel, nf_tunnel=nf_tunnel, nf_total=nf_kuppel + nf_tunnel,
                 y_tuer=round(y_tuer, 1), tunnel_laenge=round(tunnel_laenge, 1),
-                boden_m2=round(A_boden, 3), platten_boden=platten_boden, platten_total=platten_boden + platten_tunneldecke,
+                boden_m2=round(A_boden, 3), platten_boden=platten_boden, platten_tunnel=platten_tunnel, streifen=streifen, wandlaenge_mittel=round(wandlaenge_mittel, 1), platten_total=platten_boden + platten_tunnel,
                 moertel_liter=round(v_moertel_l, 1), moertel_kg=round(kg_moertel, 1),
                 perlit_mix_m3=dict(boden=round(V_boden, 3), kuppel=round(V_kuppel, 3), tunnel=round(V_tunneldecke, 3), total=round(V_perlit_mix, 3)),
                 perlit_l=round(perlit_l), zement_perlit_kg=round(zement_perlit_kg, 1),
@@ -152,7 +160,7 @@ def unterbau():
     fund = 1.5 * 1.5 * 0.15
     wandlaenge = SOCKEL_B + 2 * (SOCKEL_T - WAND)          # U-Form, vorne offen
     wandflaeche = wandlaenge / 100 * 0.75                   # 3 Lagen a 25 cm
-    fuell = wandflaeche * 0.135                             # 135 l/m2 Fuellbeton (Schalungsstein 24 cm)
+    fuell = wandflaeche * 0.121                             # 121 l/m2 Fuellbeton (KANN-Datenblatt, Schalungsstein 24 cm)
     herd = 1.5 * 1.5 * 0.10
     beton = (fund + fuell + herd) * 1.05
     steine_pro_lage = SOCKEL_B / 50 + 2 * (SOCKEL_T - WAND) / 50

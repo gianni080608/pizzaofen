@@ -4,7 +4,8 @@ Koordinaten in cm. x = Breite (links->rechts), y = Tiefe (0 = hinten/Mauer), z =
 import json, math, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 E = json.load(open(os.path.join(HERE, '..', 'berechnung', 'ergebnis.json')))
-V = E['D90']; K = V['kuppel']
+WAHL = json.load(open(os.path.join(HERE, '..', 'berechnung', 'stueckliste.json')))['d']
+V = E[WAHL]; K = V['kuppel']
 
 # ------------------------------------------------------------ Hoehen
 Z_KIES0, Z_KIES1 = -30, -10
@@ -14,17 +15,17 @@ Z_HERD1 = Z_WAND1 + 10
 Z_DAEMM1 = Z_HERD1 + 10
 Z_BODEN0 = Z_DAEMM1 + 0.5
 Z_BODEN1 = Z_BODEN0 + 4.0                 # Arbeitshoehe
-A, C, T = 45.0, 40.0, 6.4
+A, C, T = V['D'] / 2, float(V['h']), 6.4
 ISO, PUTZ = 8.0, 3.0
 CY, CX = V['cy'], 75.0
-TUN_B, TUN_W = 40.0, 12.4
-TUN_H = 27.4
+TUN_B, TUN_W = 40.0, 10.0
+TUN_H = V['tuer_h']
 Y_TUER = V['y_tuer']
 Z_TUN1 = Z_BODEN1 + TUN_H
 Z_PLATTE1 = Z_TUN1 + 4
 ROHR_L = 100
 Z_ROHR1 = Z_PLATTE1 + ROHR_L
-Y_KAMIN = 129.5
+Y_KAMIN = round(Y_TUER + 20.5, 1)
 Z_KUPPEL_IN = Z_BODEN1 + C
 Z_KUPPEL_AUS = Z_BODEN1 + C + T + ISO + PUTZ
 HOEHEN = dict(kies=(Z_KIES0, Z_KIES1), fundament=(Z_KIES1, Z_FUND1), sockel=(Z_FUND1, Z_WAND1), herdplatte=(Z_WAND1, Z_HERD1),
@@ -123,8 +124,8 @@ def frontansicht():
     b.append(rect(CX - TUN_B / 2, Z(Z_BODEN1), TUN_B, 4, COL['boden'], COL['line'], 0.3))
     # Kamin
     b.append(rect(CX - 7.5, Z(Z_ROHR1), 15, ROHR_L - ISO - PUTZ, '#c7ccd1', COL['line'], 0.4))
-    b.append(poly([(CX - 14, Z(Z_ROHR1 + 5)), (CX + 14, Z(Z_ROHR1 + 5)), (CX, Z(Z_ROHR1 + 15))], '#e5e8eb', COL['line'], 0.3, 'stroke-dasharray="1.2 0.8"'))
-    b.append(text(CX + 16, Z(Z_ROHR1 + 9), 'Regenhut (optional, ca. +15)', 2.6, 'start', COL['hint']))
+    b.append(rect(CX - 10, Z(Z_ROHR1 + 4), 20, 0.8, '#e5e8eb', COL['line'], 0.3, 'stroke-dasharray="1.2 0.8"'))
+    b.append(text(CX + 16, Z(Z_ROHR1 + 9), 'Abdeckblech nur bei kaltem Ofen (aus Türblech-Rest)', 2.6, 'start', COL['hint']))
     # Masse
     b.append(dim_h(0, 150, Z(-38), 'Fundament 150', 0))
     b.append(dim_h(-10, 160, Z(-47), 'Kieskoffer 170 (20 cm verdichtet, UK -30)', 0))
@@ -136,11 +137,11 @@ def frontansicht():
     for z0, z1, lab in [(0, Z_FUND1, '5'), (Z_FUND1, Z_WAND1, '75'), (Z_WAND1, Z_HERD1, '10'), (Z_HERD1, Z_BODEN1, '14.5'),
                         (Z_BODEN1, Z_KUPPEL_AUS, f'{Z_KUPPEL_AUS - Z_BODEN1:.1f}'), (Z_KUPPEL_AUS, Z_ROHR1, f'{Z_ROHR1 - Z_KUPPEL_AUS:.1f}')]:
         b.append(dim_v(x, Z(z0), Z(z1), lab, 1, 2.6))
-    b.append(dim_v(190, Z(0), Z(Z_ROHR1), f'Gesamthöhe {Z_ROHR1:.0f} (mit Regenhut ca. {Z_ROHR1 + 15:.0f})', 1, 3.0))
+    b.append(dim_v(190, Z(0), Z(Z_ROHR1), f'Gesamthöhe {Z_ROHR1:.0f}', 1, 3.0))
     b.append(dim_v(-20, Z(0), Z(Z_BODEN1), f'Arbeitshöhe {Z_BODEN1:.1f}', -1, 3.0))
     b.append(dim_v(-6, Z(Z_BODEN1), Z(Z_TUN1), f'{TUN_H}', -1, 2.6))
     b.append(text(-35, Z(Z_ROHR1 + 22), 'FRONTANSICHT  1:20 (Masse in cm)', 4.5, 'start', COL['line'], 'bold'))
-    b.append(text(-35, Z(Z_ROHR1 + 16), 'Kuppelofen Ø 90 innen – Würenlos – Variante B', 3, 'start', '#555'))
+    b.append(text(-35, Z(Z_ROHR1 + 16), f'Kuppelofen Ø {V["D"]} innen – Würenlos – Variante B', 3, 'start', '#555'))
     b.append(text(-33, Z(2), '±0 = Terrain / Plattenbelag', 2.6, 'start', COL['hint']))
     return svg(900, 1200, ''.join(b), 'Frontansicht', (-40, Z(Z_ROHR1 + 28), 245, Z_ROHR1 + 28 + 54))
 
@@ -202,14 +203,14 @@ def schnitt():
     # Tunnel: Seitenwand in Ansicht (Steinlagen), Deckplatten, Kamin
     yt0 = Y_TUER
     b.append(rect(yt0, Z(Z_TUN1), 150 - yt0, TUN_H, '#f1d7c4', COL['line'], 0.25))
-    for k in range(1, 4):
-        b.append(line(yt0, Z(Z_BODEN1 + k * 7.0), 150, Z(Z_BODEN1 + k * 7.0), '#b06a40', 0.2))
-    b.append(text((yt0 + 150) / 2, Z(Z_BODEN1 + 12), 'Tunnelwand', 2.4, 'middle', '#7a3d1c'))
-    b.append(text((yt0 + 150) / 2, Z(Z_BODEN1 + 9), '(Ansicht)', 2.2, 'middle', '#7a3d1c'))
-    b.append(rect(109, Z(Z_PLATTE1), 20, 4, COL['boden']))
-    b.append(rect(130, Z(Z_PLATTE1), 20, 4, COL['boden']))
-    b.append(rect(109, Z(Z_PLATTE1 + ISO), 41, ISO, 'url(#pIso)'))
-    b.append(rect(109, Z(Z_PLATTE1 + ISO + PUTZ), 41, PUTZ, COL['putz']))
+    for k in range(1, V['tunnel_lagen']):
+        b.append(line(yt0, Z(Z_BODEN1 + k * 4.6), 150, Z(Z_BODEN1 + k * 4.6), '#b06a40', 0.2))
+    b.append(text((yt0 + 150) / 2, Z(Z_BODEN1 + 13), 'Tunnelwand', 2.4, 'middle', '#7a3d1c'))
+    b.append(text((yt0 + 150) / 2, Z(Z_BODEN1 + 10.3), 'Plattenstreifen 10 cm', 2.0, 'middle', '#7a3d1c'))
+    b.append(rect(Y_TUER, Z(Z_PLATTE1), 20, 4, COL['boden']))
+    b.append(rect(Y_TUER + 21, Z(Z_PLATTE1), 150 - Y_TUER - 21, 4, COL['boden']))
+    b.append(rect(Y_TUER, Z(Z_PLATTE1 + ISO), 150 - Y_TUER, ISO, 'url(#pIso)'))
+    b.append(rect(Y_TUER, Z(Z_PLATTE1 + ISO + PUTZ), 150 - Y_TUER, PUTZ, COL['putz']))
     b.append(rect(150, Z(Z_PLATTE1 + ISO + PUTZ), 3, Z_PLATTE1 + ISO + PUTZ - Z_HERD1, COL['putz']))
     b.append(rect(Y_KAMIN - 7.5, Z(Z_ROHR1), 15, ROHR_L, '#c7ccd1', COL['line'], 0.4))
     b.append(rect(Y_KAMIN - 7.5, Z(Z_PLATTE1), 15, 4, '#2b1d14', 'none', 0))
@@ -221,24 +222,24 @@ def schnitt():
     # Beschriftung Schichten
     labs = [
         (Z_KIES0 + 10, '① Kieskoffer 0/31.5, 20 cm verdichtet (170 x 170)'),
-        (Z_KIES1 + 7, '② Fundamentplatte C25/30, 15 cm, Q188A'),
+        (Z_KIES1 + 7, '② Fundamentplatte C25/30, 15 cm, Estrichgitter'),
         (Z_FUND1 + 37, '③ Sockel Schalungssteine 24 cm, 3 Lagen, gefüllt'),
-        (Z_WAND1 + 5, '④ Herdplatte Stahlbeton 10 cm, Q188A'),
+        (Z_WAND1 + 5, '④ Herdplatte Stahlbeton 10 cm, 2 x R188A'),
         (Z_HERD1 + 5, '⑤ Perlit-Zement 5:1, 10 cm (Bodendämmung)'),
         (Z_BODEN0 + 2, '⑥ Backboden Schamottplatten 40 mm auf 5 mm Sandbett'),
-        (Z_BODEN1 + 22, '⑦ Kuppel Schamott-Halbsteine 6.4 cm, 5 Reihen + Schluss'),
+        (Z_BODEN1 + 22, f'⑦ Kuppel Schamott-Halbsteine 6.4 cm, {len(K["reihen"])} Reihen + Schluss'),
         (Z_BODEN1 + C + T + 4, '⑧ Perlit-Zement 8 cm (Kuppeldämmung)'),
         (Z_KUPPEL_AUS - 1, '⑨ Drahtgeflecht + Aussenputz 3 cm'),
-        (Z_PLATTE1 + 50, '⑩ Kaminrohr Edelstahl Ø150, 1.0 m'),
+        (Z_PLATTE1 + 50, '⑩ Kaminrohr Stahl Ø150 (Firefix), 1.0 m'),
     ]
     for zz, lab in labs:
         b.append(line(160, Z(zz), 172, Z(zz), '#888', 0.2))
         b.append(text(173, Z(zz) + 1, lab, 2.8))
     b.append(dim_h(0, 150, Z(-36), 'Fundament 150'))
-    b.append(dim_h(CY - A, CY + A, Z(z0 + 8), 'Ø innen 90'))
+    b.append(dim_h(CY - A, CY + A, Z(z0 + 8), f'Ø innen {V["D"]}'))
     b.append(dim_h(0, CY, Z(Z_ROHR1 - 20), f'Achse Kuppel {CY:.0f}'))
     b.append(dim_h(Y_TUER, 150, Z(Z_ROHR1 - 20), f'Tunnel {150 - Y_TUER:.1f}'))
-    b.append(dim_v(-8, Z(Z_BODEN1), Z(Z_KUPPEL_IN), 'h innen 40', 1, 2.6))
+    b.append(dim_v(-8, Z(Z_BODEN1), Z(Z_KUPPEL_IN), f'h innen {V["h"]}', 1, 2.6))
     b.append(dim_v(155, Z(Z_BODEN1), Z(Z_TUN1), f'Tür {TUN_H}', 1, 2.4))
     b.append(text(-35, Z(Z_ROHR1 + 14), 'SCHNITT A–A (Längsschnitt Mitte)  1:20', 4.5, 'start', COL['line'], 'bold'))
     b.append(text(-35, Z(Z_ROHR1 + 8), 'Schichtaufbau von unten nach oben ① – ⑩, Masse in cm, ±0 = Terrain', 3, 'start', '#555'))
@@ -268,7 +269,7 @@ def draufsicht():
     b.append(rect(CX - TUN_B / 2, Y_TUER, TUN_B, 150 - Y_TUER, 'none', '#7a3d1c', 0.45, 'stroke-dasharray="2 1"'))
     b.append(f'<circle cx="{CX}" cy="{Y_KAMIN}" r="7.5" fill="#c7ccd1" stroke="{COL["line"]}" stroke-width="0.5"/>')
     b.append(text(CX, Y_KAMIN + 1, 'Ø15', 2.6, 'middle'))
-    b.append(text(CX, CY, 'Backraum Ø 90', 3.4, 'middle', '#7a3d1c', 'bold'))
+    b.append(text(CX, CY, f'Backraum Ø {V["D"]}', 3.4, 'middle', '#7a3d1c', 'bold'))
     b.append(text(CX, CY + 5, f'Kuppel aussen Ø {2 * Ra:.1f}', 2.8, 'middle', '#7a3d1c'))
     # Masse
     b.append(dim_h(0, 150, 168, 'Fundament 150'))
@@ -336,7 +337,7 @@ def kuppelschnitt():
     b.append(poly(cap, '#b5653a', sw=0.4))
     Lc = P(15, C + 30)
     b.append(line(*P(4, C + T), *Lc, '#888', 0.25))
-    b.append(text(Lc[0] + 1, Lc[1] - 1.5, f'Schluss: {K["schluss_halbsteine"]} zugeschnittener Schlussstein (Ø ca. {2 * am * math.cos(t0):.0f} cm)', 2.9, 'start', COL['line'], 'bold'))
+    b.append(text(Lc[0] + 1, Lc[1] - 1.5, f'Schluss: {K["schluss_halbsteine"]} zugeschnittene Halbsteine (Restöffnung Ø ca. {2 * am * math.cos(t0):.0f} cm)', 2.9, 'start', COL['line'], 'bold'))
     # Innenkontur + Daemmung angedeutet
     inner = [P(A * math.cos(math.pi / 2 * i / 60), C * math.sin(math.pi / 2 * i / 60)) for i in range(61)]
     b.append('<polyline points="' + ' '.join(f'{x:.2f},{y:.2f}' for x, y in inner) + '" fill="none" stroke="#7a3d1c" stroke-width="0.4" stroke-dasharray="1.5 1"/>')
@@ -344,12 +345,12 @@ def kuppelschnitt():
     b.append('<polyline points="' + ' '.join(f'{x:.2f},{y:.2f}' for x, y in iso_o) + '" fill="none" stroke="#c8b46a" stroke-width="0.6" stroke-dasharray="3 1.5"/>')
     b.append(text(*P(A + T + ISO + 1, 3), 'Aussenkante Dämmung', 2.5, 'start', '#9c8a3f'))
     # Masse
-    b.append(dim_h(P(0, 0)[0], P(A, 0)[0], P(0, -9)[1], 'r innen 45'))
-    b.append(dim_v(P(-6, 0)[0], P(0, 0)[1], P(0, C)[1], 'h innen 40', -1))
+    b.append(dim_h(P(0, 0)[0], P(A, 0)[0], P(0, -9)[1], f'r innen {A:g}'))
+    b.append(dim_v(P(-6, 0)[0], P(0, 0)[1], P(0, C)[1], f'h innen {C:g}', -1))
     b.append(dim_h(P(A, 0)[0], P(A + T, 0)[0], P(0, -14)[1], '6.4', 0, 2.4))
     b.append(text(ox - 10, -(oz + (C + 52) * S), 'KUPPELSCHNITT MIT STEINREIHEN  (halber Schnitt, Massstab ca. 1:10)', 4, 'start', COL['line'], 'bold'))
     b.append(text(ox - 10, -(oz + (C + 52) * S) + 5, 'Halber NF-Stein 125 x 124 x 64 mm, flach verlegt: Fläche 125 x 124 zeigt nach innen, 6.4 cm = Kuppelstärke. Fuge 6 mm.', 2.8, 'start', '#555'))
-    b.append(text(ox - 10, -(oz + (C + 52) * S) + 9, f'Total: {K["halbsteine_reihen"]} Halbsteine + 10 % Verschnitt = {V["halbsteine_mit_verschnitt"]} = {V["nf_kuppel"]} ganze NF-Steine. Tunnel zusätzlich {V["nf_tunnel"]} NF.', 2.8, 'start', '#555'))
+    b.append(text(ox - 10, -(oz + (C + 52) * S) + 9, f'Total: {K["halbsteine_reihen"]} Halbsteine + 10 % Verschnitt = {V["halbsteine_mit_verschnitt"]} = {V["nf_kuppel"]} ganze NF-Steine. Tunnelwände aus Schamottplatten-Streifen.', 2.8, 'start', '#555'))
     b.append(text(ox - 10, -(oz + (C + 52) * S) + 13, 'Neigung = Winkel der Lagerfuge gegen die Waagrechte; jede Reihe auf Sandform/Lehre setzen, Fugen innen eng, aussen keilförmig.', 2.8, 'start', '#555'))
     return svg(1300, 860, ''.join(b), 'Kuppelschnitt Steinreihen', (ox - 15, -(oz + (C + 58) * S), 260, (C + 58) * S + oz + 18 * S))
 

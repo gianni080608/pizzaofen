@@ -52,7 +52,7 @@ page = f'''<title>Pizzaofen Würenlos Bauplan</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>{css}</style>
 <main class="wrap"><article class="doc">
-<p class="kicker">Vertiefungsarbeit · Bau- und Beschaffungsplan · Stand 13.10.2026</p>
+<p class="kicker">Vertiefungsarbeit · Bau- und Beschaffungsplan · Fassung 2 · 13.10.2026</p>
 <h1 class="title">Pizzaofen Würenlos</h1>
 {body}
 </article></main>

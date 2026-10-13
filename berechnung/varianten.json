@@ -1,50 +1,82 @@
 {
- "C": {
-  "minus_80": 135.85,
-  "nf_de_eur": 222.48,
-  "nf_de_total_chf": 257.91,
-  "nf_ch_80": 459.0,
-  "total": 1361.71
- },
- "A": {
-  "bausatz_chf_netto_import": 1268.01,
-  "entfallen": 970.6,
-  "total": 2220.06,
-  "cuppo90_chf": 2206.94,
-  "cuppo_import": 2028.9
- },
- "DE_OBI_Waldshut": {
-  "stk": 62,
-  "brutto_eur": 588.38,
-  "netto_eur": 494.44,
-  "chf_netto": 460.42,
-  "ch_mwst": 37.29,
-  "total_mit_rueckerstattung": 497.71,
-  "total_ohne_rueckerstattung": 592.28,
-  "obi_ch": 527.0
- },
- "DE_online_90": {
-  "eur": 255.44,
-  "netto_chf": 199.89,
-  "total_chf": 285.79,
-  "obi_ch": 527.0
- },
+ "B_80": 1961.8,
  "D80": {
+  "nf": 35,
+  "nf_kauf": 39,
+  "platten": 18,
   "masse": 188.0,
   "kwh": 15.51,
-  "holz_kg_bei_35pct": 11.08,
-  "backflaeche_m2": 0.5
+  "backflaeche": 0.5,
+  "aussen": 114.8,
+  "tunnel": 42.0,
+  "mehrkosten": 0.0,
+  "total": 1961.8,
+  "tuer": 22.4
  },
  "D90": {
-  "masse": 229.2,
-  "kwh": 18.91,
-  "holz_kg_bei_35pct": 13.51,
-  "backflaeche_m2": 0.64
+  "nf": 43,
+  "nf_kauf": 47,
+  "platten": 20,
+  "masse": 222.7,
+  "kwh": 18.37,
+  "backflaeche": 0.64,
+  "aussen": 124.8,
+  "tunnel": 41.7,
+  "mehrkosten": 153.8,
+  "total": 2115.6,
+  "tuer": 27.0
  },
  "D100": {
+  "nf": 52,
+  "nf_kauf": 56,
+  "platten": 22,
   "masse": 267.8,
   "kwh": 22.09,
-  "holz_kg_bei_35pct": 15.78,
-  "backflaeche_m2": 0.79
+  "backflaeche": 0.79,
+  "aussen": 134.8,
+  "tunnel": 31.2,
+  "mehrkosten": 268.2,
+  "total": 2230.0,
+  "tuer": 27.0
+ },
+ "nf_bestand_umkreis": {
+  "Volketswil": 24,
+  "Oftringen": 25,
+  "Basel": 21,
+  "Schaffhausen": 9,
+  "Winterthur": 3
+ },
+ "A": {
+  "kit_eur": 1694,
+  "kit_chf": 1432.96,
+  "entfallen": 875.7,
+  "total": 2519.06,
+  "cuppo90_eur": 2370,
+  "cuppo90_chf": 2017.59
+ },
+ "C": {
+  "minus": 217.35,
+  "total": 1744.45
+ },
+ "DE_Waldshut": {
+  "stk": 39,
+  "brutto_eur": 370.11,
+  "netto_eur": 311.02,
+  "chf": 289.62,
+  "mwst_ch": 23.46,
+  "mit": 313.08,
+  "ohne": 372.56,
+  "ch": 331.5
+ },
+ "DE_online": {
+  "stk": 35,
+  "ware_eur": 147.0,
+  "versand_eur": 79.9,
+  "annahme_eur": 49.0,
+  "total_chf": 256.92,
+  "wert_ch": 115.03,
+  "mwst_ch": 0,
+  "ch": 297.5,
+  "fahrt_km": 150
  }
 }

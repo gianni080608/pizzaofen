@@ -1,0 +1,458 @@
+{
+ "zeit": "2026-10-13T10:19+00:00",
+ "artikel": {
+  "4793972": {
+   "name": "Zement CEM I 42.5 N, 25 kg",
+   "menge": 17,
+   "markt": "Oftringen",
+   "bestand": {
+    "Basel": 324,
+    "Oftringen": 191,
+    "Winterthur": 131,
+    "Schaffhausen": 234
+   }
+  },
+  "5047857": {
+   "name": "Kann Schalungsstein grau 24 cm (50 x 25 x 24)",
+   "menge": 26,
+   "markt": "Volketswil",
+   "bestand": {
+    "Volketswil": 36,
+    "Winterthur": 72,
+    "Schaffhausen": 139
+   }
+  },
+  "5031802": {
+   "name": "Catnic Baustahlmatte R188A 230 x 100 cm (Stäbe 6 mm)",
+   "menge": 2,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 55,
+    "Volketswil": 26,
+    "Oftringen": 37,
+    "Winterthur": 52,
+    "Schaffhausen": 53
+   }
+  },
+  "5031687": {
+   "name": "Catnic Estrichgitter verzinkt 200 x 100 cm",
+   "menge": 2,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 36,
+    "Volketswil": 85,
+    "Winterthur": 27,
+    "Schaffhausen": 25
+   }
+  },
+  "6464333": {
+   "name": "OSB-Platte N+F 1.8 x 62.5 x 250 cm",
+   "menge": 2,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 45,
+    "Volketswil": 107,
+    "Oftringen": 69
+   }
+  },
+  "2473270": {
+   "name": "Schalbrett sägerau 23 x 150 mm, 3 m",
+   "menge": 3,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 69,
+    "Volketswil": 63,
+    "Oftringen": 38,
+    "Winterthur": 86
+   }
+  },
+  "4895694": {
+   "name": "Brett sägerau 23 x 100 mm, 2 m",
+   "menge": 4,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 81,
+    "Volketswil": 23,
+    "Oftringen": 49,
+    "Winterthur": 91,
+    "Schaffhausen": 60
+   }
+  },
+  "5390067@Oftringen": {
+   "name": "Schamottestein 64 x 124 x 250 mm (NF)",
+   "menge": 25,
+   "markt": "Oftringen",
+   "bestand": {
+    "Basel": 21,
+    "Volketswil": 24,
+    "Oftringen": 25,
+    "Winterthur": 3,
+    "Schaffhausen": 9
+   }
+  },
+  "5390067@Volketswil": {
+   "name": "Schamottestein 64 x 124 x 250 mm (NF)",
+   "menge": 14,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 21,
+    "Volketswil": 24,
+    "Oftringen": 25,
+    "Winterthur": 3,
+    "Schaffhausen": 9
+   }
+  },
+  "5390026@Oftringen": {
+   "name": "Schamottestein 40 x 200 x 500 mm",
+   "menge": 1,
+   "markt": "Oftringen",
+   "bestand": {
+    "Basel": 10,
+    "Volketswil": 17,
+    "Oftringen": 12,
+    "Winterthur": 13,
+    "Schaffhausen": 9
+   }
+  },
+  "5390026@Volketswil": {
+   "name": "Schamottestein 40 x 200 x 500 mm",
+   "menge": 17,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 10,
+    "Volketswil": 17,
+    "Oftringen": 12,
+    "Winterthur": 13,
+    "Schaffhausen": 9
+   }
+  },
+  "2925493": {
+   "name": "Sakret Schamottemörtel 5 kg (feuerbeständig bis 1100 °C)",
+   "menge": 5,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 18,
+    "Volketswil": 15,
+    "Oftringen": 12,
+    "Winterthur": 12,
+    "Schaffhausen": 6
+   }
+  },
+  "3798733": {
+   "name": "Pflanzen-Perlit 100 l",
+   "menge": 3,
+   "markt": "Volketswil",
+   "bestand": {
+    "Volketswil": 8,
+    "Oftringen": 11,
+    "Winterthur": 7
+   }
+  },
+  "2480333": {
+   "name": "Firefix Rauchrohr schwarz Ø 150 mm, 1 m (Stahl, Senotherm-Lack)",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 1,
+    "Volketswil": 2,
+    "Oftringen": 2,
+    "Winterthur": 3,
+    "Schaffhausen": 1
+   }
+  },
+  "4915658": {
+   "name": "Gah Alberts Sechseck-Geflecht verzinkt 25 mm, 1 m x 10 m",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 9,
+    "Volketswil": 4,
+    "Oftringen": 6,
+    "Winterthur": 5
+   }
+  },
+  "4983821": {
+   "name": "Glattblech Stahl 500 x 1000 x 0.75 mm",
+   "menge": 1,
+   "markt": "Oftringen",
+   "bestand": {
+    "Basel": 8,
+    "Volketswil": 1,
+    "Oftringen": 3,
+    "Winterthur": 4,
+    "Schaffhausen": 3
+   }
+  },
+  "5786116": {
+   "name": "Siro Möbelgriff S113 Kiefer roh, Lochabstand 96 mm",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 11,
+    "Volketswil": 6,
+    "Oftringen": 12,
+    "Winterthur": 15,
+    "Schaffhausen": 11
+   }
+  },
+  "5756416": {
+   "name": "Albrecht Thermolack schwarz matt 125 ml",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 7,
+    "Volketswil": 9,
+    "Oftringen": 3,
+    "Winterthur": 3,
+    "Schaffhausen": 8
+   }
+  },
+  "4048450": {
+   "name": "LUX Universalschraube Senkkopf 4 x 40 mm, 200 Stk",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 3,
+    "Volketswil": 2,
+    "Oftringen": 3,
+    "Winterthur": 2,
+    "Schaffhausen": 5
+   }
+  },
+  "4582912": {
+   "name": "OBI Bindedraht verzinkt 1.4 mm x 20 m",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 7,
+    "Volketswil": 7,
+    "Oftringen": 8,
+    "Winterthur": 12,
+    "Schaffhausen": 7
+   }
+  },
+  "2435469": {
+   "name": "LUX Gewebeplane grün 4 x 5 m",
+   "menge": 2,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 19,
+    "Volketswil": 54,
+    "Oftringen": 9,
+    "Winterthur": 32,
+    "Schaffhausen": 16
+   }
+  },
+  "1755560": {
+   "name": "LUX Diamant-Trennscheibe Universal 125 mm",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 1,
+    "Volketswil": 2,
+    "Oftringen": 7,
+    "Winterthur": 2,
+    "Schaffhausen": 5
+   }
+  },
+  "1206051": {
+   "name": "LUX Trennscheiben-Sparpack Metall 125 mm",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 4,
+    "Volketswil": 9,
+    "Oftringen": 9,
+    "Winterthur": 9,
+    "Schaffhausen": 12
+   }
+  },
+  "1240837": {
+   "name": "LUX Maurerschnur rot 20 m",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 5,
+    "Volketswil": 5,
+    "Oftringen": 1,
+    "Winterthur": 6
+   }
+  },
+  "1237163": {
+   "name": "LUX Zimmermannsbleistift 24 cm",
+   "menge": 2,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 22,
+    "Volketswil": 63,
+    "Oftringen": 15,
+    "Winterthur": 15,
+    "Schaffhausen": 12
+   }
+  },
+  "5799150": {
+   "name": "Jopa Mörtelkasten schwarz 90 l",
+   "menge": 4,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 64,
+    "Volketswil": 54,
+    "Oftringen": 25,
+    "Winterthur": 26,
+    "Schaffhausen": 9
+   }
+  },
+  "5799200": {
+   "name": "Jopa Mörteleimer mit Bügel 20 l",
+   "menge": 10,
+   "markt": "Oftringen",
+   "bestand": {
+    "Basel": 80,
+    "Volketswil": 26,
+    "Oftringen": 31,
+    "Winterthur": 36,
+    "Schaffhausen": 57
+   }
+  },
+  "4904546": {
+   "name": "Spanngurt Unitec mit Klemmverschluss 3 m, 400 kg",
+   "menge": 4,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 16,
+    "Volketswil": 7,
+    "Oftringen": 5,
+    "Winterthur": 9,
+    "Schaffhausen": 13
+   }
+  },
+  "5102272": {
+   "name": "Antirutschunterlage schwarz 30 x 150 cm",
+   "menge": 3,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 46,
+    "Volketswil": 23,
+    "Oftringen": 18,
+    "Winterthur": 31,
+    "Schaffhausen": 17
+   }
+  },
+  "3084563": {
+   "name": "LUX Feinstaubmaske FFP3 mit Ventil, 2 Stk",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 8,
+    "Volketswil": 12,
+    "Oftringen": 1,
+    "Winterthur": 1,
+    "Schaffhausen": 8
+   }
+  },
+  "3084571": {
+   "name": "Schutzbrille mit Bügeln",
+   "menge": 2,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 11,
+    "Volketswil": 11,
+    "Oftringen": 2,
+    "Winterthur": 32,
+    "Schaffhausen": 9
+   }
+  },
+  "5087713": {
+   "name": "3M Gehörschutzstöpsel mit Kordel 1271",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 6,
+    "Volketswil": 4,
+    "Oftringen": 5,
+    "Winterthur": 3,
+    "Schaffhausen": 4
+   }
+  },
+  "6608442": {
+   "name": "PU-Handschuh Gr. 8",
+   "menge": 4,
+   "markt": "Oftringen",
+   "bestand": {
+    "Basel": 85,
+    "Volketswil": 3,
+    "Oftringen": 107,
+    "Winterthur": 108
+   }
+  },
+  "5474523": {
+   "name": "Betonstampfer 13 x 20 cm, Stiel 105 cm (7.5 kg)",
+   "menge": 1,
+   "markt": "Oftringen",
+   "bestand": {
+    "Basel": 5,
+    "Volketswil": 1,
+    "Oftringen": 1,
+    "Winterthur": 4,
+    "Schaffhausen": 4
+   }
+  },
+  "5047022": {
+   "name": "Einhell Farb-Mörtelrührer TE-MX 1600-2 CE (1600 W)",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 5,
+    "Volketswil": 4,
+    "Schaffhausen": 2
+   }
+  },
+  "5907696": {
+   "name": "LUX Kellenset 3-tlg.",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 5,
+    "Volketswil": 5,
+    "Oftringen": 4,
+    "Winterthur": 3,
+    "Schaffhausen": 4
+   }
+  },
+  "1240233": {
+   "name": "LUX Fugenkelle Classic 10 mm",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Volketswil": 6,
+    "Oftringen": 1,
+    "Winterthur": 1,
+    "Schaffhausen": 1
+   }
+  },
+  "5295126": {
+   "name": "Abus Löschdecke LD1118",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 27,
+    "Volketswil": 18,
+    "Oftringen": 19,
+    "Winterthur": 11,
+    "Schaffhausen": 9
+   }
+  },
+  "6003131": {
+   "name": "Valo Ascheeimer oval mit Deckel schwarz 24 l",
+   "menge": 1,
+   "markt": "Volketswil",
+   "bestand": {
+    "Basel": 7,
+    "Volketswil": 20,
+    "Oftringen": 24,
+    "Winterthur": 38,
+    "Schaffhausen": 23
+   }
+  }
+ }
+}
