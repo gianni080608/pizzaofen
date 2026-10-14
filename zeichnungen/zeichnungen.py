@@ -8,7 +8,7 @@ WAHL = json.load(open(os.path.join(HERE, '..', 'berechnung', 'stueckliste.json')
 V = E[WAHL]; K = V['kuppel']
 
 # ------------------------------------------------------------ Hoehen
-Z_KIES0, Z_KIES1 = -30, -10
+Z_KIES0, Z_KIES1 = -22.5, -10          # bestehender Kies unter den alten Gartenplatten (10-15 cm), OK -10
 Z_FUND1 = 5
 Z_WAND1 = Z_FUND1 + 75
 Z_HERD1 = Z_WAND1 + 10
@@ -95,7 +95,7 @@ def frontansicht():
     # Terrain + Kies (gestrichelt, im Boden)
     b.append(rect(-35, Z(0), 220, 33, 'url(#pErde)', 'none', 0))
     b.append(line(-35, 0, 185, 0, COL['line'], 0.5))
-    b.append(rect(-10, Z(Z_KIES1), 170, 20, 'url(#pKies)', COL['line'], 0.3, 'stroke-dasharray="1.5 1"'))
+    b.append(rect(-10, Z(Z_KIES1), 170, Z_KIES1 - Z_KIES0, 'url(#pKies)', COL['line'], 0.3, 'stroke-dasharray="1.5 1"'))
     b.append(rect(0, Z(Z_FUND1), 150, 15, 'url(#pBeton)'))
     # Sockel: Seitenwaende + Rueckwand sichtbar durch Oeffnung
     b.append(rect(24, Z(Z_WAND1), 102, 75, '#5b5148', COL['line'], 0.3))            # Holzlager (dunkel)
@@ -128,7 +128,7 @@ def frontansicht():
     b.append(text(CX + 16, Z(Z_ROHR1 + 9), 'Abdeckblech nur bei kaltem Ofen (aus Türblech-Rest)', 2.6, 'start', COL['hint']))
     # Masse
     b.append(dim_h(0, 150, Z(-38), 'Fundament 150', 0))
-    b.append(dim_h(-10, 160, Z(-47), 'Kieskoffer 170 (20 cm verdichtet, UK -30)', 0))
+    b.append(dim_h(-10, 160, Z(-47), 'bestehender Kies 10–15 cm (Oberkante −10)', 0))
     b.append(dim_h(CX - Ra, CX + Ra, Z(Z_KUPPEL_AUS + 8), ''))
     b.append(text(CX - Ra + 2, Z(Z_KUPPEL_AUS + 10), f'Kuppel aussen Ø {2 * Ra:.1f}', 3.0, 'start', COL['dim']))
     b.append(dim_h(CX - TUN_B / 2, CX + TUN_B / 2, Z(Z_BODEN1 + 6), 'Tür 40'))
@@ -153,7 +153,7 @@ def schnitt():
     b.append(text(-24, Z(120), 'Betonmauer', 3, 'middle', '#fff', 'bold', rot=-90))
     b.append(rect(-15, Z(0), 175, 40, 'url(#pErde)', 'none', 0))
     b.append(line(-15, 0, 160, 0, COL['line'], 0.5))
-    b.append(rect(-10, Z(Z_KIES1), 170, 20, 'url(#pKies)'))
+    b.append(rect(-10, Z(Z_KIES1), 170, Z_KIES1 - Z_KIES0, 'url(#pKies)'))
     b.append(rect(0, Z(Z_FUND1), 150, 15, 'url(#pBeton)'))
     # Bewehrung Fundament
     b.append(line(5, Z(Z_KIES1 + 5), 145, Z(Z_KIES1 + 5), COL['stahl'], 0.7))
@@ -221,7 +221,7 @@ def schnitt():
     b.append(rect(150.5, Z(Z_TUN1 + 2), 1.2, TUN_H + 4, '#333', '#333', 0.2))
     # Beschriftung Schichten
     labs = [
-        (Z_KIES0 + 10, '① Kieskoffer 0/31.5, 20 cm verdichtet (170 x 170)'),
+        (Z_KIES0 + 6, '① bestehender Kies 10–15 cm, nachverdichtet'),
         (Z_KIES1 + 7, '② Fundamentplatte C25/30, 15 cm, Estrichgitter'),
         (Z_FUND1 + 37, '③ Sockel Schalungssteine 24 cm, 3 Lagen, gefüllt'),
         (Z_WAND1 + 5, '④ Herdplatte Stahlbeton 10 cm, 2 x R188A'),
@@ -273,7 +273,7 @@ def draufsicht():
     b.append(text(CX, CY + 5, f'Kuppel aussen Ø {2 * Ra:.1f}', 2.8, 'middle', '#7a3d1c'))
     # Masse
     b.append(dim_h(0, 150, 168, 'Fundament 150'))
-    b.append(dim_h(-10, 160, 178, 'Kieskoffer 170'))
+    b.append(dim_h(-10, 160, 178, 'freilegen 170 x 170 (bis Kies)'))
     b.append(dim_v(162, 0, 150, '150', 1))
     b.append(dim_v(-5, 0, CY, f'{CY:.0f}', -1, 2.6))
     b.append(text(150, -3, f'Kuppel bis Hinterkante: {CY - Ra:.1f} cm', 2.6, 'end', COL['hint']))

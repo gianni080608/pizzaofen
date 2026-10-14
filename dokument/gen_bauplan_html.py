@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bauplan_Pizzaofen.md -> Bauplan_Pizzaofen.html (eigenstaendig, Zeichnungen eingebettet)."""
+"""Bauplan_Pizzaofen.md (aus build_v4.py) -> Bauplan_Pizzaofen.html (eigenstaendig, Zeichnungen eingebettet)."""
 import subprocess, base64, os, re
 H = os.path.dirname(os.path.abspath(__file__)); Z = os.path.join(H, '..', 'zeichnungen')
 md = open(os.path.join(H, 'Bauplan_Pizzaofen.md')).read()
@@ -8,7 +8,7 @@ body = subprocess.run(['pandoc', '-f', 'gfm+pipe_tables', '-t', 'html5', '--wrap
 def svg_uri(m):
     name = os.path.splitext(os.path.basename(m.group(1)))[0]
     data = base64.b64encode(open(os.path.join(Z, name + '.svg'), 'rb').read()).decode()
-    return f'<figure><img src="data:image/svg+xml;base64,{data}" alt="{m.group(2)}" loading="lazy"><figcaption>{m.group(2)}</figcaption></figure>'
+    return f'<figure><img src="data:image/svg+xml;base64,{data}" alt="{m.group(2)}"><figcaption>{m.group(2)}</figcaption></figure>'
 body = re.sub(r'<img src="\.\./zeichnungen/([^"]+)" alt="([^"]*)"\s*/?>', svg_uri, body)
 body = re.sub(r'<p>(<figure>.*?</figure>)</p>', r'\1', body, flags=re.S)
 body = body.replace('<table>', '<div class="tw"><table>').replace('</table>', '</table></div>')
@@ -52,7 +52,7 @@ page = f'''<title>Pizzaofen Würenlos Bauplan</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>{css}</style>
 <main class="wrap"><article class="doc">
-<p class="kicker">Vertiefungsarbeit · Bau- und Beschaffungsplan · Fassung 2 · 13.10.2026</p>
+<p class="kicker">Vertiefungsarbeit · Bauanleitung mit Werkzeichnungen · Fassung 4 · 14.10.2026</p>
 <h1 class="title">Pizzaofen Würenlos</h1>
 {body}
 </article></main>
