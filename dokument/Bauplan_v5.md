@@ -12,7 +12,7 @@ subtitle: "Fassung 5 · Montag, 19. Oktober 2026"
 > - **Gekauft:** OBI Volketswil, Fahrten B und C, **CHF {{BEZAHLT}}**. **Offen:** eine Einkaufsfahrt **Oftringen → Basel** und **4 kurze Fahrten ins Kieswerk**.
 > - **Neu, Untergrund:** Unter dem Ofen liegen 15 cm Kies auf Vlies und Sand. Das trägt so nicht. Ihr grabt **25 cm tief** aus und baut **15 cm Kiesgemisch** ein, mit dem Stampfer verdichtet.
 > - **Neu, Schamottsteine:** Oftringen hat **keine mehr**. Die 21 fehlenden holt ihr in **OBI Basel Dreispitz**.
-> - **Korrigiert:** Zement **19 statt 16 Sack**, Perlit **4 statt 3 Sack**, Kuppel **16/15/15/10 Steine** mit Keilzuschnitt statt 18/16/15/10, Kaminrohr wird gekauft.
+> - **Korrigiert:** Zement **19 statt 16 Sack**, Perlit **4 statt 3 Sack**, Kuppel **16/15/15/10 Steine** mit Keilzuschnitt statt 18/16/15/10. Das Kaminrohr habt ihr schon.
 > - **Termine:** Aushub **Di 20.10.**, Fundament **Do 22.10.**, Sockel **Fr 23.10.**, Herdplatte **Mo 26.10.**, Kuppel **Sa 31.10.** Erste Pizza frühestens **Ende November**.
 > - **Kosten total:** **CHF {{TOTAL_MIN}} bis {{TOTAL_MAX}}** (Kapitel 9). Das Budget von CHF 2000 hält.
 
@@ -39,7 +39,7 @@ subtitle: "Fassung 5 · Montag, 19. Oktober 2026"
 | **Perlit** | 3 Sack | **4 Sack** | Die Kuppeldämmung muss auch den Kuppelfuss und die Tunnelseiten decken: 294 l Mischung = 323 l Perlit. |
 | **Kuppelreihen** | 18 / 16 / 15 / 10 + 3 Schluss | **16 / 15 / 15 / 10 + 4 Schluss** | Reihe 1 mit 18 Steinen + Tür passt nicht: 21 Plätze × 12.5 cm = 262 cm, der Innenumfang ist nur 251 cm. Neu gerechnet an der Innenkante, wo sich die Steine berühren. Ab Reihe 2 werden die Steine **keilförmig zugeschnitten**. 35 Steine reichen weiterhin. |
 | **Sturz D1** | Hinterkante bei y = 108 | **y = 103** | Sonst hängen die Steine von Reihe 3 über der Tür in der Luft. |
-| **Kaminrohr** | vom Kollegen | **kaufen** (Firefix Ø 150, 1 m, CHF 59.95) | Ein Rohr vom Kollegen ist nicht gesichert. Habt ihr doch eins, lasst ihr den Kauf weg. |
+| **Kaminrohr** | vom Kollegen | **eigenes Rohr, vorhanden** | Nichts zu kaufen. Aussendurchmesser und Länge nachmessen: Der Ausschnitt in den Deckplatten ist Rohr-Ø + 5 mm, die Gesamthöhe 231 cm gilt für 1 m Rohr. |
 | **Schamottplatten** | 17 + 1 | 17 + **2** | 18 sind nötig, die zweite ist Reserve für Bruch beim Längsschneiden. |
 | **Abstandhalter** | Stücke alter Gartenplatten | **keine** | Es gibt keine alten Platten. Gitter und Matten legt ihr in die erste Betonschicht ein (S4, S6). |
 | **Beton Herdplatte** | 15 Mischungen | **16 Mischungen** | Eine Mischung ergibt ca. 39 l, nicht 40 l. |
@@ -66,7 +66,7 @@ subtitle: "Fassung 5 · Montag, 19. Oktober 2026"
 | Kuppel innen | bis +140.5 (Scheitel) | 36 hoch |
 | Kuppel aussen (mit Dämmung + Putz) | bis +157.9 | Wand 17.4 |
 | Tunnel / Deckplatten | Tür 22.4 hoch, Deckplatten bis +130.9 | – |
-| Kaminrohr | bis ca. +231 | 1 m |
+| Kaminrohr (euer eigenes) | bis ca. +231 bei 1 m Rohr | 1 m |
 
 **Mittelpunkt der Kuppel (M):** x = 75 (Mitte), y = 73.4 cm von der Sockel-Hinterkante. Den Punkt M braucht ihr bei Bodendämmung, Backboden, Sandform und Kuppel.
 
@@ -119,6 +119,7 @@ Tägerhard Kies AG, Tägerhardstrasse 151, 5430 Wettingen · **056 426 70 45** �
 | Handsäge, Akkuschrauber + 3-mm-Bohrer | Winkelschleifer 125 mm | Arbeitshandschuhe |
 | Gartenschlauch mit Brause | gerade Latte 2 m (Richtlatte) | Löschdecke, Metall-Ascheeimer mit Deckel |
 | Kneifzange, Seitenschneider | Zeitungen, Klebeband, Karton (Keil-Lehren) | alte Decken (Frostschutz nachts) |
+| **Kaminrohr** (vorhanden) | | |
 
 ---
 
@@ -375,7 +376,7 @@ Jeder Schritt hat: **Wann · Material · Werkzeug · Ablauf · Kontrolle · Acht
 
 5. **Schluss:** 4 Viertelkreise mit r ≈ 9 cm aus 4 Halbsteinen (Z13 ⑤). Erst am Kuppeltag genau anpassen.
 6. **5 Platten längs halbieren** → 10 Streifen 50 × 10 × 4 (Z13 ②).
-7. **2 Deckplatten:** in je eine Längskante einen **Halbkreis r = 7.75 cm** schneiden (Z14). Vorher das Firefix-Rohr messen: Radius = (Rohr-Ø + 5 mm) / 2.
+7. **2 Deckplatten:** in je eine Längskante einen **Halbkreis r = 7.75 cm** schneiden (Z14). Vorher euer Kaminrohr aussen messen: Radius = (Rohr-Ø + 5 mm) / 2. Bei Ø 15 cm sind das 7.75 cm.
 8. Alles nach Reihen stapeln und beschriften (Kreide). Die **10 übrigen Halbsteine** sind Reserve für Bruch und Zuschnitt.
 
 **Achtung:** **Nie trocken in Garage oder Keller schneiden.** Quarzstaub ist krebserregend.

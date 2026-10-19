@@ -45,7 +45,7 @@ for key, g in F['gekauft'].items():
     li = ''.join(f'<li class="done"><span class="ok" aria-hidden="true">✓</span><span class="nm">{esc(p["name"])}</span><span class="q">{p["menge"]} {esc(p["eh"])}</span><span class="p">{fmt(p["chf"])}</span></li>' for p in g['pos'])
     gek.append(f'<details><summary><b>Fahrt {key} · {esc(g["ort"])}</b><span>CHF {fmt(g["chf"])} bezahlt</span></summary><ul class="donelist">{li}</ul></details>')
 
-haus_namen = ['Maurerschnur', 'Staubmaske FFP2/FFP3', 'Schutzbrille', 'Gehörschutz', 'Löschdecke', 'Metall-Ascheeimer mit Deckel',
+haus_namen = ['Kaminrohr (vorhanden): Aussen-Ø und Länge messen', 'Maurerschnur', 'Staubmaske FFP2/FFP3', 'Schutzbrille', 'Gehörschutz', 'Löschdecke', 'Metall-Ascheeimer mit Deckel',
               '3 Planen 4 × 5 m', 'Spanngurte + Antirutschmatte', '2 Schaufeln, Spaten, Schubkarre, Rechen', 'Wasserwaage, Rollmeter, Richtlatte 2 m',
               'Handsäge, Akkuschrauber + 3-mm-Bohrer', 'Winkelschleifer 125 mm', 'Gummihammer, Hammer, Meissel, Zange', 'Gartenschlauch mit Brause',
               'alte Decken (Frostschutz)', 'Zeitungen, Klebeband, Karton']

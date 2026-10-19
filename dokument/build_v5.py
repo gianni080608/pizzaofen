@@ -40,7 +40,7 @@ rows = [
     ('Baustahlmatte R188A / Estrichgitter', '2 / 2', '2 / 2', '–', 'ok'),
     ('OSB 18 mm / Schalbrett 3 m / Brett 2 m', '2 / 3 / 4', '2 / 3 / 4', '–', 'ok'),
     ('Sechseckgeflecht', f"{V['putz_m2']:.1f} m²", '1 Rolle 10 m²', '–', 'ok'),
-    ('Firefix Rauchrohr Ø 150, 1 m', '1', 0, kauf['O11'], 'neu'),
+    ('Kaminrohr Stahl Ø ca. 150, 1 m', '1', 'vorhanden', 0, 'Ø und Länge nachmessen'),
     ('Glattblech 500 × 1000', '1 (Tür, Kaminabdeckung)', 0, kauf['O13'], ''),
     ('Mörtelkasten 90 l / Mörteleimer 20 l', '6 / 10', '0 / 0', f"{kauf['O23']} / {kauf['O24']}", ''),
     ('Betonstampfer', '1 (Kieskoffer)', 0, kauf['O31'], 'neu Pflicht'),

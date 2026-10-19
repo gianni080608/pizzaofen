@@ -12,9 +12,9 @@ subtitle: "Fassung 5 · Montag, 19. Oktober 2026"
 > - **Gekauft:** OBI Volketswil, Fahrten B und C, **CHF 1'153.60**. **Offen:** eine Einkaufsfahrt **Oftringen → Basel** und **4 kurze Fahrten ins Kieswerk**.
 > - **Neu, Untergrund:** Unter dem Ofen liegen 15 cm Kies auf Vlies und Sand. Das trägt so nicht. Ihr grabt **25 cm tief** aus und baut **15 cm Kiesgemisch** ein, mit dem Stampfer verdichtet.
 > - **Neu, Schamottsteine:** Oftringen hat **keine mehr**. Die 21 fehlenden holt ihr in **OBI Basel Dreispitz**.
-> - **Korrigiert:** Zement **19 statt 16 Sack**, Perlit **4 statt 3 Sack**, Kuppel **16/15/15/10 Steine** mit Keilzuschnitt statt 18/16/15/10, Kaminrohr wird gekauft.
+> - **Korrigiert:** Zement **19 statt 16 Sack**, Perlit **4 statt 3 Sack**, Kuppel **16/15/15/10 Steine** mit Keilzuschnitt statt 18/16/15/10. Das Kaminrohr habt ihr schon.
 > - **Termine:** Aushub **Di 20.10.**, Fundament **Do 22.10.**, Sockel **Fr 23.10.**, Herdplatte **Mo 26.10.**, Kuppel **Sa 31.10.** Erste Pizza frühestens **Ende November**.
-> - **Kosten total:** **CHF 1'822.55 bis 1'904.55** (Kapitel 9). Das Budget von CHF 2000 hält.
+> - **Kosten total:** **CHF 1'762.60 bis 1'844.60** (Kapitel 9). Das Budget von CHF 2000 hält.
 
 ---
 
@@ -39,7 +39,7 @@ subtitle: "Fassung 5 · Montag, 19. Oktober 2026"
 | **Perlit** | 3 Sack | **4 Sack** | Die Kuppeldämmung muss auch den Kuppelfuss und die Tunnelseiten decken: 294 l Mischung = 323 l Perlit. |
 | **Kuppelreihen** | 18 / 16 / 15 / 10 + 3 Schluss | **16 / 15 / 15 / 10 + 4 Schluss** | Reihe 1 mit 18 Steinen + Tür passt nicht: 21 Plätze × 12.5 cm = 262 cm, der Innenumfang ist nur 251 cm. Neu gerechnet an der Innenkante, wo sich die Steine berühren. Ab Reihe 2 werden die Steine **keilförmig zugeschnitten**. 35 Steine reichen weiterhin. |
 | **Sturz D1** | Hinterkante bei y = 108 | **y = 103** | Sonst hängen die Steine von Reihe 3 über der Tür in der Luft. |
-| **Kaminrohr** | vom Kollegen | **kaufen** (Firefix Ø 150, 1 m, CHF 59.95) | Ein Rohr vom Kollegen ist nicht gesichert. Habt ihr doch eins, lasst ihr den Kauf weg. |
+| **Kaminrohr** | vom Kollegen | **eigenes Rohr, vorhanden** | Nichts zu kaufen. Aussendurchmesser und Länge nachmessen: Der Ausschnitt in den Deckplatten ist Rohr-Ø + 5 mm, die Gesamthöhe 231 cm gilt für 1 m Rohr. |
 | **Schamottplatten** | 17 + 1 | 17 + **2** | 18 sind nötig, die zweite ist Reserve für Bruch beim Längsschneiden. |
 | **Abstandhalter** | Stücke alter Gartenplatten | **keine** | Es gibt keine alten Platten. Gitter und Matten legt ihr in die erste Betonschicht ein (S4, S6). |
 | **Beton Herdplatte** | 15 Mischungen | **16 Mischungen** | Eine Mischung ergibt ca. 39 l, nicht 40 l. |
@@ -66,7 +66,7 @@ subtitle: "Fassung 5 · Montag, 19. Oktober 2026"
 | Kuppel innen | bis +140.5 (Scheitel) | 36 hoch |
 | Kuppel aussen (mit Dämmung + Putz) | bis +157.9 | Wand 17.4 |
 | Tunnel / Deckplatten | Tür 22.4 hoch, Deckplatten bis +130.9 | – |
-| Kaminrohr | bis ca. +231 | 1 m |
+| Kaminrohr (euer eigenes) | bis ca. +231 bei 1 m Rohr | 1 m |
 
 **Mittelpunkt der Kuppel (M):** x = 75 (Mitte), y = 73.4 cm von der Sockel-Hinterkante. Den Punkt M braucht ihr bei Bodendämmung, Backboden, Sandform und Kuppel.
 
@@ -93,7 +93,7 @@ subtitle: "Fassung 5 · Montag, 19. Oktober 2026"
 | Baustahlmatte R188A / Estrichgitter | 2 / 2 | 2 / 2 | – | ok |
 | OSB 18 mm / Schalbrett 3 m / Brett 2 m | 2 / 3 / 4 | 2 / 3 / 4 | – | ok |
 | Sechseckgeflecht | 2.3 m² | 1 Rolle 10 m² | – | ok |
-| Firefix Rauchrohr Ø 150, 1 m | 1 | 0 | 1 | neu |
+| Kaminrohr Stahl Ø ca. 150, 1 m | 1 | vorhanden | 0 | Ø und Länge nachmessen |
 | Glattblech 500 × 1000 | 1 (Tür, Kaminabdeckung) | 0 | 1 |  |
 | Mörtelkasten 90 l / Mörteleimer 20 l | 6 / 10 | 0 / 0 | 6 / 10 |  |
 | Betonstampfer | 1 (Kieskoffer) | 0 | 1 | neu Pflicht |
@@ -153,13 +153,12 @@ subtitle: "Fassung 5 · Montag, 19. Oktober 2026"
 | Pflanzen-Perlit 100 l | 3798733 | **1 Sack** | 11 | 29.95 | Bedarf 323 l = 4 Sack, 3 gekauft |
 | Glattblech Stahl 500 x 1000 x 0.75 mm | 4983821 | **1 Stk** | 2 | 23.50 | Tür und Kaminabdeckung |
 | Jopa Mörteleimer mit Bügel 20 l | 5799200 | **10 Stk** | 28 | 35.00 | Kies holen, Mischungen abmessen |
-| Firefix Rauchrohr schwarz Ø 150 mm, 1 m (Stahl, Senotherm-Lack) | 2480333 | **1 Stk** | 2 | 59.95 | Kaminrohr (stand schon in Fassung 3 auf der Liste). Habt ihr doch eins vom Kollegen: weglassen |
 | Betonstampfer 13 x 20 cm, Stiel 105 cm (7.5 kg) | 5474523 | **1 Stk** | 2 | 43.95 | Pflicht: neuer Kieskoffer muss verdichtet werden (sonst Basel, 4 Stk.) |
 | LUX Gewebeplane grün 4 x 5 m *(nur falls nötig)* | 2435469 | **2 Stk** | 5 | 25.90 | nur wenn zuhause keine 3 grossen Planen |
 | Spanngurt Unitec mit Klemmverschluss 3 m, 400 kg *(nur falls nötig)* | 4904546 | **4 Stk** | 5 | 35.80 | nur wenn keine Spanngurte zuhause |
 | Antirutschunterlage schwarz 30 x 150 cm *(nur falls nötig)* | 5102272 | **3 Stk** | 16 | 16.50 | nur wenn keine Antirutschmatten zuhause |
 | PU-Handschuh Gr. 8 *(nur falls nötig)* | 6608442 | **4 Paar** | 107 | 3.80 | nur wenn keine Arbeitshandschuhe zuhause |
-| **Summe** | | | | **334.75** (mit allem 416.75) | |
+| **Summe** | | | | **274.80** (mit allem 356.80) | |
 
 **A2 – OBI Basel Dreispitz** · OBI Basel, Reinacherstrasse 29, 4053 Basel · Tel. 058 329 11 00 · Mo–Fr 08–20, Sa 08–18 · 55 km ab Oftringen · 66 km zurück nach Würenlos
 
@@ -197,6 +196,7 @@ Tägerhard Kies AG, Tägerhardstrasse 151, 5430 Wettingen · **056 426 70 45** �
 | Handsäge, Akkuschrauber + 3-mm-Bohrer | Winkelschleifer 125 mm | Arbeitshandschuhe |
 | Gartenschlauch mit Brause | gerade Latte 2 m (Richtlatte) | Löschdecke, Metall-Ascheeimer mit Deckel |
 | Kneifzange, Seitenschneider | Zeitungen, Klebeband, Karton (Keil-Lehren) | alte Decken (Frostschutz nachts) |
+| **Kaminrohr** (vorhanden) | | |
 
 ---
 
@@ -472,7 +472,7 @@ Jeder Schritt hat: **Wann · Material · Werkzeug · Ablauf · Kontrolle · Acht
 
 5. **Schluss:** 4 Viertelkreise mit r ≈ 9 cm aus 4 Halbsteinen (Z13 ⑤). Erst am Kuppeltag genau anpassen.
 6. **5 Platten längs halbieren** → 10 Streifen 50 × 10 × 4 (Z13 ②).
-7. **2 Deckplatten:** in je eine Längskante einen **Halbkreis r = 7.75 cm** schneiden (Z14). Vorher das Firefix-Rohr messen: Radius = (Rohr-Ø + 5 mm) / 2.
+7. **2 Deckplatten:** in je eine Längskante einen **Halbkreis r = 7.75 cm** schneiden (Z14). Vorher euer Kaminrohr aussen messen: Radius = (Rohr-Ø + 5 mm) / 2. Bei Ø 15 cm sind das 7.75 cm.
 8. Alles nach Reihen stapeln und beschriften (Kreide). Die **10 übrigen Halbsteine** sind Reserve für Bruch und Zuschnitt.
 
 **Achtung:** **Nie trocken in Garage oder Keller schneiden.** Quarzstaub ist krebserregend.
@@ -628,13 +628,13 @@ Frühestens **7 Tage nach dem Putz**. Ziel: Das Restwasser langsam austreiben, s
 | Volketswil Fahrt B | bezahlt | 575.45 |
 | Volketswil Fahrt C | bezahlt | 578.15 |
 | **Schon ausgegeben** | | **1'153.60** |
-| Oftringen (A1, ohne Extras) | offen | 334.75 |
+| Oftringen (A1, ohne Extras) | offen | 274.80 |
 | Basel (A2) | offen | 226.20 |
 | Extras, nur falls nicht zuhause (Planen, Gurte, Antirutsch, Handschuhe) | offen | 0.00 bis 82.00 |
 | Kieswerk K1–K4 (1.80 m³ à CHF 60) | offen | 108.00 |
-| **Noch auszugeben** | | **668.95 bis 750.95** |
-| **Total Pizzaofen** | | **1'822.55 bis 1'904.55** |
-| Reserve bis CHF 2000 | | 95.45 bis 177.45 |
+| **Noch auszugeben** | | **609.00 bis 691.00** |
+| **Total Pizzaofen** | | **1'762.60 bis 1'844.60** |
+| Reserve bis CHF 2000 | | 155.40 bis 237.40 |
 
 Nicht eingerechnet: Diesel (ca. CHF 35 für die Fahrt nach Basel und das Kieswerk), Werkzeug von zuhause, Brennholz. Preise inkl. MWST, Stand 13.10., heute stichprobenweise bestätigt.
 

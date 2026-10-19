@@ -13,7 +13,7 @@ Bau- und Beschaffungsplan für einen gemauerten Kuppelofen (neapolitanischer Sti
 | [`berechnung/`](berechnung/) | Python-Skripte für alle Mengen, Gewichte, Kosten, Phasen und Varianten |
 | [`karte/`](karte/) | Grundkarte (OSM, OSRM) und Generator für `karte.html` |
 
-**Ergebnis Fassung 5 (19.10.):** Noch nichts gebaut. Gekauft: Volketswil B + C (CHF 1'153.60). Untergrund ist 15 cm Kies auf Vlies und Sand → Aushub bis −25 und Kieskoffer 15 cm. Schamottsteine nur noch in Basel. Korrigiert: Zement 19 Sack, Perlit 4 Sack, Kuppel 16/15/15/10 + 4 mit Keilzuschnitt, Sturz D1 bei y = 103, Kaminrohr kaufen. Total CHF 1'822.55 bis 1'904.55. Bau: Aushub Di 20.10., Fundament Do 22.10., Sockel Fr 23.10., Herdplatte Mo 26.10., Kuppel Sa 31.10.
+**Ergebnis Fassung 5 (19.10.):** Noch nichts gebaut. Gekauft: Volketswil B + C (CHF 1'153.60). Untergrund ist 15 cm Kies auf Vlies und Sand → Aushub bis −25 und Kieskoffer 15 cm. Schamottsteine nur noch in Basel. Korrigiert: Zement 19 Sack, Perlit 4 Sack, Kuppel 16/15/15/10 + 4 mit Keilzuschnitt, Sturz D1 bei y = 103. Kaminrohr vorhanden. Total CHF 1'762.60 bis 1'844.60. Bau: Aushub Di 20.10., Fundament Do 22.10., Sockel Fr 23.10., Herdplatte Mo 26.10., Kuppel Sa 31.10.
 
 **Ergebnis Fassung 4 (14.10.):** Einkäufe B und C erledigt, der alte Kies unter den Gartenplatten wird wiederverwendet, Kosten CHF 1'604.35 bis 1'730.30. Bau: Fundament Do 15.10., Sockel Fr 16.10., Herdplatte Mo 19.10., Kuppel So 25.10.
 

@@ -236,7 +236,7 @@ def schnitt():
         (Z_BODEN1 + 22, f'⑦ Kuppel Schamott-Halbsteine 6.4 cm, {len(K["reihen"])} Reihen + Schluss'),
         (Z_BODEN1 + C + T + 4, '⑧ Perlit-Zement 8 cm (Kuppeldämmung)'),
         (Z_KUPPEL_AUS - 1, '⑨ Drahtgeflecht + Aussenputz 3 cm'),
-        (Z_PLATTE1 + 50, '⑩ Kaminrohr Stahl Ø150 (Firefix), 1.0 m'),
+        (Z_PLATTE1 + 50, '⑩ Kaminrohr Stahl Ø ca. 150 (vorhanden), 1.0 m'),
     ]
     for zz, lab in labs:
         b.append(line(160, Z(zz), 172, Z(zz), '#888', 0.2))

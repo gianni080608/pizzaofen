@@ -60,7 +60,6 @@ FAHRT_A = [
         pos('O10', 1, 'Oftringen', warum=f"Bedarf {V['perlit_l']} l = {perlit_sack} Sack, 3 gekauft"),
         pos('O13', 1, 'Oftringen', warum='Tür und Kaminabdeckung'),
         pos('O24', 10, 'Oftringen', warum='Kies holen, Mischungen abmessen'),
-        pos('O11', 1, 'Oftringen', warum='Kaminrohr (stand schon in Fassung 3 auf der Liste). Habt ihr doch eins vom Kollegen: weglassen'),
         pos('O31', 1, 'Oftringen', warum='Pflicht: neuer Kieskoffer muss verdichtet werden (sonst Basel, 4 Stk.)'),
         pos('O18', 2, 'Oftringen', False, 'nur wenn zuhause keine 3 grossen Planen'),
         pos('O25', 4, 'Oftringen', False, 'nur wenn keine Spanngurte zuhause'),

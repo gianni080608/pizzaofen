@@ -535,23 +535,6 @@
      "alternativ": "Nyon 171, Basel 88, Schönbühl 81, Thun 56, Schaffhausen 56, Renens 49, Agno 44, "
     },
     {
-     "id": "O11",
-     "art": "2480333",
-     "name": "Firefix Rauchrohr schwarz Ø 150 mm, 1 m (Stahl, Senotherm-Lack)",
-     "menge": 1,
-     "eh": "Stk",
-     "ep": 59.95,
-     "chf": 59.95,
-     "kg": 7.8,
-     "markt": "Oftringen",
-     "pflicht": true,
-     "warum": "Kaminrohr (stand schon in Fassung 3 auf der Liste). Habt ihr doch eins vom Kollegen: weglassen",
-     "url": "https://www.obi.ch/zubehoer-fuer-cheminees-und-schwedenoefen/firefix-rauchrohr-schwarz-15-cm/p/2480333",
-     "bestand": 2,
-     "ok": true,
-     "alternativ": "Thun 8, S. Antonino 4, Volketswil 3, Renens 2, Winterthur 2, Basel 1, Carouge 1,"
-    },
-    {
      "id": "O31",
      "art": "5474523",
      "name": "Betonstampfer 13 x 20 cm, Stiel 105 cm (7.5 kg)",
@@ -637,9 +620,9 @@
      "alternativ": "Renens 108, Schönbühl 108, Winterthur 108, Nyon 107, Steinhausen 90, Basel 78, A"
     }
    ],
-   "chf_pflicht": 334.75,
-   "chf_alles": 416.75,
-   "kg": 530
+   "chf_pflicht": 274.8,
+   "chf_alles": 356.8,
+   "kg": 522
   },
   {
    "key": "A2",
@@ -757,12 +740,12 @@
   "bezahlt_B": 575.45,
   "bezahlt_C": 578.15,
   "bezahlt": 1153.6,
-  "fahrt_a_min": 560.95,
-  "fahrt_a_max": 642.95,
+  "fahrt_a_min": 501.0,
+  "fahrt_a_max": 583.0,
   "kies": 108.0,
-  "offen_min": 668.95,
-  "offen_max": 750.95,
-  "total_min": 1822.55,
-  "total_max": 1904.55
+  "offen_min": 609.0,
+  "offen_max": 691.0,
+  "total_min": 1762.6,
+  "total_max": 1844.6
  }
 }

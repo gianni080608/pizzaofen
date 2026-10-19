@@ -510,7 +510,7 @@ def eingang():
     b.append(text(Q(40, 0)[0], Q(0, Y_D1 - 4)[1], f'D1-Hinterkante y = {Y_D1:g} (trägt Reihe 3 über der Tür)', 2.3, 'start', '#7a3d1c'))
     b.append(text(ox - 6, 30, 'DECKPLATTEN VON OBEN', 3.0, 'start', COL['line'], 'bold'))
     b.append(note(ox - 6, 150, [f'Halbkreis-Ausschnitt r = {rr} cm in beide Platten', '(Winkelschleifer, mehrere flache Schnitte, dann', 'ausbrechen). Rohr sitzt zwischen D1 und D2.', 'Auflager: 5 cm je Seite auf den Tunnelwänden,', 'D1 hinten zusätzlich auf Reihe 2 neben der Tür.',
-                                 'Firefix-Rohr Ø 150: Ausschnitt Ø 15.5.', 'Rohr vorher nachmessen: Rohr-Ø + 5 mm.'], 2.5))
+                                 'Für ein Rohr Ø 150: Ausschnitt Ø 15.5.', 'Euer Rohr aussen messen: Rohr-Ø + 5 mm.'], 2.5))
     b.append(head(5, 6, 'EINGANG, STURZ, DECKPLATTEN, KAMIN  1:10', 'Tunnel 40 x 22.4 cm · Wände aus längs halbierten Schamottplatten'))
     OUT['eingang'] = svg(1300, 800, ''.join(b), 'Eingang', (0, -2, 305, 182))
 
