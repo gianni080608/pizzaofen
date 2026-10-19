@@ -1,39 +1,37 @@
 
 === Kuppel 80 cm innen, 36 cm hoch ===
-Meridianlaenge Mittelflaeche 64.8 cm, Reihen 4, Restbogen 12.8 cm -> Schluss 3 Halbsteine
-  Reihe 1: z   0.0- 11.2 cm, r_innen  39.5, Neigung   0.0 Grad, 18 Halbsteine (Tuer -3)
-  Reihe 2: z  11.7- 21.5 cm, r_innen  35.4, Neigung  20.7 Grad, 16 Halbsteine (Tuer -3)
-  Reihe 3: z  21.9- 29.4 cm, r_innen  27.7, Neigung  40.2 Grad, 15 Halbsteine (Tuer -0)
-  Reihe 4: z  29.7- 34.3 cm, r_innen  17.6, Neigung  58.0 Grad, 10 Halbsteine (Tuer -0)
-Halbsteine Reihen+Schluss: 62 | Flaechenkontrolle: 59.4 | +10% -> 69 -> NF Kuppel 35
-NF Tunnel 0 | NF total 35 | Boden 0.879 m2 -> Platten 11 + 2 Tunneldecke
-Moertel 10.2 l -> 21.1 kg | Perlit 270 l, Zement Perlit 70.1 kg | Putz 2.32 m2, 0.077 m3
-Aussendurchmesser 114.8 cm, Kuppelmasse 117.2 kg, Bodenmasse 70.8 kg, Tuerlinie y=108.0 Tunnel 42.0 cm, cy=73.4
+Meridianlaenge innen 59.7 cm, Reihen 4, Restbogen 8.5 cm, Restoeffnung r 8.5 ab z 35.2 -> Schluss 4 Stuecke
+  Reihe 1: z   0.0- 12.1 cm, r unten  40.0 oben  37.7, Lagerfuge  10.9 Grad, 16 Halbsteine + Tuer, Breite oben 11.9 (je Seite 0.3 weg), Stossfuge unten 0.6
+  Reihe 2: z  12.5- 22.9 cm, r unten  37.5 oben  30.9, Lagerfuge  32.6 Grad, 15 Halbsteine + Tuer, Breite oben 9.7 (je Seite 1.4 weg), Stossfuge unten 0.4
+  Reihe 3: z  23.2- 30.7 cm, r unten  30.6 oben  20.8, Lagerfuge  52.4 Grad, 15 Halbsteine, Breite oben 8.4 (je Seite 2.0 weg), Stossfuge unten 0.3
+  Reihe 4: z  30.9- 35.1 cm, r unten  20.5 oben   8.9, Lagerfuge  70.2 Grad, 10 Halbsteine, Breite oben 5.3 (je Seite 3.6 weg), Stossfuge unten 0.4
+Halbsteine Reihen+Schluss: 60 | Flaechenkontrolle: 51.8 | +10% -> 66 -> NF Kuppel 33
+NF Tunnel 0 | NF total 33 | Boden 0.879 m2 -> Platten 11 + 2 Tunneldecke
+Moertel 10.0 l -> 20.7 kg | Perlit 323 l, Zement Perlit 84.0 kg | Putz 2.32 m2, 0.077 m3
+Aussendurchmesser 114.8 cm, Kuppelmasse 113.4 kg, Bodenmasse 70.8 kg, Tuerlinie y=108.0 Tunnel 42.0 cm, cy=73.4
 
 === Kuppel 90 cm innen, 40 cm hoch ===
-Meridianlaenge Mittelflaeche 71.8 cm, Reihen 5, Restbogen 6.8 cm -> Schluss 1 Halbsteine
-  Reihe 1: z   0.0- 11.3 cm, r_innen  44.5, Neigung   0.0 Grad, 20 Halbsteine (Tuer -3)
-  Reihe 2: z  11.8- 21.9 cm, r_innen  40.7, Neigung  19.0 Grad, 18 Halbsteine (Tuer -3)
-  Reihe 3: z  22.4- 30.5 cm, r_innen  33.5, Neigung  37.0 Grad, 18 Halbsteine (Tuer -0)
-  Reihe 4: z  30.8- 36.4 cm, r_innen  23.8, Neigung  53.4 Grad, 13 Halbsteine (Tuer -0)
-  Reihe 5: z  36.6- 39.5 cm, r_innen  12.6, Neigung  68.5 Grad, 7 Halbsteine (Tuer -0)
-Halbsteine Reihen+Schluss: 77 | Flaechenkontrolle: 73.5 | +10% -> 85 -> NF Kuppel 43
-NF Tunnel 0 | NF total 43 | Boden 1.033 m2 -> Platten 12 + 2 Tunneldecke
-Moertel 12.2 l -> 25.5 kg | Perlit 314 l, Zement Perlit 81.8 kg | Putz 2.65 m2, 0.088 m3
-Aussendurchmesser 124.8 cm, Kuppelmasse 145.5 kg, Bodenmasse 77.2 kg, Tuerlinie y=108.3 Tunnel 41.7 cm, cy=68.0
+Meridianlaenge innen 66.8 cm, Reihen 4, Restbogen 15.6 cm, Restoeffnung r 15.4 ab z 37.6 -> Schluss 4 Stuecke
+  Reihe 1: z   0.0- 12.2 cm, r unten  45.0 oben  42.9, Lagerfuge  10.0 Grad, 18 Halbsteine + Tuer, Breite oben 12.4 (je Seite 0.1 weg), Stossfuge unten 0.9
+  Reihe 2: z  12.5- 23.3 cm, r unten  42.7 oben  36.6, Lagerfuge  29.8 Grad, 17 Halbsteine + Tuer, Breite oben 10.7 (je Seite 0.9 weg), Stossfuge unten 0.8
+  Reihe 3: z  23.6- 31.9 cm, r unten  36.4 oben  27.2, Lagerfuge  47.9 Grad, 14 Halbsteine + Tuer, Breite oben 8.7 (je Seite 1.9 weg), Stossfuge unten 0.8
+  Reihe 4: z  32.1- 37.5 cm, r unten  26.9 oben  15.7, Lagerfuge  64.2 Grad, 13 Halbsteine, Breite oben 7.3 (je Seite 2.6 weg), Stossfuge unten 0.5
+Halbsteine Reihen+Schluss: 66 | Flaechenkontrolle: 65.4 | +10% -> 73 -> NF Kuppel 37
+NF Tunnel 0 | NF total 37 | Boden 1.033 m2 -> Platten 12 + 2 Tunneldecke
+Moertel 11.2 l -> 23.3 kg | Perlit 374 l, Zement Perlit 97.1 kg | Putz 2.65 m2, 0.088 m3
+Aussendurchmesser 124.8 cm, Kuppelmasse 124.7 kg, Bodenmasse 77.2 kg, Tuerlinie y=108.3 Tunnel 41.7 cm, cy=68.0
 
 === Kuppel 100 cm innen, 44 cm hoch ===
-Meridianlaenge Mittelflaeche 78.9 cm, Reihen 6, Restbogen 0.9 cm -> Schluss 0 Halbsteine
-  Reihe 1: z   0.0- 11.4 cm, r_innen  49.6, Neigung   0.0 Grad, 23 Halbsteine (Tuer -3)
-  Reihe 2: z  11.9- 22.3 cm, r_innen  46.0, Neigung  17.6 Grad, 21 Halbsteine (Tuer -3)
-  Reihe 3: z  22.8- 31.4 cm, r_innen  39.2, Neigung  34.3 Grad, 20 Halbsteine (Tuer -0)
-  Reihe 4: z  31.7- 38.1 cm, r_innen  30.0, Neigung  49.6 Grad, 16 Halbsteine (Tuer -0)
-  Reihe 5: z  38.4- 42.4 cm, r_innen  19.1, Neigung  63.6 Grad, 10 Halbsteine (Tuer -0)
-  Reihe 6: z  42.5- 44.0 cm, r_innen   7.2, Neigung  76.6 Grad, 4 Halbsteine (Tuer -0)
-Halbsteine Reihen+Schluss: 94 | Flaechenkontrolle: 90.3 | +10% -> 104 -> NF Kuppel 52
-NF Tunnel 0 | NF total 52 | Boden 1.14 m2 -> Platten 14 + 2 Tunneldecke
-Moertel 13.9 l -> 28.8 kg | Perlit 350 l, Zement Perlit 91.0 kg | Putz 3.01 m2, 0.099 m3
-Aussendurchmesser 134.8 cm, Kuppelmasse 177.7 kg, Bodenmasse 90.1 kg, Tuerlinie y=118.8 Tunnel 31.2 cm, cy=73.0
+Meridianlaenge innen 73.9 cm, Reihen 5, Restbogen 9.9 cm, Restoeffnung r 9.9 ab z 43.1 -> Schluss 4 Stuecke
+  Reihe 1: z   0.0- 12.2 cm, r unten  50.0 oben  48.0, Lagerfuge   9.2 Grad, 21 Halbsteine + Tuer, Breite oben 12.1 (je Seite 0.2 weg), Stossfuge unten 0.5
+  Reihe 2: z  12.6- 23.5 cm, r unten  47.9 oben  42.2, Lagerfuge  27.4 Grad, 20 Halbsteine + Tuer, Breite oben 10.9 (je Seite 0.8 weg), Stossfuge unten 0.5
+  Reihe 3: z  23.9- 32.7 cm, r unten  42.0 oben  33.4, Lagerfuge  44.2 Grad, 17 Halbsteine + Tuer, Breite oben 9.5 (je Seite 1.5 weg), Stossfuge unten 0.6
+  Reihe 4: z  33.0- 39.3 cm, r unten  33.1 oben  22.5, Lagerfuge  59.3 Grad, 16 Halbsteine, Breite oben 8.5 (je Seite 2.0 weg), Stossfuge unten 0.5
+  Reihe 5: z  39.5- 43.1 cm, r unten  22.1 oben  10.2, Lagerfuge  73.2 Grad, 10 Halbsteine, Breite oben 6.1 (je Seite 3.2 weg), Stossfuge unten 1.4
+Halbsteine Reihen+Schluss: 88 | Flaechenkontrolle: 81.7 | +10% -> 97 -> NF Kuppel 49
+NF Tunnel 0 | NF total 49 | Boden 1.14 m2 -> Platten 14 + 2 Tunneldecke
+Moertel 13.3 l -> 27.7 kg | Perlit 403 l, Zement Perlit 104.8 kg | Putz 3.01 m2, 0.099 m3
+Aussendurchmesser 134.8 cm, Kuppelmasse 166.3 kg, Bodenmasse 90.1 kg, Tuerlinie y=118.8 Tunnel 31.2 cm, cy=73.0
 
 === Unterbau ===
   fundament_m3: 0.3375
@@ -47,6 +45,6 @@ Aussendurchmesser 134.8 cm, Kuppelmasse 177.7 kg, Bodenmasse 90.1 kg, Tuerlinie 
   betonkies_m3_lose: 1.028
   steine_pro_lage: 8.04
   steine_3_lagen: 24.1
-  kies_verdichtet_m3: 0.578
-  kies_lose_m3: 0.722
-  kies_kg: 1156
+  kies_verdichtet_m3: 0.433
+  kies_lose_m3: 0.542
+  kies_kg: 867

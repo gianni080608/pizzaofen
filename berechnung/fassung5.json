@@ -1,0 +1,768 @@
+{
+ "stand": "Mo 19.10.2026",
+ "bestand_zeit": "19.10.2026 14:37",
+ "bestand": {
+  "4793972": {
+   "Basel": 321,
+   "Renens": 351,
+   "Oftringen": 173,
+   "S. Antonino": 190,
+   "Agno": 112,
+   "Schönbühl": 320,
+   "Winterthur": 126,
+   "St. Gallen": 189,
+   "Thun": 258,
+   "Schaffhausen": 207,
+   "Nyon": 1
+  },
+  "5390026": {
+   "Basel": 27,
+   "Volketswil": 7,
+   "Renens": 7,
+   "Oftringen": 13,
+   "S. Antonino": 14,
+   "Schönbühl": 9,
+   "Winterthur": 13,
+   "St. Gallen": 3,
+   "Thun": 3,
+   "Schaffhausen": 9
+  },
+  "3798733": {
+   "Volketswil": 4,
+   "Renens": 18,
+   "Oftringen": 11,
+   "S. Antonino": 5,
+   "Agno": 6,
+   "Schönbühl": 6,
+   "Winterthur": 7,
+   "St. Gallen": 4
+  },
+  "4983821": {
+   "Basel": 8,
+   "Volketswil": 1,
+   "Carouge": 1,
+   "Oftringen": 2,
+   "S. Antonino": 4,
+   "Agno": 2,
+   "Schönbühl": 1,
+   "Winterthur": 4,
+   "St. Gallen": 1,
+   "Schaffhausen": 2,
+   "Nyon": 2,
+   "Stans": 2,
+   "Steinhausen": 3
+  },
+  "5799200": {
+   "Basel": 88,
+   "Volketswil": 7,
+   "Renens": 49,
+   "Carouge": 8,
+   "Oftringen": 28,
+   "S. Antonino": 29,
+   "Agno": 44,
+   "Schönbühl": 81,
+   "Winterthur": 15,
+   "St. Gallen": 25,
+   "Thun": 56,
+   "Schaffhausen": 56,
+   "Nyon": 171
+  },
+  "2480333": {
+   "Basel": 1,
+   "Volketswil": 3,
+   "Renens": 2,
+   "Carouge": 1,
+   "Oftringen": 2,
+   "S. Antonino": 4,
+   "Agno": 1,
+   "Schönbühl": 1,
+   "Winterthur": 2,
+   "St. Gallen": 1,
+   "Thun": 8,
+   "Schaffhausen": 1
+  },
+  "5474523": {
+   "Basel": 4,
+   "Renens": 5,
+   "Carouge": 2,
+   "Oftringen": 2,
+   "S. Antonino": 2,
+   "Agno": 1,
+   "Schönbühl": 5,
+   "Winterthur": 4,
+   "St. Gallen": 2,
+   "Thun": 3,
+   "Schaffhausen": 4,
+   "Nyon": 2
+  },
+  "2435469": {
+   "Basel": 24,
+   "Volketswil": 54,
+   "Renens": 9,
+   "Carouge": 27,
+   "Oftringen": 5,
+   "S. Antonino": 13,
+   "Agno": 2,
+   "Schönbühl": 18,
+   "Winterthur": 30,
+   "St. Gallen": 26,
+   "Schaffhausen": 13,
+   "Nyon": 18,
+   "Stans": 19,
+   "Steinhausen": 23
+  },
+  "4904546": {
+   "Volketswil": 7,
+   "Renens": 11,
+   "Carouge": 9,
+   "Oftringen": 5,
+   "S. Antonino": 9,
+   "Agno": 6,
+   "Winterthur": 3,
+   "St. Gallen": 5,
+   "Thun": 8,
+   "Schaffhausen": 13,
+   "Nyon": 5,
+   "Stans": 1,
+   "Steinhausen": 7
+  },
+  "5102272": {
+   "Basel": 41,
+   "Volketswil": 21,
+   "Renens": 28,
+   "Carouge": 25,
+   "Oftringen": 16,
+   "S. Antonino": 11,
+   "Schönbühl": 16,
+   "Winterthur": 27,
+   "St. Gallen": 29,
+   "Thun": 27,
+   "Schaffhausen": 17,
+   "Nyon": 50
+  },
+  "6608442": {
+   "Basel": 78,
+   "Renens": 108,
+   "Carouge": 12,
+   "Oftringen": 107,
+   "S. Antonino": 1,
+   "Agno": 77,
+   "Schönbühl": 108,
+   "Winterthur": 108,
+   "St. Gallen": 51,
+   "Thun": 31,
+   "Nyon": 107,
+   "Stans": 47,
+   "Steinhausen": 90
+  },
+  "5390067": {
+   "Basel": 33,
+   "Volketswil": 9,
+   "Renens": 10,
+   "Carouge": 10,
+   "S. Antonino": 13,
+   "Schönbühl": 15,
+   "Winterthur": 3,
+   "St. Gallen": 5,
+   "Thun": 6,
+   "Schaffhausen": 1
+  },
+  "5799150": {
+   "Basel": 63,
+   "Volketswil": 49,
+   "Renens": 23,
+   "Carouge": 23,
+   "Oftringen": 9,
+   "S. Antonino": 15,
+   "Schönbühl": 19,
+   "Winterthur": 23,
+   "St. Gallen": 24,
+   "Thun": 17,
+   "Schaffhausen": 8,
+   "Nyon": 43,
+   "Steinhausen": 8
+  }
+ },
+ "alles_da": true,
+ "bedarf": {
+  "nf": 30,
+  "halbsteine": 60,
+  "platten": 18,
+  "zement_sack": 18,
+  "perlit_sack": 4,
+  "mischungen_fundament": 9,
+  "mischungen_herdplatte": 16,
+  "mischungen_perlit": 8,
+  "betonkies_m3": 1.05,
+  "kiesgemisch_m3": 0.54,
+  "sand_m3": 0.121
+ },
+ "zement": {
+  "beton": 312.5,
+  "moertelbett": 6.25,
+  "perlit": 104.0,
+  "putz": 26.8,
+  "total_kg": 449.6,
+  "sack": 18,
+  "reserve_kg": 25.4
+ },
+ "zement_kauf": 19,
+ "nf_kauf_total": 35,
+ "gekauft": {
+  "B": {
+   "ort": "OBI Volketswil",
+   "chf": 575.45,
+   "pos": [
+    {
+     "id": "O02",
+     "art": "5047857",
+     "name": "Kann Schalungsstein grau 24 cm (50 x 25 x 24)",
+     "menge": 26,
+     "eh": "Stk",
+     "chf": 154.7
+    },
+    {
+     "id": "O03",
+     "art": "5031802",
+     "name": "Catnic Baustahlmatte R188A 230 x 100 cm (Stäbe 6 mm)",
+     "menge": 2,
+     "eh": "Stk",
+     "chf": 45.9
+    },
+    {
+     "id": "O03b",
+     "art": "5031687",
+     "name": "Catnic Estrichgitter verzinkt 200 x 100 cm",
+     "menge": 2,
+     "eh": "Stk",
+     "chf": 13.0
+    },
+    {
+     "id": "O04",
+     "art": "6464333",
+     "name": "OSB-Platte N+F 1.8 x 62.5 x 250 cm",
+     "menge": 2,
+     "eh": "Stk",
+     "chf": 34.0
+    },
+    {
+     "id": "O05",
+     "art": "2473270",
+     "name": "Schalbrett sägerau 23 x 150 mm, 3 m",
+     "menge": 3,
+     "eh": "Stk",
+     "chf": 35.85
+    },
+    {
+     "id": "O06",
+     "art": "4895694",
+     "name": "Brett sägerau 23 x 100 mm, 2 m",
+     "menge": 4,
+     "eh": "Stk",
+     "chf": 19.8
+    },
+    {
+     "id": "O16",
+     "art": "4048450",
+     "name": "LUX Universalschraube Senkkopf 4 x 40 mm, 200 Stk",
+     "menge": 1,
+     "eh": "Pack",
+     "chf": 9.95
+    },
+    {
+     "id": "O17",
+     "art": "4582912",
+     "name": "OBI Bindedraht verzinkt 1.4 mm x 20 m",
+     "menge": 1,
+     "eh": "Rolle",
+     "chf": 5.95
+    },
+    {
+     "id": "O20",
+     "art": "1206051",
+     "name": "LUX Trennscheiben-Sparpack Metall 125 mm",
+     "menge": 1,
+     "eh": "Pack",
+     "chf": 8.35
+    },
+    {
+     "id": "O22",
+     "art": "1237163",
+     "name": "LUX Zimmermannsbleistift 24 cm",
+     "menge": 2,
+     "eh": "Stk",
+     "chf": 4.5
+    },
+    {
+     "id": "O32",
+     "art": "5047022",
+     "name": "Einhell Farb-Mörtelrührer TE-MX 1600-2 CE (1600 W)",
+     "menge": 1,
+     "eh": "Stk",
+     "chf": 106.95
+    },
+    {
+     "id": "O33",
+     "art": "5907696",
+     "name": "LUX Kellenset 3-tlg.",
+     "menge": 1,
+     "eh": "Set",
+     "chf": 17.5
+    },
+    {
+     "id": "O07",
+     "art": "5390067",
+     "name": "Schamottestein 64 x 124 x 250 mm (NF)",
+     "menge": 14,
+     "eh": "Stk",
+     "chf": 119.0
+    }
+   ]
+  },
+  "C": {
+   "ort": "OBI Volketswil",
+   "chf": 578.15,
+   "pos": [
+    {
+     "id": "O08",
+     "art": "5390026",
+     "name": "Schamottestein 40 x 200 x 500 mm",
+     "menge": 17,
+     "eh": "Stk",
+     "chf": 322.15
+    },
+    {
+     "id": "O09",
+     "art": "2925493",
+     "name": "Sakret Schamottemörtel 5 kg (feuerbeständig bis 1100 °C)",
+     "menge": 5,
+     "eh": "Sack",
+     "chf": 89.75
+    },
+    {
+     "id": "O10",
+     "art": "3798733",
+     "name": "Pflanzen-Perlit 100 l",
+     "menge": 3,
+     "eh": "Sack",
+     "chf": 89.85
+    },
+    {
+     "id": "O12",
+     "art": "4915658",
+     "name": "Gah Alberts Sechseck-Geflecht verzinkt 25 mm, 1 m x 10 m",
+     "menge": 1,
+     "eh": "Rolle",
+     "chf": 27.95
+    },
+    {
+     "id": "O14",
+     "art": "5786116",
+     "name": "Siro Möbelgriff S113 Kiefer roh, Lochabstand 96 mm",
+     "menge": 1,
+     "eh": "Stk",
+     "chf": 6.95
+    },
+    {
+     "id": "O15",
+     "art": "5756416",
+     "name": "Albrecht Thermolack schwarz matt 125 ml",
+     "menge": 1,
+     "eh": "Stk",
+     "chf": 12.5
+    },
+    {
+     "id": "O19",
+     "art": "1755560",
+     "name": "LUX Diamant-Trennscheibe Universal 125 mm",
+     "menge": 1,
+     "eh": "Stk",
+     "chf": 21.5
+    },
+    {
+     "id": "O34",
+     "art": "1240233",
+     "name": "LUX Fugenkelle Classic 10 mm",
+     "menge": 1,
+     "eh": "Stk",
+     "chf": 7.5
+    }
+   ]
+  }
+ },
+ "zuhause": [
+  {
+   "id": "O21",
+   "art": "1240837",
+   "name": "LUX Maurerschnur rot 20 m",
+   "menge": 1,
+   "eh": "Stk",
+   "chf": 3.65
+  },
+  {
+   "id": "O27",
+   "art": "3084563",
+   "name": "LUX Feinstaubmaske FFP3 mit Ventil, 2 Stk",
+   "menge": 1,
+   "eh": "Pack",
+   "chf": 19.5
+  },
+  {
+   "id": "O28",
+   "art": "3084571",
+   "name": "Schutzbrille mit Bügeln",
+   "menge": 2,
+   "eh": "Stk",
+   "chf": 13.0
+  },
+  {
+   "id": "O29",
+   "art": "5087713",
+   "name": "3M Gehörschutzstöpsel mit Kordel 1271",
+   "menge": 1,
+   "eh": "Pack",
+   "chf": 8.95
+  },
+  {
+   "id": "O35",
+   "art": "5295126",
+   "name": "Abus Löschdecke LD1118",
+   "menge": 1,
+   "eh": "Stk",
+   "chf": 16.5
+  },
+  {
+   "id": "O36",
+   "art": "6003131",
+   "name": "Valo Ascheeimer oval mit Deckel schwarz 24 l",
+   "menge": 1,
+   "eh": "Stk",
+   "chf": 24.95
+  }
+ ],
+ "fahrt_a": [
+  {
+   "key": "A1",
+   "ort": "OBI Oftringen",
+   "adr": "OBI Oftringen, Ackerweg 2, 4665 Oftringen",
+   "tel": "058 329 15 00",
+   "oeffnung": "Mo–Do 08–19, Fr 08–20, Sa 08–18",
+   "weg": "42 km · ca. 35 min ab Würenlos",
+   "pos": [
+    {
+     "id": "O01",
+     "art": "4793972",
+     "name": "Zement CEM I 42.5 N, 25 kg",
+     "menge": 19,
+     "eh": "Sack",
+     "ep": 5.5,
+     "chf": 104.5,
+     "kg": 475.0,
+     "markt": "Oftringen",
+     "pflicht": true,
+     "warum": "Bedarf 450 kg, Reserve 25 kg",
+     "url": "https://www.obi.ch/zemente-kalke/zement-cem-i-42-5-n/p/4793972",
+     "bestand": 173,
+     "ok": true,
+     "alternativ": "Renens 351, Basel 321, Schönbühl 320, Thun 258, Schaffhausen 207, S. Antonino 19"
+    },
+    {
+     "id": "O08",
+     "art": "5390026",
+     "name": "Schamottestein 40 x 200 x 500 mm",
+     "menge": 2,
+     "eh": "Stk",
+     "ep": 18.95,
+     "chf": 37.9,
+     "kg": 14.8,
+     "markt": "Oftringen",
+     "pflicht": true,
+     "warum": "18 nötig, 17 gekauft: 1 fehlt + 1 Reserve",
+     "url": "https://www.obi.ch/grillutensilien/schamottestein-hxbxt-40-x-200-x-500-mm/p/5390026",
+     "bestand": 13,
+     "ok": true,
+     "alternativ": "Basel 27, S. Antonino 14, Winterthur 13, Schönbühl 9, Schaffhausen 9, Volketswil"
+    },
+    {
+     "id": "O10",
+     "art": "3798733",
+     "name": "Pflanzen-Perlit 100 l",
+     "menge": 1,
+     "eh": "Sack",
+     "ep": 29.95,
+     "chf": 29.95,
+     "kg": 9.4,
+     "markt": "Oftringen",
+     "pflicht": true,
+     "warum": "Bedarf 323 l = 4 Sack, 3 gekauft",
+     "url": "https://www.obi.ch/perlite-vermiculite/pflanzen-perlit-100-l/p/3798733",
+     "bestand": 11,
+     "ok": true,
+     "alternativ": "Renens 18, Winterthur 7, Agno 6, Schönbühl 6, S. Antonino 5, Volketswil 4, St. G"
+    },
+    {
+     "id": "O13",
+     "art": "4983821",
+     "name": "Glattblech Stahl 500 x 1000 x 0.75 mm",
+     "menge": 1,
+     "eh": "Stk",
+     "ep": 23.5,
+     "chf": 23.5,
+     "kg": 2.9,
+     "markt": "Oftringen",
+     "pflicht": true,
+     "warum": "Tür und Kaminabdeckung",
+     "url": "https://www.obi.ch/bleche/glattblech-stahl-500-x-1-000-mm-staerke-0-75-mm/p/4983821",
+     "bestand": 2,
+     "ok": true,
+     "alternativ": "Basel 8, S. Antonino 4, Winterthur 4, Steinhausen 3, Agno 2, Schaffhausen 2, Nyo"
+    },
+    {
+     "id": "O24",
+     "art": "5799200",
+     "name": "Jopa Mörteleimer mit Bügel 20 l",
+     "menge": 10,
+     "eh": "Stk",
+     "ep": 3.5,
+     "chf": 35.0,
+     "kg": 6.8,
+     "markt": "Oftringen",
+     "pflicht": true,
+     "warum": "Kies holen, Mischungen abmessen",
+     "url": "https://www.obi.ch/baueimer-moertelkuebel/jopa-moerteleimer-mit-buegel-fassungsvermoegen-20-l/p/5799200",
+     "bestand": 28,
+     "ok": true,
+     "alternativ": "Nyon 171, Basel 88, Schönbühl 81, Thun 56, Schaffhausen 56, Renens 49, Agno 44, "
+    },
+    {
+     "id": "O11",
+     "art": "2480333",
+     "name": "Firefix Rauchrohr schwarz Ø 150 mm, 1 m (Stahl, Senotherm-Lack)",
+     "menge": 1,
+     "eh": "Stk",
+     "ep": 59.95,
+     "chf": 59.95,
+     "kg": 7.8,
+     "markt": "Oftringen",
+     "pflicht": true,
+     "warum": "Kaminrohr (stand schon in Fassung 3 auf der Liste). Habt ihr doch eins vom Kollegen: weglassen",
+     "url": "https://www.obi.ch/zubehoer-fuer-cheminees-und-schwedenoefen/firefix-rauchrohr-schwarz-15-cm/p/2480333",
+     "bestand": 2,
+     "ok": true,
+     "alternativ": "Thun 8, S. Antonino 4, Volketswil 3, Renens 2, Winterthur 2, Basel 1, Carouge 1,"
+    },
+    {
+     "id": "O31",
+     "art": "5474523",
+     "name": "Betonstampfer 13 x 20 cm, Stiel 105 cm (7.5 kg)",
+     "menge": 1,
+     "eh": "Stk",
+     "ep": 43.95,
+     "chf": 43.95,
+     "kg": 7.5,
+     "markt": "Oftringen",
+     "pflicht": true,
+     "warum": "Pflicht: neuer Kieskoffer muss verdichtet werden (sonst Basel, 4 Stk.)",
+     "url": "https://www.obi.ch/baugeraete/betonstampfer-13-x-20-cm-stiellaenge-105-cm/p/5474523",
+     "bestand": 2,
+     "ok": true,
+     "alternativ": "Renens 5, Schönbühl 5, Basel 4, Winterthur 4, Schaffhausen 4, Thun 3, Carouge 2,"
+    },
+    {
+     "id": "O18",
+     "art": "2435469",
+     "name": "LUX Gewebeplane grün 4 x 5 m",
+     "menge": 2,
+     "eh": "Stk",
+     "ep": 12.95,
+     "chf": 25.9,
+     "kg": 3.0,
+     "markt": "Oftringen",
+     "pflicht": false,
+     "warum": "nur wenn zuhause keine 3 grossen Planen",
+     "url": "https://www.obi.ch/baufolien-planen/lux-gewebeplane-gruen-4-x-5-m/p/2435469",
+     "bestand": 5,
+     "ok": true,
+     "alternativ": "Volketswil 54, Winterthur 30, Carouge 27, St. Gallen 26, Basel 24, Steinhausen 2"
+    },
+    {
+     "id": "O25",
+     "art": "4904546",
+     "name": "Spanngurt Unitec mit Klemmverschluss 3 m, 400 kg",
+     "menge": 4,
+     "eh": "Stk",
+     "ep": 8.95,
+     "chf": 35.8,
+     "kg": 1.2,
+     "markt": "Oftringen",
+     "pflicht": false,
+     "warum": "nur wenn keine Spanngurte zuhause",
+     "url": "https://www.obi.ch/spanngurte-zurrgurte/spanngurt-unitec-mit-klemmverschluss-3-m-400-kg/p/4904546",
+     "bestand": 5,
+     "ok": true,
+     "alternativ": "Schaffhausen 13, Renens 11, Carouge 9, S. Antonino 9, Thun 8, Volketswil 7, Stei"
+    },
+    {
+     "id": "O26",
+     "art": "5102272",
+     "name": "Antirutschunterlage schwarz 30 x 150 cm",
+     "menge": 3,
+     "eh": "Stk",
+     "ep": 5.5,
+     "chf": 16.5,
+     "kg": 1.2,
+     "markt": "Oftringen",
+     "pflicht": false,
+     "warum": "nur wenn keine Antirutschmatten zuhause",
+     "url": "https://www.obi.ch/teppichgleitschutz/antirutschunterlage-schwarz-30-x-150-cm/p/5102272",
+     "bestand": 16,
+     "ok": true,
+     "alternativ": "Nyon 50, Basel 41, St. Gallen 29, Renens 28, Winterthur 27, Thun 27, Carouge 25,"
+    },
+    {
+     "id": "O30",
+     "art": "6608442",
+     "name": "PU-Handschuh Gr. 8",
+     "menge": 4,
+     "eh": "Paar",
+     "ep": 0.95,
+     "chf": 3.8,
+     "kg": 0.2,
+     "markt": "Oftringen",
+     "pflicht": false,
+     "warum": "nur wenn keine Arbeitshandschuhe zuhause",
+     "url": "https://www.obi.ch/arbeitshandschuhe/pu-handschuh-gr-8/p/6608442",
+     "bestand": 107,
+     "ok": true,
+     "alternativ": "Renens 108, Schönbühl 108, Winterthur 108, Nyon 107, Steinhausen 90, Basel 78, A"
+    }
+   ],
+   "chf_pflicht": 334.75,
+   "chf_alles": 416.75,
+   "kg": 530
+  },
+  {
+   "key": "A2",
+   "ort": "OBI Basel Dreispitz",
+   "adr": "OBI Basel, Reinacherstrasse 29, 4053 Basel",
+   "tel": "058 329 11 00",
+   "oeffnung": "Mo–Fr 08–20, Sa 08–18",
+   "weg": "55 km ab Oftringen · 66 km zurück nach Würenlos",
+   "pos": [
+    {
+     "id": "O07",
+     "art": "5390067",
+     "name": "Schamottestein 64 x 124 x 250 mm (NF)",
+     "menge": 21,
+     "eh": "Stk",
+     "ep": 8.5,
+     "chf": 178.5,
+     "kg": 79.4,
+     "markt": "Basel",
+     "pflicht": true,
+     "warum": "nur Basel hat genug (Oftringen 0, Volketswil 9, Winterthur 3)",
+     "url": "https://www.obi.ch/grillutensilien/schamottestein-hxbxt-64-x-124-x-250-mm/p/5390067",
+     "bestand": 33,
+     "ok": true,
+     "alternativ": ""
+    },
+    {
+     "id": "O23",
+     "art": "5799150",
+     "name": "Jopa Mörtelkasten schwarz 90 l",
+     "menge": 6,
+     "eh": "Stk",
+     "ep": 7.95,
+     "chf": 47.7,
+     "kg": 12.0,
+     "markt": "Basel",
+     "pflicht": true,
+     "warum": "4 zum Kies holen und Mischen + 2, damit eine Fahrt ins Kieswerk 900 kg fasst",
+     "url": "https://www.obi.ch/baueimer-moertelkuebel/jopa-moertelkasten-schwarz-fassungsvermoegen-90-l/p/5799150",
+     "bestand": 63,
+     "ok": true,
+     "alternativ": "Volketswil 49, Nyon 43, St. Gallen 24, Renens 23, Carouge 23, Winterthur 23, Sch"
+    }
+   ],
+   "chf_pflicht": 226.2,
+   "chf_alles": 226.2,
+   "kg": 91
+  }
+ ],
+ "kies": [
+  {
+   "key": "K1",
+   "zweck": "Kieskoffer (S2)",
+   "pos": [
+    [
+     "Kiesgemisch 0/31.5",
+     "60201",
+     0.55,
+     1600
+    ]
+   ],
+   "kg": 880,
+   "chf": 33.0
+  },
+  {
+   "key": "K2",
+   "zweck": "Fundament (S4)",
+   "pos": [
+    [
+     "Betonkies gewaschen 0/16",
+     "20001",
+     0.5,
+     1800
+    ]
+   ],
+   "kg": 900,
+   "chf": 30.0
+  },
+  {
+   "key": "K3",
+   "zweck": "Mörtelbett Sockel (S5), Herdplatte, Putz",
+   "pos": [
+    [
+     "Betonkies gewaschen 0/16",
+     "20001",
+     0.36,
+     1800
+    ],
+    [
+     "Sand gewaschen 0/4",
+     "40001",
+     0.15,
+     1500
+    ]
+   ],
+   "kg": 873,
+   "chf": 30.6
+  },
+  {
+   "key": "K4",
+   "zweck": "Herdplatte (S6)",
+   "pos": [
+    [
+     "Betonkies gewaschen 0/16",
+     "20001",
+     0.24,
+     1800
+    ]
+   ],
+   "kg": 432,
+   "chf": 14.4
+  }
+ ],
+ "summen": {
+  "bezahlt_B": 575.45,
+  "bezahlt_C": 578.15,
+  "bezahlt": 1153.6,
+  "fahrt_a_min": 560.95,
+  "fahrt_a_max": 642.95,
+  "kies": 108.0,
+  "offen_min": 668.95,
+  "offen_max": 750.95,
+  "total_min": 1822.55,
+  "total_max": 1904.55
+ }
+}

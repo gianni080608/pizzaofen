@@ -41,42 +41,52 @@ def theta_at(pts, s):
 
 
 def kuppel(D_innen, h_innen, tuer_b=TUNNEL_INNEN_B, tuer_h=TUNNEL_H):
-    a, c, t = D_innen / 2, h_innen, HALB['t']
-    am, cm = a + t / 2, c + t / 2                     # Mittelflaeche
-    pts = ellipse_arc(am, cm)
+    """Fassung 5: Reihen auf der INNENflaeche (dort beruehren sich die Steine, die Fugen oeffnen sich nach aussen).
+    Reihenhoehe = Halbstein 12.4 + Lagerfuge innen 0.4. Steinzahl pro Reihe so, dass die 12.5 cm breiten Steine
+    an der Unterkante innen Platz haben (Stossfuge innen min. 3 mm). Oben ist der Ring enger -> Steine keilfoermig
+    zuschneiden (Breite oben). Tuer: Reihen, die unterhalb der Tuerhoehe beginnen, haben eine Luecke von 40 cm."""
+    a, c = D_innen / 2, h_innen
+    B, H = HALB['w'], HALB['h']
+    FI, FS = 0.4, 0.3                                 # Lagerfuge innen, Stossfuge innen (min.)
+    pts = ellipse_arc(a, c)
     L = pts[-1][1]
-    pitch = HALB['h'] + FUGE
+    def pos(sv):
+        th = theta_at(pts, sv)
+        return th, a * math.cos(th), c * math.sin(th)
+    def avail(r, tuer):
+        u = 2 * math.pi * r
+        if tuer:
+            u -= 2 * math.asin(min(1.0, (tuer_b / 2) / r)) * r
+        return u
     reihen, s0, total = [], 0.0, 0
-    while s0 + pitch <= L:
-        s1 = s0 + HALB['h']
-        th0, th1, thm = theta_at(pts, s0), theta_at(pts, s1), theta_at(pts, (s0 + s1) / 2)
-        r_mid = am * math.cos(thm)
-        n = math.ceil(2 * math.pi * r_mid / (HALB['w'] + FUGE))
-        z_in0, z_in1 = c * math.sin(th0), c * math.sin(th1)
-        # Neigung der Lagerfuge gegen die Horizontale am Reihenanfang
-        phi = math.degrees(math.atan2(cm * math.cos(th0), am * math.sin(th0) + 1e-12))
-        neigung = 90 - phi
-        abzug = 0
-        if z_in1 <= tuer_h + 0.5:                     # Reihe liegt ganz im Tuerbereich
-            abzug = math.floor(tuer_b / (HALB['w'] + FUGE))
-        reihen.append(dict(reihe=len(reihen) + 1, s_von=round(s0, 1), z_innen_von=round(z_in0, 1),
-                           z_innen_bis=round(z_in1, 1), r_innen=round(a * math.cos(thm), 1),
-                           neigung_grad=round(neigung, 1), halbsteine=n - abzug, tuerabzug=abzug))
-        total += n - abzug
-        s0 += pitch
+    while s0 + H <= L - 6:
+        th0, r0, z0 = pos(s0)
+        th1, r1, z1 = pos(s0 + H)
+        thm, rm, zm = pos(s0 + H / 2)
+        neigung = math.degrees(math.atan2(zm / c ** 2, rm / a ** 2))
+        tuer = z0 < tuer_h - 1
+        n = math.floor(avail(r0, tuer) / (B + FS))
+        b_oben = avail(r1, tuer) / n - FS
+        fuge_unten = avail(r0, tuer) / n - B
+        abzug = round((2 * math.pi * r0 - avail(r0, tuer)) / (B + FS)) if tuer else 0
+        reihen.append(dict(reihe=len(reihen) + 1, s_von=round(s0, 1), z_innen_von=round(z0, 1), z_innen_bis=round(z1, 1),
+                           r_innen=round(rm, 1), r_unten=round(r0, 1), r_oben=round(r1, 1), neigung_grad=round(neigung, 1),
+                           halbsteine=n, tuerabzug=abzug, tuer=tuer, breite_oben=round(min(B, b_oben), 1),
+                           zuschnitt_seite=round(max(0.0, (B - b_oben) / 2), 1), fuge_unten=round(fuge_unten, 1)))
+        total += n
+        s0 += H + FI
     rest = L - s0
-    r_rest = am * math.cos(theta_at(pts, s0))
-    schluss = math.ceil(math.pi * r_rest ** 2 / ((HALB['w'] + FUGE) * (HALB['h'] + FUGE))) if r_rest > 1 else 0
+    th_r, r_rest, z_rest = pos(s0)
+    schluss = 4                                       # 4 Viertelkreis-Stuecke (je 1 Halbstein)
     total += schluss
-    # Flaechenkontrolle: halbe Rotationsellipsoid-Oberflaeche (Mittelflaeche)
-    e = math.sqrt(1 - (cm / am) ** 2) if cm < am else 0.0
-    A_full = 2 * math.pi * am ** 2 + (math.pi * cm ** 2 / e) * math.log((1 + e) / (1 - e)) if e > 0 else 4 * math.pi * am ** 2
-    A_half = A_full / 2 / 1e4                         # m2
+    e = math.sqrt(1 - (c / a) ** 2) if c < a else 0.0
+    A_full = 2 * math.pi * a ** 2 + (math.pi * c ** 2 / e) * math.log((1 + e) / (1 - e)) if e > 0 else 4 * math.pi * a ** 2
+    A_half = A_full / 2 / 1e4
     A_tuer = tuer_b * tuer_h / 1e4
-    halbe_flaeche = (A_half - A_tuer) / ((HALB['w'] + FUGE) * (HALB['h'] + FUGE) / 1e4)
+    halbe_flaeche = (A_half - A_tuer) / ((B + FS) * (H + FI) / 1e4)
     return dict(D=D_innen, h=h_innen, meridian_cm=round(L, 1), reihen=reihen, schluss_halbsteine=schluss,
-                rest_bogen_cm=round(rest, 1), halbsteine_reihen=total,
-                kontrolle_flaeche_m2=round(A_half, 3), halbsteine_flaechenkontrolle=round(halbe_flaeche, 1))
+                rest_bogen_cm=round(rest, 1), rest_radius_cm=round(r_rest, 1), rest_z_cm=round(z_rest, 1),
+                halbsteine_reihen=total, kontrolle_flaeche_m2=round(A_half, 3), halbsteine_flaechenkontrolle=round(halbe_flaeche, 1))
 
 
 def flaeche_union(cx, cy, R, xl, xr, y0, y1, step=0.5):
@@ -133,7 +143,11 @@ def variante(D, h, cy=None):
     a2, c2 = a1 + DAEMM_KUPPEL, c1 + DAEMM_KUPPEL
     V_kuppel = (2 / 3) * math.pi * (a2 ** 2 * c2 - a1 ** 2 * c1) / 1e6
     V_tunneldecke = (2 * halb_tunnel) * tunnel_laenge * DAEMM_KUPPEL / 1e6
-    V_perlit_mix = V_boden + V_kuppel + V_tunneldecke
+    # Fassung 5: Daemmring am Kuppelfuss (unter Bodenniveau bis auf die Herdplatte) + Tunnelseiten
+    R_iso, R_bd = a1 + DAEMM_KUPPEL, a1 + 5
+    V_fussring = (math.pi * (R_iso ** 2 - R_bd ** 2) * (DAEMM_BODEN + 4.5) + math.pi * (R_bd ** 2 - a1 ** 2) * 4.5) / 1e6
+    V_tunnelseiten = 2 * DAEMM_KUPPEL * (tuer_h + 4 + DAEMM_BODEN + 4.5) * tunnel_laenge / 1e6
+    V_perlit_mix = V_boden + V_kuppel + V_tunneldecke + V_fussring + V_tunnelseiten
     perlit_l = V_perlit_mix * 1000 * 1.10
     zement_perlit_kg = perlit_l / 5 * 1.3
     # Aussenputz
@@ -149,7 +163,7 @@ def variante(D, h, cy=None):
                 y_tuer=round(y_tuer, 1), tunnel_laenge=round(tunnel_laenge, 1),
                 boden_m2=round(A_boden, 3), platten_boden=platten_boden, platten_tunnel=platten_tunnel, streifen=streifen, wandlaenge_mittel=round(wandlaenge_mittel, 1), platten_total=platten_boden + platten_tunnel,
                 moertel_liter=round(v_moertel_l, 1), moertel_kg=round(kg_moertel, 1),
-                perlit_mix_m3=dict(boden=round(V_boden, 3), kuppel=round(V_kuppel, 3), tunnel=round(V_tunneldecke, 3), total=round(V_perlit_mix, 3)),
+                perlit_mix_m3=dict(boden=round(V_boden, 3), kuppel=round(V_kuppel, 3), tunnel=round(V_tunneldecke, 3), fussring=round(V_fussring, 3), tunnelseiten=round(V_tunnelseiten, 3), total=round(V_perlit_mix, 3)),
                 perlit_l=round(perlit_l), zement_perlit_kg=round(zement_perlit_kg, 1),
                 putz_m2=round(A_putz, 2), putz_m3=round(V_putz, 3), zement_putz_kg=round(zement_putz, 1), sand_putz_m3=round(sand_putz_m3, 3),
                 R_aussen=round(R_aussen, 1), aussendurchmesser=round(2 * R_aussen, 1),
@@ -164,7 +178,7 @@ def unterbau():
     herd = 1.5 * 1.5 * 0.10
     beton = (fund + fuell + herd) * 1.05
     steine_pro_lage = SOCKEL_B / 50 + 2 * (SOCKEL_T - WAND) / 50
-    kies_verdichtet = 1.7 * 1.7 * 0.20
+    kies_verdichtet = 1.7 * 1.7 * 0.15                     # Fassung 5: Kieskoffer 15 cm (Aushub -25 bis -10)
     return dict(fundament_m3=round(fund, 4), wandlaenge_cm=wandlaenge, wandflaeche_m2=round(wandflaeche, 3),
                 fuellbeton_m3=round(fuell, 3), herdplatte_m3=herd, beton_total_m3=round(beton, 3),
                 zement_beton_kg=round(beton * 300, 1), betonkies_kg=round(beton * 1900),
@@ -183,9 +197,9 @@ if __name__ == '__main__':
     for key in ['D80', 'D90', 'D100']:
         v = out[key]; k = v['kuppel']
         print(f"\n=== Kuppel {v['D']} cm innen, {v['h']} cm hoch ===")
-        print(f"Meridianlaenge Mittelflaeche {k['meridian_cm']} cm, Reihen {len(k['reihen'])}, Restbogen {k['rest_bogen_cm']} cm -> Schluss {k['schluss_halbsteine']} Halbsteine")
+        print(f"Meridianlaenge innen {k['meridian_cm']} cm, Reihen {len(k['reihen'])}, Restbogen {k['rest_bogen_cm']} cm, Restoeffnung r {k['rest_radius_cm']} ab z {k['rest_z_cm']} -> Schluss {k['schluss_halbsteine']} Stuecke")
         for r in k['reihen']:
-            print(f"  Reihe {r['reihe']}: z {r['z_innen_von']:5.1f}-{r['z_innen_bis']:5.1f} cm, r_innen {r['r_innen']:5.1f}, Neigung {r['neigung_grad']:5.1f} Grad, {r['halbsteine']} Halbsteine (Tuer -{r['tuerabzug']})")
+            print(f"  Reihe {r['reihe']}: z {r['z_innen_von']:5.1f}-{r['z_innen_bis']:5.1f} cm, r unten {r['r_unten']:5.1f} oben {r['r_oben']:5.1f}, Lagerfuge {r['neigung_grad']:5.1f} Grad, {r['halbsteine']} Halbsteine{' + Tuer' if r['tuer'] else ''}, Breite oben {r['breite_oben']} (je Seite {r['zuschnitt_seite']} weg), Stossfuge unten {r['fuge_unten']}")
         print(f"Halbsteine Reihen+Schluss: {k['halbsteine_reihen']} | Flaechenkontrolle: {k['halbsteine_flaechenkontrolle']} | +10% -> {v['halbsteine_mit_verschnitt']} -> NF Kuppel {v['nf_kuppel']}")
         print(f"NF Tunnel {v['nf_tunnel']} | NF total {v['nf_total']} | Boden {v['boden_m2']} m2 -> Platten {v['platten_boden']} + 2 Tunneldecke")
         print(f"Moertel {v['moertel_liter']} l -> {v['moertel_kg']} kg | Perlit {v['perlit_l']} l, Zement Perlit {v['zement_perlit_kg']} kg | Putz {v['putz_m2']} m2, {v['putz_m3']} m3")
